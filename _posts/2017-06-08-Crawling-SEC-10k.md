@@ -4,9 +4,6 @@ title: "Crawling all of the SEC 10-K forms available on the web (EDGAR website) 
 categories: misc
 ---
 
-## crawling_SEC_10k_Forms
-R script for crawling all the 10-k forms available on the web (EDGAR website)
-
 ### Terminal and tmux:
 ```{r}
 ssh <account_ID>@<Server_IP_Address>  ## Connect to a server
