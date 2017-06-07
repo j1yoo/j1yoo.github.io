@@ -1,4 +1,4 @@
-|[Home](/README.md)| |[CV](/Research.md)| |[Research](/Research.md)| |[Personal](/Research.md)|
+|[Home](/README.md)|[CV](/Research.md)|[Research](/Research.md)|[Personal](/Research.md)|
 
 Publication:
 1. Compromise Effect and Consideration Set Size
