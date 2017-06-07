@@ -5,7 +5,7 @@ permalink: /cv/
 ---
 
 ### Research Interests:
-Causal Inference, Applied Econometrics, IT Platform Innovation, Social Influence, Long-Term Orientation
+Causal Inference, Applied Econometrics (i.e., 'Metrics), IT Platform Innovation, Social Influence, Long-Term Orientation, Consumer Decision-Making
 
 ### Education:
 * Ph.D. Candidate in Business and Technology Management, KAIST, 2013 - current
