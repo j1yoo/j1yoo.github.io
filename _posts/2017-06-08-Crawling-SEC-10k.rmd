@@ -115,4 +115,4 @@ for(i in 1:length(TenKVEC)){
   BD_dat <- append(res, TenK_process(URL = filings10K2013$ftp_url[1], retrieve = "BD"))
 }
 ```
-### End of Code
+End of Code
