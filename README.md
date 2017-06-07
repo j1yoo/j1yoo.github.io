@@ -1,11 +1,4 @@
-<!--right-side-panel
-Example Navigation:
-
-* [Home](index.html)
-  * [Installation](index.html#Installation)
-  * [Pre-defined section names](index.html#pre-defined-section-names-)
-* [Layout](layout.html)
--->
+* [Home](/README.md) | * [Research](/Research.md)
 
 ## Jaewon's homepage
 
