@@ -1,4 +1,4 @@
-|[Home](/README.md)| |[CV](/Research.md)| |[Research](/Research.md)| |[Personal](/Research.md)|
+|[Home](/README.md)|[CV](/Research.md)|[Research](/Research.md)|[Personal](/Research.md)| 
 
 ## Jaewon's homepage
 
