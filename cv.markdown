@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CV
+title:
 permalink: /cv/
 ---
 
-### Jaewon Yoo C.V.
+### Jaewon Yoo
