@@ -27,7 +27,7 @@ require(TenK)
 require(stringi)
 ```
 
-## Collect all SIC codes
+### Collect all SIC codes
 ```{r}
 sicLIST <- read_html("https://www.sec.gov/info/edgar/siccodes.htm")
 SICs <- sicLIST %>%
@@ -40,7 +40,7 @@ SICs <- SICs[-nrow(SICs),] ## SIC Table
 SICs <- SICs[-1,1] ## Removing all but the SIC codes
 ```
 
-## Collect all CIK (EDGAR company identifier) codes
+### Collect all CIK (EDGAR company identifier) codes
 ```{r}
 i = 1
 j = 1
@@ -72,7 +72,7 @@ for(j in 1:length(SICs)){
 rm(list = ls()[!(ls() %in% c('cikVEC'))])
 ```
 
-## Collect all of the URL addresses containing 10-K forms
+### Collect all of the URL addresses containing 10-K forms
 ```{r}
 k = 1
 tenkVEC <- NULL
@@ -106,7 +106,7 @@ Sys.time() - time
 tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
 ```
 
-## Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (for all of the companies registered on EDGAR)
+### Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (for all of the companies registered on EDGAR)
 ```{r}
 i = 1
 BD_dat <- NULL
