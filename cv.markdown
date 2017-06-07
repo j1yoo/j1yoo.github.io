@@ -17,5 +17,8 @@ Causal Inference, Applied Econometrics (i.e., 'Metrics), IT Platform Innovation,
 * KAIST Full Scholarship (2011 – Current) granted by KAIST
 * Dean’s List (2009) granted by the University of Arizona
 * Honorable Mention (2008 – 2009) granted by the University of Arizona
-    
-[[Latest C.V.|Jaewon Yoo_CV.pdf]]
+
+### Current Projects:
+* Research Assistant for the Global Innovation and Production Network and the Sustainable Industrial Ecosystem of Korea, Social Sciences Korea (SSK), National Research Foundation of Korea (NRF). (2012 – current)
+* Research Assistant for Social Big Data Science Research Team, BK21 Plus, NRF. (2013 – current)
+* Research Assistant at Innovation Strategy and Policy Lab, KAIST (2011 – current)
