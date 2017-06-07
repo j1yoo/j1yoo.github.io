@@ -21,3 +21,6 @@ Causal Inference, Applied Econometrics, IT Platform Innovation, Social Influence
 ### Skills:
   #### Programming
     R, STATA, LATEX, Python (basic), PHP (basic), Javascript, HTML
+  #### Methods
+    Graduate Courses: Probability and Statistics, Research Methodology, Advanced Statistics for Man- agement, Econometrics, Advanced Quantitative Marketing
+    
