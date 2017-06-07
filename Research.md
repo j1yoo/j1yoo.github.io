@@ -1,4 +1,4 @@
-|[Home](/README.md)|[CV](/Research.md)|[Research](/Research.md)|[Personal](/Research.md)|
+|[Home](/README.md)|[CV](/CV.md)|[Research](/Research.md)|[Personal](/Personal.md)| 
 
 ### Publication:
 * "Compromise Effect and Consideration Set Size in Consumer Decision-Making" with Hyunsik Kim and Wonjoon Kim. Accepted for publication in June 2017. _Applied Economics Letters_.
