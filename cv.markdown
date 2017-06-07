@@ -4,4 +4,4 @@ title: CV
 permalink: /cv/
 ---
 
-### Jaewon Yoo
+### Jaewon Yoo C.V.
