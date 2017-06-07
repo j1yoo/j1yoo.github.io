@@ -10,4 +10,4 @@ Working papers:
 Work-in-Progress:
 * "Content is King: Marketing Contents for Consumer Engagement and Long Term Sales Growth in the Digital Era" with Wonjoon Kim, Minki Kim, Minsok Lee, and Seokjoon Yoon.
 * "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Wonjoon Kim and Minki Kim.
-* "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Methodology" with Namil Kim.
+* "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Methodology" with Namil Kim and Wonjoon Kim.
