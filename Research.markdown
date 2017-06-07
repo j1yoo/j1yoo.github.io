@@ -1,3 +1,9 @@
+---
+layout: page
+title: Research
+permalink: /research/
+---
+
 ### Publication:
 * "Compromise Effect and Consideration Set Size in Consumer Decision-Making" with Hyunsik Park and Wonjoon Kim. Accepted for publication in June 2017. _Applied Economics Letters_.
 
