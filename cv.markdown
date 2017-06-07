@@ -15,8 +15,8 @@ Causal Inference, Applied Econometrics (i.e., 'Metrics), IT Platform Innovation,
 ### Honors and Grants:
 * Global Ph.D. Fellowship Grant (2014 - 2017), National Research Foundation (NRF) of Korea (Total Grant: US$ 83,819)
 * KAIST Full Scholarship (2011 – Current), KAIST
-* Dean’s List (2009), the University of Arizona
-* Honorable Mention (2008 – 2009), the University of Arizona
+* Dean’s List (2009), University of Arizona
+* Honorable Mention (2008 – 2009), University of Arizona
 
 ### Current Projects:
 * Global Innovation and Production Network and the Sustainable Industrial Ecosystem of Korea, Social Sciences Korea (2012 – current), NRF
