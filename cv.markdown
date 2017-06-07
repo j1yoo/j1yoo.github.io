@@ -17,11 +17,5 @@ Causal Inference, Applied Econometrics, IT Platform Innovation, Social Influence
 * KAIST Full Scholarship (2011 – Current) granted by KAIST
 * Dean’s List (2009) granted by the University of Arizona
 * Honorable Mention (2008 – 2009) granted by the University of Arizona
-
-### Skills:
-  #### Programming
-    R, STATA, LATEX, Python (basic), PHP (basic), Javascript, HTML
-  #### Methods
-    Graduate Courses: Probability and Statistics, Research Methodology, Advanced Statistics for Man- agement, Econometrics, Advanced Quantitative Marketing
     
 [[Latest C.V.|Jaewon Yoo_CV.pdf]]
