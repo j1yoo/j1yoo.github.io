@@ -28,3 +28,5 @@ categories: misc
 * <a href="https://cran.r-project.org/web/packages/lubridate/lubridate.pdf"> lubridate, date manipulator </a>
 * <a href="https://cran.r-project.org/web/packages/OpenML/index.html"> OpenML, machine learning </a>
 * <a href="https://www.rdocumentation.org/packages/stringi/versions/1.1.5"> stringi, string processor </a>
+* <a href="http://www.sciencedirect.com/science/article/pii/S2352711017300110"> RCrawler, parallelizing web crawler </a>
+* <a href="https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/"> OpenMP, parallelizer for R </a>
