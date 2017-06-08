@@ -17,7 +17,7 @@ categories: misc
 * [ggplot2](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
 ### Web scrapping:
-* [rvest](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
+* [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
 * [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
 * [RCrawler, parallelizing web crawler](http://www.sciencedirect.com/science/article/pii/S2352711017300110)
 
