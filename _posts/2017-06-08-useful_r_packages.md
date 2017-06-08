@@ -4,7 +4,7 @@ title: "Collection of Useful R Packages and Tips"
 categories: misc
 ---
 
-### Reporting Results:
+### Reporting/Sharing Results:
 * <a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf"> R markdown </a>
 
 ### Data Manipulation:
