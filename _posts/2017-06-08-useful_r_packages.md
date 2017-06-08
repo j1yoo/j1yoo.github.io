@@ -21,4 +21,4 @@ categories: misc
 * <a href="http://ryanhafen.com/blog/rmote"> rmote </a>
 * <a href="https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html"> mlr </a>
 * <a href="https://tensorflow.rstudio.com/"> tensorflow </a>
-* <a href="https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/"> Parallel computing </a>
+* <a href="https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/"> parallel_computing </a>
