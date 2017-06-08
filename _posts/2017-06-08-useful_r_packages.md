@@ -14,20 +14,24 @@ categories: misc
 * [stargazer](http://jakeruss.com/cheatsheets/stargazer.html)
 
 #### Visualization:
-* <a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf"> ggplot2 </a>
+* [ggplot2](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
 #### Web scrapping:
 * [rvest](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
 * [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
+* [RCrawler, parallelizing web crawler](http://www.sciencedirect.com/science/article/pii/S2352711017300110)
+
+### Machine learning:
+* [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
+* [TensorFlow](https://tensorflow.rstudio.com/)
+* [OpenML, machine learning](https://cran.r-project.org/web/packages/OpenML/index.html)
+
+### Parallel computing:
+* [parallel computing](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
+* [OpenMP, parallelizer for R](https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/)
 
 #### Et cetera:
-* <a href="http://ryanhafen.com/blog/rmote"> rmote-1 </a>, <a href="https://github.com/cloudyr/rmote"> rmote-2 </a>
-* <a href="https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html"> mlr, machine learning </a>
-* <a href="https://tensorflow.rstudio.com/"> TensorFlow </a>
-* <a href="https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/"> parallel computing </a>
-* <a href="https://cran.r-project.org/web/packages/lubridate/lubridate.pdf"> lubridate, date manipulator </a>
-* <a href="https://cran.r-project.org/web/packages/OpenML/index.html"> OpenML, machine learning </a>
-* <a href="https://www.rdocumentation.org/packages/stringi/versions/1.1.5"> stringi, string processor </a>
-* <a href="http://www.sciencedirect.com/science/article/pii/S2352711017300110"> RCrawler, parallelizing web crawler </a>
-* <a href="https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/"> OpenMP, parallelizer for R </a>
 * [Using R on docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
+* [rmote-1](http://ryanhafen.com/blog/rmote), [rmote-2](https://github.com/cloudyr/rmote)
+* [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
+* [stringi, string processor](https://www.rdocumentation.org/packages/stringi/versions/1.1.5)
