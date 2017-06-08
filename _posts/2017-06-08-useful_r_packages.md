@@ -26,5 +26,5 @@ categories: misc
 * <a href="https://tensorflow.rstudio.com/"> TensorFlow </a>
 * <a href="https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/"> parallel computing </a>
 * <a href="https://cran.r-project.org/web/packages/lubridate/lubridate.pdf"> lubridate, date manipulator </a>
-* <a href="https://cran.r-project.org/web/packages/OpenML/index.html"> OpenML </a>
+* <a href="https://cran.r-project.org/web/packages/OpenML/index.html"> OpenML, machine learning </a>
 * <a href="https://www.rdocumentation.org/packages/stringi/versions/1.1.5"> stringi, string processor </a>
