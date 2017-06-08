@@ -5,6 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   I am a Ph.D. candidate studying quantitative marketing and innovation. This is my personal home page where I share and collaborate with my colleagues for my research projects.
 twitter_username: j1yoo4
 github_username:  j1yoo4
+google_analytics: UA-44429056-1
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
