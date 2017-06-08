@@ -5,20 +5,20 @@ categories: misc
 ---
 
 #### Data manipulation:
-* <a href="https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf"> data.table </a>
-* <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf"> dplyr </a>
-* <a href="https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/"> piping with R </a>
+* [data.table](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)
+* [dplyr](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+* [piping with R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
 
 #### Reporting results:
-* <a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf"> R markdown </a>
-* <a href="http://jakeruss.com/cheatsheets/stargazer.html"> stargazer </a>
+* [R markdown](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+* [stargazer](http://jakeruss.com/cheatsheets/stargazer.html)
 
 #### Visualization:
 * <a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf"> ggplot2 </a>
 
 #### Web scrapping:
-* <a href="https://cran.r-project.org/web/packages/rvest/rvest.pdf"> rvest </a>
-* <a href="https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html"> selectogadget, CSS selector </a>
+* [rvest](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
+* [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
 
 #### Et cetera:
 * <a href="http://ryanhafen.com/blog/rmote"> rmote-1 </a>, <a href="https://github.com/cloudyr/rmote"> rmote-2 </a>
