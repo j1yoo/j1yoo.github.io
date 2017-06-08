@@ -14,7 +14,7 @@ categories: misc
 * [stargazer](http://jakeruss.com/cheatsheets/stargazer.html)
 
 ### Visualization:
-* [ggplot2](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+* [ggplot2, the "grammer of graphics"](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
 ### Web scrapping:
 * [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
@@ -23,8 +23,8 @@ categories: misc
 
 ### Machine learning:
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
-* [TensorFlow](https://tensorflow.rstudio.com/)
-* [OpenML, machine learning](https://cran.r-project.org/web/packages/OpenML/index.html)
+* [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
+* [OpenML, collaborative machine learning platform](https://cran.r-project.org/web/packages/OpenML/index.html)
 
 ### Parallel computing:
 * [parallel computing](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
