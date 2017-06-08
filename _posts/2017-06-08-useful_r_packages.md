@@ -21,7 +21,7 @@ categories: misc
 * <a href="https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html"> selectogadget, CSS selector </a>
 
 #### Et cetera:
-* <a href="http://ryanhafen.com/blog/rmote"> rmote </a>
+* <a href="http://ryanhafen.com/blog/rmote"> rmote_1 </a> <a href="https://github.com/cloudyr/rmote"> rmote_2 </a>
 * <a href="https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html"> mlr, machine learning </a>
 * <a href="https://tensorflow.rstudio.com/"> TensorFlow </a>
 * <a href="https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/"> parallel computing </a>
