@@ -10,6 +10,7 @@ categories: misc
 
 #### Reporting results:
 * <a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf"> R markdown </a>
+* <a href="http://jakeruss.com/cheatsheets/stargazer.html"> stargazer </a>
 
 #### Visualization:
 * <a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf"> ggplot2 </a>
