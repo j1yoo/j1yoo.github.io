@@ -4,19 +4,19 @@ title: "Collection of Useful R Packages and Tips"
 categories: misc
 ---
 
-#### Data manipulation:
+### Data manipulation:
 * [data.table](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)
 * [dplyr](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 * [piping with R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
 
-#### Reporting results:
+### Reporting results:
 * [R markdown](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 * [stargazer](http://jakeruss.com/cheatsheets/stargazer.html)
 
-#### Visualization:
+### Visualization:
 * [ggplot2](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
-#### Web scrapping:
+### Web scrapping:
 * [rvest](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
 * [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
 * [RCrawler, parallelizing web crawler](http://www.sciencedirect.com/science/article/pii/S2352711017300110)
