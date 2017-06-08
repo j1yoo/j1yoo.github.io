@@ -30,7 +30,7 @@ categories: misc
 * [parallel computing](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
 * [OpenMP, parallelizer for R](https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/)
 
-#### Et cetera:
+### Et cetera:
 * [Using R on docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
 * [rmote-1](http://ryanhafen.com/blog/rmote), [rmote-2](https://github.com/cloudyr/rmote)
 * [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
