@@ -27,7 +27,7 @@ categories: misc
 * [OpenML, collaborative machine learning platform](https://cran.r-project.org/web/packages/OpenML/index.html)
 
 ### Parallel computing:
-* [parallel computing](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
+* [The 'what' and 'why'](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
 * [OpenMP, parallelizer for R](https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/)
 
 ### Et cetera:
