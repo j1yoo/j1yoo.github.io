@@ -42,3 +42,5 @@ categories: misc
 * [rmote-1](http://ryanhafen.com/blog/rmote), [rmote-2, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
 * [stringi, string processor](https://www.rdocumentation.org/packages/stringi/versions/1.1.5)
+
+###### Last updated on June 09, 2017
