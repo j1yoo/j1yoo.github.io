@@ -30,6 +30,7 @@ categories: misc
 ### Parallel computing:
 * [The 'what' and the 'why'](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
 * [OpenMP, parallelizer for R](https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/)
+* [lapply, back to the 'base'ic](http://rpubs.com/kaz_yos/1204)
 
 ### Et cetera:
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
