@@ -9,6 +9,8 @@ categories: misc
 * [dplyr, the "grammer of data manipulation"](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 * [reshape2, long <-> wide format convertor](http://seananderson.ca/2013/10/19/reshape.html)
 * [feather, fast on-disk data formatting](https://blog.rstudio.org/2016/03/29/feather/)
+* [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
+* [stringi, string processor](https://www.rdocumentation.org/packages/stringi/versions/1.1.5)
 * [Piping in R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
 * [Piping with dplyr](http://seananderson.ca/2014/09/13/dplyr-intro.html)
 
@@ -29,8 +31,8 @@ categories: misc
 
 ### Machine learning:
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
-* [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
 * [OpenML, collaborative machine learning platform](https://cran.r-project.org/web/packages/OpenML/index.html)
+* [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
 
 ### Parallel computing:
 * [The 'what' and the 'why'](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
@@ -40,8 +42,6 @@ categories: misc
 ### Et cetera:
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
 * [rmote-1](http://ryanhafen.com/blog/rmote), [rmote-2, using R on a remote machine](https://github.com/cloudyr/rmote)
-* [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
-* [stringi, string processor](https://www.rdocumentation.org/packages/stringi/versions/1.1.5)
 
 
 ###### Last updated Jun 09, 2017
