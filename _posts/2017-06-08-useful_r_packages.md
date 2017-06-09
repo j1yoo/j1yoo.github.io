@@ -4,7 +4,7 @@ title: "Collection of Useful R Packages and Tips"
 categories: misc
 ---
 
-### Data manipulation:
+### Data wrangling:
 * [data.table, enhanced data.frames](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)
 * [dplyr, the "grammer of data manipulation"](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 * [reshape2, long <-> wide format convertor](http://seananderson.ca/2013/10/19/reshape.html)
