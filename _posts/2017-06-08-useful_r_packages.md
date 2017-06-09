@@ -7,6 +7,8 @@ categories: misc
 ### Data manipulation:
 * [data.table, enhanced data.frames](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)
 * [dplyr, the "grammer of data manipulation"](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+* [reshape2, long <-> wide format convertor](http://seananderson.ca/2013/10/19/reshape.html)
+* [feather, fast on-disk data formatting](https://blog.rstudio.org/2016/03/29/feather/)
 * [Piping in R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
 * [Piping with dplyr](http://seananderson.ca/2014/09/13/dplyr-intro.html)
 
@@ -16,6 +18,8 @@ categories: misc
 
 ### Visualization:
 * [ggplot2, the "grammer of graphics"](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+* [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
+* [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
 * [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
 
 ### Web scrapping:
