@@ -15,6 +15,7 @@ categories: misc
 
 ### Visualization:
 * [ggplot2, the "grammer of graphics"](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+* [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
 
 ### Web scrapping:
 * [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
