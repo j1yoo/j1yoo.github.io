@@ -21,7 +21,6 @@ if(!require(stringi)) install.packages("stringi")
 if(!require(rvest)) install.packages("rvest")
 install_github("JasperHG90/TenK")
 require(TenK)
-require(stringi)
 ```
 
 ### Collect all SIC codes
@@ -109,7 +108,7 @@ i = 1
 BD_dat <- NULL
 time = Sys.time()
 error_list = NULL
-for(i in 107:length(tenkVEC)){
+for(i in 1:length(tenkVEC)){
   res = NULL
   tryCatch(res <- TenK_process(URL = tenkVEC[i], retrieve = "BD"),
    error = function(e) error_list <<- append(error_list, i))
