@@ -82,14 +82,14 @@ for(k in 1:length(cikVEC)){
     follow_link("Documents") %>%
     html_nodes("tr td a") %>%
     html_attr("href"))
-    
+
   if(!is.null(tenkUrl)){
     type <- TenKs %>%
     follow_link("Documents") %>%
     html_nodes("td") %>%
     html_text() %>%
     matrix(ncol = 5, byrow = T)
-    
+
     type <- type[,4]
     tenk <- data.table(cbind(type, tenkUrl))
     tenk <- tenk[type == "10-K", tenkUrl]
@@ -107,9 +107,18 @@ tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
 ```{r}
 i = 1
 BD_dat <- NULL
-for(i in 1:length(TenKVEC)){
-  res <- TenK_process(URL = tenkVEC[i], retrieve = "BD")
-  BD_dat <- append(res, TenK_process(URL = filings10K2013$ftp_url[1], retrieve = "BD"))
+time = Sys.time()
+error_list = NULL
+for(i in 107:length(tenkVEC)){
+  res = NULL
+  tryCatch(res <- TenK_process(URL = tenkVEC[i], retrieve = "BD"),
+   error = function(e) error_list <<- append(error_list, i))
+  BD_dat <- append(BD_dat, res)
+  print(paste0("#", i, " iteration completed."))
 }
+print("End of Loop")
+time - Sys.time()
 ```
 End of Code
+
+###### Last updated Jun 09, 2017
