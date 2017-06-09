@@ -4,6 +4,11 @@ title: "Collection of Useful R Packages and Tips"
 categories: misc
 ---
 
+### Web scrapping:
+* [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
+* [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
+* [RCrawler, parallelizing web crawler](http://www.sciencedirect.com/science/article/pii/S2352711017300110)
+
 ### Data wrangling:
 * [data.table, enhanced data.frames](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)
 * [dplyr, the "grammer of data manipulation"](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
@@ -23,11 +28,6 @@ categories: misc
 * [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
 * [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
 * [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
-
-### Web scrapping:
-* [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
-* [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
-* [RCrawler, parallelizing web crawler](http://www.sciencedirect.com/science/article/pii/S2352711017300110)
 
 ### Machine learning:
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
