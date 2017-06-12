@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 ### Publication:
-* "Compromise Effect and Consideration Set Size in Consumer Decision-Making" J. Yoo, H. Park, and W. Kim. _Applied Economics Letters_ (2017).
+* "Compromise Effect and Consideration Set Size in Consumer Decision-Making" with Hyunsik Park and Wonjoon Kim. _Applied Economics Letters_ (2017).
 
 ### Working papers:
 * "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua M. Ackerman. Revising for submission at _Journal of Marketing_.
