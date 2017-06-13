@@ -15,7 +15,6 @@ R  ## Access R
 
 ### R Session:
 ```r
-load("./170607_SEC_Crawling.RData")
 if(!require(devtools)) install.packages("devtools")
 if(!require(data.table)) install.packages("data.table")
 if(!require(dplyr)) install.packages("dplyr")
@@ -111,7 +110,7 @@ Sys.time() - time
 tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
 ```
 
-### Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (for all of the companies registered on EDGAR)
+### Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (i.e., for all of the companies registered on EDGAR)
 ```r
 i = 1
 BD_dat <- NULL
