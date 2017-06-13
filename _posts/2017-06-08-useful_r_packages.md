@@ -33,6 +33,7 @@ categories: misc
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
 * [OpenML, collaborative machine learning platform](https://cran.r-project.org/web/packages/OpenML/index.html)
 * [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
+* [keras, high-level neural network API](https://rstudio.github.io/keras/index.html)
 * [reticulate, python integration in R](https://www.r-bloggers.com/test-driving-python-integration-in-r-using-the-reticulate-package/)
 
 ### Parallel computing:
