@@ -72,26 +72,33 @@ rm(list = ls()[!(ls() %in% c('cikVEC'))])
 ```{r}
 k = 1
 tenkVEC <- NULL
+formList <- c("10-K", "10-K405", "10KSB", "10KSB40")  ## 10-K forms (including 10-K405, 10KSB, and 10KSB40 forms)
 time = Sys.time()
 for(k in 1:length(cikVEC)){
   TenKs <- html_session(paste0("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=", cikVEC[k],"&type=10-k&dateb=&owner=exclude&count=100"))
+  #TenKs <- html_session("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001171008&type=10-k&dateb=&owner=exclude&count=100")
   tenk <- NULL
   tenkUrl <- NULL
   try(tenkUrl <- TenKs %>%
-    follow_link("Documents") %>%
-    html_nodes("tr td a") %>%
+    html_nodes("tr td a#documentsbutton") %>%
     html_attr("href"))
-
+  
   if(!is.null(tenkUrl)){
-    type <- TenKs %>%
-    follow_link("Documents") %>%
+    for(u in tenkUrl){
+    documentUrl <- paste0("https://www.sec.gov",u) %>%
+      html_session() %>%
+    html_nodes("tr td a") %>%
+    html_attr("href")}
+
+    type <- paste0("https://www.sec.gov",u) %>%
+      html_session() %>%
     html_nodes("td") %>%
     html_text() %>%
     matrix(ncol = 5, byrow = T)
-
+    
     type <- type[,4]
-    tenk <- data.table(cbind(type, tenkUrl))
-    tenk <- tenk[type == "10-K", tenkUrl]
+    tenk <- data.table(cbind(type, documentUrl))
+    tenk <- tenk[type %in% formList, documentUrl]
     tenkVEC <- append(tenkVEC, tenk)
   }
   print(paste0(k, " iteration completed."))
