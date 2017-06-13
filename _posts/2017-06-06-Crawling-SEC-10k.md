@@ -7,14 +7,14 @@ categories: misc
 Namil Kim and I have collected all of the 10-K forms (including 10-K405, 10KSB, and 10KSB40) for all of the registered corporations (central index keys; hereafter CIKs) across all of the industries (determined by standard industrial classifications; hereafter SICs) that are available on the SEC’s EDGAR webpage. The data ranges from 19XX to 2017 (n = XXX,XXX) with XX,XXX,XXX unique companies across XX industries.
 
 ### Terminal and tmux:
-```{r}
+```r
 ssh <account_ID>@<Server_IP_Address>  ## Connect to a server
 tmux attach -t <Session Number>  ## Attach a tmux session
 R  ## Access R
 ```
 
 ### R Session:
-```{r}
+```r
 load("./170607_SEC_Crawling.RData")
 if(!require(devtools)) install.packages("devtools")
 if(!require(data.table)) install.packages("data.table")
@@ -26,7 +26,7 @@ require(TenK)
 ```
 
 ### Collect all SIC codes
-```{r}
+```r
 sicLIST <- read_html("https://www.sec.gov/info/edgar/siccodes.htm")
 SICs <- sicLIST %>%
   html_nodes("td") %>%
@@ -39,7 +39,7 @@ SICs <- SICs[-1,1] ## Removing all but the SIC codes
 ```
 
 ### Collect all CIK (EDGAR company identifier) codes
-```{r}
+```r
 i = 1
 j = 1
 cikVEC <- NULL
@@ -71,7 +71,7 @@ rm(list = ls()[!(ls() %in% c('cikVEC'))])
 ```
 
 ### Collect all of the URL addresses containing 10-K forms
-```{r}
+```r
 k = 1
 tenkVEC <- NULL
 formList <- c("10-K", "10-K405", "10KSB", "10KSB40")  ## 10-K forms (including 10-K405, 10KSB, and 10KSB40 forms)
@@ -112,7 +112,7 @@ tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
 ```
 
 ### Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (for all of the companies registered on EDGAR)
-```{r}
+```r
 i = 1
 BD_dat <- NULL
 time = Sys.time()
