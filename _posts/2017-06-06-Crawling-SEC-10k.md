@@ -72,9 +72,7 @@ rm(list = ls()[!(ls() %in% c('cikVEC'))])
 ### Collect all of the URL addresses containing 10-K forms
 ```r
 k = 1
-tenkVEC <- NULL
-documentUrl <- NULL
-type <- NULL
+tenkVEC <- list()
 formList <- c("10-K", "10-K405", "10KSB", "10KSB40")  ## 10-K forms (including 10-K405, 10KSB, and 10KSB40 forms)
 
 time = Sys.time()
@@ -85,7 +83,8 @@ for(k in 1:length(cikVEC)){
   try(tenkUrl <- TenKs %>%
     html_nodes("tr td a#documentsbutton") %>%
     html_attr("href"))
-  
+
+  documentUrl <- NULL
   if(!identical(tenkUrl,character(0))){
     for(u in tenkUrl){
     docUrl <- paste0("https://www.sec.gov",u) %>%
@@ -95,6 +94,7 @@ for(k in 1:length(cikVEC)){
     documentUrl <- append(documentUrl, docUrl)
     }
 
+    type <- NULL
     for(u in tenkUrl){
     typ <- paste0("https://www.sec.gov",u) %>%
       html_session() %>%
@@ -106,13 +106,14 @@ for(k in 1:length(cikVEC)){
 
     tenk <- data.table(cbind(type, documentUrl))
     tenk <- tenk[V2 == "Complete submission text file" | V4 %in% formList, documentUrl]
-    tenkVEC <- append(tenkVEC, tenk)
+    tenkVEC[[k]] <- tenk
   }
   print(paste0(k, " iteration completed."))
 }
 print("End of Loop.")
 Sys.time() - time
 
+tenkVEC <- unlist(tenkVEC)
 tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
 ```
 
@@ -134,4 +135,4 @@ time - Sys.time()
 ```
 End of Code
 
-###### Last updated Jun 14, 2017
+###### Last updated Jun 15, 2017
