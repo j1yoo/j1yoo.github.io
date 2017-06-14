@@ -46,4 +46,4 @@ categories: misc
 * [rmote, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
 
-###### Last updated Jun 09, 2017
+###### Last updated Jun 15, 2017
