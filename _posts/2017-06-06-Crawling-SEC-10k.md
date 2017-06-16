@@ -7,6 +7,7 @@ categories: misc
 Namil Kim and I have collected all of the 10-K forms (including 10-K405, 10KSB, and 10KSB40) for all of the registered corporations (central index keys; hereafter CIKs) across all of the industries (determined by standard industrial classifications; hereafter SICs) that are available on the SEC’s EDGAR webpage. The data ranges from 19XX to 2017 (n = XXX,XXX) with XX,XXX,XXX unique companies across XX industries.
 
 ### Terminal and tmux:
+We use a remote server for the parsing process.
 ```r
 ssh <account_ID>@<Server_IP_Address>  ## Connect to a server
 tmux attach -t <Session Number>  ## Attach a tmux session
@@ -136,6 +137,7 @@ tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
 ```
 
 ### Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (i.e., for all of the companies registered on EDGAR)
+We are collecting only the "business descriptions" by setting 'retrieve' option equal to "BD".
 ```r
 i = 1
 BD_dat <- NULL
