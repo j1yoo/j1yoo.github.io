@@ -14,14 +14,32 @@ R  ## Access R
 ```
 
 ### R Session:
+Install and load relevant packages to be used in the process.
 ```r
 if(!require(devtools)) install.packages("devtools")
 if(!require(data.table)) install.packages("data.table")
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(stringi)) install.packages("stringi")
 if(!require(rvest)) install.packages("rvest")
+if(!require(mailR)) install.packages("mailR")
 install_github("JasperHG90/TenK")
 require(TenK)
+require(mailR)
+```
+
+### Setting up E-mail addresses to use 'mailR'
+Crawling the web takes a long time. We can use the 'mailR' package to have our server send an email notifying us that the loop/iteration has been completed.
+```r
+sender <- "email1@email.com"
+recipients <- c("email2@email.com")
+email <- send.mail(from = sender,
+  to = recipients,
+  subject = "Title",
+  body = paste0("Iteration has been completed. ", "\n", 
+  "Elapsed time: ", difTime, "\n", "Number of iteration to completion: ", k),
+  smtp = list(host.name = "stmp", port = 465, user.name = "ID", passwd = "PW", ssl = T),
+  authenticate = T,
+  send = F)
 ```
 
 ### Collect all SIC codes
