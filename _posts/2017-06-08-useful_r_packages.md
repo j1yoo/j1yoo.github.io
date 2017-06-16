@@ -46,5 +46,6 @@ categories: misc
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
 * [rmote, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
+* [mailR, automatic email sender](https://github.com/rpremraj/mailR)
 
-###### Last updated Jun 15, 2017
+###### Last updated Jun 16, 2017
