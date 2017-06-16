@@ -130,7 +130,8 @@ for(k in 1:length(cikVEC)){
   print(paste0(k, " iteration completed."))
 }
 print("End of Loop.")
-Sys.time() - time
+difTime <- Sys.time() - time
+email$send()
 
 tenkVEC <- unlist(tenkVEC)
 tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
