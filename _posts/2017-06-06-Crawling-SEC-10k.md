@@ -17,15 +17,14 @@ R  ## Access R
 ### R Session:
 Install and load relevant packages to be used in the process.
 ```r
+if(!require(mailR)) install.packages("mailR")
 if(!require(devtools)) install.packages("devtools")
+if(!require(TenK)) install_github("JasperHG90/TenK")
+if(!require(rvest)) install.packages("rvest")
 if(!require(data.table)) install.packages("data.table")
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(stringi)) install.packages("stringi")
-if(!require(rvest)) install.packages("rvest")
-if(!require(mailR)) install.packages("mailR")
-install_github("JasperHG90/TenK")
-require(TenK)
-require(mailR)
+if(!require(rjson)) install.packages("rjson")
 ```
 
 ### Setting up E-mail addresses to use 'mailR'
@@ -60,7 +59,7 @@ SICs <- SICs[-1,1] ## Removing all but the SIC codes
 ```r
 i = 1
 j = 1
-cikVEC <- NULL
+cikVEC <- list()
 pages <- seq(from = 1, to = 10000000, by = 100)
 for(j in 1:length(SICs)){
   for(i in 1:length(pages)){
@@ -76,7 +75,7 @@ for(j in 1:length(SICs)){
       #cik <- matrix(cik[-length(cik)], ncol = 3, byrow = T)
       #cik <- cik[-1,1]
       cik <- cik[substr(cik,1,2) == "00"]
-      cikVEC <- append(cikVEC, cik)
+      cikVEC[[i]] <- cik
       print(paste0("j = ",j," & i = ",i , " iteration completed."))
     }
     else{
@@ -86,6 +85,7 @@ for(j in 1:length(SICs)){
   }
 } ## Constructing a full CIK (EDGAR company identifier) list
 rm(list = ls()[!(ls() %in% c('cikVEC'))])
+cikVEC <- do.call("rbind", cikVEC)
 ```
 
 ### Collect all of the URL addresses containing 10-K forms
@@ -131,28 +131,40 @@ for(k in 1:length(cikVEC)){
 }
 print("End of Loop.")
 difTime <- Sys.time() - time
-email$send()
+emailFun(k, difTime, body_add = "")  ## Send email to notify the completion of iteration
 
 tenkVEC <- unlist(tenkVEC)
 tenkVEC <- paste0("https://www.sec.gov",tenkVEC)
+tenkVEC2 <- data.table(tenkVEC)[nchar(tenkVEC) != 67,]  ## Removed rows that does not contain 10-K forms
+tenkVEC2 <- as.matrix(tenkVEC2)[,1]
 ```
 
 ### Crawling all of the 10-K forms using the exhaustive set of URLs for 10-K forms (i.e., for all of the companies registered on EDGAR)
 We are collecting only the "business descriptions" by setting 'retrieve' option equal to "BD".
 ```r
+savetojson <- function(data, path) {
+  g <- toJSON(data)
+  write(g, paste0("./path/10K_",i,".json"))
+}  ## Saving 10-K Business Descripts as JavaScript Object Notation (Json) Files 
+
 i = 1
-BD_dat <- NULL
-time = Sys.time()
 error_list = NULL
-for(i in 1:length(tenkVEC)){
+
+time = Sys.time()
+for(i in 1:length(tenkVEC2)){
   res = NULL
-  tryCatch(res <- TenK_process(URL = tenkVEC[i], retrieve = "BD"),
-   error = function(e) error_list <<- append(error_list, i))
-  BD_dat <- append(BD_dat, res)
+  tryCatch(res <- TenK_process(URL = tenkVEC2[i], retrieve = "BD"),
+   error = function(e) error_list <<- append(error_list, i))  ## length(error_list) = 2,381 --> XBRL Viewer
+   savetojson(res, i)  ## length() = 422,59X
   print(paste0("#", i, " iteration completed."))
+
+  if(i %% 42259 == 1){
+    try(emailFun(i, difTime = round(Sys.time() - time, 4), 
+    body_add = paste0("\n", "Percentage completed: ", i %/% 42259*10, "%")))
+  }
 }
 print("End of Loop")
-time - Sys.time()
+Sys.time() - time
 ```
 End of Code
 
