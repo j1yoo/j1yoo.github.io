@@ -4,7 +4,7 @@ title: "Crawling all of the SEC 10-K forms available on the web (EDGAR website) 
 categories: misc
 ---
 
-Namil Kim and I have collected all of the 10-K forms (including 10-K405, 10KSB, and 10KSB40) for all of the registered corporations (central index keys; hereafter CIKs) across all of the industries (determined by standard industrial classifications; hereafter SICs) that are available on the SEC’s EDGAR webpage. The data ranges from 19XX to 2017 (n = XXX,XXX) with XX,XXX,XXX unique companies across XX industries.
+Namil Kim and I have collected all of the 10-K forms (including 10-K405, 10KSB, and 10KSB40) for all of the registered corporations (central index keys; hereafter CIKs) across all of the industries (determined by standard industrial classifications; hereafter SICs) that are available on the SEC’s EDGAR webpage. The data ranges from 19XX to 2017 (n = xxx,xxx) with 57,599 unique companies across a total of 444 industries.
 
 ### Terminal and tmux:
 We use a remote server for the parsing process.
