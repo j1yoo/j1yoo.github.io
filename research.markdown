@@ -5,13 +5,13 @@ permalink: /research/
 ---
 
 ### Publication:
-* "Compromise Effect and Consideration Set Size in Consumer Decision-Making" with Hyunsik Park and Wonjoon Kim. _Applied Economics Letters_ (2017).
+* Jaewon Yoo , Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: 10.1080/13504851.2017.1340567
 
 ### Working papers:
-* "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua M. Ackerman. Revising for submission at _Journal of Marketing_.
-* "The Role of Affect in Choice Decision-Making Under a Large Assortment" with Hyunsik Park and Wonjoon Kim. R&R at _Journal of Consumer Marketing_.
+* "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua M. Ackerman. Revising for submission at _Journal of Marketing_
+* "The Role of Affect in Choice Decision-Making Under a Large Assortment" with Hyunsik Park and Wonjoon Kim. R&R at _Journal of Consumer Marketing_
 
 ### Work-in-Progress:
-* "Content is King: Marketing Contents for Consumer Engagement and Long Term Sales Growth in the Digital Era" with Wonjoon Kim, Minki Kim, Minsok Lee, and Seokjoon Yoon.
-* "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Wonjoon Kim and Minki Kim.
-* "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Methodology" with Namil Kim and Wonjoon Kim.
+* "Content is King: Marketing Contents for Consumer Engagement and Long Term Sales Growth in the Digital Era" with Seokjoon Yoon, Wonjoon Kim, Minki Kim, and Minsok Lee
+* "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Wonjoon Kim and Minki Kim
+* "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Methodology" with Namil Kim and Wonjoon Kim
