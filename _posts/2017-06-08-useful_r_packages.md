@@ -18,6 +18,7 @@ categories: misc
 * [stringi, string processor](https://www.rdocumentation.org/packages/stringi/versions/1.1.5)
 * [Piping in R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
 * [Piping with dplyr](http://seananderson.ca/2014/09/13/dplyr-intro.html)
+* [Bizzaro pipe, debugging tool for long _dplyr_ codes](https://cran.r-project.org/web/packages/replyr/vignettes/BizarroPipe.html)
 
 ### Reporting results:
 * [R markdown, high-quality output format](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
