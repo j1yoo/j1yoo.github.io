@@ -10,4 +10,4 @@ I am a fourth-year Ph.D. candidate studying quantitative marketing and innovatio
 
 ![Love basketball!](https://github.com/j1yoo4/j1yoo4.github.io/blob/master/JaewonYoo_1.png?raw=true)
 
-I love playing basketball when I need refreshment, whether it is simply just going to the gym and shooting around or playing some pick-up games!
+I love going to the gym to shoot around or to play some pick-up games when I need refreshment.
