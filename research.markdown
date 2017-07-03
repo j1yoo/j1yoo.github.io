@@ -12,6 +12,7 @@ permalink: /research/
 * "The Role of Affect in Choice Decision-Making Under a Large Assortment" with Hyunsik Park and Wonjoon Kim. R&R at _Journal of Consumer Marketing_
 
 ### Work-in-Progress:
-* "Content is King: Marketing Contents for Consumer Engagement and Long Term Sales Growth in the Digital Era" with Seokjoon Yoon, Wonjoon Kim, Minki Kim, and Minsok Lee
-* "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Wonjoon Kim and Minki Kim
-* "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Methodology" with Namil Kim and Wonjoon Kim
+* "Content is King: Marketing Contents for Consumer Engagement and Long Term Sales Growth in the Digital Era" with Seokjoon Yoon, Wonjoon Kim, Minki Kim, and Minsok Lee (A large-scaled field experiment in progress)
+* "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Wonjoon Kim and Minki Kim (Drafting in progress)
+* "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Methodology" with Namil Kim and Wonjoon Kim (Data collection)
+* "Interactive Collaboration and Knowledge Sharing in a virtual community" with Namil Kim and Wonjoon Kim (Data Collection)
