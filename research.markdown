@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 ### Publication:
-* Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/eprint/V8pJpbkifrmSYGffu7CQ/full)[newtab]
+* Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/eprint/V8pJpbkifrmSYGffu7CQ/full){:target="_blank"}
 
 ### Working papers:
 * "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua M. Ackerman. Revising for submission at _Journal of Marketing_
