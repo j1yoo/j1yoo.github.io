@@ -49,5 +49,6 @@ categories: misc
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
 * [mailR, automatic email sender](https://github.com/rpremraj/mailR)
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
+* [atom, the hackable text editor](https://github.com/atom/atom)
 
 ###### Last updated Jun 16, 2017
