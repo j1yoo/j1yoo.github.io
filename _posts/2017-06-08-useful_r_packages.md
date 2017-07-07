@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Collection of Useful R Packages and Tips"
+title: "Collection of Useful Packages, Tips, and Cheat Sheets (R and Python)"
 categories: misc
 ---
 
@@ -19,6 +19,8 @@ categories: misc
 * [Piping in R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
 * [Piping with dplyr](http://seananderson.ca/2014/09/13/dplyr-intro.html)
 * [Bizzaro pipe, debugging tool for long _dplyr_ codes](https://cran.r-project.org/web/packages/replyr/vignettes/BizarroPipe.html)
+* [lumberjack, tracking changes in data when _piping_](https://www.r-bloggers.com/track-changes-in-data-with-the-lumberjack/amp/)
+* [Cheat Sheet for pandas, data wrangling in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Pandas_Cheat_Sheet_2.pdf)
 
 ### Reporting results:
 * [R markdown, high-quality output format](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
@@ -29,6 +31,7 @@ categories: misc
 * [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
 * [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
 * [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
+* [Cheat Sheet for matplotlib, plotting in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf)
 
 ### Machine learning:
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
@@ -36,6 +39,10 @@ categories: misc
 * [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
 * [keras, high-level neural network API](https://rstudio.github.io/keras/index.html)
 * [reticulate, python integration in R](https://www.r-bloggers.com/test-driving-python-integration-in-r-using-the-reticulate-package/)
+* [Cheat Sheet for keras, neural networks in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Keras_Cheat_Sheet_Python.pdf)
+* [Cheat Sheet for numpy, data analysis in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
+* [Cheat Sheet for scikit-Learn, python machine learning](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Scikit_Learn_Cheat_Sheet_Python.pdf)
+* [Cheat Sheet for PySpark, spark for python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PySpark_Cheat_Sheet_Python.pdf)
 
 ### Parallel computing:
 * [The 'what' and the 'why'](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
@@ -50,5 +57,7 @@ categories: misc
 * [mailR, automatic email sender](https://github.com/rpremraj/mailR)
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
 * [atom, the hackable text editor](https://github.com/atom/atom)
+* [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
 
-###### Last updated Jun 16, 2017
+
+###### Last updated Jul 07, 2017
