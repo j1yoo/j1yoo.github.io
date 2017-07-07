@@ -25,6 +25,8 @@ categories: misc
 ### Reporting results:
 * [R markdown, high-quality output format](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 * [stargazer, reporting statistical analysis](http://jakeruss.com/cheatsheets/stargazer.html)
+* [Cheat Sheet for latex](https://www.nyu.edu/projects/beber/files/Chang_LaTeX_sheet.pdf)
+* [Mathematical symbols in latex](http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf)
 
 ### Visualization:
 * [ggplot2, the "grammer of graphics"](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
@@ -37,8 +39,8 @@ categories: misc
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
 * [OpenML, collaborative machine learning platform](https://cran.r-project.org/web/packages/OpenML/index.html)
 * [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
-* [keras, high-level neural network API](https://rstudio.github.io/keras/index.html)
 * [reticulate, python integration in R](https://www.r-bloggers.com/test-driving-python-integration-in-r-using-the-reticulate-package/)
+* [keras, high-level neural network API](https://rstudio.github.io/keras/index.html)
 * [Cheat Sheet for keras, neural networks in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Keras_Cheat_Sheet_Python.pdf)
 * [Cheat Sheet for numpy, data analysis in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
 * [Cheat Sheet for scikit-Learn, python machine learning](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Scikit_Learn_Cheat_Sheet_Python.pdf)
@@ -49,6 +51,8 @@ categories: misc
 * [lapply, back to 'base'ic](http://rpubs.com/kaz_yos/1204)
 * [parallelizing computation in R](http://gforge.se/2015/02/how-to-go-parallel-in-r-basics-tips/)
 * [OpenMP, parallelizer for R](https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/)
+* [GPU computing with R](http://www.r-tutor.com/gpu-computing)
+* [gpuR, more on GPU computing](https://www.r-bloggers.com/r-gpu-programming-for-all-with-gpur/)
 
 ### Et cetera:
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
