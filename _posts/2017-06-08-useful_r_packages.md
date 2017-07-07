@@ -7,6 +7,7 @@ categories: misc
 ### Web scrapping:
 * [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
 * [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
+* [xml2, parsing and processing xml & html](https://blog.rstudio.org/2015/04/21/xml2/)
 * [RCrawler, parallelizing web crawler](http://www.sciencedirect.com/science/article/pii/S2352711017300110)
 
 ### Data wrangling:
