@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Collection of Useful Packages, Tips, and Cheat Sheets (R and Python)"
+title: "Collection of Useful Packages, Cheat Sheets (R and Python), and Tips"
 categories: misc
 ---
 
