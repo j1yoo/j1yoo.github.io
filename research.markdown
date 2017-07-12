@@ -13,6 +13,6 @@ permalink: /research/
 
 ### Work-in-Progress:
 * "Content is King: Marketing Contents for Consumer Engagement and Long Term Sales Growth in the Digital Era" with Seokjoon Yoon, Wonjoon Kim, Minki Kim, and Minsok Lee (A large-scaled field experiment in progress)
-* "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Wonjoon Kim and Minki Kim (Drafting in progress)
+* "Mobile Payments Revolution: The Impact of Third Party Payments on Digital Commerce" with Minki Kim and Wonjoon Kim
 * "Constituency Statute and Customer Orientation: Machine Learning and Quasi-Experimental Approach" with Namil Kim and Wonjoon Kim (Data collection)
-* "Interactive Collaboration and Knowledge Sharing: Evidence from a Virtual Community" with Namil Kim and Wonjoon Kim (Data Collection)
+* "Interactive Collaboration and Knowledge Sharing: Evidence from a Virtual Community" with Namil Kim and Wonjoon Kim (Data collection)
