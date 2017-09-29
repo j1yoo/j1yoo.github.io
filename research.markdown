@@ -13,7 +13,7 @@ permalink: /research/
 * "Helping hands to bear the burden of choice: recommendations from similar, but not close, others reduce choice difficulty" with Wonjoon Kim and Joshua M. Ackerman. Preparing for submission at at _Journal of Marketing_ (Reject-and-resubmit)
 
 ### Work-in-Progress:
-* "Mobile payments revolution: the impact of third party payments on digital commerce" with Minki Kim and Wonjoon Kim (Empirical analysis in progress)
+* "Mobile payments revolution: the impact of third party payments on digital commerce" with Minki Kim and Wonjoon Kim (Data collection completed and empirical analysis in progress)
 * "Constituency statute and customer orientation: machine learning and quasi-experimental approach" with Namil Kim and Wonjoon Kim (Data collection completed and empirical analysis in progress)
 * "Interactive collaboration and knowledge sharing: evidence from a virtual community, Github" with Namil Kim and Wonjoon Kim (Data collection in progress)
 
