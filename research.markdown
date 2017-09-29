@@ -6,8 +6,8 @@ permalink: /research/
 
 ### Publication:
 * Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/eprint/V8pJpbkifrmSYGffu7CQ/full)
-
-### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020) Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
+######
+#### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020) Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
 
 ### Working papers:
 * "Small, Short, and in Motion: Content Marketing for Sustainable Growth in the Digital Era" with Seokjoon Yoon, Wonjoon Kim, Minki Kim, and Minsok Lee. Preparing for submission at _Marketing Science_
