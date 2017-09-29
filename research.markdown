@@ -18,11 +18,5 @@ permalink: /research/
 * "Interactive Collaboration and Knowledge Sharing: Evidence from a Virtual Community, Github" with Namil Kim and Wonjoon Kim (Data collection)
 
 ###
-<sup>
-ORCID ID: 0000-0003-1582-0020
-</sup>
-
-###
-<sup>
-Researcher ID: O-7574-2017
-</sup>
+* ORCID ID: 0000-0003-1582-0020
+* Researcher ID: O-7574-2017
