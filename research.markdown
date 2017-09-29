@@ -19,10 +19,9 @@ permalink: /research/
 
 ####
 <sup>
-ORCID ID: [orcid.org/0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020)
+ORCID ID: orcid.org/0000-0003-1582-0020
 </sup>
-
 ####
 <sup>
-Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
+Researcher ID: O-7574-2017
 </sup>
