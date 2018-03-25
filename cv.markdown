@@ -21,3 +21,7 @@ Causal Inference, Applied Econometrics (i.e., 'Metrics), IT Platform Innovation,
 ### Current Projects:
 * Global Innovation and Production Network and the Sustainable Industrial Ecosystem of Korea, Social Sciences Korea (2012 – current), NRF Korea
 * Social Big Data Science Research Team, BK21 Plus (2013 – current), NRF Korea
+
+### Academic membership:
+* American marketing association
+* American economic association
