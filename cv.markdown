@@ -5,5 +5,5 @@ permalink: /cv/
 ---
 
 <p align="center">
-  <a href="https://goo.gl/k14YTA">Download C.V.</a>{:target="_blank"}
+  <a href="https://goo.gl/k14YTA" target="_blank">Download C.V.</a>
 </p>
