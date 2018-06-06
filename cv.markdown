@@ -4,4 +4,4 @@ title: "Curriculum Vitae"
 permalink: /cv/
 ---
 
-href="https://goo.gl/8tq1FH"> Download C.V.
+[Download C.V.](https://goo.gl/8tq1FH)
