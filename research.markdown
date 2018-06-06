@@ -16,4 +16,4 @@ permalink: /research/
 * "Constituency statute and customer orientation: machine learning and quasi-experimental approach" with Namil Kim and Wonjoon Kim (Data collection completed and empirical analysis in progress)
 * "Interactive collaboration and knowledge sharing: evidence from a virtual community, Github" with Namil Kim and Wonjoon Kim (Data collection in progress)
 
-##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020) Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
+##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020){:target="_blank"} Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action){:target="_blank"}
