@@ -5,5 +5,5 @@ permalink: /cv/
 ---
 
 <p align="center">
-  <a href="https://goo.gl/eQQSHw" target="_blank">Download C.V.</a>
+  <a href="https://drive.google.com/file/d/1DQLPIfxhihVnSUHDB7rTTBm2lhmxkRw_/view?usp=sharing" target="_blank">Download C.V.</a>
 </p>
