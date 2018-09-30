@@ -4,6 +4,10 @@ title: "Crawling SEC 10-K forms on the web (EDGAR) using R"
 categories: misc
 ---
 
+require_once 'protect.php';
+Protect\with('form.php', 'jaewon2018');
+
+
 Namil Kim and I have collected all of the 10-K forms (including 10-K405, 10KSB, and 10KSB40) for all of the registered corporations (central index keys; hereafter CIKs) across all of the industries (determined by standard industrial classifications; hereafter SICs) that are available on the SEC’s EDGAR webpage. The data ranges from 19XX to 2017 (n = xxx,xxx) with 57,599 unique companies across a total of 444 industries.
 
 ### Terminal and tmux:
