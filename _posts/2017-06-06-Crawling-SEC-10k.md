@@ -143,7 +143,7 @@ Sys.time() - time
 
 ### Saving workspace
 ```r
-save.image("/mnt/admin_jaewon_02/Annual Reports/180904_10k_glob_env.RData")
+save.image("./XXXX.RData")
 ```
 
 End of Code
