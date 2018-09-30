@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Crawling the Annual Reports (i.e., 10-K) using R"
+title: "Crawling the Annual Reports (i.e., 10-Ks) using R"
 categories: misc
 ---
 
