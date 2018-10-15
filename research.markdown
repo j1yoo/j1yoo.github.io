@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Research
+title: Jaewon Yoo | Research
 permalink: /research/
 ---
 
