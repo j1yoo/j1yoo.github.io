@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Jaewon Yoo | Research
-permalink: /research/
+title: Research
+permalink: /Jaewon Yoo | Research/
 ---
 
 ### Publication:
