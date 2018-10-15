@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Curriculum Vitae"
+title: "Jaewon Yoo | Curriculum Vitae"
 permalink: /cv/
 ---
 
