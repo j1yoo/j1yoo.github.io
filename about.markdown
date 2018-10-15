@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Jaewon Yoo | About
 permalink: /about/
 ---
 
