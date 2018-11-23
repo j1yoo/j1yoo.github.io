@@ -9,7 +9,7 @@ permalink: /Jaewon Yoo | Research/
 
 ### Working papers:
 * "Mobile payments revolution: the impact of third party mobile payments on consumption variety" with Wonjoon Kim, Minki Kim, and Yuxin Chen. Preparing for submission at _Marketing Science: Frontier_
-* "Overcoming the Challenges of Mobile Marketing: Mobile Content Marketing in a Distracted World" with Seokjoon Yoon, Minki Kim, Wonjoon Kim, Minsok Lee. Preparing for submission at _Journal of Marketing_
+* "Overcoming the challenges of mobile marketing: mobile content marketing in a distracted world" with Seokjoon Yoon, Minki Kim, Wonjoon Kim, Minsok Lee. Preparing for submission at _Journal of Marketing_
 * "Helping hands to bear the burden of choice: recommendations from similar, but not close, others reduce choice difficulty" with Wonjoon Kim and Joshua M. Ackerman. Preparing for submission at at _Journal of Marketing_ (Reject-and-resubmit)
 
 ### Work-in-Progress:
