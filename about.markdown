@@ -10,6 +10,6 @@ Specifically, one of the essays in my dissertation investigates the impact of di
 
 I have also worked on a large scaled field experiment in collaboration with a book retailer where my coauthors and I have investigated how mobile content marketing can be used to resolve the two pertaining issues with mobile marketing (i.e., low engagement and low conversion; preparing for submission at the Journal of Marketing).
 
-[Click here to learn more about my research.](https://j1yoo4.github.io/Jaewon%20Yoo%20%7C%20Research/)
+[Follow this link](https://j1yoo4.github.io/Jaewon%20Yoo%20%7C%20Research/) or [download my C.V.](https://drive.google.com/open?id=1Xr5UdEIDlrbNkQ4XAPIGt9Vb7ZUe9Qyc) to Learn more about my research.
 
  ![Alt text](https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/Jaewon%20Yoo_5.png?raw=true "Jaewon Yoo")
