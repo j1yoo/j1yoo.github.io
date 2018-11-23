@@ -1,7 +1,0 @@
----
-layout: about_layout
----
-
-  <style>
-    body { column-count: 2 };
-  </style>
