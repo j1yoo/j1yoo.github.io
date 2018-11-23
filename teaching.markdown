@@ -5,7 +5,7 @@ permalink: /Jaewon Yoo | Teaching/
 ---
 
 ### Teaching Interests:
-Online and Mobile Business, Creating Marketing Strategy, Business Analytics, Research Methodology (e.g., Applied Econometrics, Natural and Quasi-Experiments), Fintech, Innovation Policy
+Online and Mobile Business, Creative Marketing Strategy, Business Analytics, Research Methodology (e.g., Applied Econometrics, Natural and Quasi-Experiments), Fintech, Innovation Policy
 
 ### Teaching Experience:
 #### KAIST, School of Business and Technology Management
