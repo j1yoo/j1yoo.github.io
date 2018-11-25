@@ -5,5 +5,5 @@ permalink: /Jaewon Yoo | C.V./
 ---
 
 <p align="center">
-  <a href="https://drive.google.com/open?id=1Xr5UdEIDlrbNkQ4XAPIGt9Vb7ZUe9Qyc" target="_blank">Download C.V.</a>
+  <a href="http://bit.ly/2FPNvoK" target="_blank">Download C.V.</a>
 </p>
