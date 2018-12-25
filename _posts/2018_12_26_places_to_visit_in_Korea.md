@@ -48,3 +48,5 @@ One of the well-known palaces in Korea. It also boasts the national palace museu
 10. Dongdaemun (동대문)\
 Heunginjimun gate, Cheonggyecheon, Dongdaemun shopping complex, and more.\
 [See this for more info.](http://english.visitkorea.or.kr/enu/ATR/SI_EN_3_6.jsp?cid=2419333)
+
+###### Last updated Dec 26, 2018
