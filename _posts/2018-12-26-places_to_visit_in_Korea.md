@@ -27,7 +27,7 @@ One of the primary shopping districts in Seoul, Korea.
 It's a huge mall where you can shop around, eat, or try some of the latest VR games.  
 [See this for more info.](http://english.visitkorea.or.kr/enu/SHP/SH_EN_7_2.jsp?cid=1984968)
 
-_**If you want to experience traditional Korean culture:**_
+ _**If you want to experience traditional Korean culture:**_
 
 6. Insadong (인사동)  
 Lots to see and experience :) Has a number of galleries and street shops with traditional goods on display.  
