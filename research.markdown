@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research
-permalink: /JWY_Research/
+permalink: /Jaewon_Yoo/Research/
 ---
 
 ### Publication:
