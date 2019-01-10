@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Curriculum Vitae"
-permalink: /Jaewon Yoo | C.V./
+tagline: Jaewon Yoo | C.V.
 ---
 
 <p align="center">
