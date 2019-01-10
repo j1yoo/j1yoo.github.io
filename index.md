@@ -1,4 +1,4 @@
 ---
 layout: home
-permalink: /Jaewon Yoo | Home/
+tagline: Jaewon Yoo | Home
 ---
