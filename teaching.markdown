@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Teaching
-permalink: /Jaewon_Yoo/Teaching/
+permalink: /Teaching/
 ---
 
 ### Teaching Interests:
