@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /JWY_About/
+permalink: /JaewonYoo_About/
 ---
 
 My name is Jaewon Yoo (유재원/俞在元). 
