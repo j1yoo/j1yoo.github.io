@@ -15,10 +15,10 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
-https://j1yoo4.github.io/JaewonYoo/About/
-https://j1yoo4.github.io/JaewonYoo/Research/
-https://j1yoo4.github.io/JaewonYoo/Teaching/
-https://j1yoo4.github.io/JaewonYoo/C.V/
+https://github.com/j1yoo4/j1yoo4.github.io/blob/master/about.markdown
+https://github.com/j1yoo4/j1yoo4.github.io/blob/master/research.markdown
+https://github.com/j1yoo4/j1yoo4.github.io/blob/master/teaching.markdown
+https://github.com/j1yoo4/j1yoo4.github.io/blob/master/c.v.markdown
 
 # Build settings
 markdown: kramdown
