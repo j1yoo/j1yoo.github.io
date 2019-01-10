@@ -1,4 +1,4 @@
 ---
 layout: home
-title: Home | Jaewon Yoo
+title: Jaewon Yoo | Home
 ---
