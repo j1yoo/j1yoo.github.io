@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Teaching
-permalink: /JWY_Teaching/
+permalink: /Jaewon_Yoo_Teaching/
 ---
 
 ### Teaching Interests:
