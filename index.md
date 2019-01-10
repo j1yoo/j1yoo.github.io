@@ -1,5 +1,4 @@
 ---
 layout: home
+title: Jaewon Yoo | Home
 ---
-
-This is my index.
