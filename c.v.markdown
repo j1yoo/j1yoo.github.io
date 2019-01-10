@@ -13,5 +13,5 @@ permalink: /Jaewon Yoo | C.V./
 </p>
 
 <p align="center">
-  <a href="http://bit.ly/2E8BTfg" target="_blank">Download C.V.</a>
+  <a href="http://bit.ly/2QD1azY" target="_blank">Download C.V.</a>
 </p>
