@@ -15,4 +15,4 @@ permalink: /JaewonYoo/Research/
 ### Work-in-Progress:
 * "The dark side of digitization: the impact of online intermediaries on illicit drug usage" with Namil Kim and Wonjoon Kim (Data analysis in progress)
 
-##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020){:target="_blank"} Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action){:target="_blank"}
+##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020) Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
