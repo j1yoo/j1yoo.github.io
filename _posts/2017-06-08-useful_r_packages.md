@@ -4,6 +4,8 @@ title: "[Updated] Collection of Useful Packages, Cheat Sheets (R and Python), an
 categories: misc
 ---
 
+##### Last updated Feb 01, 2019
+
 ### Web scrapping:
 * [selectogadget, CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html)
 * [rvest, 'harvesting' web pages](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
@@ -65,6 +67,3 @@ categories: misc
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
 * [atom, the hackable text editor](https://github.com/atom/atom)
 * [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
-
-
-###### Last updated Feb 01, 2019
