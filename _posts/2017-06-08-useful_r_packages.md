@@ -56,6 +56,7 @@ categories: misc
 * [gpuR, more on GPU computing](https://www.r-bloggers.com/r-gpu-programming-for-all-with-gpur/)
 
 ### Et cetera:
+* [An (awesome) alternative console for R](https://github.com/randy3k/radian)
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
 * [rmote, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
@@ -65,4 +66,4 @@ categories: misc
 * [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
 
 
-###### Last updated Jul 07, 2017
+###### Last updated Feb 01, 2019
