@@ -37,6 +37,7 @@ categories: misc
 * [Cheat Sheet for matplotlib, plotting in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf)
 
 ### Machine learning:
+* [keras, using Keras in R](https://keras.rstudio.com/)
 * [mlr, machine learning](https://cran.r-project.org/web/packages/mlr/vignettes/mlr.html)
 * [OpenML, collaborative machine learning platform](https://cran.r-project.org/web/packages/OpenML/index.html)
 * [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
