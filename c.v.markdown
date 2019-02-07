@@ -13,5 +13,5 @@ permalink: /JaewonYoo/C.V./
 </p>
 
 <p align="center">
-  <a href="http://bit.ly/2QD1azY" target="_blank">Download C.V.</a>
+  <a href="https://bit.ly/2Bp2CkJ" target="_blank">Download C.V.</a>
 </p>
