@@ -13,6 +13,6 @@ permalink: /JaewonYoo/Research/
 * "Helping hands to bear the burden of choice: recommendations from similar, but not close, others reduce choice difficulty" with Wonjoon Kim and Joshua M. Ackerman. Preparing for submission at at _Journal of Marketing_ (Reject-and-resubmit)
 
 ### Work-in-Progress:
-* "The dark side of digitization: the impact of online intermediaries on illicit drug usage" with Namil Kim, Yuxin chen, and Wonjoon Kim (Data analysis in progress)
+* "The dark side of digitization: the impact of online intermediaries on the Distribution of New Narcotics" with Namil Kim, Yuxin chen, and Wonjoon Kim (Data analysis in progress)
 
 ##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020) Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
