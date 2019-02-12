@@ -27,26 +27,26 @@ The dataset contains five variables: cost (i.e., total cost in million \$), outp
 
 __Nerlove (1963) posits the following production function (this follows [the Cobb-Douglas](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) specification):__
 
-$$output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}},$$
+$$output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}$$
 
 which implies the following equation on the total cost:
 
-$$log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i})+\frac{\alpha_{2}}{r}log(pCapital_{i})+\frac{\alpha_{3}}{r}log(pFuel_{i})+log \biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl],$$
+$$log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i})+\frac{\alpha_{2}}{r}log(pCapital_{i})+\frac{\alpha_{3}}{r}log(pFuel_{i})+log \biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}$$
 
 where $$r \equiv \alpha_{1} + \alpha_{2} + \alpha_{3}$$ (i.e., the degree of returns to scale).
 
 Equation (2) can be estimated by OLS using the following unrestricted model:
 
-$$log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) + \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon.$$
+$$log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) + \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon. \tag{3}$$
 
-The linear regression model can be written as $$y_{i} = X\beta+\epsilon$$, and the $\hat\beta$ can be calculated as $(X^{T}X)^{-1}X^{T}y$.
+The linear regression model can be written as $$y_{i} = X\beta+\epsilon$$, and the $$\hat\beta$$ can be calculated as $$(X^{T}X)^{-1}X^{T}y$$.
 
 Let's take it step by step! 
 
 
 __1. Data Construction__
 
-First, we will create the $X$ and $Y$ matrices and see what it looks like.
+First, we will create the $$X$$ and $$Y$$ matrices and see what it looks like.
 
 ```r
 X <- as.matrix(cbind(int = 1, log(nerlove63$output), log(nerlove63$plabor), log(nerlove63$pkap), log(nerlove63$pfuel)))
@@ -70,15 +70,15 @@ print(data.table::data.table(cbind(Y,X))) # V3 ~ V6 correspond to X1 ~ X4, respe
 ```
 
 
-__2. The Estimates for the Coefficients, $\hat\beta$__
+__2. The Estimates for the Coefficients, $$\hat\beta$$__
 
-Next, we will calculate $(X^{T}X)^{-1}$
+Next, we will calculate $$(X^{T}X)^{-1}$$
 
 ```r
 XXi <- solve(t(X) %*% X)
 ```
 
-and $X^{T}y$.
+and $$X^{T}y$$.
 
 ```r
 XY <- t(X) %*% Y
@@ -159,7 +159,7 @@ print(round(b.standard.errors, digit = 3))
 
 __4. The Coefficient of Determination__
 
-Lastly, we will calculate the coefficient of determination for the model commonly denoted as $R^{2}$.
+Lastly, we will calculate the coefficient of determination for the model commonly denoted as $$R^{2}$$.
 
 ```r
 Rsquared <- 1 - (SSE / SST)
