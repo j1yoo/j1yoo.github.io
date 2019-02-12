@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Hand-Rolling OLS Regression"
-author: "Jaewon Yoo"
-date: "2/12/2019"
+category: misc
 ---
 
 To illustrate how to calculate ordinary least squares (OLS) by hand, I am going to use the dataset provided by Nerlove (1963) "Returns to Scale in Electricity Supply" which is publically available at EconPapers (https://econpapers.repec.org/paper/bocbocins/nerlove63.htm).
