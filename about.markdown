@@ -4,10 +4,6 @@ title: About
 permalink: /JaewonYoo/About/
 ---
 
-$$ \sigma^2 = \frac{\sum_{i=1}^n(x_i - \bar{x})^2}{n} \tag{1} $$
-
-
-
 My name is Jaewon Yoo (유재원/俞在元). 
 ![Alt text](https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/Jaewon%20Yoo_5.png?raw=true "Jaewon Yoo")
 
