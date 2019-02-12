@@ -21,7 +21,7 @@ header_pages:
  - c.v.markdown
 
 # Build settings
-markdown: kramdown
+markdown: maruku
 theme: minima
 exclude:
   - Gemfile
