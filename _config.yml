@@ -7,6 +7,8 @@ twitter_username: j1yoo4
 github_username:  j1yoo4
 google_analytics: UA-44429056-1
 
+show_excerpts: false
+
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
