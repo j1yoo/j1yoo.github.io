@@ -26,3 +26,5 @@ theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
+
+permalink: /:title
