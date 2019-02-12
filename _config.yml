@@ -22,6 +22,7 @@ header_pages:
 
 # Build settings
 markdown: kramdown
+mathjax: true
 theme: minima
 exclude:
   - Gemfile
