@@ -2,10 +2,7 @@
 layout: post
 title: "Crawling the Annual Reports (i.e., 10-Ks) using R"
 categories: misc
-use_math: true
 ---
-
-$\beta^{1}$
 
 ### Terminal and tmux:
 Using a remote server for the parsing process.
