@@ -6,7 +6,7 @@ categories: misc
 
 To illustrate how to calculate ordinary least squares (OLS) by hand, I am going to use the dataset provided by Nerlove (1963) "Returns to Scale in Electricity Supply" which is publically available at EconPapers (https://econpapers.repec.org/paper/bocbocins/nerlove63.htm).
 
-Let's first import the data into R using [the 'foreign'](https://cran.r-project.org/web/packages/foreign/foreign.pdf) package and take a glance.
+Let's first import the data into R and take a glance.
 
 
 ```r
@@ -37,12 +37,9 @@ where $$r \equiv \alpha_{1} + \alpha_{2} + \alpha_{3}$$ (i.e., the degree of ret
 
 Equation (2) can be estimated by OLS using the following unrestricted model:
 
-\begin{equation}
-\tag{3}
-log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) + \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon.
-\end{equation}
+$$log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) + \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon.$$
 
-The linear regression model can be written as $y_{i} = X\beta+\epsilon$, and the $\hat\beta$ can be calculated as $(X^{T}X)^{-1}X^{T}y$.
+The linear regression model can be written as $$y_{i} = X\beta+\epsilon$$, and the $\hat\beta$ can be calculated as $(X^{T}X)^{-1}X^{T}y$.
 
 Let's take it step by step! 
 
