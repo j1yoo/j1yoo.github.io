@@ -4,6 +4,9 @@ title: "Places to visit in Seoul, S. Korea"
 categories: misc
 ---
 
+$$ y(x_i) = f(x_i) + \epsilon(x_i) $$
+
+
 _**If you want to drink out and enjoy the city life:**_
 * Gangnam (강남대로)  
 Yes, Gangnam from the infamous ['Gangnam style'](https://www.youtube.com/watch?v=9bZkp7q19f0). Lots of people come out to drink and have fun, especially at night.
