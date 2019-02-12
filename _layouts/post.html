@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include mathjax.html %}
-
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -17,6 +15,17 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
     
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            jax: ["input/TeX","output/HTML-CSS"],
+            displayAlign: "left",
+            displayIndent: "5em"
+        });
+    </script>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" 
+        type="text/javascript">
+    </script>
   </header>
 
   <div class="post-content" itemprop="articleBody">
