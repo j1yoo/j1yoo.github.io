@@ -31,13 +31,15 @@ $$output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{
 
 which implies the following equation on the total cost:
 
-$$log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i})+\frac{\alpha_{2}}{r}log(pCapital_{i})+\frac{\alpha_{3}}{r}log(pFuel_{i})+log \biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}$$
+$$log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i})+\frac{\alpha_{2}}{r}log(pCapital_{i}) \\
++\frac{\alpha_{3}}{r}log(pFuel_{i})+log \biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}$$
 
 where $$r \equiv \alpha_{1} + \alpha_{2} + \alpha_{3}$$ (i.e., the degree of returns to scale).
 
 Equation (2) can be estimated by OLS using the following unrestricted model:
 
-$$log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) + \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon. \tag{3}$$
+$$log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) + \beta_{4} \times log(pCapital) \\
++ \beta_{5} \times log(pFuel) + \epsilon. \tag{3}$$
 
 The linear regression model can be written as $$y_{i} = X\beta+\epsilon$$, and the $$\hat\beta$$ can be calculated as $$(X^{T}X)^{-1}X^{T}y$$.
 
