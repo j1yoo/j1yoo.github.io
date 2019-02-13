@@ -33,7 +33,7 @@ which implies the following equation on the total cost:
 
 $$log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i}) \\
 +\frac{\alpha_{2}}{r}log(pCapital_{i})+\frac{\alpha_{3}}{r}log(pFuel_{i}) \\
-+log \biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}$$
++log\biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}$$
 
 where $$r \equiv \alpha_{1} + \alpha_{2} + \alpha_{3}$$ (i.e., the degree of returns to scale).
 
