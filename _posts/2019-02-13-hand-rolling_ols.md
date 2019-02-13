@@ -27,9 +27,9 @@ The dataset contains five variables: cost (i.e., total cost in million \$), outp
 
 __Nerlove (1963) posits the following production function (this follows [the Cobb-Douglas](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) specification):__
 
-$$\begin{aligned}
+$$\begin{align}
 output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}
-\end{aligned}$$
+\end{align}$$
 
 which implies the following equation on the total cost:
 
