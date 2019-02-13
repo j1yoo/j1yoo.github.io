@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Crawling the Annual Reports (i.e., 10-Ks) using R"
-categories: misc
+categories: Research
+tag: Research
 ---
 
 ### Terminal and tmux:
