@@ -66,4 +66,4 @@ categories: misc
 * [atom, the hackable text editor](https://github.com/atom/atom)
 * [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
 
-##### Created on Jul 08, 2017
+###### Created on Jul. 08, 2017
