@@ -49,7 +49,7 @@ $$\begin{align}
 log(cost) = &\beta_{1} + \beta_{2} \times log(output) + \\
 &\beta_{3} \times log(pLabor) + \\
 &\beta_{4} \times log(pCapital) + \\
-\beta_{5} \times log(pFuel) + \epsilon. \tag{3}
+&\beta_{5} \times log(pFuel) + \epsilon. \tag{3}
 \end{align}$$
 
 The linear regression model can be written as $$y_{i} = X\beta+\epsilon$$, and the $$\hat\beta$$ can be calculated as $$(X^{T}X)^{-1}X^{T}y$$.
