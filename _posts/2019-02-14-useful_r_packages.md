@@ -32,6 +32,7 @@ tag: Research
 
 ### Visualization:
 * [ggplot2, the "grammer of graphics"](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+* [ggtheme, customising ggplot2 outputs](https://ggplot2.tidyverse.org/reference/ggtheme.html)
 * [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
 * [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
 * [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
@@ -59,6 +60,7 @@ tag: Research
 
 ### Et cetera:
 * [radian, an (awesome) alternative console for R](https://github.com/randy3k/radian)
+* [colorout, colorizing R output on a Unix terminal emulator](https://github.com/jalvesaq/colorout)
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
 * [rmote, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
