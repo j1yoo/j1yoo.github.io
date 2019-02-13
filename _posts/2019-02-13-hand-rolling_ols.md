@@ -211,3 +211,5 @@ stargazer::stargazer(regOut, type = 'text')
 ```
 
 The results obtained using the built-in function are identical to ours. Check! :)
+
+###### Last updated Feb. 13, 2019
