@@ -27,20 +27,24 @@ The dataset contains five variables: cost (i.e., total cost in million \$), outp
 
 __Nerlove (1963) posits the following production function (this follows [the Cobb-Douglas](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) specification):__
 
-$$output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}$$
+$$\begin{align}
+output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}
+\end{equation}$$
 
 which implies the following equation on the total cost:
 
-$$log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i}) \\
-+\frac{\alpha_{2}}{r}log(pCapital_{i})+\frac{\alpha_{3}}{r}log(pFuel_{i}) \\
-+log\biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}$$
+$$\begin{equation}
+log(cost_{i}) = \frac{1}{r}log(output_{i})+\frac{\alpha_{1}}{r}log(pLabor_{i})+\frac{\alpha_{2}}{r}log(pCapital_{i})+\frac{\alpha_{3}}{r}log(pFuel_{i})+log\biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}
+\end{equation}$$
 
 where $$r \equiv \alpha_{1} + \alpha_{2} + \alpha_{3}$$ (i.e., the degree of returns to scale).
 
 Equation (2) can be estimated by OLS using the following unrestricted model:
 
-$$log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) \\
-+ \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon. \tag{3}$$
+$$\begin{equation}
+log(cost) = \beta_{1} + \beta_{2} \times log(output) + \beta_{3} \times log(pLabor) \\
++ \beta_{4} \times log(pCapital) + \beta_{5} \times log(pFuel) + \epsilon. \tag{3}
+\end{equation}$$
 
 The linear regression model can be written as $$y_{i} = X\beta+\epsilon$$, and the $$\hat\beta$$ can be calculated as $$(X^{T}X)^{-1}X^{T}y$$.
 
