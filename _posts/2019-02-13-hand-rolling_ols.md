@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hand-Rolling OLS Regression"
+title: "Hand-Rolling OLS Regression using R"
 categories: misc
 ---
 
