@@ -118,7 +118,7 @@ print(b)
 
 __3. The Standard Errors for the Coefficients__
 
-First, we calculate the residuals of the model $$\epsilon$$ can be calculated as follows:
+Next, we calculate the residuals of the model $$\epsilon$$ can be calculated as follows:
 
 ```r
 n <- length(Y) # number of observations
@@ -146,7 +146,7 @@ print(data.table::data.table(res)[, .(Residuals = V1)])
 ## 145: 0.7151026
 ```
 
-Next, we will calculate the standard errors of the coefficients which typically are displayed in parenthesis underneath the coefficients in the regression output tables.
+Then, we will calculate the standard errors of the coefficients which typically are displayed in parenthesis underneath the coefficients in the regression output tables.
 
 ```r
 SST <- sum((Y - mean(Y))^2) # Sum of Squares Total
