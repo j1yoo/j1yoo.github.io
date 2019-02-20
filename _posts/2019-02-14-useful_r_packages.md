@@ -22,12 +22,12 @@ tag: Research
 * [Piping with dplyr](http://seananderson.ca/2014/09/13/dplyr-intro.html)
 * [Bizzaro pipe, debugging tool for long _dplyr_ codes](https://cran.r-project.org/web/packages/replyr/vignettes/BizarroPipe.html)
 * [lumberjack, tracking changes in data when _piping_](https://www.r-bloggers.com/track-changes-in-data-with-the-lumberjack/amp/)
-* [Cheat Sheet for pandas, data wrangling in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Pandas_Cheat_Sheet_2.pdf)
+* [Cheat sheet for pandas, data wrangling in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Pandas_Cheat_Sheet_2.pdf)
 
 ### Reporting results:
 * [R markdown, high-quality output format](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 * [stargazer, reporting statistical analysis](http://jakeruss.com/cheatsheets/stargazer.html)
-* [Cheat Sheet for latex](https://www.nyu.edu/projects/beber/files/Chang_LaTeX_sheet.pdf)
+* [Cheat sheet for latex](https://www.nyu.edu/projects/beber/files/Chang_LaTeX_sheet.pdf)
 * [Mathematical symbols in latex](http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf)
 
 ### Visualization:
@@ -38,7 +38,7 @@ tag: Research
 * [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
 * [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
 * [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
-* [Cheat Sheet for matplotlib, plotting in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf)
+* [Cheat sheet for matplotlib, plotting in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf)
 
 ### Machine learning:
 * [keras, using Keras in R](https://keras.rstudio.com/)
@@ -47,10 +47,10 @@ tag: Research
 * [TensorFlow, deep learning?!](https://tensorflow.rstudio.com/)
 * [reticulate, python integration in R](https://www.r-bloggers.com/test-driving-python-integration-in-r-using-the-reticulate-package/)
 * [keras, high-level neural network API](https://rstudio.github.io/keras/index.html)
-* [Cheat Sheet for keras, neural networks in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Keras_Cheat_Sheet_Python.pdf)
-* [Cheat Sheet for numpy, data analysis in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
-* [Cheat Sheet for scikit-Learn, python machine learning](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Scikit_Learn_Cheat_Sheet_Python.pdf)
-* [Cheat Sheet for PySpark, spark for python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PySpark_Cheat_Sheet_Python.pdf)
+* [Cheat sheet for keras, neural networks in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Keras_Cheat_Sheet_Python.pdf)
+* [Cheat sheet for numpy, data analysis in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
+* [Cheat sheet for scikit-Learn, python machine learning](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Scikit_Learn_Cheat_Sheet_Python.pdf)
+* [Cheat sheet for PySpark, spark for python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PySpark_Cheat_Sheet_Python.pdf)
 
 ### Parallel computing:
 * [The 'what' and the 'why'](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
