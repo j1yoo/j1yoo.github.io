@@ -14,6 +14,8 @@ tag: Research
 ### Data wrangling:
 * [data.table, enhanced data.frames](https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf)
 * [dplyr, the "grammer of data manipulation"](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+* [dplyr, more data wrangling tips with dplyr, part I](https://www.r-bloggers.com/data-wrangling-with-dplyr-part-1/)
+* [dplyr, more data wrangling tips with dplyr, part II](https://www.r-bloggers.com/data-wrangling-with-dplyr-part-2/)
 * [reshape2, long <-> wide format convertor](http://seananderson.ca/2013/10/19/reshape.html)
 * [feather, fast on-disk data formatting](https://blog.rstudio.org/2016/03/29/feather/)
 * [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
@@ -73,5 +75,6 @@ tag: Research
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
 * [atom, the hackable text editor](https://github.com/atom/atom)
 * [Cheat sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
+* [Collection of novel & not-well-known statistical tests](https://www.datasciencecentral.com/profiles/blogs/a-plethora-of-original-underused-statistical-tests)
 
 ###### Created on Jul. 08, 2017
