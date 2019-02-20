@@ -72,6 +72,6 @@ tag: Research
 * [mailR, when you are getting error messages!](https://medium.com/@randerson112358/send-email-using-r-program-1b094208cf2f)
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
 * [atom, the hackable text editor](https://github.com/atom/atom)
-* [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
+* [Cheat sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
 
 ###### Created on Jul. 08, 2017
