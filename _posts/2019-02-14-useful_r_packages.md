@@ -32,6 +32,8 @@ tag: Research
 
 ### Visualization:
 * [ggplot2, the "grammer of graphics"](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+* [ggplot2, a thorough guideline for the package](http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization)
+* [ggplot2, point arrows to specific parts of the data](https://www.r-bloggers.com/point-arrows-to-specific-parts-of-the-data/amp/)
 * [ggtheme, customising ggplot2 outputs](https://ggplot2.tidyverse.org/reference/ggtheme.html)
 * [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
 * [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
@@ -53,18 +55,21 @@ tag: Research
 ### Parallel computing:
 * [The 'what' and the 'why'](https://www.r-bloggers.com/r-with-parallel-computing-from-user-perspectives/)
 * [lapply, back to 'base'ic](http://rpubs.com/kaz_yos/1204)
+* [lapply, parallelizing for-loops with lapply](https://www.r-bloggers.com/parallelize-a-for-loop-by-rewriting-it-as-an-lapply-call/amp/)
 * [parallelizing computation in R](http://gforge.se/2015/02/how-to-go-parallel-in-r-basics-tips/)
 * [OpenMP, parallelizer for R](https://www.r-bloggers.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/)
 * [GPU computing with R](http://www.r-tutor.com/gpu-computing)
 * [gpuR, more on GPU computing](https://www.r-bloggers.com/r-gpu-programming-for-all-with-gpur/)
 
 ### Et cetera:
+* [updating R](https://www.r-bloggers.com/updating-r/)
 * [radian, an (awesome) alternative console for R](https://github.com/randy3k/radian)
 * [colorout, colorizing R output on a Unix terminal emulator](https://github.com/jalvesaq/colorout)
 * [Using R on Docker](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
 * [rmote, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
 * [mailR, automatic email sender](https://github.com/rpremraj/mailR)
+* [mailR, when you are getting errors messages!](https://medium.com/@randerson112358/send-email-using-r-program-1b094208cf2f)
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
 * [atom, the hackable text editor](https://github.com/atom/atom)
 * [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
