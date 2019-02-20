@@ -69,7 +69,7 @@ tag: Research
 * [rmote, using R on a remote machine](https://github.com/cloudyr/rmote)
 * [rmote, serving graphics from remote server to local machine](http://ryanhafen.com/blog/rmote)
 * [mailR, automatic email sender](https://github.com/rpremraj/mailR)
-* [mailR, when you are getting errors messages!](https://medium.com/@randerson112358/send-email-using-r-program-1b094208cf2f)
+* [mailR, when you are getting error messages!](https://medium.com/@randerson112358/send-email-using-r-program-1b094208cf2f)
 * [tmux, tips and shortcuts](https://tmuxcheatsheet.com/)
 * [atom, the hackable text editor](https://github.com/atom/atom)
 * [Cheat Sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
