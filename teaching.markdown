@@ -17,4 +17,4 @@ Online and Mobile Business, Creative Marketing Strategy, Business Analytics, Res
 * [Intermediate Microeconomics (ECN 311)](http://bulletin.kaist.ac.kr/html/en/?year=2014&id=en20141407&file=E), Fall 2013 (Undergraduate)
 * [Corporate Strategy and Design Process (MSB 552)](http://bulletin.kaist.ac.kr/html/en/?year=2012&id=en20121501&file=E), Fall 2012 (Undergraduate)
 * [Special Topics in Management Science I: Innovation and Sustainability (MSB 481)](http://bulletin.kaist.ac.kr/html/en/?year=2012&id=en20121501&file=E), Spring 2012 (Undergraduate)
-* [Microeconomics (MSB 504)](http://bulletin.kaist.ac.kr/html/en/?year=2012&id=en20121501&file=E), Fall 2011 (Undergraduate)
+* [Microeconomics (MSB 504)](http://bulletin.kaist.ac.kr/html/en/?year=2012&id=en20121501&file=E){:target="_blank"}, Fall 2011 (Undergraduate)
