@@ -5,7 +5,7 @@ permalink: /JaewonYoo/Research/
 ---
 
 #### Publication:
-* Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/doi/abs/10.1080/13504851.2017.1340567)
+* Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/doi/abs/10.1080/13504851.2017.1340567){:target="_blank"}
 
 #### Working papers:
 * "Mobile payments revolution: the impact of third party mobile payments on customer mobile purchase behavior" with Wonjoon Kim, Minki Kim, and Yuxin Chen. Preparing for submission at _Marketing Science_
@@ -20,4 +20,4 @@ permalink: /JaewonYoo/Research/
 #### Work-in-Progress:
 * "The dark side of digitization: the impact of online intermediaries on the Distribution of New Narcotics" with Namil Kim, Yuxin chen, and Wonjoon Kim (Data analysis in progress)
 
-##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020) Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action)
+##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020){:target="_blank"} Researcher ID: [O-7574-2017](http://www.researcherid.com/Workspace.action){:target="_blank"}
