@@ -5,7 +5,7 @@ permalink: /JaewonYoo/C.V./
 ---
 
 <p align="center">
-<a href="https://bit.ly/2TzZklB" target="_blank"> View C.V. on Google drive</a>
+<a href="https://bit.ly/2Fd64Ba" target="_blank"> View C.V. on Google drive</a>
 </p>
 
 <p align="center">
