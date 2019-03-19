@@ -37,6 +37,7 @@ tag: Research
 * [ggplot2, a thorough guideline for the package](http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization)
 * [ggplot2, point arrows to specific parts of the data](https://www.r-bloggers.com/point-arrows-to-specific-parts-of-the-data/amp/)
 * [ggtheme, customising ggplot2 outputs](https://ggplot2.tidyverse.org/reference/ggtheme.html)
+* [Adding custom fonts to ggplot objects](https://www.r-bloggers.com/adding-custom-fonts-to-ggplot-in-r/amp/)
 * [shiny, interactive visualization tool](http://rstudio.github.io/shiny/tutorial/)
 * [ggmap, plotting maps in R](https://github.com/dkahle/ggmap)
 * [tufte, collection of resources for readily accessible visualization](http://motioninsocial.com/tufte/#introduction)
@@ -64,6 +65,9 @@ tag: Research
 * [gpuR, more on GPU computing](https://www.r-bloggers.com/r-gpu-programming-for-all-with-gpur/)
 
 ### Et cetera:
+* [RStudio's new feature: Jobs](https://www.r-bloggers.com/rstudio-1-2-preview-jobs/amp/)
+* [reticulate, using R & Python interactively](https://www.r-bloggers.com/r-and-python-using-reticulate-to-get-the-best-of-both-worlds/amp/)
+* [reticulate, bringing together R & Python](https://www.r-bloggers.com/the-reticulate-package-solves-the-hardest-problem-in-data-science-people/amp/)
 * [updating R](https://www.r-bloggers.com/updating-r/)
 * [radian, an (awesome) alternative console for R](https://github.com/randy3k/radian)
 * [colorout, colorizing R output on a Unix terminal emulator](https://github.com/jalvesaq/colorout)
