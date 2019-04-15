@@ -18,11 +18,11 @@ permalink: /JaewonYoo/C.V./
       height: 100%;
     }
   </style>
-  
+</html>
   <p align="center">
   <a href="http://bit.ly/2ItYuUI" target="_blank"> Download C.V. from Google drive</a>
   </p>
-
+<html>
   <p align="center">
     <div class="responsive">
      <iframe src="https://j1yoo4.github.io/190415_Jaewon_Yoo_CV.pdf" width="750" height="550"></iframe>
