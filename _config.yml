@@ -7,7 +7,7 @@ twitter_username: j1yoo4
 github_username:  j1yoo4
 google_analytics: UA-44429056-1
 
-show_excerpts: false
+show_excerpts: true
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -17,7 +17,7 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
- - index.md
+# - index.md
  - about.markdown
  - research.markdown
  - teaching.markdown
