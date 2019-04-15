@@ -9,5 +9,5 @@ permalink: /JaewonYoo/C.V./
 </p>
 
 <p align="center">
-<iframe src="https://j1yoo4.github.io/190415_Jaewon_Yoo_CV.pdf" width="700" height="800">
+<iframe src="https://j1yoo4.github.io/190415_Jaewon_Yoo_CV.pdf" width="700" height="700">
 </p>
