@@ -4,19 +4,6 @@ title: "Curriculum Vitae"
 permalink: /JaewonYoo/C.V./
 ---
 
-.responsive {
-width: 100%;
-height: 0;
-padding-bottom: 56.25%;
-position: relative;
-}
-
-.responsive iframe {
-position: absolute;
-width: 100%;
-height: 100%;
-}
-
 <p align="center">
 <a href="http://bit.ly/2ItYuUI" target="_blank"> Download C.V. from Google drive</a>
 </p>
