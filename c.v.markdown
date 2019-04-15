@@ -22,4 +22,6 @@ position: relative;
 }
 .iframe-container iframe {
 position: absolute;
+width: 100%;
+height: 100%;
 }
