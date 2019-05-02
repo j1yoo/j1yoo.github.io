@@ -18,6 +18,7 @@ tag: Research
 * [dplyr, more data wrangling tips with dplyr, part II](https://www.r-bloggers.com/data-wrangling-with-dplyr-part-2/)
 * [reshape2, long <-> wide format convertor](http://seananderson.ca/2013/10/19/reshape.html)
 * [feather, fast on-disk data formatting](https://blog.rstudio.org/2016/03/29/feather/)
+* [fst, faster (than feather!) way to serialize data frames](https://www.fstpackage.org/)
 * [lubridate, date manipulator](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf)
 * [stringi, string processor](https://www.rdocumentation.org/packages/stringi/versions/1.1.5)
 * [Piping in R](https://www.r-statistics.com/2014/08/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/)
