@@ -11,6 +11,6 @@ I am a Ph.D. candidate studying quantitative marketing and innovation at [KAIST]
 
 Specifically, one of the essays in my dissertation investigates the impact of digitization in the payment industry (i.e., third party mobile payments such as Google pay, WeChat pay, and Kakao pay) on customers' mobile purchase behavior (preparing for submission to _Marketing Science_). I use a mixture of quasi-experimental methods in conjunction with a novel dataset of fine-grained customer purchase history and further dig into elucidating the treatment effects, heterogeneity, as well as the underlying mechanism by conducting a battery of identification tests and robustness checks.
 
-I have also worked on a large scaled field experiment in collaboration with a book retailer and a multitude of publishers in which my coauthors and I have investigated how mobile content marketing can be used to resolve the two persisting issues of mobile marketing (i.e., low engagement and low conversion; under 1<sup>st</sup> round review at _Journal of Marketing Research_).
+I have also worked on a large scaled field experiment in collaboration with a book retailer and a multitude of publishers in which my coauthors and I have investigated how mobile content marketing can be used to resolve the two persisting issues of mobile marketing (i.e., low engagement and low conversion; under review at _Management Science_).
 
 [Follow this link](https://j1yoo4.github.io/JaewonYoo/Research) or [download my C.V.](https://j1yoo4.github.io/JaewonYoo/C.V) to learn more about my research.
