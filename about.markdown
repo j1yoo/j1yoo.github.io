@@ -4,13 +4,12 @@ title: About
 permalink: /JaewonYoo/About/
 ---
 
-My name is Jaewon Yoo (유재원/俞在元). 
-![Alt text](https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/Jaewon%20Yoo_5.png?raw=true "Jaewon Yoo")
+<p align="center">
+![Alt text](https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/Screen%20Shot%202019-07-19%20at%206.54.35%20AM.png?raw=true "Jaewon Yoo")
+</p>
 
-I am a Ph.D. candidate studying quantitative marketing and innovation at [KAIST](https://btm.kaist.ac.kr/en/){:target="_blank"}. I passed my qualification exam in Aug. 2014, and am A.B.D (all but dissertation) since 2015. I am interested in investigating the short-term and long-term impact of marketing on consumer decision-making in the era of digitization. 
+My name is Jaewon Yoo (유재원/俞在元). I am a doctoral candidate in quantitative marketing with a focus on emerging technologies and economics of digitization at [KAIST College of Business](https://btm.kaist.ac.kr/en/){:target="_blank"}. This year, I am on the job market and will be available for an on-site interview at the AMA Summer Academic Conference or via online video chat at a time of your convenience.
 
-Specifically, one of the essays in my dissertation investigates the impact of digitization in the payment industry (i.e., third party mobile payments such as Google pay, WeChat pay, and Kakao pay) on customers' mobile purchase behavior (preparing for submission to _Marketing Science_). I use a mixture of quasi-experimental methods in conjunction with a novel dataset of fine-grained customer purchase history and further dig into elucidating the treatment effects, heterogeneity, as well as the underlying mechanism by conducting a battery of identification tests and robustness checks.
+The research topics that I am interested in consist of, but are not limited to, the following questions: how would fully automated grocery stores, e.g., Alibaba's Tao Cafe or Amazon Go, influence the shoppers' consumption behavior? What are the new opportunities as well as challenges presented to the incumbent firms in the retail industry? Would firms be able to benefit from introducing self-service kiosks or AI chatbots? If yes, how can they maximize the benefits? With technological advancements reshaping the industries, marketers are required to understand the influence of these newly emerging technologies and to learn how to utilize them to their advantage. The majority of my current research projects utilize a form of natural, field, and quasi-experiments to study the impact of emerging technologies.
 
-I have also worked on a large scaled field experiment in collaboration with a book retailer and a multitude of publishers in which my coauthors and I have investigated how mobile content marketing can be used to resolve the two persisting issues of mobile marketing (i.e., low engagement and low conversion; under review at _Management Science_).
-
-[Follow this link](https://j1yoo4.github.io/JaewonYoo/Research) or [download my C.V.](https://j1yoo4.github.io/JaewonYoo/C.V) to learn more about my research.
+If you are interested in learning more about my research, [follow this link](https://j1yoo4.github.io/JaewonYoo/Research) or [download my full curriculum vitae](https://j1yoo4.github.io/JaewonYoo/C.V).
