@@ -6,7 +6,7 @@ permalink: /JaewonYoo/About/
 
 ![Alt text](https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/Screen%20Shot%202019-07-19%20at%206.54.35%20AM.png?raw=true "Jaewon Yoo")
 
-My name is Jaewon Yoo (유재원/俞在元). I am a doctoral candidate in quantitative marketing with a focus on emerging technologies and economics of digitization at [KAIST College of Business](https://btm.kaist.ac.kr/en/){:target="_blank"}. This year, I am on the job market and will be available for an on-site interview at the AMA Summer Academic Conference or via online video chat at a time of your convenience.
+My name is Jaewon Yoo (유재원/俞在元). I am a doctoral candidate in quantitative marketing with a focus on emerging technologies and economics of digitization at [KAIST](https://btm.kaist.ac.kr/en/){:target="_blank"}. This year, I am on the job market and will be available for an on-site interview at the AMA Summer Academic Conference or via online video chat at a time of your convenience.
 
 The research topics that I am interested in consist of, but are not limited to, the following questions: how would fully automated grocery stores, e.g., Alibaba's Tao Cafe or Amazon Go, influence the shoppers' consumption behavior? What are the new opportunities as well as challenges presented to the incumbent firms in the retail industry? Would firms be able to benefit from introducing self-service kiosks or AI chatbots? If yes, how can they maximize the benefits? 
 
