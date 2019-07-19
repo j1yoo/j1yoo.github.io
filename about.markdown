@@ -4,7 +4,9 @@ title: About
 permalink: /JaewonYoo/About/
 ---
 
-![Alt image](https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/cover_photo.png){: style="float:right" width="80" /}
+<p float="right">
+  <img src="https://raw.githubusercontent.com/j1yoo4/j1yoo4.github.io/master/cover_photo.png" width="80" />
+</p>
 
 My name is Jaewon Yoo (유재원/俞在元). I am a doctoral candidate in quantitative marketing with a focus on emerging technologies and economics of digitization at [KAIST](https://btm.kaist.ac.kr/en/){:target="_blank"}. This year, I am on the job market and will be available for an on-site interview at the AMA Summer Academic Conference or via online video chat at a time of your convenience.
 
