@@ -25,7 +25,7 @@ permalink: /JaewonYoo/C.V./
   
   <p align="center">
     <div class="responsive">
-     <iframe src="https://j1yoo4.github.io/190415_Jaewon_Yoo_CV.pdf" width="750" height="650"></iframe>
+     <iframe src="https://j1yoo4.github.io/CV_Jaewon_Yoo.pdf" width="750" height="650"></iframe>
     </div>
   </p>
 </html>
