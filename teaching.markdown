@@ -9,6 +9,7 @@ Online and Mobile Business, Creative Marketing Strategy, Business Analytics, Res
 
 ### Teaching Experience:
 #### Teaching assistant, School of Business and Technology Management, KAIST
+* [R&D Project Management (MSB 360)](http://bulletin.kaist.ac.kr/html/en/?year=2016&id=en20161421&file=E){:target="_blank"}, Fall 2016 (Undergraduate)
 * [Supply Chain Management (MSB 446)](http://bulletin.kaist.ac.kr/html/en/?year=2016&id=en20161421&file=E){:target="_blank"}, Spring 2016 (Undergraduate)
 
 #### Teaching assistant, Department of Management Science, KAIST
