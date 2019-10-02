@@ -19,9 +19,9 @@ minima:
 header_pages:
 # - index.markdown
  - about.markdown
+ - c.v.markdown
  - research.markdown
  - teaching.markdown
- - c.v.markdown
 # - posts.markdown
 
 # Build settings
