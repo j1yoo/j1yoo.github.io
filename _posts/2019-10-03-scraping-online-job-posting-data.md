@@ -5,7 +5,6 @@ categories: Research
 tag: Research
 ---
 
-## Scraping the Online Job Posting Data: 'Indeed.com'
 _p.s., This is still a work-in-progress._
 
 I am scraping the search results for job postings that require skills that are related to artificial intelligence. There are 11,807 pages in each of which there are ten job postings (~ approximately 118,070 job postings for A.I. as of October 2, 2019).
