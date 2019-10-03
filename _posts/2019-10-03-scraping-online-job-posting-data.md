@@ -5,9 +5,8 @@ categories: Research
 tag: Research
 ---
 
-p.s., This is still a work-in-progress.
-
 ## Scraping the Online Job Posting Data: 'Indeed.com'
+p.s., This is still a work-in-progress.
 
 ### Terminal and tmux:
 Using a remote server for the parsing process.
