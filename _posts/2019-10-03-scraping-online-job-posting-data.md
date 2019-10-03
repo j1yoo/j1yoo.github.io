@@ -130,6 +130,6 @@ write.csv(x = full_data, file = "/mnt/admin_jaewon_02/AI_job_posting_data/AI_job
 
 | "Vice President of Artificial Intelligence is an executive position for a result oriented R&D leader. He or she will lead R&D efforts of Artificial Intelligence Team (AIT) within Samsung SDS Research America (SDSRA) located in Silicon Valley. He or she will be responsible for creating the overall AI roadmap for AIT and building a cohesive and comprehensive AI strategy for execution as well as providing technical guidance.
 
-AIT in SDSRA has been building AI productivity enhancement platform for the last two years and will be launching it early next year. The core mission of this position is the oversight of product development efforts for current AI platform as well as the incubation of new AI products. This role requires a close collaboration with Artificial Intelligence Research Center in Samsung SDS in Korea from an engineering perspective and with Samsung SDS America from going to market perspective ---." |
+AIT in SDSRA has been building AI productivity enhancement platform for the last two years and will be launching it early next year. The core mission of this position is the oversight of product development efforts for current AI platform as well as the incubation of new AI products. This role requires a close collaboration with Artificial Intelligence Research Center in Samsung SDS in Korea from an engineering perspective and with Samsung SDS America from going to market perspective - - -." |
 
 ### End of Code
