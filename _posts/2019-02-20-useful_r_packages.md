@@ -82,4 +82,4 @@ tag: Research
 * [Cheat sheet for scipy, linear algebra in python](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf)
 * [Collection of novel & not-well-known statistical tests](https://www.datasciencecentral.com/profiles/blogs/a-plethora-of-original-underused-statistical-tests)
 
-###### Created on Jul. 08, 2017
+#### Created on Jul. 08, 2017
