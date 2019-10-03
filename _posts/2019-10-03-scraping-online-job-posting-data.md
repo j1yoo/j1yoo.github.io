@@ -6,7 +6,7 @@ tag: Research
 ---
 
 ## Scraping the Online Job Posting Data: 'Indeed.com'
-p.s., This is still a work-in-progress.
+_p.s., This is still a work-in-progress._
 
 ### Terminal and tmux:
 Using a remote server for the parsing process.
