@@ -132,7 +132,5 @@ write.csv(x = full_data, file = "/mnt/admin_jaewon_02/AI_job_posting_data/AI_job
 
 AIT in SDSRA has been building AI productivity enhancement platform for the last two years and will be launching it early next year. The core mission of this position is the oversight of product development efforts for current AI platform as well as the incubation of new AI products. This role requires a close collaboration with Artificial Intelligence Research Center in Samsung SDS in Korea from an engineering perspective and with Samsung SDS America from going to market perspective..."
 
-
-### End of Code
 ##### Created on Oct. 03, 2019
 
