@@ -114,6 +114,7 @@ write.csv(x = full_data, file = "/mnt/admin_jaewon_02/AI_job_posting_data/AI_job
 ```
 
 ### What the Data Looks Like:
+
 | date_crawled  | job_title                                          | company_name                 | job_location                                             | job_rating   | job_review     | href_links                                                                 |
 |---------------|----------------------------------------------------|------------------------------|----------------------------------------------------------|--------------|----------------|----------------------------------------------------------------------------|
 | 10/2/19 13:05 | VP of Artificial Intelligence                      | Samsung SDS America          | Samsung SDS America6,867 reviews-San Jose, CA 95134      | 4 out of 5   | 6,867 reviews  | https://indeed.com/rc/clk?jk=29e6b0cfd4f1ad6e&fccid=da3c7fed78dd1607&vjs=3 |
