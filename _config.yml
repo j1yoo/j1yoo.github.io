@@ -17,12 +17,11 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
- - index.markdown
  - about.markdown
  - c.v.markdown
  - research.markdown
  - teaching.markdown
-# - posts.markdown
+ - index.markdown
 
 # Build settings
 markdown: kramdown
