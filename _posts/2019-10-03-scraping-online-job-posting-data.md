@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scraping the Online Job Posting Data: "Indeed.com""
+title: "Scraping the Online Job Posting Data: 'Indeed.com'"
 categories: Research
 tag: Research
 ---
