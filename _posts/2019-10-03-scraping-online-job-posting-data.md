@@ -7,7 +7,7 @@ tag: Research
 
 _p.s., This is still a work-in-progress._
 
-I am scraping the search results for job postings that require skills related to artificial intelligence; e.g., experience and knowledge on machine learning, linear algibra, data analytics, etc. There are 11,807 pages in each of which there are ten job postings amounting to approximately 118,070 job openings for A.I. as of October 2, 2019.
+I am scraping the search results for job postings that require skills related to artificial intelligence; e.g., experience and knowledge on machine learning, linear algibra, data analytics, etc. The search results in 11,807 pages in each of which there are ten job postings (approximately 118,070 job openings for A.I. as of October 2, 2019).
 
 ### Terminal and tmux:
 Using a remote server for the parsing process.
