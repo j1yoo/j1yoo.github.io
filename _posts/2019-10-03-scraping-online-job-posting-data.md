@@ -75,13 +75,13 @@ for(i in 1:num_pages){
       html_text() %>%
       paste0(., "")
     
-    job_rating <- page2 %>%  # [4] Rating
+    company_rating <- page2 %>%  # [4] Rating
       html_nodes("a") %>%
       html_nodes(xpath = '//*[@class="icl-Ratings-starsCountWrapper icl-Ratings-link"]') %>%
       html_attr("aria-label") %>%
       paste0(., "")
     
-    job_review <- page2 %>%  # [5] Number of Reviews
+    company_review <- page2 %>%  # [5] Number of Reviews
       html_nodes(xpath = '/html/body/div[1]/div[2]/div[3]/div/div/div[1]/div[1]/div[1]/div[1]/div/div/div[2]/div/a/div[2]') %>%
       html_text() %>%
       paste0(., "")
