@@ -18,7 +18,7 @@ __Abstract__  Mobile marketing, despite its popularity among marketers, has yet 
 __The dark side of digitization: the impact of online intermediaries on the Distribution of New Narcotics__ with [Namil Kim](http://namilkim.github.io/){:target="_blank"}, [Yuxin Chen](https://shanghai.nyu.edu/academics/faculty/directory/yuxin-chen){:target="_blank"}, and [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"} (Data analysis in progress)
 
 <!---#### Publication:
-Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/doi/abs/10.1080/13504851.2017.1340567){:target="_blank"}--->
+Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/doi/abs/10.1080/13504851.2017.1340567){:target="_blank"}
 
 
-##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020){:target="_blank"} Researcher ID: [P-6780-2019](https://publons.com/researcher/P-6780-2019/){:target="_blank"}
+##### ORCID ID: [0000-0003-1582-0020](http://orcid.org/0000-0003-1582-0020){:target="_blank"} Researcher ID: [P-6780-2019](https://publons.com/researcher/P-6780-2019/){:target="_blank"}--->
