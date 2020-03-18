@@ -5,7 +5,7 @@ permalink: /JaewonYoo/C.V./
 ---
 
 <p align="center">
-<a href="https://j1yoo4.github.io/CV_Jaewon_Yoo.pdf" target="_blank"> Download C.V. (updated on Dec. 8, 2019) </a>
+<a href="https://j1yoo4.github.io/CV_Jaewon_Yoo.pdf" target="_blank"> Download C.V. </a> (updated on Dec. 8, 2019)
 </p>
 
 <html>
