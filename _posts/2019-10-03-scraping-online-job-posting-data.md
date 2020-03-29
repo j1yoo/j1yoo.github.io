@@ -115,9 +115,8 @@ write.csv(x = full_data, file = "/mnt/admin_jaewon_02/AI_job_posting_data/AI_job
 
 ### What the Data Looks Like:
 
-```
-id  date_crawled  job_title company_name  job_location  company_rating  company_review  href_links
---- --- ----  --- --- --- --- --------
+|  **id** | **date_crawled** | **job_title** | **company_name** | **job_location** | **company_rating** | **company_review** | **href_links** |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |  1 | 10/2/19 13:05 | VP of Artificial Intelligence | Samsung SDS America | Samsung SDS America6,867 reviews-San Jose, CA 95134 | 4 out of 5 | 6,867 reviews | https://indeed.com/rc/clk?jk=29e6b0cfd4f1ad6e&fccid=da3c7fed78dd1607&vjs=3 |
 |  2 | 10/2/19 13:05 | Artificial Intelligence Solution Architect | Avanade | Avanade243 reviews-Baltimore, MD | 3.7 out of 5 | 243 reviews | https://indeed.com/rc/clk?jk=c8b32b06ac7c5f37&fccid=5386281035076fdf&vjs=3 |
 |  3 | 10/2/19 13:05 | Artificial Intelligence Intern | Tractor Supply Company | Tractor Supply Company3,297 reviews-Brentwood, TN 37027 | 3.5 out of 5 | 3,297 reviews | https://indeed.com/rc/clk?jk=4f9e3676b2e5e4c8&fccid=11196309d222f1c1&vjs=3 |
@@ -126,7 +125,6 @@ id  date_crawled  job_title company_name  job_location  company_rating  company_
 |  6 | 10/2/19 13:06 | Conversational Artificial Intelligence Designer | PennyMac Loan Services, LLC | PennyMac Loan Services, LLC267 reviews-Plano, TX | 3.1 out of 5 | 267 reviews | https://indeed.com/rc/clk?jk=371dc494bc960265&fccid=24c6c21cc329dea7&vjs=3 |
 |  7 | 10/2/19 13:06 | Artificial Intelligence | Bank of America | Bank of America28,108 reviews-Charlotte, NC 28255 | 3.8 out of 5 | 28,108 reviews | https://indeed.com/rc/clk?jk=8b653788c51d5ef9&fccid=5bd99dfa21c8a490&vjs=3 |
 |  8 | 10/2/19 13:06 | Intern - Artificial Intelligence (AI) | Alion Science and Technology | Alion Science and Technology227 reviews-College Park, MD | 3.5 out of 5 | 227 reviews | https://indeed.com/rc/clk?jk=2638fb51ee02f970&fccid=1f295927bec6a974&vjs=3 |
-```
 
 ### Sample Job Description (Row 1: VP of Artificial Intelligence, Samsung SDS America):
 
