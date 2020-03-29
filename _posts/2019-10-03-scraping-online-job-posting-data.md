@@ -116,8 +116,8 @@ write.csv(x = full_data, file = "/mnt/admin_jaewon_02/AI_job_posting_data/AI_job
 ### What the Data Looks Like:
 
 ```
-|  id | date_crawled | job_title | company_name | job_location | company_rating | company_review | href_links |
-| --- | --- | ---- | --- | --- | --- | --- | -------- |
+id  date_crawled  job_title company_name  job_location  company_rating  company_review  href_links
+--- --- ----  --- --- --- --- --------
 |  1 | 10/2/19 13:05 | VP of Artificial Intelligence | Samsung SDS America | Samsung SDS America6,867 reviews-San Jose, CA 95134 | 4 out of 5 | 6,867 reviews | https://indeed.com/rc/clk?jk=29e6b0cfd4f1ad6e&fccid=da3c7fed78dd1607&vjs=3 |
 |  2 | 10/2/19 13:05 | Artificial Intelligence Solution Architect | Avanade | Avanade243 reviews-Baltimore, MD | 3.7 out of 5 | 243 reviews | https://indeed.com/rc/clk?jk=c8b32b06ac7c5f37&fccid=5386281035076fdf&vjs=3 |
 |  3 | 10/2/19 13:05 | Artificial Intelligence Intern | Tractor Supply Company | Tractor Supply Company3,297 reviews-Brentwood, TN 37027 | 3.5 out of 5 | 3,297 reviews | https://indeed.com/rc/clk?jk=4f9e3676b2e5e4c8&fccid=11196309d222f1c1&vjs=3 |
