@@ -14,10 +14,10 @@ __Overcoming the challenges of mobile marketing: content marketing in a mobile a
 
 __Abstract__  Mobile marketing, despite its popularity among marketers, has yet to overcome the persistent challenges of consumer’s short attention span and apathy towards digital ads, thus resulting in low engagement and conversion. Although mobile content marketing (MCM) has emerged as an alternative solution to such challenges in practice, academic research on the effectiveness and strategies of MCM is still in its infancy. This study aims to investigate the causal impact of MCM on customer engagement and sales. To this end, we conducted a randomized controlled trial in close collaboration with both a book retailer and a large number of publishers. We empirically confirm the effectiveness of MCM by showing that it is capable of increasing both customer engagement (e.g., higher check-in rate) and sales revenue (e.g., higher click-through and sales conversion), but its success is largely determined by the quality of the content being used. Our findings confirm that MCM can backfire if not implemented properly. While informative and entertaining content is consumed more, entertaining content that better sustains readers’ attention can be even more effective.
 
-#### Work-in-Progress:
+<!---#### Work-in-Progress:
 __The dark side of digitization: the impact of online intermediaries on the Distribution of New Narcotics__ with [Namil Kim](http://namilkim.github.io/){:target="_blank"}, [Yuxin Chen](https://shanghai.nyu.edu/academics/faculty/directory/yuxin-chen){:target="_blank"}, and [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"} (Data analysis in progress)
 
-<!---#### Publication:
+#### Publication:
 Jaewon Yoo, Hyunsik Park & Wonjoon Kim (2017): Compromise effect and consideration set size in consumer decision-making, _Applied Economics Letters_, DOI: [10.1080/13504851.2017.1340567](http://www.tandfonline.com/doi/abs/10.1080/13504851.2017.1340567){:target="_blank"}
 
 
