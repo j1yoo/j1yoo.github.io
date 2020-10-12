@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   <head>
+    
+    {% if page.use_math %}
+    {% include mathjax_support.html %}
+    {% endif %}
 
   <link rel="icon"  type="image/png"    href="https://cdn2.iconfinder.com/data/icons/social-aquiocons/512/Aquicon-Github.png">
   
