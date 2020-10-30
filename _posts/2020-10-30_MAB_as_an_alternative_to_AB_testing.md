@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Multi-Armed Bandit (MAB) as an Alternative to A/B Testing"
-categories: misc
+categories: Research
 use_math: true
-permalink: /post/
 ---
 
 # Multi-Armed Bandit (MAB) as an Alternative to A/B Testing
