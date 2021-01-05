@@ -23,7 +23,7 @@ tail(nerlove63, 5) # print the last five observations
 ## 144 139.422  14359   2.31  33.5  212
 ## 145 119.939  16719   2.30  23.6  162
 ```
-
+ 
 The dataset contains five variables: cost (i.e., total cost in million \$), output (i.e., quantity (Q) in billion kilowatt hours), pLabor (i.e., unit price of labor or wage rate in \$ per hour), pCapital (i.e., unit price of capital), and pFuel (i.e., unit price of fuels in cent per million British thermal unit). Note that it is a firm-level cross-sectional data that comprises of observations from 145 American electric utility companies in 1955.
 
 __Nerlove (1963) posits the following production function (this follows [the Cobb-Douglas](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) specification):__
