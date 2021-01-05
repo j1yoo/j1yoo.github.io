@@ -191,7 +191,7 @@ __Let's check if we got our hand-rolled regression results correctly using the l
 regOut <- lm(log(totcost) ~ log(output) + log(plabor) + log(pkap) + log(pfuel), data = nerlove63)
 stargazer::stargazer(regOut, type = 'text')
 ```
-
+ 
 ```
 ## 
 ## ===============================================
