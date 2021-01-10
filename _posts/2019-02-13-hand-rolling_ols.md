@@ -32,6 +32,8 @@ $$\begin{align}
 output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}
 \end{align}$$
 
+$$ output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1} $$
+
 which implies the following equation on the total cost:
 
 $$\begin{align}
