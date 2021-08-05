@@ -5,7 +5,7 @@ permalink: /JaewonYoo/C.V./
 ---
 
 <p align="center">
-<a href="https://j1yoo4.github.io/210626_CV_Jaewon_Yoo.pdf" target="_blank"> Download C.V. </a> (updated on June 26, 2021)
+<a href="https://j1yoo4.github.io/Jaewon Yoo_CV.pdf" target="_blank"> Download C.V. </a> (updated on August 05, 2021)
 </p>
 
 <html>
@@ -25,7 +25,7 @@ permalink: /JaewonYoo/C.V./
   
   <p align="center">
     <div class="responsive">
-     <iframe src="https://j1yoo4.github.io/210626_CV_Jaewon_Yoo.pdf" width="750" height="650"></iframe>
+     <iframe src="https://j1yoo4.github.io/Jaewon Yoo_CV.pdf" width="750" height="650"></iframe>
     </div>
   </p>
 </html>
