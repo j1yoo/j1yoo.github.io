@@ -15,10 +15,10 @@ permalink: /JaewonYoo/Research/
 **Work-in-Progress**
 
 1. "Unexpected Consequences of Product Sales Bans: An Empirical Investigation" with Yuxin Chen and Namil Kim
-  - Conceptualization and data collection completed. Data analysis in progress.
+   - Conceptualization and data collection completed. Data analysis in progress.
 
 2. "The Dark Side of Digitization: Last Mile Mobility and Traffic Fatality" with Moon Gyu Kim
-  - Recipient of the 1st, 2nd, and 3rd CSES best paper awards. Data collection in progress.
+   - Recipient of the 1st, 2nd, and 3rd CSES best paper awards. Data collection in progress.
 
 3. "Empirical Investigation of The Impact of Online Platforms on Charitable Giving" with Namil Kim and Hyungseok (David) Yoon
 
