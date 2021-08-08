@@ -12,6 +12,7 @@ permalink: /JaewonYoo/Research/
 
 "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua Ackerman (reject and resubmit at _**Journal of Marketing**_).
 
+
 **Work-in-Progress**
 
 "Unexpected Consequences of Product Sales Bans: An Empirical Investigation" with Yuxin Chen and Namil Kim
@@ -21,6 +22,7 @@ permalink: /JaewonYoo/Research/
 * Recipient of the 1st, 2nd, and 3rd CSES best paper awards. Data collection in progress.
 
 "Empirical Investigation of The Impact of Online Platforms on Charitable Giving" with Namil Kim and Hyungseok (David) Yoon
+
 
 **Publications**
 
