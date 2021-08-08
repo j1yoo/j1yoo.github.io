@@ -6,11 +6,11 @@ permalink: /JaewonYoo/Research/
 
 **Manuscripts in Preparation**
 
-1. "Mobile payment and in-store mobile purchase behavior" with [Yuxin Chen](https://shanghai.nyu.edu/academics/faculty/directory/yuxin-chen){:target="_blank"}, [Minki Kim](https://www.business.kaist.edu/faculty/pcmingki){:target="_blank"}, and [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"} (preparing for submission to _**Marketing Science**_).
+1. "Mobile payment and in-store mobile purchase behavior" with [Yuxin Chen](https://shanghai.nyu.edu/academics/faculty/directory/yuxin-chen){:target="_blank"}, [Minki Kim](https://www.business.kaist.edu/faculty/pcmingki){:target="_blank"}, and [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"} (preparing for submission to _Marketing Science_).
 
-2. "Overcoming the Challenges of Mobile Marketing: Mobile Content Marketing in a Distracted World" with Seokjoon Yoon, [Minki Kim](https://www.business.kaist.edu/faculty/pcmingki){:target="_blank"}, [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"}, [Minsok Lee](https://mapss.uchicago.edu/directory/min-sok-lee){:target="_blank"} (preparing for submission to _**Journal of Marketing**_).
+2. "Overcoming the Challenges of Mobile Marketing: Mobile Content Marketing in a Distracted World" with Seokjoon Yoon, [Minki Kim](https://www.business.kaist.edu/faculty/pcmingki){:target="_blank"}, [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"}, [Minsok Lee](https://mapss.uchicago.edu/directory/min-sok-lee){:target="_blank"} (preparing for submission to _Journal of Marketing_).
 
-3. "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua Ackerman (reject and resubmit at _**Journal of Marketing**_).
+3. "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua Ackerman (reject and resubmit at _Journal of Marketing_).
 
 **Work-in-Progress**
 
