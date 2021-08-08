@@ -10,7 +10,7 @@ permalink: /JaewonYoo/Teaching/
 
 
 #### Korea Advanced Institute of Science and Technology (KAIST)
-* [R&D Project Management (MSB360)](http://bulletin.kaist.ac.kr/html/en/?year=2016&id=en20161421&file=E){:target="_blank"}, Fall 2016 (Undergraduate), _Teaching assistant (TA)_
+* [R&D Project Management (MSB360)](http://bulletin.kaist.ac.kr/html/en/?year=2016&id=en20161421&file=E){:target="_blank"}, Fall 2016 (Undergraduate), _Teaching Assistant (TA)_
 * [Supply Chain Management (MSB446)](http://bulletin.kaist.ac.kr/html/en/?year=2016&id=en20161421&file=E){:target="_blank"}, Spring 2016 (Undergraduate), _TA_
 * [Research Methodologies I (MSB601)](http://bulletin.kaist.ac.kr/html/en/?year=2014&id=en20141403&file=E){:target="_blank"}, Fall 2014 (Graduate), _TA_
 * [Introduction to Business Management (MSB200)](http://bulletin.kaist.ac.kr/html/en/?year=2014&id=en20141403&file=E){:target="_blank"}, Spring 2014 (Undergraduate), _TA_
