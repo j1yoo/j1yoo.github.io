@@ -10,7 +10,7 @@ permalink: /JaewonYoo/Research/
 
 "Overcoming the Challenges of Mobile Marketing: Mobile Content Marketing in a Distracted World" with Seokjoon Yoon, [Minki Kim](https://www.business.kaist.edu/faculty/pcmingki){:target="_blank"}, [Wonjoon Kim](http://wjkim.kaist.ac.kr/home){:target="_blank"}, [Minsok Lee](https://mapss.uchicago.edu/directory/min-sok-lee){:target="_blank"} (preparing for submission to _**Journal of Marketing**_).
 
-"Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua Ackerman (reject and resubmit at _**Journal of Marketing**_).\\
+"Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua Ackerman (reject and resubmit at _**Journal of Marketing**_).
 
 
 **Work-in-Progress**
