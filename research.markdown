@@ -33,8 +33,8 @@ The introduction of the Internet generated two significant developments for cons
 
 **Publications**
 
-- Yoo, Jaewon, Hyunsik Park, and Wonjoon Kim. “Compromise Effect and Consideration Set Size in Consumer Decision-Making.” _Applied Economics Letters_ 25, no. 8 (2018): 513-517. SSCI.
+- **Yoo, Jaewon**, Hyunsik Park, and Wonjoon Kim. “Compromise Effect and Consideration Set Size in Consumer Decision-Making.” _Applied Economics Letters_ 25, no. 8 (2018): 513-517. SSCI.
 
-- Kang, Minjeong, Jaewon Yoo, Wonjoon Kim, and Namil Kim. “The Effect of Alliance Activity on Patent Litigation.” _Journal of Korea Technology Innovation Society_ 21, no. 1 (2018): 265-299. KCI.
+- Kang, Minjeong, **Jaewon Yoo**, Wonjoon Kim, and Namil Kim. “The Effect of Alliance Activity on Patent Litigation.” _Journal of Korea Technology Innovation Society_ 21, no. 1 (2018): 265-299. KCI.
 
-- Yoo, Jaewon and Wonjoon Kim. “To What Extend does Social Effect has Influence on Choice Overload?” _Proceedings of the 2013 International Symposium on Education, Psychology, Society, and Tourism_. Seoul, Republic of Korea. June 27 - 29, 2013.
+- **Yoo, Jaewon** and Wonjoon Kim. “To What Extend does Social Effect has Influence on Choice Overload?” _Proceedings of the 2013 International Symposium on Education, Psychology, Society, and Tourism_. Seoul, Republic of Korea. June 27 - 29, 2013.
