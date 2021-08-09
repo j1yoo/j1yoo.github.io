@@ -7,8 +7,7 @@ permalink: /JaewonYoo/Research/
 **Manuscripts in Preparation**
 
 - "Mobile payment and in-store mobile purchase behavior" with Yuxin Chen, Minki Kim, and Wonjoon Kim (preparing for submission to _Marketing Science_).
-<details>
-<summary>Abstract</summary>
+<details> <summary>[Abstract]</summary>
 A growing number of retailers have enabled in-store mobile purchases, which allow consumers to buy products they see anytime and anywhere in the offline store using their mobile phones. This practice is facilitated by the emerging mobile payment services (e.g., Google Pay, WeChat Pay, or Kakao Pay) that represent a substantial shift in the transaction experience as they require fewer tasks to complete than incumbent payment options such as credit cards. This paper investigates the behavioral consequences of mobile payment adoption in the context of in-store mobile purchase using data from a leading book retailer in Korea with the launch of the most popular mobile payment service in the country during the data period. The results show that the adoption of a mobile payment service not only increases the total spending and purchase frequency of the adopters but also increases their consumption variety. These findings are consistent with the predictions from the transaction cost theory and are supported and further verified by a series of additional empirical analysis. The implications of our results for retailers and consumers are also discussed.
 </details>
 
