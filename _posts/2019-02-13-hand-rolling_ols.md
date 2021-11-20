@@ -5,8 +5,6 @@ categories: misc
 mathjax: true
 ---
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-
 To illustrate how to calculate ordinary least squares (OLS) by hand, I am going to use the dataset provided by Nerlove (1963) "Returns to Scale in Electricity Supply" which is publically available at [EconPapers](https://econpapers.repec.org/paper/bocbocins/nerlove63.htm).
 
 Let's first import the data into R and take a glance.
@@ -29,6 +27,9 @@ tail(nerlove63, 5) # print the last five observations
 The dataset contains five variables: cost (i.e., total cost in million \$), output (i.e., quantity (Q) in billion kilowatt hours), pLabor (i.e., unit price of labor or wage rate in \$ per hour), pCapital (i.e., unit price of capital), and pFuel (i.e., unit price of fuels in cent per million British thermal unit). Note that it is a firm-level cross-sectional data that comprises of observations from 145 American electric utility companies in 1955.
 
 __Nerlove (1963) posits the following production function (this follows [the Cobb-Douglas](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) specification):__
+
+
+<img src="https://render.githubusercontent.com/render/math?math=output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}">
 
 $$\begin{align}
 output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i})^{\alpha_{3}}, \tag{1}
