@@ -37,6 +37,13 @@ output_{i} = A_{i}(pLabor_{i})^{\alpha_{1}}(pCapital_{i})^{\alpha_{2}}(pFuel_{i}
 
 which implies the following equation on the total cost:
 
+<img src="https://render.githubusercontent.com/render/math?math=log(cost_{i}) = &\frac{1}{r}log(output_{i})+ \\
+&\frac{\alpha_{1}}{r}log(pLabor_{i})+ \\
+&\frac{\alpha_{2}}{r}log(pCapital_{i})+ \\
+&\frac{\alpha_{3}}{r}log(pFuel_{i})+ \\
+&log\biggl[r(A_{i}\alpha_{1}^{\alpha_{1}}\alpha_{2}^{\alpha_{2}}\alpha_{3}^{\alpha_{3}})^{-\frac{1}{r}}\biggl], \tag{2}
+">
+
 $$\begin{align}
 log(cost_{i}) = &\frac{1}{r}log(output_{i})+ \\
 &\frac{\alpha_{1}}{r}log(pLabor_{i})+ \\
