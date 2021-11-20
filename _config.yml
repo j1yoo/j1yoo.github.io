@@ -22,7 +22,8 @@ header_pages:
  - c.v.markdown
  - research.markdown
  - teaching.markdown
- - index.markdown
+ - posts.markdown
+# - index.markdown
 
 # Build settings
 markdown: kramdown
