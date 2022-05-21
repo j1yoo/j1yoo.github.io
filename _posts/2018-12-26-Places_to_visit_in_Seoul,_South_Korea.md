@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Places to visit in Seoul, S. Korea"
+title: "Places to visit in Seoul, South Korea"
 categories: misc
 ---
 
