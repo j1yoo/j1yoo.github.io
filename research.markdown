@@ -11,10 +11,14 @@ permalink: /JaewonYoo/Research/
    <summary><span style="color:gray">[Abstract]</span></summary>
    A growing number of retailers have enabled in-store mobile purchases, which allow consumers to buy products they see anytime and anywhere in the offline store using their mobile phones. This practice is facilitated by the emerging mobile payment services (e.g., Google Pay, WeChat Pay, or Kakao Pay) that represent a substantial shift in the transaction experience as they require fewer tasks to complete than incumbent payment options such as credit cards. This paper investigates the behavioral consequences of mobile payment adoption in the context of in-store mobile purchase using data from a leading book retailer in Korea with the launch of the most popular mobile payment service in the country during the data period. The results show that the adoption of a mobile payment service not only increases the total spending and purchase frequency of the adopters but also increases their consumption variety. These findings are consistent with the predictions from the transaction cost theory and are supported and further verified by a series of additional empirical analysis. The implications of our results for retailers and consumers are also discussed. <br/><br/> </details>
 
+
+
 - "Overcoming the Challenges of Mobile Marketing: Mobile Content Marketing in a Distracted World" with Seokjoon Yoon, Minki Kim, Wonjoon Kim, Minsok Lee (resubmission requested at _Management Science_).
   <details>
   <summary><span style="color:gray">[Abstract]</span></summary>
 Mobile marketing, despite its popularity among marketers, has yet to overcome the persistent challenges of consumer apathy and short attention span, thus resulting in low engagement and conversion. Although mobile content marketing (MCM) has emerged as an alternative solution to such challenges in practice, academic research on the effectiveness and strategies of MCM is still in its infancy. This study aims to investigate the causal impact of MCM on customer engagement and sales. To this end, we conducted a randomized controlled trial in close collaboration with both a book retailer and a large number of publishers. We empirically confirm the effectiveness of MCM by showing that it is capable of increasing both customer engagement (e.g., higher check-in rate) and sales revenue (e.g., higher click-through and sales conversion), but its success is largely determined by the quality of the content being used. Our findings confirm that MCM can backfire if not implemented properly. While informative and entertaining content is consumed more, entertaining content that better sustains readers’ attention can be even more effective. <br/><br/> </details>
+
+
 
 - "Helping Hands to Bear the Burden of Choice: Recommendations from Similar, but Not Close, Others Reduce Choice Difficulty" with Wonjoon Kim and Joshua Ackerman (resubmission requested at _Journal of Marketing_).
   <details>
@@ -26,8 +30,10 @@ The introduction of the Internet generated two significant developments for cons
 - "Unexpected Consequences of Product Sales Bans: An Empirical Investigation" with Y. Chen and N. Kim
    - Conceptualization and data collection completed. Data analysis in progress.
 
+
 - "The Dark Side of Digitization: Last Mile Mobility and Traffic Fatality" with M. Kim
    - Recipient of the 1st, 2nd, and 3rd CSES best paper awards. Data collection in progress.
+
 
 - "Empirical Investigation of The Impact of Online Platforms on Charitable Giving" with N. Kim and H. Yoon
 
