@@ -27,7 +27,7 @@ The introduction of the Internet generated two significant developments for cons
 **Work-in-Progress**
 
 - "Empirical Investigation of The Impact of Online Platforms on Charitable Giving" with N. Kim and H. Yoon
-- 
+
 - "Unexpected Consequences of Product Sales Bans: An Empirical Investigation" with Y. Chen and N. Kim
    - Conceptualization and data collection completed. Data analysis in progress.
 
