@@ -26,6 +26,8 @@ The introduction of the Internet generated two significant developments for cons
 
 **Work-in-Progress**
 
+- "Turn My Mourning into Dancing: Childhood Racial Adversities and Minority Entrepreneurship" with D. H. Yoon and C. Boudreaux
+
 - "Empirical Investigation of The Impact of Online Platforms on Charitable Giving" with N. Kim and H. Yoon
 
 - "Unexpected Consequences of Product Sales Bans: An Empirical Investigation" with Y. Chen and N. Kim
