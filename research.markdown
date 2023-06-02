@@ -26,7 +26,7 @@ The introduction of the Internet generated two significant developments for cons
 
 **Work-in-Progress**
 
-- "From What Ifs to Insights: Counterfactuals in Causal Inference vs. Explainable AI" with G. Shmueli, D. Martens, T. Greene
+- "From What Ifs to Insights: Counterfactuals in Causal Inference vs. Explainable AI" with G. Shmueli, D. Martens, and T. Greene
   <details>
   <summary><span style="color:gray">[Abstract]</span></summary>
 Counterfactuals play a pivotal role in the two distinct data science fields of causal inference (CI) and explainable artificial intelligence (XAI). While the core idea behind counterfactuals remains the same in both fields—the examination of what would have happened under different circumstances—there are key differences in how they are used and interpreted. We introduce a formal definition that encompasses the multi-faceted concept of the counterfactual in CI and XAI. We then discuss how counterfactuals are used, evaluated, generated, and operationalized in CI vs. XAI, highlighting conceptual and practical differences. By comparing and contrasting the two, we hope to identify opportunities for cross fertilization across CI and XAI.  <br/><br/> </details>
