@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
-    gem 'classifier-reborn'
+    gem 'classifier-reborn', '~> 2.3.4'
     gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-email-protect'
@@ -23,7 +23,6 @@ group :jekyll_plugins do
     gem 'webrick'
     gem 'observer'
     gem "github-pages", group: :jekyll_plugins
-    gem 'classifier-reborn', '~> 2.3.4'
 end
 group :other_plugins do
     gem 'css_parser'
