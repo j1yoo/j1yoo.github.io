@@ -4,7 +4,7 @@ title: Home
 ---
 
 <img style="width:220px; height:220px; float:left; padding:15px;"
-src="/Photo_Jaewon Yoo.png" alt="profile picture">
+src="/PXL_20230817_050446515~6.jpg" alt="profile picture">
 
 I am an Assistant Professor in the [Institute of Service Science](https://www.iss.nthu.edu.tw/){:target="_blank"} at the [College of Technology Management](http://www.ctm.nthu.edu.tw/){:target="_blank"}, [National Tsing Hua University (NTHU)](https://nthu-en.site.nthu.edu.tw/){:target="_blank"} where I teach courses related to business analytics and causal inference using experimental and observational studies.
 
