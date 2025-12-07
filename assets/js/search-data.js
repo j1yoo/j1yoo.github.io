@@ -226,7 +226,7 @@ ninja.data = [{
               window.location.href = "/teaching/eci/";
             },},{id: "teaching-programming-for-business-analytics",
           title: 'Programming for Business Analytics',
-          description: "This course introduces the basics of programming using *R* for business applications.",
+          description: "This course introduces the basics of programming using R for business applications.",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/pba/";
             },},{
