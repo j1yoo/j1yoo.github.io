@@ -219,6 +219,16 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "teaching-experiments-and-causal-inference",
+          title: 'Experiments and Causal Inference',
+          description: "A deep dive into experimental design and causal inference methods for business analytics.",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/eci/";
+            },},{id: "teaching-programming-for-business-analytics",
+          title: 'Programming for Business Analytics',
+          description: "This course introduces the basics of programming using *R* for business applications.",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/pba/";
             },},{
         id: 'social-github',
         title: 'GitHub',
