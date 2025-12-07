@@ -221,7 +221,7 @@ ninja.data = [{
               window.location.href = "/projects/9_project/";
             },},{id: "teaching-experiments-and-causal-inference",
           title: 'Experiments and Causal Inference',
-          description: "A deep dive into experimental design and causal inference methods for business analytics.",
+          description: "A deep dive into experimental and quasi experimental designs and causal inference methods for business analytics.",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/eci/";
             },},{id: "teaching-programming-for-business-analytics",
