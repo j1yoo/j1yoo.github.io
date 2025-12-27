@@ -81,7 +81,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2019/Scraping_the_Online_Job_Posting_Data-_'Indeed.com'/";
+            window.location.href = "/blog/2019/Scraping_the_Online_Job_Posting_Data_Indeed_com/";
           
         },
       },{id: "post-collection-of-useful-packages-cheat-sheets-r-and-python-and-tips",
