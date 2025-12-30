@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "The corresponding author is denoted by *.",
+          description: "The corresponding author is denoted by *. Video summaries 🎬 generated with NotebookLM.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
