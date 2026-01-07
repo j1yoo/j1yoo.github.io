@@ -51,9 +51,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-what-directed-acyclic-graphs-teach-us-about-choosing-covariates",
+        },{id: "post-what-directed-acyclic-graphs-dags-teach-us-about-choosing-covariates",
         
-          title: "What Directed Acyclic Graphs Teach Us About Choosing Covariates",
+          title: "What Directed Acyclic Graphs (DAGs) Teach Us About Choosing Covariates",
         
         description: "",
         section: "Posts",
