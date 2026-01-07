@@ -51,9 +51,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-three-conceptual-shifts-that-will-change-how-you-see-causal-inference",
+        },{id: "post-rethinking-control-what-directed-acyclic-graphs-teach-us-about-choosing-covariates",
         
-          title: "Three Conceptual Shifts That Will Change How You See Causal Inference",
+          title: "Rethinking Control: What Directed Acyclic Graphs Teach Us About Choosing Covariates",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Rethinking_Control_What_Directed_Acyclic_Graphs_Teach_Us_About_Choosing_Covariates/";
+          
+        },
+      },{id: "post-three-fundamental-conceptual-shifts-in-causal-inference",
+        
+          title: "Three Fundamental Conceptual Shifts in Causal Inference",
         
         description: "",
         section: "Posts",
