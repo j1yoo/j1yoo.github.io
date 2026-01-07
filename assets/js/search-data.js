@@ -51,15 +51,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-rethinking-control-what-directed-acyclic-graphs-teach-us-about-choosing-covariates",
+        },{id: "post-what-directed-acyclic-graphs-teach-us-about-choosing-covariates",
         
-          title: "Rethinking Control: What Directed Acyclic Graphs Teach Us About Choosing Covariates",
+          title: "What Directed Acyclic Graphs Teach Us About Choosing Covariates",
         
         description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/Rethinking_Control_What_Directed_Acyclic_Graphs_Teach_Us_About_Choosing_Covariates/";
+            window.location.href = "/blog/2026/What_Directed_Acyclic_Graphs_Teach_Us_About_Choosing_Covariates/";
           
         },
       },{id: "post-three-fundamental-conceptual-shifts-in-causal-inference",
