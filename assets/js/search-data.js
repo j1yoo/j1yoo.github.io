@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-what-directed-acyclic-graphs-dags-teach-us-about-choosing-covariates",
+        },{id: "post-why-better-models-can-create-stranger-counterfactuals",
+        
+          title: "Why Better Models Can Create Stranger Counterfactuals",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Why_Better_Models_Can_Create_Stranger_Counterfactuals/";
+          
+        },
+      },{id: "post-what-directed-acyclic-graphs-dags-teach-us-about-choosing-covariates",
         
           title: "What Directed Acyclic Graphs (DAGs) Teach Us About Choosing Covariates",
         
