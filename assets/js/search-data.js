@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-why-better-models-can-create-stranger-counterfactuals",
+        },{id: "post-why-causal-mechanisms-are-harder-than-you-think",
+        
+          title: "Why Causal Mechanisms Are Harder Than You Think",
+        
+        description: "The hidden costs of asking &quot;how does it work?&quot;—cross-world counterfactuals and heroic assumptions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Why_Causal_Mechanisms_Are_Harder_Than_You_Think/";
+          
+        },
+      },{id: "post-why-better-models-can-create-stranger-counterfactuals",
         
           title: "Why Better Models Can Create Stranger Counterfactuals",
         
