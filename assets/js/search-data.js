@@ -55,7 +55,7 @@ ninja.data = [{
         
           title: "Why Better Models Can Create Stranger Counterfactuals",
         
-        description: "",
+        description: "When AI explanations respect real-world constraints, the &quot;what-ifs&quot; become fewer but more meaningful.",
         section: "Posts",
         handler: () => {
           
@@ -66,22 +66,22 @@ ninja.data = [{
         
           title: "What Directed Acyclic Graphs (DAGs) Teach Us About Choosing Covariates",
         
-        description: "",
+        description: "Why adding more controls can backfire, and how causal graphs help you pick the right ones.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/What_Directed_Acyclic_Graphs_Teach_Us_About_Choosing_Covariates/";
+            window.location.href = "/blog/2025/What_Directed_Acyclic_Graphs_Teach_Us_About_Choosing_Covariates/";
           
         },
       },{id: "post-three-fundamental-conceptual-shifts-in-causal-inference",
         
           title: "Three Fundamental Conceptual Shifts in Causal Inference",
         
-        description: "",
+        description: "From missing data to survivor bias—three ideas that will reshape how you think about cause and effect.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/Three_Conceptual_Shifts_That_Will_Change_How_You_See_Causal_Inference/";
+            window.location.href = "/blog/2025/Three_Conceptual_Shifts_That_Will_Change_How_You_See_Causal_Inference/";
           
         },
       },{id: "post-ddd-estimators-and-distributional-effects",
@@ -99,7 +99,7 @@ ninja.data = [{
         
           title: "Multi-Armed Bandit (MAB) as an Alternative to A/B Testing: a Simulation using R...",
         
-        description: "",
+        description: "Earn while you learn—comparing bandit algorithms that optimize experiments in real time.",
         section: "Posts",
         handler: () => {
           
@@ -110,7 +110,7 @@ ninja.data = [{
         
           title: "Scraping the Online Job Posting Data: &#39;Indeed.com&#39;",
         
-        description: "",
+        description: "Collecting 100k+ AI job postings from Indeed using R for labor market research.",
         section: "Posts",
         handler: () => {
           
@@ -121,7 +121,7 @@ ninja.data = [{
         
           title: "Collection of Useful Packages, Cheat Sheets (R and Python), and Tips",
         
-        description: "",
+        description: "A curated list of go-to packages and resources for data science workflows.",
         section: "Posts",
         handler: () => {
           
@@ -132,7 +132,7 @@ ninja.data = [{
         
           title: "Hand-Rolling OLS Using R",
         
-        description: "",
+        description: "Deriving and coding OLS from scratch to understand what happens under the hood.",
         section: "Posts",
         handler: () => {
           
@@ -143,7 +143,7 @@ ninja.data = [{
         
           title: "Places to visit in Seoul, South Korea",
         
-        description: "",
+        description: "A local&#39;s guide to nightlife, culture, and hidden gems in Korea&#39;s capital.",
         section: "Posts",
         handler: () => {
           
@@ -154,7 +154,7 @@ ninja.data = [{
         
           title: "Crawling the Annual Reports (i.e., 10-Ks) using R",
         
-        description: "",
+        description: "Automating SEC filings extraction with R for large-scale text analysis.",
         section: "Posts",
         handler: () => {
           
