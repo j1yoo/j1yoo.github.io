@@ -55,7 +55,7 @@ ninja.data = [{
         
           title: "Why Causal Mechanisms Are Harder Than You Think",
         
-        description: "The hidden costs of asking &quot;how does it work?&quot;—cross-world counterfactuals and heroic assumptions.",
+        description: "The hidden costs of explaining how something works: cross-world counterfactuals and heroic assumptions.",
         section: "Posts",
         handler: () => {
           
@@ -88,7 +88,7 @@ ninja.data = [{
         
           title: "Three Fundamental Conceptual Shifts in Causal Inference",
         
-        description: "From missing data to survivor bias—three ideas that will reshape how you think about cause and effect.",
+        description: "From missing data to survivor bias: three ideas that will reshape how you think about cause and effect.",
         section: "Posts",
         handler: () => {
           
@@ -110,7 +110,7 @@ ninja.data = [{
         
           title: "Multi-Armed Bandit (MAB) as an Alternative to A/B Testing: a Simulation using R...",
         
-        description: "Earn while you learn—comparing bandit algorithms that optimize experiments in real time.",
+        description: "Earn while you learn: comparing bandit algorithms that optimize experiments in real time.",
         section: "Posts",
         handler: () => {
           
