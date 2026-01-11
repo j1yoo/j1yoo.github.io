@@ -117,6 +117,17 @@ ninja.data = [{
             window.open("https://diddigest.substack.com/p/ddd-estimators-distributional-effects", "_blank");
           
         },
+      },{id: "post-one-sample-to-rule-them-all-the-subtle-power-of-the-bootstrap",
+        
+          title: "One Sample to Rule Them All? The Subtle Power of the Bootstrap",
+        
+        description: "How resampling from your own data can reveal an estimator&#39;s uncertainty: the logic and limits of the bootstrap.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/One_Sample_to_Rule_Them_All_The_Subtle_Power_of_the_Bootstrap/";
+          
+        },
       },{id: "post-multi-armed-bandit-mab-as-an-alternative-to-a-b-testing-a-simulation-using-r",
         
           title: "Multi-Armed Bandit (MAB) as an Alternative to A/B Testing: a Simulation using R...",
