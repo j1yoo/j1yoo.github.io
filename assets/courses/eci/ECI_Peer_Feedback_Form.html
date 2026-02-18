@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ECI — Peer Feedback Form</title>
+<style>
+  @page { size: A4; margin: 1.5cm 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #222;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5cm 2cm;
+  }
+
+  h1 {
+    font-size: 14pt;
+    text-align: center;
+    margin-bottom: 0.2em;
+    letter-spacing: 0.05em;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 10pt;
+    color: #555;
+    margin-bottom: 1em;
+  }
+  .field-row {
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 0.7em;
+    font-size: 10pt;
+  }
+  .field-row label {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .field-row .line {
+    flex: 1;
+    border-bottom: 1px solid #999;
+    min-width: 80px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #bbb;
+    margin: 0.8em 0;
+  }
+  .section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 0.15em;
+  }
+  .section-desc {
+    font-size: 9.5pt;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 0.5em;
+  }
+  .writing-area {
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    height: 200px;
+    padding: 6px;
+    background: #fafafa;
+  }
+  /* all writing areas same size */
+  .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 10pt;
+    margin-top: 0.4em;
+    margin-bottom: 1.2em;
+  }
+  .rating-row span { font-weight: bold; }
+  .circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #888;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 9pt;
+    color: #666;
+  }
+  .rating-label { font-size: 8.5pt; color: #777; }
+  .page-cont {
+    font-size: 9pt;
+    color: #999;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3em;
+    margin-bottom: 1em;
+  }
+  .footer {
+    margin-top: 1.5em;
+    font-size: 8.5pt;
+    color: #999;
+    text-align: center;
+  }
+
+  /* ── PRINT: force page 2 ── */
+  @media print {
+    body { padding: 0; }
+    .writing-area { background: #fff; -webkit-print-color-adjust: exact; }
+    .page2 { page-break-before: always !important; break-before: page !important; }
+  }
+
+  /* ── SCREEN: visual page separator ── */
+  @media screen {
+    .page2 {
+      margin-top: 3em;
+      padding-top: 1.5em;
+      border-top: 2px dashed #ccc;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+
+<h1>Peer Feedback Form</h1>
+<p class="subtitle">ISS5096 Experiments and Causal Inference — Final Presentation</p>
+
+<div class="field-row">
+  <label>Presenter(s):</label><div class="line"></div>
+</div>
+<div class="field-row">
+  <label>Project Title:</label><div class="line"></div>
+</div>
+<div class="field-row">
+  <label>Your Name:</label><div class="line"></div>
+  <label>Date:</label><div class="line" style="max-width:120px;"></div>
+</div>
+
+<hr>
+
+<div class="section-title">1. Research Question</div>
+<div class="section-desc">Is the research question clearly stated? What is the contribution to the literature?</div>
+<div class="writing-area"></div>
+<div class="rating-row">
+  <span>Rating:</span>
+  <div class="circle">1</div><div class="circle">2</div><div class="circle">3</div><div class="circle">4</div><div class="circle">5</div>
+  <div class="rating-label">&nbsp;(1 = needs work · 5 = excellent)</div>
+</div>
+
+<div class="section-title">2. Identification Strategy</div>
+<div class="section-desc">Is the causal inference method appropriate for the question? What are the key identifying assumptions?</div>
+<div class="writing-area"></div>
+<div class="rating-row">
+  <span>Rating:</span>
+  <div class="circle">1</div><div class="circle">2</div><div class="circle">3</div><div class="circle">4</div><div class="circle">5</div>
+  <div class="rating-label">&nbsp;(1 = needs work · 5 = excellent)</div>
+</div>
+
+<div class="section-title">3. Threats &amp; Limitations</div>
+<div class="section-desc">What are the potential threats to internal or external validity?</div>
+<div class="writing-area"></div>
+<div class="rating-row">
+  <span>Rating:</span>
+  <div class="circle">1</div><div class="circle">2</div><div class="circle">3</div><div class="circle">4</div><div class="circle">5</div>
+  <div class="rating-label">&nbsp;(1 = needs work · 5 = excellent)</div>
+</div>
+
+<!-- ══════════ PAGE 2 ══════════ -->
+
+<div class="page2">
+<div class="page-cont">Peer Feedback Form — continued</div>
+
+<div class="section-title">4. Constructive Suggestion</div>
+<div class="section-desc">Provide one specific, actionable idea to strengthen the research.</div>
+<div class="writing-area"></div>
+
+<hr>
+
+<div class="section-title">Overall Comments</div>
+<div class="section-desc">What did you find most interesting? Any other thoughts?</div>
+<div class="writing-area"></div>
+
+<p class="footer">Experiments and Causal Inference (ISS5096) — National Tsing Hua University — Spring 2026</p>
+</div>
+
+</body>
+</html>
