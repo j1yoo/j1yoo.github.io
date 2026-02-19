@@ -415,12 +415,25 @@ Students will review relevant research papers on each topic and actively engage 
 
 ## Prerequisites
 
-- **Math:** Undergraduate-level probability and statistics; some experience with regression analysis/econometrics is helpful
-- **Programming:** Knowledge of statistical programming (e.g., R and Python)
-- **Recommended prior coursework:**
-  - ISS5077 Business Analytics using Computational Statistics (BACS) — covers hypothesis testing, regression, and applied statistical modeling; ideal preparation for this course.
-  - ECON3033 Econometrics I and ECON3034 Econometrics II — causal inference foundations and regression methodology.
-  - ISS5066 Programming for Business Analytics (PBA) covers regression, statistical inference, and R programming, but students entering with PBA alone should expect a steeper learning curve.
+- **Probability & Statistics:** Undergraduate-level probability and statistics
+  (random variables, distributions, hypothesis testing, confidence intervals)
+- **Regression:** Prior coursework or working knowledge of linear regression
+  (OLS, interpretation of coefficients, standard errors) is strongly recommended.
+  Regression is used extensively from Week 4 onward.
+- **Math:** Comfort with mathematical notation; basic linear algebra
+  (matrix operations) is helpful for following textbook derivations
+- **Programming:** Working knowledge of **R** is expected (our primary
+  language for in-class demos and assignments). Familiarity with `tidyverse`
+  for data wrangling is a plus. Students with only Python or Stata experience
+  should self-study R basics before the semester begins.
+- **Recommended prior coursework:** ISS5077 Business Analytics using
+  Computational Statistics (BACS) provides ideal preparation, covering
+  hypothesis testing, regression, and applied modeling. ISS5066
+  Programming for Business Analytics (PBA) also covers regression,
+  statistical inference, and R programming. For students seeking
+  deeper methodological preparation, ECON3033 Econometrics I and
+  ECON3034 Econometrics II from the Economics Department are
+  recommended.
 
 ## Teaching Team
 
