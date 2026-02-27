@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #B509AC; }
+    .letter { fill: #ffffff; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 38px; }
+    .accent-bar { fill: #d946ef; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #e2e8f0; }
+      .letter { fill: #B509AC; }
+      .accent-bar { fill: #d946ef; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="14"/>
+  <rect class="accent-bar" x="0" y="54" width="64" height="10" rx="0 0 14 14"/>
+  <text class="letter" x="32" y="44" text-anchor="middle">E</text>
+</svg>
