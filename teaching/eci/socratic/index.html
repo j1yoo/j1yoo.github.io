@@ -1,0 +1,239 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>SocratIC (Prototype) | ISS5096 Experiments &amp; Causal Inference</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"> <style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#fafaf8;--surface:#fff;--surface-alt:#f5f3ee;--accent:#9a3412;--accent-light:#fff7ed;--accent-dark:#7c2d12;--accent-mid:#c2410c;--text:#1c1917;--text-muted:#78716c;--text-light:#a8a29e;--border:#e7e5e4;--border-dark:#d6d3d1;--success:#15803d;--success-bg:#f0fdf4;--warning-bg:#fffbeb;--warning-border:#fde68a;--blue:#1d4ed8;--blue-bg:#eff6ff;--blue-border:#bfdbfe;--serif:'Source Serif 4',Georgia,serif;--sans:'DM Sans','Helvetica Neue',sans-serif}body{font-family:var(--sans);background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden;-webkit-font-smoothing:antialiased}button{font-family:var(--sans);cursor:pointer}input,textarea{font-family:var(--sans)}.header{padding:14px 24px;border-bottom:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.header-left{display:flex;align-items:center;gap:12px}.logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;font-family:var(--serif);letter-spacing:-.5px;line-height:1}.header-title{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.4px}.header-title span{color:var(--accent)}.header-sub{font-size:11px;color:var(--text-light);margin-top:-1px;letter-spacing:.2px}.proto-badge{display:inline-block;font-size:9px;font-weight:700;color:var(--accent);background:var(--accent-light);border:1px solid #fdba74;padding:2px 7px;border-radius:5px;margin-left:6px;letter-spacing:.5px;text-transform:uppercase;vertical-align:middle}.tabs{display:flex;background:var(--surface-alt);border-radius:10px;padding:3px}.tab{padding:8px 18px;border-radius:8px;border:0;background:transparent;color:var(--text-muted);font-size:13px;font-weight:500;transition:all .2s;letter-spacing:-.1px}.tab.active{background:var(--surface);box-shadow:0 1px 4px rgba(0,0,0,.07);color:var(--text);font-weight:600}.tab:hover:not(.active){color:var(--text)}.main{flex:1;overflow:hidden;display:flex;flex-direction:column}.content{flex:1;overflow-y:auto;padding:28px 24px}.chat-input-bar{padding:16px 24px;border-top:1px solid var(--border);background:var(--surface);display:flex;gap:10px}.chat-input{flex:1;padding:13px 18px;border:1.5px solid var(--border);border-radius:14px;font-size:14px;outline:0;background:var(--bg);color:var(--text);transition:border-color .2s}.chat-input:focus{border-color:var(--accent)}.chat-send{padding:13px 22px;border-radius:14px;border:0;background:var(--border-dark);color:#fff;font-size:14px;font-weight:600;transition:all .2s}.chat-send.active{background:var(--accent)}.chat-send.active:hover{background:var(--accent-dark)}.msg-row{display:flex;margin-bottom:18px;align-items:flex-start}.msg-row.user{justify-content:flex-end}.msg-avatar{width:34px;height:34px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:2px;margin-right:12px}.msg-bubble{max-width:76%;padding:15px 20px;font-size:14.5px;line-height:1.72;border-radius:6px 20px 20px 20px}.msg-row.user .msg-bubble{border-radius:20px 20px 6px 20px;background:var(--accent);color:#fff}.msg-bubble.question{background:var(--surface);border:1px solid var(--border)}.msg-bubble.thinking{background:var(--surface-alt);border:1px solid transparent;font-style:italic;color:var(--text-muted)}.msg-bubble.hint{background:var(--warning-bg);border:1px solid var(--warning-border)}.msg-bubble.guide{background:var(--blue-bg);border:1px solid var(--blue-border)}.msg-bubble.reference{background:var(--surface-alt);border:1px solid var(--border-dark);font-size:13px}.msg-bubble.feedback{background:var(--success-bg);border:1px solid #bbf7d0}.msg-bubble.encouragement{background:var(--accent-light);border:1px solid #fdba74}.msg-bubble strong{color:var(--accent-dark)}.typing-indicator{padding:13px 20px;border-radius:6px 20px 20px 20px;background:var(--surface);border:1px solid var(--border);font-size:14px;color:var(--text-light)}@keyframes blink{0%,20%{opacity:1}50%{opacity:.3}80%,100%{opacity:1}}.dots::after{content:'...';animation:blink 1.2s infinite}.empty{text-align:center;padding:48px 20px}.empty-icon{font-size:44px;margin-bottom:18px}.empty h3{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px;letter-spacing:-.3px}.empty p{color:var(--text-muted);font-size:14px;line-height:1.72;max-width:460px;margin:0 auto 28px}.empty .accent-text{color:var(--accent);font-style:italic;font-family:var(--serif)}.example-box{background:var(--surface-alt);border-radius:14px;padding:20px 22px;max-width:480px;margin:0 auto;text-align:left}.example-label{font-size:11px;font-weight:700;color:var(--text-muted);margin-bottom:10px;letter-spacing:1px;text-transform:uppercase}
+.example-btn{display:block;width:100%;text-align:left;padding:12px 14px;margin-bottom:8px;border:1px solid var(--border);border-radius:10px;background:var(--surface);font-size:13.5px;color:var(--text);line-height:1.55;transition:all .15s}.example-btn:last-child{margin-bottom:0}.example-btn:hover{border-color:var(--accent);background:var(--accent-light)}.back-btn{background:0;border:0;color:var(--text-muted);font-size:13px;margin-bottom:18px;padding:0}.back-btn:hover{color:var(--text)}.scenario-card{display:block;width:100%;text-align:left;padding:20px 22px;margin-bottom:14px;border:1.5px solid var(--border);border-radius:16px;background:var(--surface);transition:all .2s}.scenario-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 6px 16px rgba(154,52,18,.06)}.topic-badge{background:var(--accent-light);color:var(--accent);padding:4px 11px;border-radius:7px;font-size:11.5px;font-weight:700;display:inline-block;letter-spacing:.3px}.difficulty{color:var(--text-light);font-size:11.5px;margin-left:8px}.completed-badge{color:var(--success);font-size:12px;margin-left:8px;font-weight:600}.scenario-title{font-size:15.5px;font-weight:600;margin-top:8px;letter-spacing:-.2px}.scenario-box{background:var(--surface-alt);border-radius:14px;padding:20px 22px;margin-bottom:22px}.scenario-box p{font-size:13.5px;line-height:1.78;white-space:pre-line}.progress-bar{display:flex;gap:6px;margin-bottom:22px}.progress-seg{flex:1;height:4px;border-radius:2px;background:var(--border);transition:background .3s}.progress-seg.done{background:var(--success)}.progress-seg.current{background:var(--accent)}.question-text{font-size:15px;font-weight:600;line-height:1.6;margin-bottom:16px;letter-spacing:-.15px}.option-btn{display:block;width:100%;text-align:left;padding:13px 18px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;color:var(--text);margin-bottom:8px;transition:all .15s;line-height:1.5}.option-btn:hover:not(:disabled){border-color:var(--accent)}.option-btn.selected{border-color:var(--accent);background:var(--accent-light)}.option-btn.correct{border-color:var(--success);background:var(--success-bg)}.option-btn.wrong{border-color:#ef4444;background:#fef2f2}.open-textarea{width:100%;min-height:110px;padding:14px 18px;border-radius:14px;border:1.5px solid var(--border);font-size:14px;line-height:1.65;outline:0;resize:vertical;background:var(--bg);color:var(--text)}.open-textarea:focus{border-color:var(--accent)}.hint-btn{background:0;border:0;color:var(--accent);font-size:13px;margin-top:10px;padding:0;font-weight:500}.hint-box{margin-top:10px;padding:14px 18px;background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:12px;font-size:13.5px;color:var(--accent-dark);line-height:1.65}.feedback-box{padding:18px 20px;border-radius:14px;background:var(--success-bg);border:1px solid #bbf7d0;margin-bottom:16px;font-size:14px;line-height:1.72}.feedback-label{font-weight:700;margin-bottom:8px;color:var(--success);font-size:13px;text-transform:uppercase;letter-spacing:.5px}.keypoint{display:inline-block;padding:5px 12px;margin:0 6px 8px 0;border-radius:8px;font-size:12.5px;font-weight:600}.keypoint.hit{background:#dcfce7;color:var(--success);border:1px solid #bbf7d0}.keypoint.miss{background:#fef3c7;color:var(--accent);border:1px solid var(--warning-border)}.reference-box{padding:14px 18px;border-radius:12px;background:var(--surface-alt);border:1px solid var(--border-dark);margin-bottom:16px;font-size:13px;color:var(--text-muted);line-height:1.65}.action-btn{flex:1;padding:14px;border-radius:14px;border:0;background:var(--border-dark);color:#fff;font-size:14px;font-weight:600;transition:all .2s;letter-spacing:-.1px}.action-btn.active{background:var(--accent);cursor:pointer}.action-btn.active:hover{background:var(--accent-dark)}.practice-header h3{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:4px;letter-spacing:-.3px}.practice-header p{color:var(--text-muted);font-size:13.5px;margin-bottom:28px}.footer{padding:10px 24px;border-top:1px solid var(--border);background:var(--surface);text-align:center;font-size:11px;color:var(--text-light);flex-shrink:0;letter-spacing:.1px}.footer a{color:var(--accent);text-decoration:none}.footer a:hover{text-decoration:underline}@media(max-width:640px){.header{padding:12px 16px;flex-wrap:wrap;gap:10px}.tabs{width:100%;justify-content:center}.tab{padding:7px 14px;font-size:12px}.content{padding:20px 16px}.chat-input-bar{padding:12px 16px}.msg-bubble{max-width:88%;padding:12px 16px;font-size:13.5px}.empty{padding:32px 16px}}</style> </head> <body> <header class="header"> <div class="header-left"> <div class="logo">S</div> <div> <div class="header-title">Socrat<span>IC</span> <span class="proto-badge">PROTOTYPE</span> </div> <div class="header-sub">ISS5096 · Experiments &amp; Causal Inference</div> </div> </div> <div class="tabs"> <button class="tab active" onclick="switchTab('chat')">Socratic Chat</button> <button class="tab" onclick="switchTab('practice')">Practice</button> </div> </header> <div class="main"> <div id="tab-chat" class="main" style="display:flex;flex-direction:column"> <div class="content" id="chatContent"> <div class="empty" id="emptyState"> <div class="empty-icon">🏛️</div> <h3>Welcome to SocratIC</h3> <p>I won't just give you answers. Instead, I'll guide you through <span class="accent-text">questions that help you discover the logic yourself</span> — just like Socrates would.</p> <div class="example-box"> <div class="example-label">Choose a topic to explore</div> <button class="example-btn" onclick="startFlow(0)">🎯 <strong>Randomized Experiments</strong><br>Why is random assignment the gold standard?</button> <button class="example-btn" onclick="startFlow(1)">🔄 <strong>Selection Bias</strong><br>What happens when treatment isn't random?</button> <button class="example-btn" onclick="startFlow(2)">📊 <strong>Difference-in-Differences</strong><br>How can we use panel data for causal claims?</button> <button class="example-btn" onclick="startFlow(3)">🎲 <strong>Instrumental Variables</strong><br>When can a 'trick' solve endogeneity?</button> <button class="example-btn" onclick="startFlow(4)">📈 <strong>Regression Discontinuity</strong><br>How do cutoffs create natural experiments?</button> </div> </div> </div> <div class="chat-input-bar"> <input type="text" class="chat-input" id="chatInput" placeholder="Type your answer or reasoning..." onkeydown="if(event.key==='Enter')sendMessage()" disabled> <button class="chat-send" id="sendBtn" onclick="sendMessage()">Send</button> </div> </div> <div id="tab-practice" style="display:none;flex:1;overflow-y:auto;padding:28px 24px"> <div id="practiceContent"></div> </div> </div> <footer class="footer"> SocratIC (Prototype) · <a href="/teaching/eci/">ISS5096 Course Page</a> · National Tsing Hua University </footer> <script>
+/* ── Tab switching ── */
+function switchTab(t){document.querySelectorAll('.tab').forEach(function(b,i){b.classList.toggle('active',i===(t==='chat'?0:1))});document.getElementById('tab-chat').style.display=t==='chat'?'flex':'none';document.getElementById('tab-practice').style.display=t==='practice'?'block':'none';if(t==='practice')renderPracticeHome()}
+
+/* ── Socratic Flows ── */
+var socraticFlows=[
+{topic:'Randomized Experiments',steps:[
+{type:'question',text:"Imagine you want to test whether a new drug lowers blood pressure. You give the drug to volunteers who ask for it. After a month, the drug group has lower blood pressure. Can you confidently say the drug worked? Why or why not?"},
+{type:'thinking',text:"Think about who chooses to take the drug. Are they the same as those who don't?"},
+{type:'hint',text:"Consider: People who volunteer might already be healthier, more health-conscious, or different in ways that affect blood pressure."},
+{type:'guide',text:"This is the fundamental problem of **selection bias**. When people self-select into treatment, we can't separate the drug's effect from the pre-existing differences between groups."},
+{type:'question',text:"Now suppose you randomly assign people to drug vs. placebo groups. Why does this help solve the problem we just identified?"},
+{type:'thinking',text:"What does randomization do to those pre-existing differences between groups?"},
+{type:'guide',text:"Random assignment makes the two groups **comparable in expectation** — both observed and unobserved characteristics are balanced. This is why we call RCTs the 'gold standard' for causal inference."},
+{type:'question',text:"A company runs an A/B test: randomly showing users either a new checkout flow or the old one. 2% of users in the new flow group complete a purchase vs. 1.5% in control. The PM says 'the new flow caused a 0.5pp increase in conversion.' Do you agree? What assumptions must hold?"},
+{type:'guide',text:"Key assumptions: (1) **SUTVA** — one user's assignment doesn't affect others. (2) **No attrition bias** — users don't differentially drop out. (3) **Compliance** — users actually see their assigned flow. In digital experiments, network effects can violate SUTVA if users interact."},
+{type:'reference',text:"📚 Key readings: Rubin (1974) on the potential outcomes framework, Fisher (1935) on randomization inference, List et al. (2011) on field experiments in economics."}
+]},
+{topic:'Selection Bias',steps:[
+{type:'question',text:"A study finds that hospital patients who receive a certain surgery have higher mortality than those who don't. A journalist writes: 'Surgery kills patients.' What's wrong with this conclusion?"},
+{type:'thinking',text:"Who gets surgery? Are they comparable to those who don't?"},
+{type:'hint',text:"Patients who receive surgery are typically sicker to begin with — that's WHY they need surgery."},
+{type:'guide',text:"This is **selection bias** (or confounding). The treatment group (surgery) and control group (no surgery) differ systematically. Sicker patients → more likely to get surgery AND more likely to die. The surgery might actually help, but the raw comparison is misleading."},
+{type:'question',text:"How would you formally express this using the potential outcomes framework? Think about E[Y₁|D=1] vs E[Y₁|D=0]."},
+{type:'guide',text:"The observed difference = **ATT + Selection Bias**.\nE[Y|D=1] - E[Y|D=0] = E[Y₁-Y₀|D=1] + {E[Y₀|D=1] - E[Y₀|D=0]}\nThe second term is selection bias — it captures how the treated group would have fared even WITHOUT treatment compared to the control group."},
+{type:'question',text:"Name three strategies researchers use to address selection bias when randomization isn't possible."},
+{type:'guide',text:"Common strategies: (1) **Matching/propensity scores** — make groups comparable on observables. (2) **Instrumental variables** — find exogenous variation in treatment. (3) **Difference-in-differences** — control for fixed unobservables with panel data. (4) **Regression discontinuity** — exploit arbitrary cutoffs. Each has different assumptions about what's driving selection."},
+{type:'reference',text:"📚 Heckman (1979) on sample selection, Angrist & Pischke (2009) 'Mostly Harmless Econometrics' Ch. 3, Rosenbaum & Rubin (1983) on propensity scores."}
+]},
+{topic:'Difference-in-Differences',steps:[
+{type:'question',text:"Card and Krueger (1994) studied the effect of a minimum wage increase in New Jersey on employment. They compared NJ fast-food restaurants to neighboring Pennsylvania restaurants, before and after the increase. Why compare two states instead of just looking at NJ over time?"},
+{type:'thinking',text:"What else might change in NJ at the same time as the minimum wage increase?"},
+{type:'hint',text:"If the economy was improving in NJ, employment might rise even without the wage change. You need a counterfactual for what would have happened in NJ without the policy."},
+{type:'guide',text:"Just comparing NJ before/after confounds the policy effect with **time trends**. PA serves as a control group that captures common trends (economic conditions, seasonal patterns). The DiD estimate removes both time-invariant state differences and common time trends."},
+{type:'question',text:"What is the key identifying assumption of DiD? Can you think of a scenario where it would be violated in the Card & Krueger setting?"},
+{type:'thinking',text:"The assumption is about trends, not levels. The two groups don't need to be identical..."},
+{type:'guide',text:"The **parallel trends assumption**: absent treatment, NJ and PA would have followed the same employment trend. Violation example: if NJ was experiencing a localized tech boom attracting workers while PA wasn't, employment trends would diverge regardless of minimum wage."},
+{type:'question',text:"How would you test (or at least provide evidence for) the parallel trends assumption?"},
+{type:'guide',text:"Common approaches: (1) **Pre-treatment trend plots** — show that outcomes moved in parallel before the policy. (2) **Placebo tests** — run DiD on periods before the actual treatment. (3) **Event study design** — estimate dynamic treatment effects and check that pre-treatment coefficients are near zero. None can prove the assumption, but violations would cast doubt."},
+{type:'reference',text:"📚 Card & Krueger (1994), Angrist & Pischke (2009) Ch. 5, Roth et al. (2023) 'What's Trending in Difference-in-Differences?'"}
+]},
+{topic:'Instrumental Variables',steps:[
+{type:'question',text:"Suppose you want to estimate the causal effect of education on earnings. Why can't you just regress earnings on years of schooling?"},
+{type:'thinking',text:"What else correlates with both education and earnings?"},
+{type:'hint',text:"Think about ability, motivation, family background — things that drive both education choices and labor market success."},
+{type:'guide',text:"Years of schooling is **endogenous** — it correlates with unobserved factors (ability, motivation) that also affect earnings. OLS gives a biased estimate because it captures both the causal effect of education AND the 'return' to these unobserved factors."},
+{type:'question',text:"Angrist & Krueger (1991) used quarter of birth as an instrument for education. The logic: students born earlier in the year can legally drop out with less schooling due to compulsory schooling laws. What two conditions must this instrument satisfy?"},
+{type:'guide',text:"(1) **Relevance**: Quarter of birth must predict years of education (it does — those born in Q1 can drop out earlier). (2) **Exclusion restriction**: Quarter of birth affects earnings ONLY through education, not directly. This is the controversial part — does birth quarter correlate with anything else that matters?"},
+{type:'question',text:"Some critics argue quarter of birth violates the exclusion restriction. Can you think of reasons why birth quarter might affect earnings through channels OTHER than education?"},
+{type:'guide',text:"Potential violations: (1) **Age effects** — students born in different quarters start school at different ages, affecting maturity and development. (2) **Family background** — birth timing may correlate with family planning and socioeconomic status. (3) **Seasonal health effects**. Bound, Jaeger & Baker (1995) raised these concerns, sparking a major debate about IV validity."},
+{type:'reference',text:"📚 Angrist & Krueger (1991), Bound, Jaeger & Baker (1995), Angrist & Pischke (2009) Ch. 4 on IV methods."}
+]},
+{topic:'Regression Discontinuity',steps:[
+{type:'question',text:"A university admits students with entrance exam scores ≥ 80 and rejects those below 80. A researcher compares outcomes of students scoring 79 vs 81. Why might this comparison give us a good causal estimate of the effect of attending this university?"},
+{type:'thinking',text:"How different are students who score 79 from those who score 81?"},
+{type:'hint',text:"A student scoring 79 vs 81 is largely a matter of luck on test day. These students are nearly identical in ability, motivation, etc."},
+{type:'guide',text:"Near the cutoff, whether a student is admitted is **as good as random** — determined by tiny, essentially random variation in test performance. Students just above and below are nearly identical on all characteristics, creating a **local randomized experiment** around the threshold."},
+{type:'question',text:"What's the difference between a 'sharp' and 'fuzzy' RD design? Which is more common in practice and why?"},
+{type:'guide',text:"**Sharp RD**: Treatment probability jumps from 0 to 1 at the cutoff (perfect compliance). **Fuzzy RD**: Treatment probability jumps but not from 0 to 1 (some below get treated, some above don't). Fuzzy is more common because real-world cutoffs rarely determine treatment perfectly — think of scholarship eligibility where some decline the scholarship."},
+{type:'question',text:"A politician uses an RD study showing positive returns to college admission for students near the cutoff to argue for expanding university enrollment by 50%. Is this valid? What's the limitation?"},
+{type:'guide',text:"This is the **external validity** problem of RD. The causal estimate is LOCAL — it applies to students near the cutoff (marginal students). Students far from the cutoff may respond very differently. Expanding enrollment would include students well below the cutoff, for whom the treatment effect could be very different. RD trades internal validity for limited external validity."},
+{type:'reference',text:"📚 Thistlethwaite & Campbell (1960), Lee & Lemieux (2010), Cattaneo, Idrobo & Titiunik (2019) 'A Practical Introduction to RD Designs'."}
+]}
+];
+
+var currentFlow=null,currentStep=0,waitingForUser=false,chatHistory=[];
+
+function startFlow(i){
+currentFlow=i;currentStep=0;waitingForUser=false;chatHistory=[];
+var el=document.getElementById('emptyState');if(el)el.style.display='none';
+document.getElementById('chatContent').innerHTML='';
+appendMsg('bot','guide','Let\'s explore: <strong>'+socraticFlows[i].topic+'</strong>. I\'ll guide you through a series of questions. Take your time thinking before you respond.');
+setTimeout(function(){showBotMessages()},800);
+document.getElementById('chatInput').disabled=false;
+}
+
+function appendMsg(sender,type,html){
+var cont=document.getElementById('chatContent');
+var row=document.createElement('div');
+row.className='msg-row'+(sender==='user'?' user':'');
+if(sender==='bot'){
+var av=document.createElement('div');av.className='msg-avatar';av.textContent='S';row.appendChild(av);
+}
+var bub=document.createElement('div');bub.className='msg-bubble'+(type?' '+type:'');
+bub.innerHTML=html;row.appendChild(bub);cont.appendChild(row);cont.scrollTop=cont.scrollHeight;
+}
+
+function showBotMessages(){
+if(!currentFlow&&currentFlow!==0)return;
+var flow=socraticFlows[currentFlow];
+if(currentStep>=flow.steps.length){
+appendMsg('bot','encouragement','Excellent work! You\'ve completed the <strong>'+flow.topic+'</strong> dialogue. Go back and try another topic, or head to the Practice tab to test yourself with scenarios.');
+document.getElementById('chatInput').disabled=true;
+waitingForUser=false;return;
+}
+var step=flow.steps[currentStep];
+if(step.type==='question'){
+appendMsg('bot','question',step.text);currentStep++;waitingForUser=true;
+document.getElementById('chatInput').disabled=false;
+document.getElementById('chatInput').placeholder='Type your answer or reasoning...';
+document.getElementById('chatInput').focus();
+updateSendBtn();return;
+}
+appendMsg('bot',step.type,step.text);currentStep++;
+setTimeout(function(){showBotMessages()},900);
+}
+
+function sendMessage(){
+var input=document.getElementById('chatInput');
+var text=input.value.trim();if(!text||!waitingForUser)return;
+appendMsg('user','',text);input.value='';waitingForUser=false;
+input.disabled=true;updateSendBtn();
+var typing=document.createElement('div');typing.className='msg-row';typing.id='typing';
+typing.innerHTML='<div class="msg-avatar">S</div><div class="typing-indicator"><span class="dots">Thinking</span></div>';
+document.getElementById('chatContent').appendChild(typing);
+document.getElementById('chatContent').scrollTop=document.getElementById('chatContent').scrollHeight;
+setTimeout(function(){var t=document.getElementById('typing');if(t)t.remove();showBotMessages()},1200);
+}
+
+function updateSendBtn(){
+var btn=document.getElementById('sendBtn');
+var input=document.getElementById('chatInput');
+if(input.value.trim()&&waitingForUser){btn.classList.add('active')}else{btn.classList.remove('active')}
+}
+document.addEventListener('DOMContentLoaded',function(){
+var input=document.getElementById('chatInput');
+if(input)input.addEventListener('input',updateSendBtn);
+});
+
+/* ── Practice Scenarios ── */
+var scenarios=[
+{id:'oregon',topic:'RCT',difficulty:'Intermediate',title:'The Oregon Health Insurance Experiment',description:'In 2008, Oregon expanded Medicaid through a lottery. About 90,000 people signed up but only 30,000 were randomly selected. Researchers studied the effects on health outcomes, healthcare utilization, and financial strain.',
+questions:[
+{q:'This study is often called a "natural experiment." Why is the lottery mechanism so valuable for causal inference?',type:'open',keyPoints:['random assignment','eliminates selection bias','comparable groups','lottery as randomization device'],hint:'Think about what makes RCTs the gold standard and how this lottery mimics that.',reference:'Finkelstein et al. (2012) — "The Oregon Health Insurance Experiment: Evidence from the First Year"'},
+{q:'The study found Medicaid increased ER usage by about 40%. Some argued this means Medicaid "wastes money." Evaluate this claim.',type:'open',keyPoints:['access vs efficiency','previously unmet needs','preventive care takes time','welfare vs cost'],hint:'Consider why someone without insurance might not have been going to the ER before, and what "increased usage" actually means.'},
+{q:'Only about 25% of lottery winners actually enrolled in Medicaid. This creates a compliance problem. What estimation approach handles this?',type:'mc',options:['OLS regression','Instrumental Variables (IV) / LATE','Propensity Score Matching','Simple difference in means'],correct:1,explanation:'The lottery (random assignment) serves as an instrument for actual Medicaid enrollment. IV estimates the Local Average Treatment Effect (LATE) for compliers — those whose enrollment was affected by winning the lottery.'}
+]},
+{id:'microfinance',topic:'RCT',difficulty:'Advanced',title:'Microfinance RCTs Across Six Countries',description:'Banerjee et al. (2015) coordinated six randomized evaluations of microcredit programs across Bosnia, Ethiopia, India, Mexico, Mongolia, and Morocco. Despite high hopes, the results were surprisingly consistent across contexts.',
+questions:[
+{q:'The studies found modest increases in business investment but no significant effects on average household income. How is this possible? What does it tell us about treatment effect heterogeneity?',type:'open',keyPoints:['heterogeneous effects','average masks variation','some benefit some dont','existing entrepreneurs vs new'],hint:'Think about who actually uses the loans for business vs. consumption, and what averaging over everyone does.'},
+{q:'A policymaker says: "These RCTs prove microfinance doesn\'t work." Do you agree with this interpretation?',type:'open',keyPoints:['null average doesnt mean no effect','external validity','LATE vs ATE','welfare beyond income'],hint:'Consider what "doesn\'t work" means. No average effect ≠ no effect for anyone. Also consider what outcomes were measured.'},
+{q:'What is the key advantage of running similar experiments across six different countries simultaneously?',type:'mc',options:['It increases the sample size','It allows meta-analysis and tests external validity','It reduces the cost per experiment','It eliminates all forms of bias'],correct:1,explanation:'Running parallel experiments tests whether findings generalize across contexts (external validity). Consistent null results across diverse settings are much more convincing than a single null result, which might be context-specific.'}
+]},
+{id:'minimum_wage',topic:'DiD',difficulty:'Intermediate',title:'Card & Krueger: Minimum Wage and Employment',description:'In 1992, New Jersey raised its minimum wage from $4.25 to $5.05 while neighboring Pennsylvania did not. Card and Krueger surveyed fast-food restaurants in both states before and after the increase.',
+questions:[
+{q:'Why did Card and Krueger focus on fast-food restaurants specifically? What makes this sector ideal for studying minimum wage effects?',type:'open',keyPoints:['high proportion of minimum wage workers','standardized jobs','clear treatment group','easy to measure employment'],hint:'Think about which industries employ the most minimum-wage workers and where employment changes would be most visible.'},
+{q:'The parallel trends assumption requires that NJ and PA employment would have followed the same trend absent the policy. Name one factor that could violate this.',type:'open',keyPoints:['differential economic shocks','industry composition','migration patterns','local demand shifts'],hint:'Think about what could cause employment to move differently in the two states even without the minimum wage change.'},
+{q:'Card and Krueger found no significant decrease in employment — contradicting classical theory. Which explanation is most consistent with their findings?',type:'mc',options:['The study had too small a sample to detect effects','Monopsony power in the labor market','Restaurants must have been breaking the law','Random measurement error cancelled out the true effect'],correct:1,explanation:'Under monopsony (employer has wage-setting power), a moderate minimum wage increase can actually increase employment by moving closer to the competitive equilibrium. This challenges the simple supply-and-demand prediction.'}
+]}
+];
+
+var currentScenario=null,currentQ=0,answered=false,practiceCompleted={};
+
+function renderPracticeHome(){
+var c=document.getElementById('practiceContent');
+var html='<div class="practice-header"><h3>Practice Scenarios</h3><p>Work through real research scenarios. Answer questions, get feedback, and deepen your understanding.</p></div>';
+scenarios.forEach(function(s,i){
+var done=practiceCompleted[s.id]?'<span class="completed-badge">✓ Completed</span>':'';
+html+='<button class="scenario-card" onclick="startScenario('+i+')">'
++'<span class="topic-badge">'+s.topic+'</span><span class="difficulty">'+s.difficulty+'</span>'+done
++'<div class="scenario-title">'+s.title+'</div></button>';
+});
+c.innerHTML=html;
+}
+
+function startScenario(i){
+currentScenario=i;currentQ=0;answered=false;renderQuestion();
+}
+
+function renderQuestion(){
+var s=scenarios[currentScenario];var q=s.questions[currentQ];var c=document.getElementById('practiceContent');
+var html='<button class="back-btn" onclick="renderPracticeHome()">← Back to scenarios</button>';
+html+='<div class="scenario-box"><strong>'+s.title+'</strong><p>'+s.description+'</p></div>';
+html+='<div class="progress-bar">';
+for(var j=0;j<s.questions.length;j++){
+var cls=j<currentQ?'done':j===currentQ?'current':'';
+html+='<div class="progress-seg '+cls+'"></div>';
+}
+html+='</div>';
+html+='<div class="question-text">Q'+(currentQ+1)+': '+q.q+'</div>';
+if(q.type==='mc'){
+q.options.forEach(function(o,idx){
+html+='<button class="option-btn" id="opt'+idx+'" onclick="selectOption('+idx+')">'+String.fromCharCode(65+idx)+'. '+o+'</button>';
+});
+}else{
+html+='<textarea class="open-textarea" id="openAnswer" placeholder="Write your reasoning here..."></textarea>';
+html+='<button class="hint-btn" onclick="showHint()">💡 Need a hint?</button>';
+html+='<div class="hint-box" id="hintBox" style="display:none">'+q.hint+'</div>';
+html+='<div style="display:flex;gap:10px;margin-top:14px"><button class="action-btn active" onclick="submitOpen()">Submit Answer</button></div>';
+}
+html+='<div id="feedbackArea"></div>';
+c.innerHTML=html;
+}
+
+function selectOption(idx){
+if(answered)return;answered=true;
+var q=scenarios[currentScenario].questions[currentQ];
+document.querySelectorAll('.option-btn').forEach(function(b){b.disabled=true});
+document.getElementById('opt'+q.correct).classList.add('correct');
+if(idx!==q.correct)document.getElementById('opt'+idx).classList.add('wrong');
+var fb='<div class="feedback-box"><div class="feedback-label">'+(idx===q.correct?'✓ Correct':'✗ Not quite')+'</div>'+q.explanation+'</div>';
+if(q.reference)fb+='<div class="reference-box">'+q.reference+'</div>';
+fb+='<div style="display:flex;gap:10px"><button class="action-btn active" onclick="nextQuestion()">'+((currentQ<scenarios[currentScenario].questions.length-1)?'Next Question →':'Finish Scenario')+'</button></div>';
+document.getElementById('feedbackArea').innerHTML=fb;
+}
+
+function submitOpen(){
+if(answered)return;
+var ta=document.getElementById('openAnswer');if(!ta||!ta.value.trim())return;
+answered=true;
+var q=scenarios[currentScenario].questions[currentQ];
+var answer=ta.value.toLowerCase();
+var hits=[],misses=[];
+q.keyPoints.forEach(function(kp){
+var words=kp.toLowerCase().split(' ');
+var found=words.some(function(w){return w.length>3&&answer.indexOf(w)!==-1});
+if(found)hits.push(kp);else misses.push(kp);
+});
+var fb='<div class="feedback-box"><div class="feedback-label">Key Points Analysis</div>';
+fb+='<div style="margin-bottom:8px">';
+hits.forEach(function(h){fb+='<span class="keypoint hit">✓ '+h+'</span>'});
+misses.forEach(function(m){fb+='<span class="keypoint miss">○ '+m+'</span>'});
+fb+='</div>';
+if(misses.length>0)fb+='<p style="font-size:13px;margin-top:8px">Consider also: '+misses.join(', ')+'.</p>';
+fb+='</div>';
+if(q.reference)fb+='<div class="reference-box">'+q.reference+'</div>';
+fb+='<div style="display:flex;gap:10px"><button class="action-btn active" onclick="nextQuestion()">'+((currentQ<scenarios[currentScenario].questions.length-1)?'Next Question →':'Finish Scenario')+'</button></div>';
+document.getElementById('feedbackArea').innerHTML=fb;
+}
+
+function showHint(){var h=document.getElementById('hintBox');if(h)h.style.display='block'}
+
+function nextQuestion(){
+var s=scenarios[currentScenario];
+if(currentQ<s.questions.length-1){currentQ++;answered=false;renderQuestion()}
+else{practiceCompleted[s.id]=true;renderPracticeHome()}
+}
+</script> </body> </html>
