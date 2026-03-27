@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
+description: GitHub repositories and open-source projects by Jaewon Yoo, including teaching materials and research code.
 nav: true
 nav_order: 4
 ---

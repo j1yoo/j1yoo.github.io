@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Research and applied projects by Jaewon Yoo, spanning causal inference, business analytics, and information systems.
 nav: true
 nav_order: 3
 display_categories: [work, fun]

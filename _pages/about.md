@@ -3,6 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: #<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+description: Jaewon Yoo is an Assistant Professor at NTHU's Institute of Service Science, researching causal inference and the socioeconomic impacts of emerging technologies.
 
 profile:
   align: right

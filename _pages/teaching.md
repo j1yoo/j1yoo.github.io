@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Courses taught by Jaewon Yoo at NTHU: programming for business analytics and causal inference using experimental and observational data.
 nav: true
 nav_order: 6
 ---
