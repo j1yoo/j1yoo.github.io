@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-blog",
           title: "blog",
-          description: "",
+          description: "Articles and notes by Jaewon Yoo on causal inference, data science, and academic life.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
@@ -22,13 +22,6 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
-          },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
           },
         },{id: "nav-talks",
           title: "talks",
@@ -46,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "",
+          description: "Academic CV of Jaewon Yoo: education, publications, research experience, and professional activities.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
