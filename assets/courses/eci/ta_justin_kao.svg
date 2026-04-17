@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <circle cx="90" cy="90" r="90" fill="#6c757d"/>
+  <text x="90" y="90" text-anchor="middle" dominant-baseline="central"
+        font-family="'Fira Sans', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="600" font-size="72" fill="#ffffff">JK</text>
+</svg>
