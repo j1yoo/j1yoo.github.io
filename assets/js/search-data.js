@@ -199,6 +199,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "gallery_events-2025-best-master-39-s-thesis-award",
+          title: '2025 Best Master&amp;#39;s Thesis Award',
+          description: "Zhan-Yi Liao (M.S., NYCU; co-advised with Po-An Chen) recognized by the Algorithms and Computation Theory Society of Taiwan, presented at CMCT 2026.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/zhanyi-2025-cmct/";
             },},{id: "news-scholarly-speech-interdisciplinary-research-in-marketing-amp-amp-innovation-at-the-institute-of-service-science-national-tsing-hua-university-nthu",
           title: 'Scholarly speech: Interdisciplinary Research in Marketing &amp;amp;amp; Innovation at the Institute of Service...',
           description: "",
