@@ -135,5 +135,11 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-F2Y4X86JTT');
-  </script> </body> </html>
+    gtag('config', 'G-F2Y4X86JTT', {
+      cookie_domain: 'auto',
+      cookie_flags: 'SameSite=None;Secure',
+      linker: {
+        domains: ['j1yoo.github.io', 'cadi-lab.github.io']
+      }
+    });
+  </script> <script defer src="/assets/js/enhanced-tracking.js"></script> </body> </html>
