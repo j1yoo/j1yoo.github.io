@@ -1,3 +1,11 @@
+# === Incoming PhD (Fall 2026) — shown in 2026-current with a "Note:" line (Zhan-Yi style). ===
+- name: "Anh (Mint) Tran"   # full: Tran Pham Tuan Anh; goes by "Anh", Gmail handle "Mint". Admitted May 2026, starts Aug 2026. Prior: lecturer, Tra Vinh University (Vietnam)
+  year: 2026-current
+  info: "Institute of Service Science, National Tsing Hua University (NTHU)"
+  degree: "PhD"
+  status: "Incoming"
+  note: "Incoming PhD student, joining Fall 2026"
+
 - name: Daniel Vinicio Gonzalez de Leon
   year: 2021-23
   info: "iMBA, National Tsing Hua University (NTHU)"

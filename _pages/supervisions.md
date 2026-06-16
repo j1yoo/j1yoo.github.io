@@ -12,19 +12,6 @@ nav_order: 8
 
 <div class="publications">
 {%- assign students_by_year = site.data.supervision | group_by: 'year' | sort: 'name' | reverse -%}
-{%- assign has_photos = false -%}
-{%- for year_group in students_by_year -%}
-  {%- for student in year_group.items -%}
-    {%- if student.photo -%}
-      {%- assign has_photos = true -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
-  {%- if has_photos -%}
-    {%- break -%}
-  {%- endif -%}
-{%- endfor -%}
-
 {%- for year_group in students_by_year -%}
   <h2 class="year">{{ year_group.name }}</h2>
   {%- for student in year_group.items -%}
