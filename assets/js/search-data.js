@@ -331,6 +331,13 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=6vinVNUAAAAJ", "_blank");
         },
       },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0003-1582-0020", "_blank");
+        },
+      },{
         id: 'social-researchgate',
         title: 'ResearchGate',
         section: 'Socials',
