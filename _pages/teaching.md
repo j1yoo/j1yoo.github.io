@@ -97,6 +97,18 @@ nav_order: 6
     <div class="carousel-item">
       <img src="/assets/img/teaching_photos/PXL_20241219_083528513.jpg" class="d-block w-100" alt="Class Photo" style="max-height: 600px; object-fit: contain; background: #333;">
     </div>
+    <div class="carousel-item">
+      <img src="/assets/img/teaching_photos/IMG_7110.jpg" class="d-block w-100" alt="Class Photo" style="max-height: 600px; object-fit: contain; background: #333;">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/img/teaching_photos/IMG_7114.jpg" class="d-block w-100" alt="Class Photo" style="max-height: 600px; object-fit: contain; background: #333;">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/img/teaching_photos/IMG_7412.jpg" class="d-block w-100" alt="Class Photo" style="max-height: 600px; object-fit: contain; background: #333;">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/img/teaching_photos/IMG_7419.jpg" class="d-block w-100" alt="Class Photo" style="max-height: 600px; object-fit: contain; background: #333;">
+    </div>
   </div>
 
   <a class="carousel-control-prev" href="#teachingPhotoCarousel" role="button" data-slide="prev">
