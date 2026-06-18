@@ -337,13 +337,27 @@ assignments_content: |
   | Final project report | Week 15 | Submit final version of the paper |
   | Final presentation | Week 16 | In-class group presentation |
 
-  ### Structured Peer Feedback
+  ### Replication Package
 
-  Final presentations are accompanied by structured peer feedback. After each presentation, every student completes a feedback form covering four areas: **Research Question**, **Identification Strategy**, **Threats & Limitations**, and a **Constructive Suggestion**. Each area includes space for written comments and a 1–5 rating.
+  Each final project must be accompanied by a **replication package**: a public GitHub repository containing the materials behind the paper (code, data, and outputs), so that the results can be reproduced. Beyond being standard practice in empirical research, it is a portfolio piece you can show prospective employers or graduate programs.
 
-  → [Open Printable Feedback Form](/assets/courses/eci/ECI_Peer_Feedback_Form.html){:target="_blank"}
+  **Repository.** Each group creates one public repository (e.g., `lastname-eci-final`), organized for clarity. For example:
 
-  Feedback forms are shared with presenters to support their final revisions. The **quality and thoughtfulness** of your feedback (not the scores you give) contributes to your **Participation** grade. Presenter grades are determined by the instructor independently.
+  ```
+  <lastname>-eci-final/
+  ├── README.md            # how to reproduce, data availability
+  ├── code/                # R scripts in run order (e.g., 01_clean.R → 02_analysis.R → 03_figures.R)
+  ├── data/                # raw and/or cleaned data (see Data availability)
+  ├── output/              # figures and tables
+  ├── paper/               # final report (PDF)
+  └── LICENSE
+  ```
+
+  **README.** The repository includes a short README documenting how to reproduce the analysis: a one-line project summary; which scripts to run, and in what order; the R version and key packages used (`sessionInfo()` is a convenient record); a Data Availability statement (below); and a brief note on AI use, per the course AI Use Policy.
+
+  **Data availability.** Data should be included whenever possible so that results can be reproduced. When raw data cannot be shared (e.g., NDA, license, or privacy/personally identifiable information), it is omitted, and the README instead (1) documents what the data is, its source, and how it may be obtained, and (2) includes the non-sensitive derived or aggregated data behind the figures and tables, with a small sample where feasible, so that as much of the code as possible still runs. Personal or identifying data, non-redistributable licensed data, and credentials must never be committed.
+
+  **Submission.** Submit the repository link via [MS Teams](https://teams.microsoft.com/l/team/19%3AJP2R-tTEDQeUB1xDpd33-nu4Qo21bv_c8NkSr5XxMaM1%40thread.tacv2/conversations?groupId=b48faca7-6855-4284-b7ef-b9ba){:target="_blank"} by the final report deadline. (Submissions are made through Teams while Canvas is unavailable.) A repository kept private for data sensitivity should give the instructor and TA access for grading (on GitHub, via *Settings → Collaborators*).
 
   ---
 
@@ -380,6 +394,14 @@ assignments_content: |
   5. **Extensions**: After the current paper, what could be done next in this general area?
 
   You may also discuss: one-sentence conclusion, institutional background, conceptual framework, or relevant literature. Submit as PDF via Teams.
+
+  ### Peer Evaluation Form
+
+  For each paper presentation, you complete a structured feedback form covering four areas: **Research Question**, **Identification Strategy**, **Threats & Limitations**, and a **Constructive Suggestion**. Each area has space for written comments and a 1–5 rating.
+
+  → [Open Printable Feedback Form](/assets/courses/eci/ECI_Peer_Feedback_Form.html){:target="_blank"}
+
+  Completed forms are shared with the presenter. What counts toward your **Participation** grade is the **quality and thoughtfulness** of your evaluation, not the scores you give. Presenters are graded by the instructor, not by peers' ratings.
 
   ### Reading Assignments by Topic
 
