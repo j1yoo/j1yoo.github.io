@@ -37,6 +37,11 @@ nav_order: 7
             <em>Note: <span {% if talk.highlight_note %}style="color: var(--global-theme-color); font-weight: 500;"{% endif %}>{{ talk.note }}</span></em>
           </div>
         {% endif %}
+        {% if talk.slides or talk.website %}
+          <div class="periodical">
+            <em>Note: {% if talk.slides %}<a href="{{ talk.slides | relative_url }}" target="_blank" rel="noopener">Presentation slides</a>{% endif %}{% if talk.slides and talk.website %}; {% endif %}{% if talk.website %}<a href="{{ talk.website }}" target="_blank" rel="noopener">workshop website</a>{% endif %}</em>
+          </div>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
