@@ -1,0 +1,63 @@
+# Data catalog: datasets held / used by the CADI Lab.
+# Rendered publicly at /data/ AND designed to be machine-readable for research
+# pipeline agents (single source of truth — edit here only).
+#
+# NOTE: the entries below are PLACEHOLDER EXAMPLES showing the schema.
+# Replace them with real datasets before merging to main.
+#
+# Fields:
+#   name        — dataset name (required)
+#   category    — grouping on the page, e.g. "Platform & Field Data",
+#                 "Experimental Data", "Public & Archival Data" (required)
+#   status      — one of: public | on-request | proprietary (required)
+#                 public:      data itself is openly downloadable (give link)
+#                 on-request:  description public, data shared upon reasonable request
+#                 proprietary: existence/description public, data not shareable (NDA etc.)
+#   source      — where the data comes from (platform, partner, collection method)
+#   period      — time coverage, e.g. "2021-01 ~ 2023-12"
+#   unit        — unit of analysis / granularity, e.g. "user-session-ad impression"
+#   size        — approximate scale, e.g. "~2.1M impressions, 180K users"
+#   description — 2-4 sentences: what it captures, what makes it useful
+#   link        — optional URL (repository, paper, documentation)
+#   related     — optional list of {text, url} for related papers/projects
+#   keywords    — optional list, used by students/agents to search the catalog
+
+- name: "(placeholder) Mobile ad platform impression logs"
+  category: "Platform & Field Data"
+  status: proprietary
+  source: "Industry partner (mobile advertising platform)"
+  period: "20XX-XX ~ 20XX-XX"
+  unit: "user-session-impression"
+  size: "~X.XM impressions, XXXk users"
+  description: >
+    Placeholder example — replace. Impression-level logs with ad creative
+    features and user interaction outcomes, suitable for studying how creative
+    design causally shapes engagement.
+  keywords: [advertising, field data, causal inference]
+
+- name: "(placeholder) App store exploration panel"
+  category: "Platform & Field Data"
+  status: on-request
+  source: "Scraped/collected app store data"
+  period: "20XX ~ 20XX"
+  unit: "app-week"
+  size: "~XXk apps"
+  description: >
+    Placeholder example — replace. Panel of app-level ratings, rankings, and
+    metadata enabling quasi-experimental designs around platform policy changes.
+  related:
+    - text: "Related talk (DIGIT 2024)"
+      url: /talks/
+  keywords: [app store, panel data, platform policy]
+
+- name: "(placeholder) Lab/online experiment: consumer choice"
+  category: "Experimental Data"
+  status: on-request
+  source: "Online experiment (e.g., Prolific/MTurk)"
+  period: "20XX"
+  unit: "participant-choice task"
+  size: "~XXX participants"
+  description: >
+    Placeholder example — replace. Randomized choice experiments with
+    treatment variations in choice-set composition.
+  keywords: [experiment, consumer choice]
