@@ -199,6 +199,8 @@ kramdown:
 include: ["_pages", "_scripts", "favicon.ico"] # ensure favicon.ico is included in build
 exclude:
   - bin/
+  - check_links.py
+  - CLAUDE*.md
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -216,6 +218,8 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - requirements.txt
+  - syllabus_text.txt
   - vendor
 keep_files:
   - CNAME

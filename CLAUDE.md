@@ -25,6 +25,8 @@ python3 check_links.py            # check internal links in the built _site/
 
 There is no test suite. Pre-commit hooks (`.pre-commit-config.yaml`) enforce trailing whitespace, EOF newlines, YAML validity, and large-file limits.
 
+Jekyll copies any root-level file without front matter into the published `_site/` unless it is listed under `exclude:` in `_config.yml`. When adding dev-only files at the repo root (scripts, notes, `CLAUDE*.md`), add them to that exclude list so they don't get served on the live site.
+
 ## CI / deployment
 
 - **deploy.yml**: on push to `main`, builds the site (Ruby 3.3.5, Python nbconvert, ImageMagick), purges unused CSS, and deploys `_site/` to GitHub Pages.
