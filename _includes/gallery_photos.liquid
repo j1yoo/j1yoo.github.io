@@ -1,0 +1,27 @@
+{% assign gallery_photos = include.photos %}
+{% if gallery_photos and gallery_photos.size > 0 %}
+  <div
+    class="gallery-photo-grid gallery-photo-grid--{{ gallery_photos.size }} pswp-gallery"
+    id="gallery-{{ include.gallery_id }}"
+  >
+    {% for photo in gallery_photos %}
+      <a
+        class="gallery-photo"
+        href="{{ photo.file | relative_url }}"
+        data-pswp-width="{{ photo.width }}"
+        data-pswp-height="{{ photo.height }}"
+        data-cropped="true"
+        aria-label="Enlarge photo {{ forloop.index }} of {{ gallery_photos.size }}"
+      >
+        <img
+          src="{{ photo.file | relative_url }}"
+          width="{{ photo.width }}"
+          height="{{ photo.height }}"
+          alt="{{ photo.alt }}"
+          {% if photo.position %}style="object-position: {{ photo.position }};"{% endif %}
+          loading="{% if forloop.index <= 3 %}eager{% else %}lazy{% endif %}"
+        >
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

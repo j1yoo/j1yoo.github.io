@@ -32,3 +32,264 @@ blockquote.research-question {
   font-style: normal;
 }
 
+.gallery-event__header {
+  margin-bottom: 1.6rem;
+}
+
+.gallery-event__meta {
+  margin: 0.45rem 0 0;
+  color: var(--global-text-color-light);
+  font-size: 0.82rem;
+}
+
+.gallery-event__description {
+  max-width: 720px;
+  margin: 0.65rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.gallery-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+
+  a {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 5px;
+    background: var(--global-divider-color);
+    cursor: zoom-in;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.gallery-photo-grid--1 {
+  max-width: 760px;
+  grid-template-columns: 1fr;
+}
+
+.gallery-photo-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gallery-event__back {
+  margin-top: 1.8rem;
+  font-size: 0.86rem;
+}
+
+.photo-albums {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.4rem 1.25rem;
+  margin-top: 2rem;
+}
+
+.photo-filters {
+  display: flex;
+  gap: 0 1.15rem;
+  margin-top: 1.35rem;
+  padding-bottom: 0.15rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--global-divider-color);
+  scrollbar-width: none;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.photo-filter {
+  flex: 0 0 auto;
+  appearance: none;
+  padding: 0.25rem 0 0.45rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--global-text-color-light);
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  cursor: pointer;
+
+  span {
+    margin-left: 0.16rem;
+    font-size: 0.68rem;
+    opacity: 0.72;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    color: var(--global-theme-color);
+  }
+
+  &.is-active {
+    border-bottom-color: var(--global-theme-color);
+  }
+}
+
+.photo-album {
+  min-width: 0;
+}
+
+.photo-album__cover,
+.home-photo__image {
+  display: block;
+  overflow: hidden;
+  background: var(--global-divider-color);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--photo-position, center);
+  }
+}
+
+.photo-album__cover {
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+}
+
+.photo-album__caption {
+  padding-top: 0.7rem;
+
+  h2 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  h2 a {
+    color: var(--global-text-color);
+  }
+
+  p {
+    margin: 0.22rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.74rem;
+    line-height: 1.4;
+  }
+}
+
+.home-photos {
+  margin-top: 2.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.home-photos__heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+
+  h2 {
+    margin: 0;
+  }
+
+  > a {
+    font-size: 0.76rem;
+  }
+}
+
+.home-photos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-photo {
+  min-width: 0;
+  color: var(--global-text-color);
+}
+
+.home-photo:hover {
+  color: var(--global-theme-color);
+}
+
+.home-photo__image {
+  aspect-ratio: 3 / 2;
+  border-radius: 3px;
+}
+
+.home-photo__label {
+  display: block;
+  margin-top: 0.45rem;
+  overflow: hidden;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+
+  small {
+    color: var(--global-text-color-light);
+    font-size: 0.7rem;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .gallery-photo-grid--1 {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-albums {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.45rem 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .photo-album__caption {
+    padding-top: 0.5rem;
+
+    h2 {
+      font-size: 0.82rem;
+    }
+
+    p {
+      font-size: 0.68rem;
+    }
+  }
+
+  .home-photos {
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .home-photos__grid {
+    gap: 0.55rem;
+  }
+
+  .home-photo__label {
+    font-size: 0.7rem;
+  }
+
+  .home-photo__label small {
+    display: block;
+    margin-top: 0.05rem;
+  }
+}

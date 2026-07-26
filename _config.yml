@@ -176,8 +176,6 @@ collections:
   gallery_events:
     output: true
     permalink: /gallery/:path/
-    defaults:
-      layout: page
 # -----------------------------------------------------------------------------
 # Jekyll settings
 # -----------------------------------------------------------------------------
@@ -244,6 +242,13 @@ plugins:
 
 # Sitemap settings
 defaults:
+  - scope:
+      path: ""
+      type: gallery_events
+    values:
+      layout: gallery_event
+      images:
+        photoswipe: true
   - scope:
       path: "assets"
     values:

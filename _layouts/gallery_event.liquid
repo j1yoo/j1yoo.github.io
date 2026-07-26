@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="post gallery-event">
+  <header class="post-header gallery-event__header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="gallery-event__meta">
+      {% if page.date_label %}{{ page.date_label }}{% else %}{{ page.date | date: "%B %Y" }}{% endif %}
+      {% if page.location %}<span aria-hidden="true"> · </span>{{ page.location }}{% endif %}
+    </p>
+    {% if page.description %}
+      <p class="gallery-event__description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    {% include gallery_photos.liquid photos=page.photos gallery_id=page.slug %}
+  </article>
+
+  <p class="gallery-event__back"><a href="{{ '/gallery/' | relative_url }}">&larr; photos</a></p>
+</div>

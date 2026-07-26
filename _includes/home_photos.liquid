@@ -1,0 +1,29 @@
+{% assign home_photo_albums = site.gallery_events | where: "home_featured", true | sort: "home_order" %}
+
+<section class="home-photos" aria-labelledby="home-photos-heading">
+  <div class="home-photos__heading">
+    <h2 id="home-photos-heading">
+      <a href="{{ '/gallery/' | relative_url }}" style="color: inherit">photos</a>
+    </h2>
+    <a href="{{ '/gallery/' | relative_url }}">view all <span aria-hidden="true">&rarr;</span></a>
+  </div>
+
+  <div class="home-photos__grid">
+    {% for album in home_photo_albums %}
+      <a class="home-photo" href="{{ album.url | relative_url }}">
+        <span class="home-photo__image">
+          <img
+            src="{{ album.img | relative_url }}"
+            alt="{{ album.card_alt | default: album.title }}"
+            loading="lazy"
+            style="--photo-position: {{ album.cover_position | default: 'center' }};"
+          >
+        </span>
+        <span class="home-photo__label">
+          {{ album.title }}
+          <small>{{ album.date | date: "%b %Y" }}</small>
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</section>

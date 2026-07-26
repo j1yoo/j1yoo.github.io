@@ -1,39 +1,57 @@
 ---
 layout: page
 permalink: /gallery/
-title: gallery
-description: "Photo gallery from CADI Lab milestones: student awards, lab events, conferences, and visiting talks."
+title: photos
+description: "Conferences, workshops, presentations, and the people around them."
 nav: false
-nav_order: 9
-display_categories: [awards, events, conferences, talks]
-horizontal: false
 ---
 
-> A growing photo log of milestones from the <a href="https://cadi-lab.github.io" target="_blank" style="font-weight: bold;">CADI Lab</a>. Each card opens a dedicated page for that event.
-{:.research-question}
+{% assign photo_albums = site.gallery_events | sort: "date" | reverse %}
+{% assign conference_albums = photo_albums | where: "category", "conference" %}
+{% assign talk_albums = photo_albums | where: "category", "talk" %}
+{% assign hosted_albums = photo_albums | where: "category", "hosted" %}
+{% assign award_albums = photo_albums | where: "category", "award" %}
 
-<div class="projects">
-{% if page.display_categories %}
-  {% for category in page.display_categories %}
-    {% assign categorized_events = site.gallery_events | where: "category", category %}
-    {% if categorized_events.size > 0 %}
-      <a id="{{ category }}" href=".#{{ category }}">
-        <h2 class="category">{{ category }}</h2>
+<nav class="photo-filters" aria-label="Filter photo albums">
+  <button class="photo-filter is-active" type="button" data-photo-filter="all" data-photo-filter-label="all" aria-pressed="true">
+    all <span>{{ photo_albums.size }}</span>
+  </button>
+  <button class="photo-filter" type="button" data-photo-filter="conference" data-photo-filter-label="conferences and workshops" aria-pressed="false">
+    conferences &amp; workshops <span>{{ conference_albums.size }}</span>
+  </button>
+  <button class="photo-filter" type="button" data-photo-filter="talk" data-photo-filter-label="invited talks" aria-pressed="false">
+    invited talks <span>{{ talk_albums.size }}</span>
+  </button>
+  <button class="photo-filter" type="button" data-photo-filter="hosted" data-photo-filter-label="hosted seminars" aria-pressed="false">
+    hosted seminars <span>{{ hosted_albums.size }}</span>
+  </button>
+  <button class="photo-filter" type="button" data-photo-filter="award" data-photo-filter-label="awards" aria-pressed="false">
+    awards <span>{{ award_albums.size }}</span>
+  </button>
+</nav>
+<p class="sr-only" id="photo-filter-status" aria-live="polite"></p>
+
+<div class="photo-albums">
+  {% for album in photo_albums %}
+    <article class="photo-album" data-photo-category="{{ album.category }}">
+      <a class="photo-album__cover" href="{{ album.url | relative_url }}">
+        <img
+          src="{{ album.img | relative_url }}"
+          alt="{{ album.card_alt | default: album.title }}"
+          loading="{% if forloop.index <= 3 %}eager{% else %}lazy{% endif %}"
+          style="--photo-position: {{ album.cover_position | default: 'center' }};"
+        >
       </a>
-      {% assign sorted_events = categorized_events | sort: "date" | reverse %}
-      <div class="row row-cols-1 row-cols-md-3">
-      {% for project in sorted_events %}
-        {% include projects.liquid %}
-      {% endfor %}
+      <div class="photo-album__caption">
+        <h2><a href="{{ album.url | relative_url }}">{{ album.title }}</a></h2>
+        <p>
+          {{ album.date | date: "%b %Y" }}
+          · {{ album.location }} ·
+          {{ album.photos.size }} {% if album.photos.size == 1 %}photo{% else %}photos{% endif %}
+        </p>
       </div>
-    {% endif %}
+    </article>
   {% endfor %}
-{% else %}
-  {% assign sorted_events = site.gallery_events | sort: "date" | reverse %}
-  <div class="row row-cols-1 row-cols-md-3">
-  {% for project in sorted_events %}
-    {% include projects.liquid %}
-  {% endfor %}
-  </div>
-{% endif %}
 </div>
+
+<script defer src="{{ '/assets/js/gallery-filter.js' | relative_url }}"></script>
