@@ -4,5 +4,6 @@ const photoswipe = new PhotoSwipeLightbox({
   gallery: ".pswp-gallery",
   children: "a",
   pswpModule: PhotoSwipe,
+  bgClickAction: "close",
 });
 photoswipe.init();

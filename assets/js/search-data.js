@@ -199,11 +199,111 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "gallery_events-2025-best-master-39-s-thesis-award",
-          title: '2025 Best Master&amp;#39;s Thesis Award',
-          description: "Zhan-Yi Liao (M.S., NYCU; co-advised with Po-An Chen) recognized by the Algorithms and Computation Theory Society of Taiwan, presented at CMCT 2026.",
+            },},{id: "gallery_events-34th-isms-marketing-science-conference",
+          title: '34th ISMS Marketing Science Conference',
+          description: "Attending the 2012 Marketing Science Conference with fellow participants.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/marketing-science-boston-2012/";
+            },},{id: "gallery_events-36th-isms-marketing-science-conference",
+          title: '36th ISMS Marketing Science Conference',
+          description: "Attending the 2014 Marketing Science Conference with fellow participants.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/marketing-science-atlanta-2014/";
+            },},{id: "gallery_events-global-ph-d-fellowship",
+          title: 'Global Ph.D. Fellowship',
+          description: "Receiving the Global Ph.D. Fellowship certificate.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/global-phd-fellowship-2014/";
+            },},{id: "gallery_events-academy-of-management-annual-meeting",
+          title: 'Academy of Management Annual Meeting',
+          description: "Attending the 2015 annual meeting with fellow participants.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/aom-2015/";
+            },},{id: "gallery_events-kellogg-qmse-workshop-2015",
+          title: 'Kellogg QMSE Workshop 2015',
+          description: "Participating in the Quantitative Marketing and Structural Econometrics Workshop at Kellogg.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/qmse-2015/";
+            },},{id: "gallery_events-kaist-innovation-amp-entrepreneurship-research-bootcamp",
+          title: 'KAIST Innovation &amp;amp; Entrepreneurship Research Bootcamp',
+          description: "Taking part in research discussions at the first KAIST Innovation &amp; Entrepreneurship Research Bootcamp.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/kaist-innovation-bootcamp-2019/";
+            },},{id: "gallery_events-yale-mit-china-india-insights-conference-2019",
+          title: 'Yale–MIT China India Insights Conference 2019',
+          description: "Presenting research at the Yale–MIT China India Insights Conference.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/china-india-insights-2019/";
+            },},{id: "gallery_events-2019-dmac-dissertation-competition-best-paper-award",
+          title: '2019 DMAC Dissertation Competition Best Paper Award',
+          description: "Winning the Best Paper Award, the top prize in the KMA Doctoral Dissertation Competition at DMAC.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/dmac-2019/";
+            },},{id: "gallery_events-nthu-ctm-brown-bag-seminar-2021",
+          title: 'NTHU CTM Brown Bag Seminar 2021',
+          description: "Presenting research at the College of Technology Management Brown Bag Seminar.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/nthu-brown-bag-2021/";
+            },},{id: "gallery_events-hosted-research-seminar-yuxin-chen",
+          title: 'Hosted Research Seminar: Yuxin Chen',
+          description: "Hosting Prof. Yuxin Chen (NYU Shanghai) for an invited research seminar at NTHU.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/yuxin-chen-2023/";
+            },},{id: "gallery_events-nstc-is-workshop-2023",
+          title: 'NSTC IS Workshop 2023',
+          description: "Giving a scholarly talk at the National Science and Technology Council IS Workshop.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/nstc-is-workshop-2023/";
+            },},{id: "gallery_events-11th-aiea-nber-conference-2023",
+          title: '11th AIEA–NBER Conference 2023',
+          description: "Taking part in the conference and meeting fellow participants.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/aiea-nber-2023/";
+            },},{id: "gallery_events-invited-talk-at-nsysu-2024",
+          title: 'Invited Talk at NSYSU, 2024',
+          description: "Presenting at the College of Management research seminar.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/nsysu-invited-talk-2024/";
+            },},{id: "gallery_events-nycu-invited-talk-2024",
+          title: 'NYCU Invited Talk 2024',
+          description: "Giving an invited talk at the Institute of Information Management.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/nycu-invited-talk-2024/";
+            },},{id: "gallery_events-hosted-research-seminar-steven-sungjun-park",
+          title: 'Hosted Research Seminar: Steven Sungjun Park',
+          description: "Hosting Prof. Steven Sungjun Park (National Chengchi University) for an invited research seminar at NTHU.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/steven-park-2024/";
+            },},{id: "gallery_events-hosted-research-seminar-po-an-chen",
+          title: 'Hosted Research Seminar: Po-An Chen',
+          description: "Hosting Prof. Po-An Chen (NYCU) for an invited research seminar at NTHU.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/po-an-chen-2024/";
+            },},{id: "gallery_events-digit-workshop-at-icis-2024",
+          title: 'DIGIT Workshop at ICIS 2024',
+          description: "Taking part in the DIGIT Workshop and ICIS 2024.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/icis-2024/";
+            },},{id: "gallery_events-hosted-research-seminar-yu-jen-chen",
+          title: 'Hosted Research Seminar: Yu-Jen Chen',
+          description: "Hosting Prof. Yu-Jen Chen (National Taiwan University) for an invited research seminar at NTHU.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/yu-jen-chen-2024/";
+            },},{id: "gallery_events-hosted-research-seminar-bahman-rostami-tabar",
+          title: 'Hosted Research Seminar: Bahman Rostami-Tabar',
+          description: "Hosting Prof. Bahman Rostami-Tabar (Cardiff University) for an invited research seminar at NTHU.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/bahman-rostami-tabar-2025/";
+            },},{id: "gallery_events-2025-best-master-39-s-thesis-award-at-cmct-2026",
+          title: '2025 Best Master&amp;#39;s Thesis Award at CMCT 2026',
+          description: "Celebrating Zhan-Yi Liao&#39;s Best Master&#39;s Thesis Award with co-advisor Po-An Chen.",
           section: "Gallery_events",handler: () => {
               window.location.href = "/gallery/zhanyi-2025-cmct/";
+            },},{id: "gallery_events-tswim-2026",
+          title: 'TSWIM 2026',
+          description: "Co-organizing TSWIM 2026; presenting research; serving as a session chair and discussant in the Research Incubator; and taking part in career-development sessions.",
+          section: "Gallery_events",handler: () => {
+              window.location.href = "/gallery/tswim-2026/";
             },},{id: "news-scholarly-speech-interdisciplinary-research-in-marketing-amp-amp-innovation-at-the-institute-of-service-science-national-tsing-hua-university-nthu",
           title: 'Scholarly speech: Interdisciplinary Research in Marketing &amp;amp;amp; Innovation at the Institute of Service...',
           description: "",
