@@ -194,12 +194,7 @@ ninja.data = [{
             window.location.href = "/blog/2017/Crawling_the_Annual_Reports_(i.e.,_10-Ks)_using_R/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "gallery_events-34th-isms-marketing-science-conference",
+      },{id: "gallery_events-34th-isms-marketing-science-conference",
           title: '34th ISMS Marketing Science Conference',
           description: "Attending the 2012 Marketing Science Conference with fellow participants.",
           section: "Gallery_events",handler: () => {
