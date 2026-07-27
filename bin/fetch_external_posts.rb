@@ -57,9 +57,14 @@ def fetch_content_from_url(url)
 
     puts "  \e[32mSuccess: Fetched title - \"#{title.strip}\"\e[0m"
 
+    text = content.strip
     {
       'title' => title.strip,
-      'content' => content.strip
+      # Keep only an excerpt: external posts may be third-party content, so the
+      # full text must not be committed or republished. word_count preserves
+      # the real length for the read-time display.
+      'content' => text[0, 300],
+      'word_count' => text.split(/\s+/).length
     }
 
   rescue => e
@@ -100,7 +105,8 @@ def main
           'published_date' => post_config['published_date'],
           'source_name' => source['name'],
           'title' => content['title'],
-          'content' => content['content']
+          'content' => content['content'],
+          'word_count' => content['word_count']
         }
       end
     end

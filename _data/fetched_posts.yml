@@ -4,3 +4,4 @@ posts:
     source_name: substack.com
     title: "DDD Estimators and Distributional Effects"
     content: "A discussion of recent developments in Difference-in-Differences (DDD) estimation, focusing on how to account for distributional effects."
+    word_count: 2942
