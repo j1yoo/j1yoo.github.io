@@ -197,6 +197,10 @@ kramdown:
 include: ["_pages", "_scripts", "favicon.ico"] # ensure favicon.ico is included in build
 exclude:
   - bin/
+  - check_links.py
+  - CLAUDE.local.md
+  - CLAUDE.main.md
+  - CLAUDE.md
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
