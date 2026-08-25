@@ -48,6 +48,8 @@
       <a href="https://medium.com/@{{ social[1] }}" title="Medium"><i class="fa-brands fa-medium"></i></a>
     {% when 'orcid_id' %}
       <a href="https://orcid.org/{{ social[1] }}" title="ORCID"><i class="ai ai-orcid"></i></a>
+    {% when 'nthu_scholars_url' %}
+      <a href="{{ social[1] }}" title="NTHU Scholars"><i class="fa-solid fa-building-columns"></i></a>
     {% when 'osf_id' %}
       <a href="https://osf.io/{{ social[1] }}/" title="Open Science Framework"><i class="ai ai-osf"></i></a>
     {% when 'pinterest_id' %}
