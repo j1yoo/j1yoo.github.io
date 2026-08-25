@@ -433,6 +433,13 @@ ninja.data = [{
           window.open("https://orcid.org/0000-0003-1582-0020", "_blank");
         },
       },{
+        id: 'social-nthu_scholars_url',
+        title: 'Nthu_scholars_url',
+        section: 'Socials',
+        handler: () => {
+          window.open("", "_blank");
+        },
+      },{
         id: 'social-researchgate',
         title: 'ResearchGate',
         section: 'Socials',
