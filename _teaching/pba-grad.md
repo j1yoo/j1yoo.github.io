@@ -10,6 +10,8 @@ course_number: "ISS5066"
 series: "Skills"
 accent: "#2698ba"
 logo: /assets/courses/pba/pba_badge.png
+favicon_base: /assets/courses/pba/pba_favicon
+og_image: https://j1yoo.github.io/assets/courses/pba/pba_badge.png
 permalink: /teaching/pba-grad/
 day: "Thursday"
 time: "14:20–17:20"

@@ -20,11 +20,12 @@
     <script>initTheme();</script>
   {% endif %}
 
-  <!-- ECI Favicon (SVG with dark/light theme support + PNG fallbacks) -->
-  <link rel="icon" href="/assets/courses/eci/eci_favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/courses/eci/eci_favicon_32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/assets/courses/eci/eci_favicon_16.png" sizes="16x16" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/courses/eci/eci_favicon_apple.png">
+  <!-- Course favicon (per-page favicon_base; defaults to the ECI set) -->
+  {% assign fav = page.favicon_base | default: "/assets/courses/eci/eci_favicon" %}
+  <link rel="icon" href="{{ fav }}.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ fav }}_32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="{{ fav }}_16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="{{ fav }}_apple.png">
 
   <title>{{ page.title }} · {{ page.semester }}</title>
 

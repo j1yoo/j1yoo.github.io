@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    .bg { fill: #2698ba; }
+    .letter { fill: #ffffff; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 38px; }
+    .accent-bar { fill: #7fd0e6; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #e2e8f0; }
+      .letter { fill: #2698ba; }
+      .accent-bar { fill: #7fd0e6; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="14"/>
+  <rect class="accent-bar" x="0" y="54" width="64" height="10"/>
+  <text class="letter" x="32" y="44" text-anchor="middle">P</text>
+</svg>
