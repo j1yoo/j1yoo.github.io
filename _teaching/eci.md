@@ -1,5 +1,6 @@
 ---
 layout: course-eci
+order: 3
 title: Experiments and Causal Inference
 description: A graduate seminar on experimental and quasi-experimental designs for causal inference.
 semester: "Spring 2026"

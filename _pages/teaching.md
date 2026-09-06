@@ -33,15 +33,23 @@ nav_order: 6
 
 <!-- Dynamic Course Grid -->
 <div class="row row-cols-1 row-cols-md-2">
-  {% for course in site.teaching %}
+  {% assign courses = site.teaching | sort: "order" %}
+  {% for course in courses %}
+    {% if course.hidden %}{% continue %}{% endif %}
     <div class="col mb-4">
       <div class="card h-100 shadow-sm border-0">
         <div class="card-body">
           <h4 class="card-title">
-            <a href="{{ course.url | relative_url }}">{{ course.title }}</a>
+            {% if course.card_sections %}{{ course.card_title }}{% else %}<a href="{{ course.url | relative_url }}">{{ course.title }}</a>{% endif %}
           </h4>
-          <p class="card-text text-muted">{{ course.description }}</p>
-          <a href="{{ course.url | relative_url }}" class="btn btn-outline-secondary btn-sm stretched-link btn-theme">View Course</a>
+          <p class="card-text text-muted">{% if course.card_description %}{{ course.card_description }}{% else %}{{ course.description }}{% endif %}</p>
+          {% if course.card_sections %}
+            {% for sec in course.card_sections %}
+              <a href="{{ sec.url | relative_url }}" class="btn btn-outline-secondary btn-sm btn-theme" style="margin: 0 6px 6px 0;">{{ sec.label }}</a>
+            {% endfor %}
+          {% else %}
+            <a href="{{ course.url | relative_url }}" class="btn btn-outline-secondary btn-sm stretched-link btn-theme">View Course</a>
+          {% endif %}
         </div>
       </div>
     </div>

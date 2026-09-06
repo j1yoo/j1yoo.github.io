@@ -87,7 +87,7 @@
     }
     .eci-navbar .nav-links a.active {
       color: #fff;
-      border-bottom-color: #b509ac;
+      border-bottom-color: {{ page.accent | default: '#b509ac' }};
     }
     .eci-navbar .nav-links .back-link {
       color: rgba(255,255,255,0.5);
@@ -125,7 +125,7 @@
         border-left: 3px solid transparent;
       }
       .eci-navbar .nav-links a.active {
-        border-left-color: #b509ac;
+        border-left-color: {{ page.accent | default: '#b509ac' }};
         border-bottom-color: transparent;
       }
       .eci-navbar .navbar-inner {
@@ -243,6 +243,13 @@
     .feature-card i {
       color: var(--global-theme-color);
       margin-bottom: 0.8rem;
+    }
+    .feature-card svg {
+      color: var(--global-theme-color);
+      width: 2em;
+      height: 2em;
+      margin-bottom: 0.8rem;
+      display: inline-block;
     }
     .feature-card h5 {
       font-size: 1rem;
@@ -695,7 +702,7 @@
 
 <body>
   <!-- ════════ ECI Navbar ════════ -->
-  <nav class="eci-navbar">
+  <nav class="eci-navbar"{% if page.accent %} style="--global-theme-color: {{ page.accent }}; --global-hover-color: {{ page.accent }};"{% endif %}>
     <div class="navbar-inner">
       <a href="{{ page.url | relative_url }}" class="site-title">{{ page.course_number }} · {{ page.semester }}</a>
       <button class="mobile-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
@@ -710,7 +717,7 @@
     </div>
   </nav>
 
-  <div class="eci-container">
+  <div class="eci-container"{% if page.accent %} style="--global-theme-color: {{ page.accent }}; --global-hover-color: {{ page.accent }};"{% endif %}>
 
     <!-- ════════ Hero ════════ -->
     <div class="eci-hero">
@@ -785,10 +792,10 @@
           <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem;">Topics Covered</h2>
           <div class="row">
             {% for feature in page.features %}
-              <div class="col-md-4 mb-3">
+              <div class="{% if page.features.size == 4 %}col-md-3{% else %}col-md-4{% endif %} mb-3">
                 <div class="card h-100 border-0 shadow-sm">
                   <div class="card-body feature-card">
-                    <i class="{{ feature.icon }} fa-2x"></i>
+                    {% if feature.icon_svg %}{% include icons/{{ feature.icon_svg }}.svg %}{% else %}<i class="{{ feature.icon }} fa-2x"></i>{% endif %}
                     <h5>{{ feature.title }}</h5>
                     <p>{{ feature.description }}</p>
                   </div>

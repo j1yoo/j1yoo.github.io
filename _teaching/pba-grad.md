@@ -1,17 +1,17 @@
 ---
 layout: course-eci
-order: 1
-title: "Programming for Business Analytics (Undergraduate)"
-description: "An undergraduate introduction to data analysis with R for business: wrangling and visualizing data, evaluating causal claims, linear regression, and quantifying uncertainty."
+order: 2
+title: "Programming for Business Analytics (Graduate)"
+description: "A graduate course on empirical analysis with R: from data wrangling and visualization to causal reasoning, regression, and uncertainty quantification, culminating in a research-grade project that prepares students for Experiments and Causal Inference."
 semester: "Fall 2026"
 semester_dates: "Sep 7 – Dec 26, 2026"
 first_offered: "Fall 2021"
-course_number: "ISS4066"
+course_number: "ISS5066"
 series: "Skills"
 accent: "#2698ba"
 logo: /assets/courses/pba/pba_badge.png
-permalink: /teaching/pba/
-day: "Monday"
+permalink: /teaching/pba-grad/
+day: "Thursday"
 time: "14:20–17:20"
 location: "TSMC Bldg. R421"
 instructor_office: "TSMC Bldg. R828B"
@@ -21,12 +21,12 @@ communication: "Lecture slides, handouts, in-class exercises, assignments, and g
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
-  - text: "<strong>ISS4066, Mondays.</strong> Graduate students should enroll in <a href=\"/teaching/pba-grad/\">ISS5066 (Graduate)</a>."
-  - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day, taught asynchronously with recordings and exercise E3) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
+  - text: "<strong>ISS5066, Thursdays.</strong> Undergraduates should enroll in <a href=\"/teaching/pba/\">ISS4066 (Undergraduate)</a>."
+  - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. In Week 6 (Oct 15) there is no class meeting; instead, teams meet the instructor by appointment to discuss research questions."
   - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
-  - text: "<strong>Project showcase with Q&amp;A</strong> in the final week."
+  - text: "<strong>Team presentations with Q&amp;A</strong> in the final week."
 
-syllabus: /assets/courses/pba/ISS4066_PBA_Undergrad_Syllabus_Fall_26.pdf
+syllabus: /assets/courses/pba/ISS5066_PBA_Graduate_Syllabus_Fall_26.pdf
 
 features:
   - title: "Data Wrangling & Viz"
@@ -47,10 +47,10 @@ materials:
   - title: "Week 1: Course Introduction and R Programming Basics"
   - title: "Week 2: Data Types, Data Structures, and Visualization I"
   - title: "Week 3: Functions and Visualization II"
-  - title: "Week 4: Data Wrangling with dplyr (asynchronous week: recordings on eeclass)"
+  - title: "Week 4: Data Wrangling with dplyr"
   - title: "Week 5: Causality"
-  - title: "Week 6: Relationships, Importing, and Tidying Data"
-  - title: "Week 7: Prediction and Iteration"
+  - title: "Week 7: Relationships, Importing, and Tidying Data"
+  - title: "Week 8: Prediction and Iteration"
   - title: "Week 9: Regression and Model Fit"
   - title: "Week 10: More on Regression"
   - title: "Week 11: Sampling and Sampling Distributions"
@@ -60,23 +60,23 @@ materials:
   - title: "Week 15: Inference for Regression"
 
 schedule_content: |
-  ## Weekly Schedule (Undergraduate, Mondays)
+  ## Weekly Schedule (Graduate, Thursdays)
 
-  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Two Mondays are university holidays with no make-up class (Sep 28, Oct 26); the week of Sep 28 is taught asynchronously. Readings should be completed before class. The schedule is tentative; eeclass announcements take precedence.*
+  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Week 6 has no class meeting; teams meet the instructor by appointment instead. Readings should be completed before class. The schedule is tentative; eeclass announcements take precedence.*
 
   ### Part I: Working with Data in R
 
-  **Week 1 (Sep 7): Course Introduction and R Programming Basics**
+  **Week 1 (Sep 10): Course Introduction and R Programming Basics**
   - How the course works
   - A first look at R and RStudio; Quarto
   - Getting started: programming errors, operators, variables
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 1; AAG Ch. 4.3, 5, 6; VT Ch. 1–2. Install R and RStudio before class.
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Self-introduction on the eeclass discussion board by Fri Sep 11</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Self-introduction on the eeclass discussion board by Mon Sep 14</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Swirl tutorials 1–3 by Week 2</em>
   </div>
 
-  **Week 2 (Sep 14): Data Types, Data Structures, and Visualization I**
+  **Week 2 (Sep 17): Data Types, Data Structures, and Visualization I**
   - Numeric, character, logical, factor, dates
   - Vectors, lists, data frames; reading data
   - Building plots by layers with ggplot2
@@ -87,7 +87,7 @@ schedule_content: |
   <span class="badge-due">Due:</span> Group formation survey, Sun Sep 20
   </div>
 
-  **Week 3 (Sep 21): Functions and Visualization II**
+  **Week 3 (Sep 24): Functions and Visualization II**
   - Writing and reading functions
   - Histograms, facets, boxplots; principles of analytic graphics
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 7.2, 11; VT Ch. 5–6
@@ -96,46 +96,47 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em>
   </div>
 
-  **Week 4 (Sep 28): Data Wrangling with dplyr, asynchronous (Teachers' Day, no class meeting)**
+  **Week 4 (Oct 1): Data Wrangling with dplyr**
   - Operating on rows, columns, and groups
   - Bar plots
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 14–16; VT Ch. 7; MD Ch. 3
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Watch the Lecture 5 recordings on eeclass; TAs hold extra office hours this week</em><br>
-  <span class="badge-due">Due:</span> Exercise E3, Sun Oct 4
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em>
   </div>
 
   ### Part II: Causality, Prediction, and Regression
 
-  **Week 5 (Oct 5): Causality**
+  **Week 5 (Oct 8): Causality**
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> QSS Ch. 2.1–2.5
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>20-minute debrief of E3</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
   <span class="badge-due">Due:</span> Assignment 1<br>
   <span class="badge-due">Due:</span> Milestone 1: GitHub repository, Sun Oct 11
   </div>
 
-  **Week 6 (Oct 12): Relationships, Importing, and Tidying Data**
+  **Week 6 (Oct 15): Individual or team meetings by appointment (no class meeting)**
+  - With the causal-inference concepts in hand, discuss your research question and data before the proposal is due
+  <div class="schedule-deliverables">
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a>; meetings at TSMC Bldg. R828B</em>
+  </div>
+
+  **Week 7 (Oct 22): Relationships, Importing, and Tidying Data**
   - Z-scores and correlation
   - Pivoting longer; joining datasets
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 11; MD Ch. 4; QSS Ch. 3.5–3.6
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Optional, Oct 12–23: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a> to discuss your research question before the proposal</em><br>
   <span class="badge-due">Due:</span> Milestone 2: data and proposal, Sun Oct 25
   </div>
 
-  **Week 7 (Oct 19): Prediction and Iteration**
+  **Week 8 (Oct 29): Prediction and Iteration**
   - Predicting election outcomes
   - Loops; evaluating predictions; time-series plots
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 4.7, 12; VT Ch. 8–9
 
-  **Week 8 (Oct 26): No class (Retrocession Day observed)**
-
-  **Week 9 (Nov 2): Regression and Model Fit**
+  **Week 9 (Nov 5): Regression and Model Fit**
   - Modeling with a line; linear regression in R
   - Model fit
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 5; QSS Ch. 4.1, 4.2.1–4.2.4
@@ -145,7 +146,7 @@ schedule_content: |
   <span class="badge-due">Due:</span> Assignment 2
   </div>
 
-  **Week 10 (Nov 9): More on Regression**
+  **Week 10 (Nov 12): More on Regression**
   - Multiple regression
   - Categorical predictors
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 6.1–6.2; QSS Ch. 4.2.6–4.3.2
@@ -158,7 +159,7 @@ schedule_content: |
 
   ### Part III: Statistical Uncertainty
 
-  **Week 11 (Nov 16): Sampling and Sampling Distributions**
+  **Week 11 (Nov 19): Sampling and Sampling Distributions**
   - Sampling framework
   - Random variables; the normal and the central limit theorem
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 7
@@ -167,7 +168,7 @@ schedule_content: |
   <span class="badge-due">Due:</span> Problem Set 2, Sun Nov 22
   </div>
 
-  **Week 12 (Nov 23): The Bootstrap and Confidence Intervals**
+  **Week 12 (Nov 26): The Bootstrap and Confidence Intervals**
   - Resampling; bootstrap CIs for means and ATEs
   - Computing and interpreting CIs
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 18–19; MD Ch. 8; IMS Ch. 12
@@ -175,7 +176,7 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em>
   </div>
 
-  **Week 13 (Nov 30): Hypothesis Testing**
+  **Week 13 (Dec 3): Hypothesis Testing**
   - Hypothesis tests with infer; two-sample and permutation tests
   - Issues with hypothesis testing; power
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 9; IMS Ch. 11
@@ -186,7 +187,7 @@ schedule_content: |
   <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
   </div>
 
-  **Week 14 (Dec 7): Models of Uncertainty**
+  **Week 14 (Dec 10): Models of Uncertainty**
   - Using the normal for inference
   - CIs for experiments
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> IMS Ch. 13
@@ -196,16 +197,15 @@ schedule_content: |
   <span class="badge-due">Due:</span> Problem Set 3, Sun Dec 13
   </div>
 
-  **Week 15 (Dec 14): Inference for Regression**
+  **Week 15 (Dec 17): Inference for Regression**
   - Uncertainty for regression coefficients
   - Presenting OLS regressions
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> QSS Ch. 7.3
 
-  ### Part IV: Showcase
+  ### Part IV: Presentations
 
-  **Week 16 (Dec 21): Project Showcase, Q&A, and Peer Evaluation**
-  - Teams present at stations; the instructor and TAs rotate for Q&A
-  - Peer evaluation
+  **Week 16 (Dec 24): Team Presentations and Q&A**
+  - Each team presents for 15 minutes, followed by Q&A; exact slots depend on the number of teams
   <div class="schedule-deliverables">
   <span class="badge-due">Due:</span> Final report, Sun Dec 20<br>
   <span class="badge-due">Due:</span> Assignment 5, Sun Dec 27
@@ -234,18 +234,18 @@ assignments_content: |
 
   | Component | Weight |
   |:---|:---:|
-  | Final project (report, showcase Q&A, milestones, peer evaluation) | 40% |
-  | Assignments (5) | 20% |
-  | Problem sets (3) | 15% |
+  | Final project (report, presentation Q&A, milestones, peer evaluation) | 50% |
+  | Assignments (5) | 15% |
+  | Problem sets (3) | 10% |
   | In-class exercises (5) | 5% |
   | Attitude / participation | 10% |
   | Attendance | 10% |
 
-  Within the final project: written report, showcase presentation with Q&A, four milestones, and peer evaluation. A rubric is provided on eeclass.
+  Within the final project: written report, presentation with Q&A, four milestones, and peer evaluation. A rubric is provided on eeclass.
 
   ## Final Project
 
-  A team project on a topic of your choice. Develop a research question, locate and prepare data (a pre-cleaned dataset from an R package is not sufficient), apply the methods from the course, and publish a portfolio-ready article or webpage with a linked GitHub repository containing all code.
+  A team research project held to a research-grade standard: self-collected or non-trivial data, an explicit identification argument, and analysis carried to publishable-style depth. The deliverable is a portfolio-ready article or webpage with a linked GitHub repository containing all code. Week 6 is reserved for individual or team meetings by appointment, for feedback on your research question and data before the proposal is due.
 
   | Milestone | Due |
   |:---|:---|
@@ -254,7 +254,7 @@ assignments_content: |
   | First visualization | Sun Nov 15 |
   | First analysis | Sun Dec 6 |
   | Final report | Sun Dec 20 |
-  | Showcase and Q&A | Mon Dec 21 |
+  | Presentation and Q&A | Thu Dec 24 |
 
   ## Assignments
 
@@ -296,7 +296,7 @@ This course teaches you to turn messy business data into defensible answers with
 
 Agentic AI now writes much of the code. The skill that matters has shifted from writing code to directing and verifying it: without the underlying building blocks, you cannot tell when an analysis is wrong, and you end up steered by the tool rather than steering it. The course therefore builds programming and visualization foundations first, then turns to statistical inference, and every in-class exercise ends with a verification step.
 
-This is the undergraduate course (ISS4066, Mondays). Graduate students take ISS5066 on Thursdays, which carries research-oriented project requirements. Students may not receive credit for both.
+This is the graduate course (ISS5066, Thursdays). The emphasis goes beyond applying the methods to evaluating and producing rigorous empirical research: the final project must use self-collected or non-trivial data, address identification and threats to inference, and reach greater analytical depth. It also builds the foundation for Experiments and Causal Inference (ISS5096). Students may not receive credit for both ISS4066 and ISS5066.
 
 ## Learning Objectives
 
@@ -307,7 +307,7 @@ This is the undergraduate course (ISS4066, Mondays). Graduate students take ISS5
 
 ## Who Should Take This Course
 
-No prerequisites. The course is designed for students from any background who want a working foundation in data analysis for business. Graduate students should enroll in ISS5066.
+No prerequisites. The course is designed for students from any background who want a working foundation in data analysis for business.
 
 ## Teaching Team
 
@@ -326,12 +326,20 @@ No prerequisites. The course is designed for students from any background who wa
   </div>
 </div>
 
-### Teaching Assistants
+### Teaching Assistant
 
-| Name | Affiliation | Contact |
-|:---|:---|:---|
-| Tuan Anh Tran | Ph.D. student, ISS | anhtranpt [at] iss.nthu.edu.tw |
-| Daffa Onielda | IBBA | daffaonielda [at] gapp.nthu.edu.tw |
+<div class="ta-grid">
+  <div class="ta-card">
+    <span class="ta-photo">
+      <img src="/assets/courses/pba/ta_mave_alexander.jpg" alt="Mave Kimara Alexander" class="photo-clickable" data-full="/assets/courses/pba/ta_mave_alexander.jpg">
+    </span>
+    <div class="ta-info">
+      <p class="ta-name">Mave Kimara Alexander</p>
+      <p class="ta-affiliation">M.S. Student, Taipei School of Economics and Political Science (TSE) &middot; NTHU IMBA alumna</p>
+      <p class="ta-contact"><i class="fas fa-envelope"></i> alexander.mave [at] gmail.com</p>
+    </div>
+  </div>
+</div>
 
 ## Course Platforms
 
