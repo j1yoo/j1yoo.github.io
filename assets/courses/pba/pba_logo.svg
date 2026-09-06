@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="PBA">
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="#2698ba"/>
+  <g stroke="#ffffff" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.95">
+    <line x1="112" y1="116" x2="112" y2="300"/>
+    <line x1="112" y1="300" x2="400" y2="300"/>
+    <polyline points="150,262 210,214 268,236 330,168 386,150"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="150" cy="262" r="16"/><circle cx="210" cy="214" r="16"/><circle cx="268" cy="236" r="16"/><circle cx="330" cy="168" r="16"/><circle cx="386" cy="150" r="16"/>
+  </g>
+  <text x="256" y="428" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="120" fill="#ffffff" letter-spacing="6">PBA</text>
+</svg>
