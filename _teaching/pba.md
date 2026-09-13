@@ -79,7 +79,7 @@ schedule_content: |
   <a class="badge-slides" href="/assets/courses/pba/PBA_01_Course_Intro_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Reference.pdf">R basics (reference)</a>
   - How the course works
   - A first look at R and RStudio; Quarto
-  - R basics (operators, data types, vectors, data frames): reference slides under Materials, paired with AAG Ch. 4–6; we use them at the keyboard from Week 2 on
+  - R basics (operators, data types, vectors, data frames): reference slides under Materials, paired with AAG Ch. 4–6; we use them from Week 2 on
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 1; AAG Ch. 4.3, 5, 6; VT Ch. 1–2. Install R and RStudio before class.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Self-introduction on the eeclass discussion board by Fri Sep 11</em><br>
@@ -88,7 +88,7 @@ schedule_content: |
 
   **Week 2 (Sep 14): R Basics and Data Visualization**
   <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.R" download>R script</a>
-  - R basics at the keyboard: operators, variables, and how a data table is put together (vectors, column types)
+  - R basics: operators, variables, and how a data table is put together (vectors, column types)
   - A first look at data and a first plot (Gapminder)
   - Building plots by layers with ggplot2: geoms, labels, mapping vs. setting aesthetics
   - Histograms, facets, density plots, boxplots; grouped data
