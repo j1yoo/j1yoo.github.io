@@ -1,16 +1,16 @@
 # PBA 2. Data Visualization (Fall 2026)
 # Run selected lines in order in RStudio. "PDF p." refers to the 55-page slides.
-# Packages used today: ggplot2, gapminder, dplyr (install once if needed):
-# install.packages(c("ggplot2", "gapminder", "dplyr"))
+# Packages used today: ggplot2, gapminder, dplyr. Install once: install.packages(c("pacman", "ggplot2", "gapminder", "dplyr"))
 
 # PDF p. 6
-library(ggplot2)
-library(gapminder)   # install the package first: install.packages("gapminder")
+# Install once: install.packages(c("pacman", "gapminder"))
+# Load with library() or require(), or let pacman do both:
+pacman::p_load(ggplot2, gapminder)
 gapminder
 
 # PDF p. 7
 ggplot(gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
-  geom_point() + geom_smooth(method = "loess")
+  geom_point() + geom_smooth(method = "loess")  # loess: local smoothing, a flexible curve that follows the data
 
 # PDF p. 8
 ggplot(gapminder, mapping = aes(x = gdpPercap)) +
