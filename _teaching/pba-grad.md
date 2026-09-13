@@ -23,7 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
-  - text: "<strong>Sep 13, 2026:</strong> Weeks 2–5 reorganized. Week 2 is <strong>Data Visualization</strong>, Week 3 <strong>Data Wrangling</strong>, Week 4 <strong>Causality</strong>, and Week 5 <strong>Causality II: DAGs and covariate selection</strong>. R basics are provided as reference slides on eeclass alongside the AAG readings. Slides and R scripts are now posted on this page under Materials."
+  - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings (AAG Ch. 4–6). Week 3 is <strong>Data Wrangling</strong>, Week 4 <strong>Causality</strong>, and Week 5 <strong>Causality II: DAGs and covariate selection</strong>."
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. In Week 6 (Oct 15) there is no class meeting; instead, teams meet the instructor by appointment to discuss research questions."
   - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
   - text: "<strong>Team presentations with Q&amp;A</strong> in the final week."
@@ -48,7 +48,7 @@ features:
 materials:
   - title: "Week 1: Course Introduction and R Programming Basics"
     url: "/assets/courses/pba/PBA_01_Course_Intro_Grad.pdf"
-  - title: "Week 1(b): R Basics, reference slides (not lectured; read with AAG Ch. 4–6)"
+  - title: "Week 1(b): R Basics, reference slides (companion to AAG Ch. 4–6)"
     url: "/assets/courses/pba/PBA_00_R_Basics_Reference.pdf"
   - title: "Week 2: Data Visualization"
     url: "/assets/courses/pba/PBA_02_Data_Visualization.pdf"
@@ -79,7 +79,7 @@ schedule_content: |
   <a class="badge-slides" href="/assets/courses/pba/PBA_01_Course_Intro_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Reference.pdf">R basics (reference)</a>
   - How the course works
   - A first look at R and RStudio; Quarto
-  - R basics (operators, data types, vectors, data frames) are reference slides on eeclass, paired with AAG Ch. 4–6; they are not lectured
+  - R basics (operators, data types, vectors, data frames): reference slides under Materials, paired with AAG Ch. 4–6; we use them at the keyboard from Week 2 on
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 1; AAG Ch. 4.3, 5, 6; VT Ch. 1–2. Install R and RStudio before class.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Self-introduction on the eeclass discussion board by Mon Sep 14</em><br>
@@ -88,6 +88,7 @@ schedule_content: |
 
   **Week 2 (Sep 17): Data Visualization**
   <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.R" download>R script</a>
+  - R basics at the keyboard: operators, variables, and how a data table is put together (vectors, column types)
   - A first look at data and a first plot (Gapminder)
   - Building plots by layers with ggplot2: geoms, labels, mapping vs. setting aesthetics
   - Histograms, facets, density plots, boxplots; grouped data

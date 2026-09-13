@@ -23,7 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
-  - text: "<strong>Sep 13, 2026:</strong> Weeks 2–4 reorganized. Week 2 is <strong>Data Visualization</strong>, Week 3 is <strong>Data Wrangling</strong>, and there is no class on <strong>Sep 28</strong> (Teachers' Day). R basics (operators, data types, vectors, data frames, functions) are provided as reference slides on eeclass alongside the AAG readings; exercise E3 moves to Week 5. Slides and R scripts are now posted on this page under Materials."
+  - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings (AAG Ch. 4–6). Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
   - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
   - text: "<strong>Project showcase with Q&amp;A</strong> in the final week."
@@ -48,7 +48,7 @@ features:
 materials:
   - title: "Week 1: Course Introduction and R Programming Basics"
     url: "/assets/courses/pba/PBA_01_Course_Intro_UG.pdf"
-  - title: "Week 1(b): R Basics, reference slides (not lectured; read with AAG Ch. 4–6)"
+  - title: "Week 1(b): R Basics, reference slides (companion to AAG Ch. 4–6)"
     url: "/assets/courses/pba/PBA_00_R_Basics_Reference.pdf"
   - title: "Week 2: Data Visualization"
     url: "/assets/courses/pba/PBA_02_Data_Visualization.pdf"
@@ -71,7 +71,7 @@ materials:
 schedule_content: |
   ## Weekly Schedule (Undergraduate, Mondays)
 
-  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Two Mondays are university holidays with no make-up class (Sep 28, Oct 26); the week of Sep 28 is taught asynchronously. Readings should be completed before class. The schedule is tentative; eeclass announcements take precedence. Click the <span class="badge-slides" style="font-size:0.75rem; cursor:default;">Slides</span> badges to view lecture slides and R scripts.*
+  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Two Mondays are university holidays with no make-up class (Sep 28, Oct 26). Readings should be completed before class. The schedule is tentative; eeclass announcements take precedence. Click the <span class="badge-slides" style="font-size:0.75rem; cursor:default;">Slides</span> badges to view lecture slides and R scripts.*
 
   ### Part I: Working with Data in R
 
@@ -79,7 +79,7 @@ schedule_content: |
   <a class="badge-slides" href="/assets/courses/pba/PBA_01_Course_Intro_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Reference.pdf">R basics (reference)</a>
   - How the course works
   - A first look at R and RStudio; Quarto
-  - R basics (operators, data types, vectors, data frames) are reference slides on eeclass, paired with AAG Ch. 4–6; they are not lectured
+  - R basics (operators, data types, vectors, data frames): reference slides under Materials, paired with AAG Ch. 4–6; we use them at the keyboard from Week 2 on
   - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 1; AAG Ch. 4.3, 5, 6; VT Ch. 1–2. Install R and RStudio before class.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Self-introduction on the eeclass discussion board by Fri Sep 11</em><br>
@@ -88,6 +88,7 @@ schedule_content: |
 
   **Week 2 (Sep 14): Data Visualization**
   <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.R" download>R script</a>
+  - R basics at the keyboard: operators, variables, and how a data table is put together (vectors, column types)
   - A first look at data and a first plot (Gapminder)
   - Building plots by layers with ggplot2: geoms, labels, mapping vs. setting aesthetics
   - Histograms, facets, density plots, boxplots; grouped data
