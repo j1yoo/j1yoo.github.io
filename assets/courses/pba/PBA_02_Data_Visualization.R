@@ -5,7 +5,7 @@
 
 # PDF p. 6
 library(ggplot2)
-gapminder <- gapminder::gapminder
+library(gapminder)   # install the package first: install.packages("gapminder")
 gapminder
 
 # PDF p. 7
