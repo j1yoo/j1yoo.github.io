@@ -52,16 +52,22 @@
         // Close mobile menu
         document.querySelector('.nav-links').classList.remove('open');
 
-        // Update URL hash
+        // Update URL hash, and remember the tab for reloads
         history.replaceState(null, null, '#' + target);
+        try { sessionStorage.setItem('courseSection', target); } catch (err) {}
 
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
 
-    // Handle initial hash
+    // Handle initial hash; on a reload without a hash, restore the last tab
     var hash = window.location.hash.replace('#', '');
+    if (!hash) {
+      var navEntry = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+      var isReload = navEntry ? navEntry.type === 'reload' : (performance.navigation && performance.navigation.type === 1);
+      if (isReload) { try { hash = sessionStorage.getItem('courseSection') || ''; } catch (err) {} }
+    }
     if (hash) {
       var targetLink = document.querySelector('.eci-nav-link[data-section="' + hash + '"]');
       if (targetLink) targetLink.click();
