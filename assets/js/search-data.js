@@ -411,14 +411,14 @@ ninja.data = [{
           description: "This course introduces the basics of programming using R for business applications.",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/pba-2025/";
-            },},{id: "teaching-pba-grad",
-          title: 'Pba Grad',
-          description: "",
+            },},{id: "teaching-programming-for-business-analytics-graduate",
+          title: 'Programming for Business Analytics (Graduate)',
+          description: "A graduate course on empirical analysis with R: from data wrangling and visualization to causal reasoning, regression, and uncertainty quantification, culminating in a research-grade project that prepares students for Experiments and Causal Inference.",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/pba-grad/";
-            },},{id: "teaching-pba",
-          title: 'Pba',
-          description: "",
+            },},{id: "teaching-programming-for-business-analytics-undergraduate",
+          title: 'Programming for Business Analytics (Undergraduate)',
+          description: "An undergraduate introduction to data analysis with R for business: wrangling and visualizing data, evaluating causal claims, linear regression, and quantifying uncertainty.",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/pba/";
             },},{
