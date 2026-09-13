@@ -859,6 +859,11 @@
                     <i class="fas fa-file-alt"></i> Handout
                   </a>
                 {% endif %}
+                {% if item.script_url %}
+                  <a href="{{ item.script_url | relative_url }}" download class="btn-eci btn-eci-sm">
+                    <i class="fab fa-r-project"></i> R script
+                  </a>
+                {% endif %}
                 {% if item.url %}
                   <a href="{{ item.url | relative_url }}#toolbar=0&navpanes=0" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer">
                     <i class="fas fa-chalkboard-teacher"></i> Slides
