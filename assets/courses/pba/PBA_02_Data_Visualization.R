@@ -3,17 +3,17 @@
 # Packages used today: ggplot2, gapminder, dplyr. Install once: install.packages(c("pacman", "ggplot2", "gapminder", "dplyr"))
 
 # PDF p. 6
-# Install once: install.packages(c("pacman", "gapminder"))
+# Install once: install.packages(c("pacman", "ggplot2"))
 # Load with library() or require(), or let pacman do both:
-pacman::p_load(ggplot2, gapminder)
-gapminder
+pacman::p_load(ggplot2)
+midwest
 
 # PDF p. 7
-ggplot(gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
-  geom_point() + geom_smooth(method = "loess")  # loess: local smoothing, a flexible curve that follows the data
+ggplot(midwest, mapping = aes(x = percollege, y = percbelowpoverty)) +
+  geom_point() + geom_smooth()   # the curve: loess, local smoothing
 
 # PDF p. 8
-ggplot(gapminder, mapping = aes(x = gdpPercap)) +
+ggplot(midwest, mapping = aes(x = percollege)) +
   geom_histogram()
 
 # PDF p. 11
