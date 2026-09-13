@@ -738,7 +738,7 @@
             <img src="{{ page.logo | relative_url }}" alt="{{ page.title }} logo" class="eci-logo">
           {% endif %}
           {% if page.syllabus %}
-            <a href="{{ page.syllabus | relative_url }}#toolbar=0&navpanes=0" class="btn-eci btn-eci-sm" target="_blank" rel="noopener noreferrer" style="margin-top: 0.8rem;">
+            <a href="{{ page.syllabus | relative_url }}" class="btn-eci btn-eci-sm" target="_blank" rel="noopener noreferrer" style="margin-top: 0.8rem;">
               <i class="fas fa-file-pdf"></i> Syllabus PDF
             </a>
           {% endif %}
@@ -855,7 +855,7 @@
               <span>{{ item.title }}</span>
               <span class="materials-buttons">
                 {% if item.handout_url %}
-                  <a href="{{ item.handout_url | relative_url }}#toolbar=0&navpanes=0" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer">
+                  <a href="{{ item.handout_url | relative_url }}" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer">
                     <i class="fas fa-file-alt"></i> Handout
                   </a>
                 {% endif %}
@@ -865,7 +865,7 @@
                   </a>
                 {% endif %}
                 {% if item.url %}
-                  <a href="{{ item.url | relative_url }}#toolbar=0&navpanes=0" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer">
+                  <a href="{{ item.url | relative_url }}" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer">
                     <i class="fas fa-chalkboard-teacher"></i> Slides
                   </a>
                 {% endif %}
@@ -881,7 +881,7 @@
         <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.8rem;">Detailed notes in article format, covering material discussed in class and beyond.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
           {% for note in page.written_notes %}
-            <a href="{{ note.url | relative_url }}#toolbar=0&navpanes=0" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer" style="white-space: nowrap;">
+            <a href="{{ note.url | relative_url }}" target="_blank" class="btn-eci btn-eci-sm" rel="noopener noreferrer" style="white-space: nowrap;">
               <i class="fas fa-book"></i> {{ note.title }}
             </a>
           {% endfor %}

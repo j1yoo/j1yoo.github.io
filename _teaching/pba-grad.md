@@ -48,7 +48,7 @@ features:
 materials:
   - title: "Week 1: Course Introduction and R Programming Basics"
     url: "/assets/courses/pba/PBA_01_Course_Intro_Grad.pdf"
-  - title: "Week 1(b): R Basics, reference slides. The Week 1 reading assignment (AAG Ch. 4–6) in slide form; not lectured, read on your own"
+  - title: "Week 1(b): R Basics, reference slides (not lectured; read with AAG Ch. 4–6)"
     url: "/assets/courses/pba/PBA_00_R_Basics_Reference.pdf"
   - title: "Week 2: Data Visualization"
     url: "/assets/courses/pba/PBA_02_Data_Visualization.pdf"
