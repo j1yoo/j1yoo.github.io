@@ -23,7 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
-  - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings (AAG Ch. 4–6). Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
+  - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>R Basics and Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings (AAG Ch. 4–6). Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
   - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
   - text: "<strong>Project showcase with Q&amp;A</strong> in the final week."
@@ -50,7 +50,7 @@ materials:
     url: "/assets/courses/pba/PBA_01_Course_Intro_UG.pdf"
   - title: "Week 1(b): R Basics, reference slides (companion to AAG Ch. 4–6)"
     url: "/assets/courses/pba/PBA_00_R_Basics_Reference.pdf"
-  - title: "Week 2: Data Visualization"
+  - title: "Week 2: R Basics and Data Visualization"
     url: "/assets/courses/pba/PBA_02_Data_Visualization.pdf"
     script_url: "/assets/courses/pba/PBA_02_Data_Visualization.R"
   - title: "Week 3: Data Wrangling with dplyr"
@@ -86,7 +86,7 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Swirl tutorials 1–3 by Week 2</em>
   </div>
 
-  **Week 2 (Sep 14): Data Visualization**
+  **Week 2 (Sep 14): R Basics and Data Visualization**
   <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_02_Data_Visualization.R" download>R script</a>
   - R basics at the keyboard: operators, variables, and how a data table is put together (vectors, column types)
   - A first look at data and a first plot (Gapminder)
