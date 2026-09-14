@@ -23,6 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
+  - text: "<strong>Sep 14, 2026:</strong> The existing reading list now distinguishes <strong>Required reading</strong> from <strong>Further reading</strong>, with direct links to free resources and more precise section ranges. For our next class on <strong>Mon Sep 21</strong>, review <strong>MD §§1.2–1.4</strong> and complete the Week 3 reading. An R Basics companion handout now adds explanations and worked examples to the reference slides under <strong>Materials</strong>."
   - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings (AAG Ch. 4–6). Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
   - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
@@ -48,8 +49,11 @@ features:
 materials:
   - title: "Week 1: Course Introduction and R Programming Basics"
     url: "/assets/courses/pba/PBA_01_Course_Intro_UG.pdf"
-  - title: "Week 1(b): R Basics, reference slides (companion to AAG Ch. 4–6)"
+  - title: "Week 1(b): R Basics: reference slides"
     url: "/assets/courses/pba/PBA_00_R_Basics_Reference.pdf"
+  - title: "Week 1(b): R Basics: companion handout"
+    url: "/assets/courses/pba/PBA_00_R_Basics_Handout.pdf"
+    script_url: "/assets/courses/pba/PBA_R_Basics_Companion.R"
   - title: "Week 2: Data Visualization"
     url: "/assets/courses/pba/PBA_02_Data_Visualization.pdf"
     script_url: "/assets/courses/pba/PBA_02_Data_Visualization.R"
@@ -71,16 +75,17 @@ materials:
 schedule_content: |
   ## Weekly Schedule (Undergraduate, Mondays)
 
-  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Two Mondays are university holidays with no make-up class (Sep 28, Oct 26). Readings should be completed before class. The schedule is tentative; eeclass announcements take precedence. Click the <span class="badge-slides" style="font-size:0.75rem; cursor:default;">Slides</span> badges to view lecture slides and R scripts.*
+  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Two Mondays are university holidays with no make-up class (Sep 28, Oct 26). Required readings should be completed before class; further readings are optional. The linked MD and IMS readings are freely available, and commercial textbook purchase is not required. The schedule is tentative; eeclass announcements take precedence. Click the <span class="badge-slides" style="font-size:0.75rem; cursor:default;">Slides</span> badges to view lecture slides and R scripts.*
 
   ### Part I: Working with Data in R
 
   **Week 1 (Sep 7): Course Introduction and R Programming Basics**
-  <a class="badge-slides" href="/assets/courses/pba/PBA_01_Course_Intro_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Reference.pdf">R basics (reference)</a>
+  <a class="badge-slides" href="/assets/courses/pba/PBA_01_Course_Intro_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Reference.pdf">R basics (reference)</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Handout.pdf">R basics (handout)</a>
   - How the course works
   - A first look at R and RStudio; Quarto
-  - R basics (operators, data types, vectors, data frames): reference slides under Materials, paired with AAG Ch. 4–6; we use them from Week 2 on
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 1; AAG Ch. 4.3, 5, 6; VT Ch. 1–2. Install R and RStudio before class.
+  - R basics (operators, data types, vectors, matrices, arrays, lists, and data frames): MD Ch. 1 introduces the core ideas; the reference slides and companion handout under Materials provide explanations and examples to revisit throughout the semester
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§1.1–1.4](https://moderndive.com/1-getting-started.html#r-rstudio) (R/RStudio, objects, functions, packages, and data frames). Install R and RStudio before class.
+  - **Further reading (optional):** AAG §§4.3, 5, 6 (R basics); VT Ch. 1–2 (working with and communicating data).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Self-introduction on the eeclass discussion board by Fri Sep 11</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Swirl tutorials 1–3 by Week 2</em>
@@ -92,7 +97,8 @@ schedule_content: |
   - A first look at data and a first plot (Gapminder)
   - Building plots by layers with ggplot2: geoms, labels, mapping vs. setting aesthetics
   - Histograms, facets, density plots, boxplots; grouped data
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 2; AAG Ch. 3, 4, 7.1, 9, 10, 27, 28; VT Ch. 3–4
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§1.2–1.4](https://moderndive.com/1-getting-started.html#code) (review); [MD §§2.1–2.7](https://moderndive.com/2-viz.html#grammarofgraphics) (grammar of graphics, scatterplots, line graphs, histograms, facets, and boxplots).
+  - **Further reading (optional):** AAG §7.2 (ggplot2); AAG Ch. 3–5 (additional R background); VT Ch. 3–4 (tools and patterns over time).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E1 (gapminder)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 1 released</em><br>
@@ -102,7 +108,8 @@ schedule_content: |
   **Week 3 (Sep 21): Data Wrangling with dplyr**
   - Operating on rows, columns, and groups
   - Bar plots
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 14–16; VT Ch. 7; MD Ch. 3
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§3.1–3.6](https://moderndive.com/3-wrangling.html#piping), [MD §3.8](https://moderndive.com/3-wrangling.html#other-verbs) (pipes, filtering, summaries, groups, new variables, sorting, and selecting columns); [MD §2.8](https://moderndive.com/2-viz.html#geombar) (bar plots).
+  - **Further reading (optional):** AAG §§12.1–12.9 (dplyr); VT Ch. 7 (visual comparisons).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E2</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em>
@@ -118,7 +125,8 @@ schedule_content: |
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> QSS Ch. 2.1–2.5
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); course notes on potential outcomes, average treatment effects, and comparisons of group means (to be posted before class).
+  - **Further reading (optional):** QSS §§2.1–2.5.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>20-minute debrief of E3</em><br>
@@ -130,7 +138,8 @@ schedule_content: |
   **Week 6 (Oct 12): Relationships, Importing, and Tidying Data**
   - Z-scores and correlation
   - Pivoting longer; joining datasets
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 11; MD Ch. 4; QSS Ch. 3.5–3.6
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§4.1–4.2](https://moderndive.com/4-tidy.html#csv) (importing and tidy data); [MD §§3.7.1–3.7.3](https://moderndive.com/3-wrangling.html#matching-key-variable-names) (joins); [MD §5.1.1](https://moderndive.com/5-regression.html#model1EDA) (correlation); [IMS §13.2.2](https://openintro-ims1.netlify.app/foundations-mathematical#standardizing-with-z-scores) (Z-scores).
+  - **Further reading (optional):** AAG §§6.1, 15.2–15.3, 18.2; QSS §§3.5–3.6.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Optional, Oct 12–23: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a> to discuss your research question before the proposal</em><br>
   <span class="badge-due">Due:</span> Milestone 2: data and proposal, Sun Oct 25
@@ -139,14 +148,16 @@ schedule_content: |
   **Week 7 (Oct 19): Prediction and Iteration**
   - Predicting election outcomes
   - Loops; evaluating predictions; time-series plots
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 4.7, 12; VT Ch. 8–9
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (to be posted before class); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
+  - **Further reading (optional):** QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
 
   **Week 8 (Oct 26): No class (Retrocession Day observed)**
 
   **Week 9 (Nov 2): Regression and Model Fit**
   - Modeling with a line; linear regression in R
   - Model fit
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 5; QSS Ch. 4.1, 4.2.1–4.2.4
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §5.1](https://moderndive.com/5-regression.html#model1) and [MD §5.3.2](https://moderndive.com/5-regression.html#leastsquares) (linear regression, fitted values, residuals, and least squares); [IMS §7.2.5](https://openintro-ims1.netlify.app/model-slr#r-squared) (R-squared).
+  - **Further reading (optional):** QSS §§4.2.1–4.2.4, 4.2.6; [IMS §§7.1–7.3](https://openintro-ims1.netlify.app/model-slr#fit-line-res-cor) for additional explanation and practice.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 3 and Problem Set 1 (IMS Ch. 7) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Course withdrawal period Nov 2–20</em><br>
@@ -156,7 +167,8 @@ schedule_content: |
   **Week 10 (Nov 9): More on Regression**
   - Multiple regression
   - Categorical predictors
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 6.1–6.2; QSS Ch. 4.2.6–4.3.2
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
+  - **Further reading (optional):** QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E4 (NYC condominiums)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em><br>
@@ -169,7 +181,8 @@ schedule_content: |
   **Week 11 (Nov 16): Sampling and Sampling Distributions**
   - Sampling framework
   - Random variables; the normal and the central limit theorem
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 7
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§7.1–7.3](https://moderndive.com/7-sampling.html#sampling-activity) and [MD §7.5](https://moderndive.com/7-sampling.html#sampling-conclusion-central-limit-theorem) (sampling, sampling distributions, and the central limit theorem).
+  - **Further reading (optional):** [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) (normal models and standard errors).
   <div class="schedule-deliverables">
   <span class="badge-due">Due:</span> Assignment 3<br>
   <span class="badge-due">Due:</span> Problem Set 2, Sun Nov 22
@@ -178,7 +191,8 @@ schedule_content: |
   **Week 12 (Nov 23): The Bootstrap and Confidence Intervals**
   - Resampling; bootstrap CIs for means and ATEs
   - Computing and interpreting CIs
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> AAG Ch. 18–19; MD Ch. 8; IMS Ch. 12
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§8.1–8.5](https://moderndive.com/8-confidence-intervals.html#resampling-tactile) (resampling and confidence intervals); [IMS §20.2](https://openintro-ims1.netlify.app/inference-two-means#bootstrap-confidence-interval-for-the-difference-in-means) (bootstrap intervals for a difference in means).
+  - **Further reading (optional):** AAG §21.4; [MD §8.6](https://moderndive.com/8-confidence-intervals.html#case-study-two-prop-ci) (a worked comparison of two groups).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em>
   </div>
@@ -186,7 +200,8 @@ schedule_content: |
   **Week 13 (Nov 30): Hypothesis Testing**
   - Hypothesis tests with infer; two-sample and permutation tests
   - Issues with hypothesis testing; power
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> MD Ch. 9; IMS Ch. 11
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§9.1–9.4](https://moderndive.com/9-hypothesis-testing.html#ht-activity) (randomization tests and interpretation); [IMS §20.1](https://openintro-ims1.netlify.app/inference-two-means#rand2mean) (two-means randomization test); [IMS §14.4](https://openintro-ims1.netlify.app/decerr#pow) (power).
+  - **Further reading (optional):** [MD §§9.5–9.6](https://moderndive.com/9-hypothesis-testing.html#ht-case-study) (worked example and issues with testing).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
@@ -197,7 +212,8 @@ schedule_content: |
   **Week 14 (Dec 7): Models of Uncertainty**
   - Using the normal for inference
   - CIs for experiments
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> IMS Ch. 13
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) and [IMS §13.6](https://openintro-ims1.netlify.app/foundations-mathematical#casestent) (normal models, standard errors, and confidence intervals); [IMS §20.4](https://openintro-ims1.netlify.app/inference-two-means#mathematical-model-for-estimating-the-difference-in-means) (intervals for a difference in means).
+  - **Further reading (optional):** [IMS §§13.4–13.5](https://openintro-ims1.netlify.app/foundations-mathematical#caseopp) (additional examples).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 5 released</em><br>
   <span class="badge-due">Due:</span> Assignment 4<br>
@@ -207,13 +223,15 @@ schedule_content: |
   **Week 15 (Dec 14): Inference for Regression**
   - Uncertainty for regression coefficients
   - Presenting OLS regressions
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Readings:</span> QSS Ch. 7.3
+  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§10.1–10.3](https://moderndive.com/10-inference-for-regression.html#regression-refresher) (regression tables, uncertainty, and conditions for inference); [IMS §25.1](https://openintro-ims1.netlify.app/inf-model-mlr#inf-mult-reg-soft) (multiple-regression output).
+  - **Further reading (optional):** QSS §7.3; [MD §10.4](https://moderndive.com/10-inference-for-regression.html#infer-regression) (simulation-based inference).
 
   ### Part IV: Showcase
 
   **Week 16 (Dec 21): Project Showcase, Q&A, and Peer Evaluation**
   - Teams present at stations; the instructor and TAs rotate for Q&A
   - Peer evaluation
+  - **Preparation:** Review the project instructions and evaluation rubric on eeclass, and prepare your presentation and responses to questions.
   <div class="schedule-deliverables">
   <span class="badge-due">Due:</span> Final report, Sun Dec 20<br>
   <span class="badge-due">Due:</span> Assignment 5, Sun Dec 27
@@ -221,14 +239,24 @@ schedule_content: |
 
 
 textbooks_content: |
-  ## Textbooks
+  ## Reading Materials
 
-  Readings are assigned from the following books (see the syllabus for the week-by-week list):
+  The weekly schedule separates **Required reading (before class)** from **Further reading (optional)**. Read the specified sections and try their R examples before class so that you can work with the examples, ask questions, and participate in discussion. We will build on this preparation by explaining the code and using it in real analyses.
 
-  - **[MD]** Ismay, Chester and Albert Y. Kim. 2022. [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/).
-  - **[QSS]** Imai, Kosuke and Nora Webb Williams. 2022. *Quantitative Social Science: An Introduction with Tidyverse*. Princeton University Press.
-  - **[IMS]** Çetinkaya-Rundel, Mine and Johanna Hardin. 2021. [Introduction to Modern Statistics](https://openintro-ims.netlify.app/). OpenIntro.
-  - **[AAG]** Lander, Jared P. 2017. *R for Everyone: Advanced Analytics and Graphics*, 2nd ed. O'Reilly.
+  We learn R through practical data-analysis questions. Class time will focus on working through code, interpreting results, and making changes to answer new questions. Programming foundations such as objects, operators, data structures, and functions will be explained and revisited as we use them in visualization, data wrangling, and later analyses. Questions about these foundations are welcome throughout the course.
+
+  ### Required reading: freely accessible resources
+
+  - **[MD]** Ismay, Chester and Albert Y. Kim. [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/1-getting-started.html). The schedule links to the first-edition online text and specifies the sections to read.
+  - **[IMS]** Çetinkaya-Rundel, Mine and Johanna Hardin. 2021. [Introduction to Modern Statistics, 1st ed.](https://openintro-ims1.netlify.app/). OpenIntro. Use this linked edition for the section numbers in the reading list.
+  - **Course materials:** lecture slides, R scripts, and handouts are linked under Materials. The [R Basics reference slides](/assets/courses/pba/PBA_00_R_Basics_Reference.pdf) and [companion handout](/assets/courses/pba/PBA_00_R_Basics_Handout.pdf) explain the programming foundations and remain available throughout the semester. Additional course notes named in the schedule will be posted before the relevant class.
+
+  ### Further reading: optional references
+
+  These books provide additional explanations and examples. Purchasing them is not required.
+
+  - **[QSS]** Imai, Kosuke and Nora Webb Williams. 2022. *Quantitative Social Science: An Introduction in tidyverse*. Princeton University Press.
+  - **[AAG]** Lander, Jared P. 2017. *R for Everyone: Advanced Analytics and Graphics*, 2nd ed. Addison-Wesley Professional.
   - **[VT]** Yau, Nathan. 2011. *Visualize This: The FlowingData Guide to Design, Visualization, and Statistics*. Wiley.
 
   ## Software
@@ -307,6 +335,17 @@ policies_content: |
   Attend every class with your laptop. Attendance is recorded from Week 2 and counts for 10%; each missed class costs about 1% of the final grade. Notify the instructor or a TA before class if you must miss it. Participation is assessed through in-class discussion and the eeclass discussion board.
 ---
 
+<div style="border-left: 4px solid #2698ba; padding: 0.9rem 1.2rem; margin: 0 0 1.5rem;">
+  <h2 style="margin-top: 0;">Must read before Monday, September 21</h2>
+  <p>Prepare with these freely available ModernDive sections:</p>
+  <ol>
+    <li><strong>Data wrangling:</strong> <a href="https://moderndive.com/3-wrangling.html#piping">Sections 3.1–3.6</a> and <a href="https://moderndive.com/3-wrangling.html#other-verbs">Section 3.8</a>: working with rows, columns, and groups.</li>
+    <li><strong>Bar plots:</strong> <a href="https://moderndive.com/2-viz.html#geombar">Section 2.8</a>.</li>
+  </ol>
+  <p>Read and run the examples before class, and note questions to work through together. To revisit the foundations from this week's visualization examples, use <a href="https://moderndive.com/1-getting-started.html#code">ModernDive Sections 1.2–1.4</a> and the <a href="/assets/courses/pba/PBA_00_R_Basics_Handout.pdf">R Basics companion handout</a> as needed. The handout's later sections on writing functions and scoping are references for the semester.</p>
+  <p style="font-size: 0.85rem; margin-bottom: 0;">Preparation clarified September 14. The weekly schedule distinguishes required reading from optional further reading.</p>
+</div>
+
 ## Course Overview
 
 This course teaches you to turn messy business data into defensible answers with R. You will learn to wrangle and visualize data, evaluate claims about causality, fit and interpret linear regressions, and quantify how much you should trust an estimate through sampling distributions, the bootstrap, confidence intervals, and hypothesis tests. Every method is practiced on real datasets, and the semester culminates in a team project published as a portfolio-ready article with a public GitHub repository.
@@ -314,6 +353,14 @@ This course teaches you to turn messy business data into defensible answers with
 Agentic AI now writes much of the code. The skill that matters has shifted from writing code to directing and verifying it: without the underlying building blocks, you cannot tell when an analysis is wrong, and you end up steered by the tool rather than steering it. The course therefore builds programming and visualization foundations first, then turns to statistical inference, and every in-class exercise ends with a verification step.
 
 This is the undergraduate course (ISS4066, Mondays). Graduate students take ISS5066 on Thursdays, which carries research-oriented project requirements. Students may not receive credit for both.
+
+## How We Will Learn R
+
+We will learn programming fundamentals through questions about real data, beginning with visualization and data wrangling. Each analysis gives the code a purpose: we can ask what it does, why it is useful, and how changing it changes the result. We will explain and revisit objects, data structures, functions, and other R concepts throughout the semester, with time to work through code, compare analytical choices, and interpret results together.
+
+Complete the **Required reading** linked in the weekly schedule before class and try the examples in R. You are expected to take responsibility for this preparation and arrive ready to work with the examples and contribute to discussion. As you read, note anything you would like clarified; questions about the fundamentals are welcome. The free **R Basics companion handout** explains the reference slides in prose and provides worked examples you can return to when needed.
+
+Required readings are freely accessible online. **Further reading** offers additional explanation and depth; purchasing the commercial textbooks is not required.
 
 ## Learning Objectives
 
