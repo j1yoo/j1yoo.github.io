@@ -352,6 +352,25 @@
       font-size: 0.8rem;
     }
 
+    {% if page.permalink == '/teaching/pba/' or page.permalink == '/teaching/pba-grad/' %}
+    /* PBA reading labels share typography; color distinguishes preparation. */
+    .eci-section .badge-read {
+      display: inline-block;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      margin-right: 0.3em;
+    }
+    .eci-section .badge-read i {
+      color: inherit;
+      font-size: 0.9em;
+      margin-right: 0.3em;
+    }
+    .eci-section .badge-read-required { color: #b42318; }
+    .eci-section .badge-read-optional { color: #626b75; }
+    html[data-theme="dark"] .eci-section .badge-read-required { color: #ff938c; }
+    html[data-theme="dark"] .eci-section .badge-read-optional { color: #adb5bd; }
+    {% endif %}
+
     /* ── Instructor card ── */
     .instructor-card {
       display: flex;

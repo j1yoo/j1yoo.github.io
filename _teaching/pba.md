@@ -85,8 +85,8 @@ schedule_content: |
   - Course aims, organization, and expectations
   - Working in R and RStudio: objects, functions, and packages
   - Reproducible reports with Quarto
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§1.1–1.4](https://moderndive.com/1-getting-started.html#r-rstudio) (R/RStudio, objects, functions, packages, and data frames). Install R and RStudio before class.
-  - **Further reading (optional):** AAG §§4.3, 5, 6 (R basics); VT Ch. 1–2 (working with and communicating data).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§1.1–1.4](https://moderndive.com/1-getting-started.html#r-rstudio) (R/RStudio, objects, functions, packages, and data frames). Install R and RStudio before class.
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §§4.3, 5, 6 (R basics); VT Ch. 1–2 (working with and communicating data).
 
   **R Basics reference materials:** The reference slides and companion handout under Materials cover operators, data types, data structures, and writing functions, with explanations and examples to consult throughout the semester.
   <div class="schedule-deliverables">
@@ -100,8 +100,8 @@ schedule_content: |
   - Building plots layer by layer with ggplot2: geoms, labels, scales, and mapping versus setting aesthetics
   - Comparing distributions with histograms, density plots, boxplots, and facets
   - Plotting grouped data and trends over time with Gapminder
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§1.2–1.4](https://moderndive.com/1-getting-started.html#code) (review); [MD §§2.1–2.7](https://moderndive.com/2-viz.html#grammarofgraphics) (grammar of graphics, scatterplots, line graphs, histograms, facets, and boxplots).
-  - **Further reading (optional):** AAG §7.2 (ggplot2); AAG Ch. 3–5 (additional R background); VT Ch. 3–4 (tools and patterns over time).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§1.2–1.4](https://moderndive.com/1-getting-started.html#code) (review); [MD §§2.1–2.7](https://moderndive.com/2-viz.html#grammarofgraphics) (grammar of graphics, scatterplots, line graphs, histograms, facets, and boxplots).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §7.2 (ggplot2); AAG Ch. 3–5 (additional R background); VT Ch. 3–4 (tools and patterns over time).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E1 (gapminder)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 1 released</em><br>
@@ -111,8 +111,8 @@ schedule_content: |
   **Week 3 (Sep 21): Data Wrangling with dplyr**
   - Operating on rows, columns, and groups
   - Bar plots
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§3.1–3.6](https://moderndive.com/3-wrangling.html#piping), [MD §3.8](https://moderndive.com/3-wrangling.html#other-verbs) (pipes, filtering, summaries, groups, new variables, sorting, and selecting columns); [MD §2.8](https://moderndive.com/2-viz.html#geombar) (bar plots).
-  - **Further reading (optional):** AAG §§12.1–12.9 (dplyr); VT Ch. 7 (visual comparisons).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§3.1–3.6](https://moderndive.com/3-wrangling.html#piping), [MD §3.8](https://moderndive.com/3-wrangling.html#other-verbs) (pipes, filtering, summaries, groups, new variables, sorting, and selecting columns); [MD §2.8](https://moderndive.com/2-viz.html#geombar) (bar plots).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §§12.1–12.9 (dplyr); VT Ch. 7 (visual comparisons).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E2</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em>
@@ -128,8 +128,8 @@ schedule_content: |
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); course notes on potential outcomes, average treatment effects, and comparisons of group means (to be posted before class).
-  - **Further reading (optional):** QSS §§2.1–2.5.
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); course notes on potential outcomes, average treatment effects, and comparisons of group means (to be posted before class).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§2.1–2.5.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>20-minute debrief of E3</em><br>
@@ -142,8 +142,8 @@ schedule_content: |
   - Z-scores and correlation
   - Writing reusable functions for standardization
   - Pivoting longer; joining datasets
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§4.1–4.2](https://moderndive.com/4-tidy.html#csv) (importing and tidy data); [MD §§3.7.1–3.7.3](https://moderndive.com/3-wrangling.html#matching-key-variable-names) (joins); [MD §5.1.1](https://moderndive.com/5-regression.html#model1EDA) (correlation); [IMS §13.2.2](https://openintro-ims1.netlify.app/foundations-mathematical#standardizing-with-z-scores) (Z-scores).
-  - **Further reading (optional):** AAG §§6.1, 15.2–15.3, 18.2; QSS §§3.5–3.6.
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§4.1–4.2](https://moderndive.com/4-tidy.html#csv) (importing and tidy data); [MD §§3.7.1–3.7.3](https://moderndive.com/3-wrangling.html#matching-key-variable-names) (joins); [MD §5.1.1](https://moderndive.com/5-regression.html#model1EDA) (correlation); [IMS §13.2.2](https://openintro-ims1.netlify.app/foundations-mathematical#standardizing-with-z-scores) (Z-scores).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §§6.1, 15.2–15.3, 18.2; QSS §§3.5–3.6.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Optional, Oct 12–23: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a> to discuss your research question before the proposal</em><br>
   <span class="badge-due">Due:</span> Milestone 2: data and proposal, Sun Oct 25
@@ -152,16 +152,16 @@ schedule_content: |
   **Week 7 (Oct 19): Prediction and Iteration**
   - Predicting election outcomes
   - Loops; evaluating predictions; time-series plots
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (to be posted before class); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
-  - **Further reading (optional):** QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (to be posted before class); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
 
   **Week 8 (Oct 26): No class (Retrocession Day observed)**
 
   **Week 9 (Nov 2): Regression and Model Fit**
   - Modeling with a line; linear regression in R
   - Model fit
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §5.1](https://moderndive.com/5-regression.html#model1) and [MD §5.3.2](https://moderndive.com/5-regression.html#leastsquares) (linear regression, fitted values, residuals, and least squares); [IMS §7.2.5](https://openintro-ims1.netlify.app/model-slr#r-squared) (R-squared).
-  - **Further reading (optional):** QSS §§4.2.1–4.2.4, 4.2.6; [IMS §§7.1–7.3](https://openintro-ims1.netlify.app/model-slr#fit-line-res-cor) for additional explanation and practice.
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.1](https://moderndive.com/5-regression.html#model1) and [MD §5.3.2](https://moderndive.com/5-regression.html#leastsquares) (linear regression, fitted values, residuals, and least squares); [IMS §7.2.5](https://openintro-ims1.netlify.app/model-slr#r-squared) (R-squared).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.1–4.2.4, 4.2.6; [IMS §§7.1–7.3](https://openintro-ims1.netlify.app/model-slr#fit-line-res-cor) for additional explanation and practice.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 3 and Problem Set 1 (IMS Ch. 7) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Course withdrawal period Nov 2–20</em><br>
@@ -171,8 +171,8 @@ schedule_content: |
   **Week 10 (Nov 9): More on Regression**
   - Multiple regression
   - Categorical predictors
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
-  - **Further reading (optional):** QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E4 (NYC condominiums)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em><br>
@@ -185,8 +185,8 @@ schedule_content: |
   **Week 11 (Nov 16): Sampling and Sampling Distributions**
   - Sampling framework
   - Random variables; the normal distribution and the central limit theorem
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§7.1–7.3](https://moderndive.com/7-sampling.html#sampling-activity) and [MD §7.5](https://moderndive.com/7-sampling.html#sampling-conclusion-central-limit-theorem) (sampling, sampling distributions, and the central limit theorem).
-  - **Further reading (optional):** [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) (normal models and standard errors).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§7.1–7.3](https://moderndive.com/7-sampling.html#sampling-activity) and [MD §7.5](https://moderndive.com/7-sampling.html#sampling-conclusion-central-limit-theorem) (sampling, sampling distributions, and the central limit theorem).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) (normal models and standard errors).
   <div class="schedule-deliverables">
   <span class="badge-due">Due:</span> Assignment 3<br>
   <span class="badge-due">Due:</span> Problem Set 2, Sun Nov 22
@@ -195,8 +195,8 @@ schedule_content: |
   **Week 12 (Nov 23): The Bootstrap and Confidence Intervals**
   - Resampling; bootstrap CIs for means and ATEs
   - Computing and interpreting CIs
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§8.1–8.5](https://moderndive.com/8-confidence-intervals.html#resampling-tactile) (resampling and confidence intervals); [IMS §20.2](https://openintro-ims1.netlify.app/inference-two-means#bootstrap-confidence-interval-for-the-difference-in-means) (bootstrap intervals for a difference in means).
-  - **Further reading (optional):** AAG §21.4; [MD §8.6](https://moderndive.com/8-confidence-intervals.html#case-study-two-prop-ci) (a worked comparison of two groups).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§8.1–8.5](https://moderndive.com/8-confidence-intervals.html#resampling-tactile) (resampling and confidence intervals); [IMS §20.2](https://openintro-ims1.netlify.app/inference-two-means#bootstrap-confidence-interval-for-the-difference-in-means) (bootstrap intervals for a difference in means).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §21.4; [MD §8.6](https://moderndive.com/8-confidence-intervals.html#case-study-two-prop-ci) (a worked comparison of two groups).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em>
   </div>
@@ -204,8 +204,8 @@ schedule_content: |
   **Week 13 (Nov 30): Hypothesis Testing**
   - Hypothesis tests with infer; two-sample and permutation tests
   - Issues with hypothesis testing; power
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§9.1–9.4](https://moderndive.com/9-hypothesis-testing.html#ht-activity) (randomization tests and interpretation); [IMS §20.1](https://openintro-ims1.netlify.app/inference-two-means#rand2mean) (two-means randomization test); [IMS §14.4](https://openintro-ims1.netlify.app/decerr#pow) (power).
-  - **Further reading (optional):** [MD §§9.5–9.6](https://moderndive.com/9-hypothesis-testing.html#ht-case-study) (worked example and issues with testing).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§9.1–9.4](https://moderndive.com/9-hypothesis-testing.html#ht-activity) (randomization tests and interpretation); [IMS §20.1](https://openintro-ims1.netlify.app/inference-two-means#rand2mean) (two-means randomization test); [IMS §14.4](https://openintro-ims1.netlify.app/decerr#pow) (power).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [MD §§9.5–9.6](https://moderndive.com/9-hypothesis-testing.html#ht-case-study) (worked example and issues with testing).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
@@ -216,8 +216,8 @@ schedule_content: |
   **Week 14 (Dec 7): Models of Uncertainty**
   - Normal approximation and standard errors for confidence intervals and hypothesis tests
   - Comparing groups: confidence intervals and two-sample tests for experiments
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) and [IMS §13.6](https://openintro-ims1.netlify.app/foundations-mathematical#casestent) (normal models, standard errors, and confidence intervals); [IMS §20.4](https://openintro-ims1.netlify.app/inference-two-means#mathematical-model-for-estimating-the-difference-in-means) (intervals for a difference in means).
-  - **Further reading (optional):** [IMS §§13.4–13.5](https://openintro-ims1.netlify.app/foundations-mathematical#caseopp) (additional examples).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) and [IMS §13.6](https://openintro-ims1.netlify.app/foundations-mathematical#casestent) (normal models, standard errors, and confidence intervals); [IMS §20.4](https://openintro-ims1.netlify.app/inference-two-means#mathematical-model-for-estimating-the-difference-in-means) (intervals for a difference in means).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [IMS §§13.4–13.5](https://openintro-ims1.netlify.app/foundations-mathematical#caseopp) (additional examples).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 5 released</em><br>
   <span class="badge-due">Due:</span> Assignment 4<br>
@@ -227,8 +227,8 @@ schedule_content: |
   **Week 15 (Dec 14): Inference for Regression**
   - Uncertainty for regression coefficients
   - Presenting OLS regressions
-  - <span class="badge-read"><i class="fas fa-book-open"></i>Required reading:</span> [MD §§10.1–10.3](https://moderndive.com/10-inference-for-regression.html#regression-refresher) (regression tables, uncertainty, and conditions for inference); [IMS §25.1](https://openintro-ims1.netlify.app/inf-model-mlr#inf-mult-reg-soft) (multiple-regression output).
-  - **Further reading (optional):** QSS §7.3; [MD §10.4](https://moderndive.com/10-inference-for-regression.html#infer-regression) (simulation-based inference).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§10.1–10.3](https://moderndive.com/10-inference-for-regression.html#regression-refresher) (regression tables, uncertainty, and conditions for inference); [IMS §25.1](https://openintro-ims1.netlify.app/inf-model-mlr#inf-mult-reg-soft) (multiple-regression output).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §7.3; [MD §10.4](https://moderndive.com/10-inference-for-regression.html#infer-regression) (simulation-based inference).
 
   ### Part IV: Showcase
 
