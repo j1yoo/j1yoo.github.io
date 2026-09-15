@@ -4,7 +4,7 @@
   <div class="cv-entry cv-talk" data-talk-date="{{ talk.date | date: '%Y-%m-%d' }}">
     <div class="dated-row"><strong>{{ talk.title }}</strong><span class="date">{{ talk.date | date: '%Y' }}</span></div>
     <div>{% assign talk_type = talk.type | downcase %}{% if talk_type contains 'invited' %}<em>Invited talk</em>, {% elsif talk_type == 'brownbag' %}<em>Brownbag seminar</em>, {% elsif talk_type == 'scholarly speech' %}<em>Scholarly speech</em>, {% endif %}{{ talk.venue }}, {{ talk.date | date: '%B %d, %Y' }}.</div>
-    {% if talk.note %}<div class="note">{{ talk.note }}.</div>{% endif %}
+    {% if talk.note %}<div class="note"><em>Note:</em> {% if talk.highlight_note %}<span class="note-emphasis">{{ talk.note }}</span>{% else %}{{ talk.note }}{% endif %}.</div>{% endif %}
     {% if talk.slides %}{% assign slides_link = talk.slides | absolute_url %}{% include cv_links.liquid url=slides_link label=site.data.cv_links.slides second_url=talk.website second_label=site.data.cv_links.event %}{% elsif talk.website %}{% include cv_links.liquid url=talk.website label=site.data.cv_links.event %}{% endif %}
   </div>
 {% endfor %}

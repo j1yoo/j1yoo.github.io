@@ -7,6 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title }} - {{ site.data.resume.basics.name }}</title>
 <style>
+  @font-face {
+    font-family: "CV Noto Serif TC";
+    src: url("../assets/fonts/cv/NotoSerifTC-nthu.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
   * { box-sizing: border-box; }
   body { color: #111; background: white; font-family: "Times New Roman", Times, serif; font-size: 11pt; line-height: 1.30; margin: 0 auto; max-width: 215.9mm; padding: 18mm; }
   a, a:visited { color: #007bff; text-decoration: underline; text-decoration-thickness: .55pt; text-underline-offset: 1.5pt; }
@@ -17,6 +23,7 @@
   p { margin: 3pt 0; }
   .masthead { display: flex; justify-content: space-between; gap: 12pt; align-items: flex-start; font-size: 10pt; line-height: 1.35; }
   .affiliation { flex: 1; }
+  .institution-local { font-family: "CV Noto Serif TC"; font-weight: 400; font-synthesis: none; }
   .contact { text-align: right; flex-shrink: 0; }
   .profile-links { white-space: nowrap; }
   .cv-entry, .entry, ol.bibliography > li { break-inside: avoid; page-break-inside: avoid; }
@@ -54,7 +61,8 @@
   .research ol.bibliography > li { margin-bottom: 6pt; }
   .cv-subsection { break-inside: avoid; page-break-inside: avoid; }
   .cv-talk { font-size: 10.5pt; line-height: 1.28; margin-bottom: 8pt; }
-  .cv-talk .note { font-size: 10.5pt; font-style: italic; }
+  .cv-talk .note { font-size: 10.5pt; }
+  .cv-talk .note-emphasis { color: #246d83; font-weight: normal; text-decoration: none; }
   .student { font-size: 10.5pt; margin-bottom: 8pt; }
   .student p { margin: 1pt 0; }
   .student-details { margin-left: 12pt; }
@@ -64,7 +72,7 @@
     @page { size: Letter; margin: 17mm 17mm 18mm; }
     body { margin: 0; padding: 0; max-width: none; }
     .research > .note { break-after: avoid; page-break-after: avoid; }
-    a, a:visited { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a, a:visited, .note-emphasis { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .preview-banner { display: none; }
     p { widows: 2; orphans: 2; }
   }
@@ -74,12 +82,14 @@
 {% assign basics = site.data.resume.basics %}
 {% assign current_appointment = site.data.resume.work | first %}
 {% assign profile = site.data.academic_profile %}
-{% if site.cv_preview %}<div class="preview-banner">LOCAL REVIEW COPY · Letter · Updates automatically · <a href="/assets/pdf/cv_jaewon.pdf" target="_blank">Open latest PDF</a> · Not published</div>{% endif %}
+{% assign cv_version = site.time | date: '%Y%m%d%H%M%S' %}
+{% assign cv_pdf_url = '/assets/pdf/cv_jaewon.pdf' | relative_url | append: '?v=' | append: cv_version %}
+{% if site.cv_preview %}<div class="preview-banner">LOCAL REVIEW COPY · Letter · Updates automatically · <a href="{{ cv_pdf_url }}" target="_blank">Open latest PDF</a> · Not published</div>{% endif %}
 <header>
   <h1>{{ basics.name }}</h1>
   <div class="masthead">
     <div class="affiliation">
-      {{ current_appointment.name }}{% if current_appointment.name_local %} ({{ current_appointment.name_local }}){% endif %}<br>
+      {{ current_appointment.name }}{% if current_appointment.name_local %} (<span class="institution-local" lang="zh-Hant-TW">{{ current_appointment.name_local }}</span>){% endif %}<br>
       {{ current_appointment.summary | remove: '.' }}<br>
       {{ basics.location.address }}<br>
       {{ basics.location.city }}, {{ basics.location.country }} {{ basics.location.postalCode }}

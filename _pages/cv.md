@@ -10,6 +10,9 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
 #   sidebar: left
 ---
 
+{% assign cv_version = site.time | date: '%Y%m%d%H%M%S' %}
+{% assign cv_pdf_url = '/assets/pdf/cv_jaewon.pdf' | relative_url | append: '?v=' | append: cv_version %}
+
 <html>
   <style>
     .responsive {
@@ -75,7 +78,7 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
       <i class="fa-solid fa-rotate"></i> Updated on {{ site.data.academic_profile.reviewed_on | date: "%B %d, %Y" }}
     </div>
     <div>
-        <a href="{{ 'assets/pdf/cv_jaewon.pdf' | relative_url }}" class="btn btn-theme z-depth-0" target="_blank">
+        <a href="{{ cv_pdf_url }}" class="btn btn-theme z-depth-0" target="_blank">
             <i class="fas fa-file-pdf"></i> Download/Open PDF
         </a>
         <a href="{{ '/cv_print/' | relative_url }}" class="btn btn-theme z-depth-0">Read online</a>
@@ -84,7 +87,7 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
 
   <!-- Desktop: Interactive PDF iframe -->
   <div class="responsive">
-    <iframe title="Curriculum vitae of Jaewon Yoo" src="{{ 'assets/pdf/cv_jaewon.pdf' | relative_url }}"></iframe>
+    <iframe title="Curriculum vitae of Jaewon Yoo" src="{{ cv_pdf_url }}"></iframe>
   </div>
 
 </html>

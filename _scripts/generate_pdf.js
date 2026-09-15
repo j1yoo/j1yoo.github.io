@@ -14,6 +14,25 @@ const { pathToFileURL } = require('url');
     const page = await browser.newPage();
     await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
     await page.evaluate(() => document.fonts.ready);
+
+    // Fail rather than publish a PDF whose Chinese institution name silently
+    // falls back to different system fonts on macOS and the Linux build server.
+    const institutionName = await page.$eval('.institution-local', node => node.textContent.trim());
+    const client = await page.createCDPSession();
+    await client.send('DOM.enable');
+    await client.send('CSS.enable');
+    const { root } = await client.send('DOM.getDocument');
+    const { nodeId } = await client.send('DOM.querySelector', { nodeId: root.nodeId, selector: '.institution-local' });
+    const { fonts } = await client.send('CSS.getPlatformFontsForNode', { nodeId });
+    const renderedFonts = fonts.filter(font => font.glyphCount > 0);
+    if (renderedFonts.length !== 1 || !renderedFonts[0].isCustomFont ||
+        !renderedFonts[0].postScriptName.startsWith('NotoSerifTC-') ||
+        renderedFonts[0].glyphCount !== [...institutionName].length) {
+      throw new Error(`Chinese institution font verification failed: ${JSON.stringify(renderedFonts)}`);
+    }
+    console.log(`Verified ${institutionName}: ${renderedFonts[0].postScriptName}, ${renderedFonts[0].glyphCount} glyphs`);
+    await client.detach();
+
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
     await page.pdf({
       path: outputPath,
