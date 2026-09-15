@@ -13,8 +13,6 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
 {% assign cv_version = site.time | date: '%Y%m%d%H%M%S' %}
 {% assign cv_pdf_url = '/assets/pdf/cv_jaewon.pdf' | relative_url | append: '?v=' | append: cv_version %}
 
-<html>
-  {% include cv_mobile_styles.liquid %}
   <style>
     .responsive {
       width: 100%;
@@ -90,9 +88,3 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
   <div class="responsive">
     <iframe title="Curriculum vitae of Jaewon Yoo" loading="lazy" src="{{ cv_pdf_url }}#page=1&view=Fit&navpanes=0"></iframe>
   </div>
-
-  <div class="cv-mobile-document" aria-label="Curriculum vitae of Jaewon Yoo">
-    {% include cv_body.liquid %}
-  </div>
-
-</html>
