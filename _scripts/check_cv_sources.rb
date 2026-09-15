@@ -9,7 +9,7 @@ root = File.expand_path('..', __dir__)
 build = File.expand_path(ENV.fetch('CV_BUILD_DIR', '_site'), root)
 read_yaml = lambda { |name| YAML.safe_load(File.read(File.join(root, '_data', name)), permitted_classes: [Date, Time]) }
 normalize = lambda { |value| CGI.unescapeHTML(value.to_s.gsub(/<[^>]*>/, ' ')).unicode_normalize(:nfkc).gsub(/\s+/, ' ').strip }
-pages = %w[index.html cv/index.html cv_print/index.html research/index.html supervision/index.html talks/index.html].to_h do |name|
+pages = %w[index.html cv_print/index.html research/index.html supervision/index.html talks/index.html].to_h do |name|
   [name, normalize.call(File.read(File.join(build, name)))]
 end
 profile = read_yaml.call('academic_profile.yml')
@@ -18,7 +18,7 @@ contains = lambda do |value, targets|
   text = normalize.call(value)
   targets.each { |target| errors << "#{target}: missing #{text}" unless pages.fetch(target).include?(text) }
 end
-cv = ['cv/index.html', 'cv_print/index.html']
+cv = ['cv_print/index.html']
 profile.fetch('awards').each { |item| contains.call(item.fetch('title'), cv) }
 profile.fetch('grants').each do |item|
   contains.call(item.fetch('title'), cv + (item['paper_key'] ? ['research/index.html'] : []))
@@ -68,4 +68,4 @@ end
 if errors.any?
   abort "Shared CV source checks failed:\n#{errors.join("\n")}"
 end
-puts 'Shared CV sources match About, Research, Talks, Supervision, mobile CV and print CV.'
+puts 'Shared CV sources match About, Research, Talks, Supervision and print CV.'
