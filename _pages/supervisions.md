@@ -45,11 +45,11 @@ Master's students are listed by enrollment period.
             {%- if student.thesis_url -%}
               <a href="{{ student.thesis_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">Thesis</a>
             {%- endif -%}
-            {%- if student.linkedin -%}
-              <a href="{{ student.linkedin }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">LinkedIn</a>
-            {%- endif -%}
             {%- if student.github -%}
               <a href="{{ student.github }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">GitHub</a>
+            {%- endif -%}
+            {%- if student.linkedin -%}
+              <a href="{{ student.linkedin }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">LinkedIn</a>
             {%- endif -%}
             {%- if student.cv -%}
               <a href="{{ student.cv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">CV</a>
@@ -95,11 +95,11 @@ Master's students are listed by enrollment period.
         {%- if student.thesis_url -%}
           <a href="{{ student.thesis_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">Thesis</a>
         {%- endif -%}
-        {%- if student.linkedin -%}
-          <a href="{{ student.linkedin }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">LinkedIn</a>
-        {%- endif -%}
         {%- if student.github -%}
           <a href="{{ student.github }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">GitHub</a>
+        {%- endif -%}
+        {%- if student.linkedin -%}
+          <a href="{{ student.linkedin }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">LinkedIn</a>
         {%- endif -%}
         {%- if student.cv -%}
           <a href="{{ student.cv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="external nofollow noopener">CV</a>
