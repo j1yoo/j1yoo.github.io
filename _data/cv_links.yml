@@ -16,5 +16,7 @@ award: { description: Award announcement, target: CTM }
 fellowship_media: { prefix: 'Media mention (in Korean)', target: Asia Economy }
 slides: { description: Presentation slides, target: PDF }
 event: { description: Event, target: website }
+organizing:
+  tswim2026: { description: Workshop website, target: TSWIM 2026 }
 course: { description: Course materials, target: website }
 thesis: { description: Thesis record, target: repository }

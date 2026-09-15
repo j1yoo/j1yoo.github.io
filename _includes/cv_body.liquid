@@ -66,20 +66,22 @@
 
 <section>
 <h2>Academic Service</h2>
-<div class="cv-entry service-group"><strong>Ad hoc journal reviewer</strong><div class="service-details">{% for journal in profile.service.reviewing %}{{ journal.name }}{% if journal.classification %} ({{ journal.classification }}){% endif %}{% unless forloop.last %}; {% endunless %}{% endfor %}.</div></div>
+<div class="cv-entry service-group"><strong>Ad hoc journal reviewer</strong><div class="service-details">{% for journal in profile.service.reviewing %}<em>{{ journal.name }}</em>{% if journal.abbreviation or journal.classification %} ({% if journal.abbreviation %}{{ journal.abbreviation }}{% if journal.classification %}; {% endif %}{% endif %}{{ journal.classification | remove: ' journal' }}){% endif %}{% unless forloop.last %}; {% endunless %}{% endfor %}.</div></div>
 <div class="cv-entry service-group"><strong>Conference reviewer</strong><div class="service-details">{% for conference in profile.service.conferences %}{{ conference.name }}{% unless forloop.last %}; {% endunless %}{% endfor %}.</div></div>
 <div class="cv-entry service-group"><strong>Conference organization</strong><div class="service-details">
 {% for role in profile.service.organizing %}
 <div class="dated-row"><div>{{ role.role }}, {{ role.name }}</div><span class="date">{{ role.period | replace: '-', '–' }}</span></div>
+{% assign organizing_link_label = site.data.cv_links.organizing[role.id] | default: site.data.cv_links.event %}
+{% include cv_links.liquid url=role.url label=organizing_link_label %}
 {% endfor %}
 </div></div>
 <div class="cv-entry service-group"><strong>Editorial board</strong><div class="service-details">
 {% for role in profile.service.editorial %}
-<div class="dated-row"><div>{{ role.role }}, {{ role.journal }}</div><span class="date">{{ role.period | replace: '-', '–' }}</span></div>{% include cv_links.liquid url=role.url label=site.data.cv_links.editorial %}
+<div class="dated-row"><div>{{ role.role }}, <em>{{ role.journal }}</em>{% if role.abbreviation %} ({{ role.abbreviation }}){% endif %}</div><span class="date">{{ role.period | replace: '-', '–' }}</span></div>{% include cv_links.liquid url=role.url label=site.data.cv_links.editorial %}
 {% endfor %}
 </div></div>
 <div class="cv-entry service-group"><strong>University service</strong><div class="service-details">
-{% for work in site.data.resume.work %}{% if work.name contains 'Tsing Hua' %}{% for highlight in work.highlights %}{% assign parts = highlight | split: ' ::: ' %}<div class="dated-row"><div>{{ parts[0] }}</div><span class="date">{{ parts[1] | replace: '-', '–' }} present</span></div>{% endfor %}{% endif %}{% endfor %}
+{% for work in site.data.resume.work %}{% if work.name contains 'Tsing Hua' %}{% for highlight in work.highlights %}{% assign parts = highlight | split: ' ::: ' %}<div class="dated-row"><div>{{ parts[0] }}</div><span class="date">{{ parts[1] | replace: '-', '–' }}</span></div>{% endfor %}{% endif %}{% endfor %}
 </div></div>
 </section>
 

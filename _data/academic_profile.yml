@@ -16,6 +16,8 @@ awards:
   - id: emerging_scholar_2025
     title: Emerging Scholar Research Award
     organization: College of Technology Management, National Tsing Hua University
+    note: Awarded to up to two faculty members annually within the College of Technology Management.
+    highlight_note: true
     year: 2025
     url: https://www.ctm.nthu.edu.tw/tw/article/1139-2025-ke-ji-guan-li-syueh-yuan-sin
   - id: cses_outstanding_research_2020
@@ -90,19 +92,29 @@ grants:
 service:
   editorial:
     - journal: Asia Marketing Journal
+      abbreviation: AMJ
       role: Editorial Board Member
       period: October 2023-present
       url: https://amj.kma.re.kr/journal/editorialboard.html
   reviewing:
     - name: MIS Quarterly
+      abbreviation: MISQ
       url: https://misq.umn.edu/
       classification: UTD24/FT50 journal
     - name: Research Policy
+      abbreviation: RP
       url: https://www.sciencedirect.com/journal/research-policy
       classification: FT50 journal
     - name: Journal of Business Research
+      abbreviation: JBR
       url: https://www.sciencedirect.com/journal/journal-of-business-research
       classification: SSCI/NSTC Mgmt. II Top Journal List
+    - name: Journal of Electronic Commerce Research
+      abbreviation: JECR
+      url: https://jecr.org/
+    - name: Asia Pacific Journal of Information Systems
+      abbreviation: APJIS
+      url: https://www.apjis.or.kr/
   conferences:
     - name: International Conference on Information Systems (ICIS)
       url: https://aisel.aisnet.org/icis
@@ -112,10 +124,14 @@ service:
       url: https://cistconf.org/
     - name: American Marketing Association (AMA) Winter and Summer Academic Conferences
       url: https://www.ama.org/events/?event_type=academic&event_year=2026
+    - name: Academy of Management (AOM) Annual Meeting
+      url: https://aom.org/
   organizing:
     - name: Taiwan Summer Workshop on Information Management (TSWIM)
+      id: tswim2026
       role: Organizing Co-Chair
       period: 2026
+      url: https://tswim2026.ctm.nthu.edu.tw/
 mentoring_awards:
   - id: robust_ce_thesis
     paper_key: yoo_robustce
