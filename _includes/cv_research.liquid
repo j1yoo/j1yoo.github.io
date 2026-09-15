@@ -1,0 +1,19 @@
+<h3 id="manuscripts-in-revision">Manuscripts in Revision</h3>
+{% bibliography --query @*[kind=manuscripts in revision] --template bib_clean %}
+
+<h3 id="manuscripts-under-review">Manuscripts Under Review</h3>
+{% bibliography --query @*[kind=manuscripts under review] --template bib_clean %}
+
+<h3 id="working-papers">Working Papers</h3>
+{% bibliography --query @*[kind=working papers] --template bib_clean %}
+
+<div class="cv-subsection">
+
+<h3 id="work-in-progress">Work in Progress</h3>
+<p class="note"><em>Projects in development; authorship to be determined.</em></p>
+{% bibliography --query @*[kind=work-in-progress] --template bib_clean %}
+
+</div>
+
+<h3 id="publications">Publications</h3>
+{% bibliography --query @*[kind=publications] --template bib_clean %}

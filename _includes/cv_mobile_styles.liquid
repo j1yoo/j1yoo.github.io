@@ -1,0 +1,65 @@
+<style>
+  @font-face {
+    font-family: "CV Noto Serif TC";
+    src: url("{{ '/assets/fonts/cv/NotoSerifTC-nthu.ttf' | relative_url }}") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  .cv-mobile-document { display: none; }
+  @media screen and (max-width: 768px) {
+    .cv-mobile-document {
+      display: block;
+      color: var(--global-text-color);
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+    .cv-mobile-document h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 1.25rem 0 .75rem;
+    }
+    .cv-mobile-document h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 2rem 0 1rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .cv-mobile-document h3 { font-size: 1.05rem; font-weight: 600; margin: 1.25rem 0 .75rem; }
+    .cv-mobile-document h2.bibliography { display: none; }
+    .cv-mobile-document p { margin: .25rem 0; }
+    .cv-mobile-document .masthead { display: block; }
+    .cv-mobile-document .contact { margin-top: .75rem; text-align: left; }
+    .cv-mobile-document .institution-local { font-family: "CV Noto Serif TC"; font-synthesis: none; white-space: nowrap; }
+    .cv-mobile-document .profile-links { white-space: normal; }
+    .cv-mobile-document .cv-entry { margin-bottom: 1.25rem; }
+    .cv-mobile-document .dated-row { display: block; }
+    .cv-mobile-document .date { display: block; font-size: .9rem; color: var(--global-text-color-light); }
+    .cv-mobile-document .role { font-style: italic; }
+    .cv-mobile-document .institution-details { margin-top: .25rem; }
+    .cv-mobile-document .degree + .degree { margin-top: 1rem; }
+    .cv-mobile-document .lab-role { margin-top: .4rem; }
+    .cv-mobile-document .service-group > strong { display: block; margin-bottom: .25rem; }
+    .cv-mobile-document .service-details .dated-row + .dated-row { margin-top: .75rem; }
+    .cv-mobile-document ul,
+    .cv-mobile-document ol { margin: .4rem 0 0; padding-left: 1.4rem; }
+    .cv-mobile-document li { margin-bottom: .4rem; }
+    .cv-mobile-document ol.bibliography > li { margin-bottom: 1.25rem; padding-left: .15rem; }
+    .cv-mobile-document .note,
+    .cv-mobile-document .paper-details { font-size: .95rem; }
+    .cv-mobile-document .student-details { margin-top: .25rem; padding-left: .75rem; border-left: 2px solid var(--global-divider-color); }
+    .cv-mobile-document .cv-links { display: block; margin-top: .4rem; font-size: .95rem; }
+    .cv-mobile-document .cv-links-label { margin-right: .25rem; }
+    .cv-mobile-document .cv-links-items { display: inline; }
+    .cv-mobile-document a { color: var(--global-theme-color); text-decoration: underline; text-underline-offset: .15em; }
+    .cv-mobile-document .contact a,
+    .cv-mobile-document .cv-links a { display: inline-block; padding: .2rem 0; }
+    .cv-mobile-document .note-emphasis { color: #246d83; font-weight: normal; }
+    html[data-theme="dark"] .cv-mobile-document .note-emphasis { color: #8ab7c9; }
+    .cv-mobile-document .cv-footer { margin-top: 2rem; font-size: .85rem; color: var(--global-text-color-light); }
+  }
+</style>

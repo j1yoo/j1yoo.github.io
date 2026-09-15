@@ -9,7 +9,7 @@ root = File.expand_path('..', __dir__)
 build = File.expand_path(ENV.fetch('CV_BUILD_DIR', '_site'), root)
 read_yaml = lambda { |name| YAML.safe_load(File.read(File.join(root, '_data', name)), permitted_classes: [Date, Time]) }
 normalize = lambda { |value| CGI.unescapeHTML(value.to_s.gsub(/<[^>]*>/, ' ')).unicode_normalize(:nfkc).gsub(/\s+/, ' ').strip }
-pages = %w[index.html cv_print/index.html research/index.html supervision/index.html talks/index.html].to_h do |name|
+pages = %w[index.html cv/index.html cv_print/index.html research/index.html supervision/index.html talks/index.html].to_h do |name|
   [name, normalize.call(File.read(File.join(build, name)))]
 end
 profile = read_yaml.call('academic_profile.yml')
@@ -18,7 +18,7 @@ contains = lambda do |value, targets|
   text = normalize.call(value)
   targets.each { |target| errors << "#{target}: missing #{text}" unless pages.fetch(target).include?(text) }
 end
-cv = ['cv_print/index.html']
+cv = ['cv/index.html', 'cv_print/index.html']
 profile.fetch('awards').each { |item| contains.call(item.fetch('title'), cv) }
 profile.fetch('grants').each do |item|
   contains.call(item.fetch('title'), cv + (item['paper_key'] ? ['research/index.html'] : []))
@@ -38,9 +38,11 @@ talks.each { |item| contains.call(item.fetch('title'), cv + ['talks/index.html']
 # Grouping by date keeps the author's source order for same-day presentations.
 # Sorting directly by date alone can reorder tied entries across Ruby versions.
 expected_talks = talks.each_with_index.sort_by { |item, i| [item.fetch('date').to_s, -i] }.reverse.map { |item, _| [item.fetch('date').to_s, normalize.call(item.fetch('title'))] }
-raw_cv = File.read(File.join(build, 'cv_print/index.html'))
-actual_talks = raw_cv.scan(/class="cv-entry cv-talk" data-talk-date="([^"]+)"[^>]*>\s*<div class="dated-row">\s*<strong>(.*?)<\/strong>/m).map { |date, title| [date, normalize.call(title)] }
-errors << 'CV talk order differs from descending date with original source order for ties' unless actual_talks == expected_talks
+cv.each do |target|
+  raw_cv = File.read(File.join(build, target))
+  actual_talks = raw_cv.scan(/class="cv-entry cv-talk" data-talk-date="([^"]+)"[^>]*>\s*<div class="dated-row">\s*<strong>(.*?)<\/strong>/m).map { |date, title| [date, normalize.call(title)] }
+  errors << "#{target}: CV talk order differs from descending date with original source order for ties" unless actual_talks == expected_talks
+end
 read_yaml.call('supervision.yml').each do |student|
   targets = cv + ['supervision/index.html']
   contains.call(student.fetch('name'), targets)
@@ -66,4 +68,4 @@ end
 if errors.any?
   abort "Shared CV source checks failed:\n#{errors.join("\n")}"
 end
-puts 'Shared CV sources match About, Research, Talks, Supervision and the CV print view.'
+puts 'Shared CV sources match About, Research, Talks, Supervision, mobile CV and print CV.'

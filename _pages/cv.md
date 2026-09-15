@@ -14,11 +14,13 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
 {% assign cv_pdf_url = '/assets/pdf/cv_jaewon.pdf' | relative_url | append: '?v=' | append: cv_version %}
 
 <html>
+  {% include cv_mobile_styles.liquid %}
   <style>
     .responsive {
       width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
+      /* One US Letter page at the existing content width, plus viewer controls. */
+      height: 56px;
+      padding-bottom: 129.4118%;
       position: relative;
     }
     .responsive iframe {
@@ -78,16 +80,19 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
       <i class="fa-solid fa-rotate"></i> Updated on {{ site.data.academic_profile.reviewed_on | date: "%B %d, %Y" }}
     </div>
     <div>
-        <a href="{{ cv_pdf_url }}" class="btn btn-theme z-depth-0" target="_blank">
-            <i class="fas fa-file-pdf"></i> Download/Open PDF
+        <a href="{{ cv_pdf_url }}" class="btn btn-theme z-depth-0" target="_blank" rel="noopener">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i> Download/Open PDF
         </a>
-        <a href="{{ '/cv_print/' | relative_url }}" class="btn btn-theme z-depth-0">Read online</a>
     </div>
   </div>
 
   <!-- Desktop: Interactive PDF iframe -->
   <div class="responsive">
-    <iframe title="Curriculum vitae of Jaewon Yoo" src="{{ cv_pdf_url }}"></iframe>
+    <iframe title="Curriculum vitae of Jaewon Yoo" loading="lazy" src="{{ cv_pdf_url }}#page=1&view=Fit&navpanes=0"></iframe>
+  </div>
+
+  <div class="cv-mobile-document" aria-label="Curriculum vitae of Jaewon Yoo">
+    {% include cv_body.liquid %}
   </div>
 
 </html>

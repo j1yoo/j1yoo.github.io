@@ -1,0 +1,131 @@
+{% assign basics = site.data.resume.basics %}
+{% assign current_appointment = site.data.resume.work | first %}
+{% assign profile = site.data.academic_profile %}
+<header>
+  <h1>{{ basics.name }}</h1>
+  <div class="masthead">
+    <div class="affiliation">
+      {{ current_appointment.name }}{% if current_appointment.name_local %} (<span class="institution-local" lang="zh-Hant-TW">{{ current_appointment.name_local }}</span>){% endif %}<br>
+      {{ current_appointment.summary | remove: '.' }}<br>
+      {{ basics.location.address }}<br>
+      {{ basics.location.city }}, {{ basics.location.country }} {{ basics.location.postalCode }}
+    </div>
+    <div class="contact">
+      Email: <a href="mailto:{{ basics.email }}">{{ basics.email }}</a><br>
+      Homepage: <a href="{{ basics.url }}">{{ basics.url | remove: 'https://' }}</a><br>
+      Phone: {{ basics.phone }}<br>
+      <span class="profile-links"><a href="{{ site.data.socials.nthu_scholars_url }}">NTHU Scholars</a> · <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a></span>
+    </div>
+  </div>
+</header>
+
+<section>
+<h2>Academic Appointments</h2>
+{% for work in site.data.resume.work %}
+  <div class="cv-entry">
+    <div class="institution-heading"><strong>{{ work.name }}</strong></div>
+    <div class="institution-details">
+    <div class="dated-row"><span class="role">{{ work.position }}</span><span class="date">{{ work.startDate | date: '%B %Y' }} – {% if work.endDate != '' and work.endDate %}{{ work.endDate | date: '%B %Y' }}{% else %}present{% endif %}</span></div>
+    <div>{% if work.name contains 'NYU' %}{{ work.summary | remove: '.' }}{% for highlight in work.highlights %}{% assign highlight_prefix = highlight | slice: 0, 11 %}{% if highlight_prefix == 'Advised by ' %} <span class="advisor-clause">(advised by Dr. <strong>{{ highlight | remove_first: 'Advised by Dr. ' }}</strong>)</span>{% endif %}{% endfor %}{% else %}{{ work.summary }}{% endif %}</div>
+    {% if work.name contains 'Tsing Hua' %}
+      <ul class="lab-role"><li><span class="role">{{ profile.lab.role }}, <a class="label-link" href="{{ profile.lab.url }}">{{ profile.lab.short_name }}</a></span><br>{{ profile.lab.name }}.</li></ul>
+    {% else %}
+      {% for highlight in work.highlights %}
+        {% assign highlight_prefix = highlight | slice: 0, 11 %}
+        {% unless highlight_prefix == 'Advised by ' %}<div><em>Note:</em> {{ highlight }}</div>{% endunless %}
+      {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+{% endfor %}
+</section>
+
+<section>
+<h2>Education</h2>
+{% assign education_institutions = site.data.resume.education | group_by: 'institution' %}
+{% for institution in education_institutions %}
+<div class="cv-entry">
+  <div class="institution-heading"><strong>{{ institution.name }}</strong></div>
+  <div class="institution-details">
+  {% for edu in institution.items %}
+    <div class="degree">
+    <div class="dated-row"><span class="role">{{ edu.studyType }} in {{ edu.area }}</span><span class="date">{{ edu.startDate | date: '%B %Y' }} – {{ edu.endDate | date: '%B %Y' }}</span></div>
+    {% if edu.courses.size > 0 %}<ul class="education-details">{% for detail in edu.courses %}<li>{{ detail }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+  {% endfor %}
+  </div>
+</div>
+{% endfor %}
+</section>
+
+<section class="research">
+<h2>Research</h2>
+<p class="note">* Corresponding author.</p>
+{% include cv_research.liquid %}
+</section>
+
+<section>
+<h2>Academic Service</h2>
+<div class="cv-entry service-group"><strong>Ad hoc journal reviewer</strong><div class="service-details">{% for journal in profile.service.reviewing %}{{ journal.name }}{% if journal.classification %} ({{ journal.classification }}){% endif %}{% unless forloop.last %}; {% endunless %}{% endfor %}.</div></div>
+<div class="cv-entry service-group"><strong>Conference reviewer</strong><div class="service-details">{% for conference in profile.service.conferences %}{{ conference.name }}{% unless forloop.last %}; {% endunless %}{% endfor %}.</div></div>
+<div class="cv-entry service-group"><strong>Conference organization</strong><div class="service-details">
+{% for role in profile.service.organizing %}
+<div class="dated-row"><div>{{ role.role }}, {{ role.name }}</div><span class="date">{{ role.period | replace: '-', '–' }}</span></div>
+{% endfor %}
+</div></div>
+<div class="cv-entry service-group"><strong>Editorial board</strong><div class="service-details">
+{% for role in profile.service.editorial %}
+<div class="dated-row"><div>{{ role.role }}, {{ role.journal }}</div><span class="date">{{ role.period | replace: '-', '–' }}</span></div>{% include cv_links.liquid url=role.url label=site.data.cv_links.editorial %}
+{% endfor %}
+</div></div>
+<div class="cv-entry service-group"><strong>University service</strong><div class="service-details">
+{% for work in site.data.resume.work %}{% if work.name contains 'Tsing Hua' %}{% for highlight in work.highlights %}{% assign parts = highlight | split: ' ::: ' %}<div class="dated-row"><div>{{ parts[0] }}</div><span class="date">{{ parts[1] | replace: '-', '–' }} present</span></div>{% endfor %}{% endif %}{% endfor %}
+</div></div>
+</section>
+
+<section>
+<h2>Honors, Awards and Fellowships</h2>
+{% for award in profile.awards %}
+<div class="cv-entry compact"><div class="dated-row"><strong>{{ award.title }}</strong><span class="date">{{ award.year }}</span></div><div>{{ award.organization }}</div>{% if award.note %}<div class="note"><em>Note:</em> {% if award.highlight_note %}<span class="note-emphasis">{{ award.note }}</span>{% else %}{{ award.note }}{% endif %}</div>{% endif %}{% if award.url %}{% include cv_links.liquid url=award.url label=site.data.cv_links.award %}{% endif %}{% if award.media_url %}{% include cv_links.liquid url=award.media_url label=site.data.cv_links.fellowship_media %}{% endif %}</div>
+{% endfor %}
+</section>
+
+<section>
+<h2>Research Grants</h2>
+{% for grant in profile.grants %}
+<div class="cv-entry"><div class="dated-row"><strong>{{ grant.organization }}</strong><span class="date">{{ grant.period | replace: '-', '–' }}</span></div><div class="role">{{ grant.role }}</div><div>{{ grant.title }}.</div>{% if grant.program %}<div class="note"><em>Funding program:</em> {{ grant.program }}</div>{% endif %}</div>
+{% endfor %}
+</section>
+
+<section class="talks-start"><h2>Academic Talks and Conferences</h2>{% include cv_talks.liquid %}</section>
+
+<section>
+<h2>Teaching</h2>
+{% assign courses = site.teaching | sort: 'semester' | reverse %}
+{% for course in courses %}{% unless course.hidden %}
+<div class="cv-entry"><div class="dated-row"><strong>{{ course.title }}</strong><span class="date">{% if course.first_offered %}{{ course.first_offered }} – present{% else %}{{ course.semester }}{% endif %}</span></div><div>{{ course.course_number }} · {{ course.description }}</div>{% assign course_link = course.url | absolute_url %}{% include cv_links.liquid url=course_link label=site.data.cv_links.course %}</div>
+{% endunless %}{% endfor %}
+<p class="note">Course websites provide syllabi and teaching materials, including lecture slides, code, and written notes.</p>
+</section>
+
+<section>
+<h2>Research Supervision and Mentoring</h2>
+<p class="note">Master's students are listed by enrollment period.</p>
+{% assign groups = site.data.supervision | group_by: 'year' | sort: 'name' | reverse %}
+{% for group in groups %}{% for student in group.items %}
+<div class="cv-entry student">
+<div class="dated-row"><strong>{{ student.name }}</strong><span class="date">{{ student.year | replace: '-current', '-present' | replace: '-', '–' }}</span></div>
+<div class="student-details">
+<p>{{ student.info }}</p>
+{% if student.thesis %}<p><em>Thesis:</em> {{ student.thesis }}</p>{% endif %}
+{% if student.note or student.mentoring_award_id %}<p class="note"><em>Note:</em> {% include student_note.liquid student=student %}</p>{% endif %}
+{% if student.thesis_url %}{% include cv_links.liquid url=student.thesis_url label=site.data.cv_links.thesis %}{% endif %}
+</div>
+</div>
+{% endfor %}{% endfor %}
+</section>
+
+<footer class="cv-footer">
+  <p>Updated on {{ profile.reviewed_on | date: '%B %d, %Y' }}.</p>
+  <p>Automatically generated from <a href="{{ basics.url }}">website content</a> via <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://pptr.dev/">Puppeteer</a>, and <a href="https://github.com/features/actions">GitHub Actions</a>.</p>
+</footer>
