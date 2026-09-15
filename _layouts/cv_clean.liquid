@@ -170,7 +170,7 @@
 <section>
 <h2>Honors, Awards and Fellowships</h2>
 {% for award in profile.awards %}
-<div class="cv-entry compact"><div class="dated-row"><strong>{{ award.title }}</strong><span class="date">{{ award.year }}</span></div><div>{{ award.organization }}</div>{% if award.note %}<div class="note"><em>Note:</em> {% if award.highlight_note %}<span class="note-emphasis">{{ award.note }}</span>{% else %}{{ award.note }}{% endif %}</div>{% endif %}{% if award.url %}{% include cv_links.liquid url=award.url label=site.data.cv_links.award %}{% endif %}</div>
+<div class="cv-entry compact"><div class="dated-row"><strong>{{ award.title }}</strong><span class="date">{{ award.year }}</span></div><div>{{ award.organization }}</div>{% if award.note %}<div class="note"><em>Note:</em> {% if award.highlight_note %}<span class="note-emphasis">{{ award.note }}</span>{% else %}{{ award.note }}{% endif %}</div>{% endif %}{% if award.url %}{% include cv_links.liquid url=award.url label=site.data.cv_links.award %}{% endif %}{% if award.media_url %}{% include cv_links.liquid url=award.media_url label=site.data.cv_links.fellowship_media %}{% endif %}</div>
 {% endfor %}
 </section>
 
