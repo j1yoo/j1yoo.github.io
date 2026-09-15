@@ -10,6 +10,9 @@ nav_order: 8
 > Students in my group are part of the <a href="https://cadi-lab.github.io" target="_blank" style="font-weight: bold;">CADI Lab</a>. Prospective students and collaborators can find more about our research directions and how to <a href="https://cadi-lab.github.io/join/" target="_blank">join us</a> on the lab page.
 {:.research-question}
 
+Master's students are listed by enrollment period.
+{:.small.text-muted}
+
 <div class="publications">
 {%- assign students_by_year = site.data.supervision | group_by: 'year' | sort: 'name' | reverse -%}
 {%- for year_group in students_by_year -%}
@@ -30,9 +33,9 @@ nav_order: 8
               <em>Thesis title:</em> {{ student.thesis }}
             </div>
             {%- endif -%}
-            {%- if student.note and student.note != "" -%}
+            {%- if student.note or student.mentoring_award_id -%}
             <div class="periodical">
-              <em>Note:</em> {{ student.note }}
+              <em>Note:</em> {% include student_note.liquid student=student %}
             </div>
             {%- endif -%}
             <div class="links">
@@ -78,9 +81,9 @@ nav_order: 8
         {%- endif -%}
 
         <!-- Co-supervision Note -->
-        {%- if student.note and student.note != "" -%}
+        {%- if student.note or student.mentoring_award_id -%}
         <div class="periodical">
-          <em>Note:</em> {{ student.note }}
+          <em>Note:</em> {% include student_note.liquid student=student %}
         </div>
         {%- endif -%}
 

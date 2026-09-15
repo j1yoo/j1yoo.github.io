@@ -1,12 +1,11 @@
 ---
 layout: cv_clean
 permalink: /cv_print/
-title: curriculum vitae
+title: Curriculum Vitae
 nav: false
 ---
 
-
-### Manuscripts In Revision
+### Manuscripts in Revision
 {% bibliography --query @*[kind=manuscripts in revision] --template bib_clean %}
 
 ### Manuscripts Under Review
@@ -14,6 +13,14 @@ nav: false
 
 ### Working Papers
 {% bibliography --query @*[kind=working papers] --template bib_clean %}
+
+<div class="cv-subsection" markdown="1">
+
+### Work in Progress
+<p class="note"><em>Projects in development; authorship to be determined.</em></p>
+{% bibliography --query @*[kind=work-in-progress] --template bib_clean %}
+
+</div>
 
 ### Publications
 {% bibliography --query @*[kind=publications] --template bib_clean %}

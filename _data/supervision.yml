@@ -1,10 +1,10 @@
-# === Incoming PhD (Fall 2026) — shown in 2026-current with a "Note:" line (Zhan-Yi style). ===
-- name: "Anh (Mint) Tran"   # full: Tran Pham Tuan Anh; goes by "Anh", Gmail handle "Mint". Admitted May 2026, starts Aug 2026. Prior: lecturer, Tra Vinh University (Vietnam)
+# Master's student year ranges indicate enrollment periods, not exact advising tenure.
+- name: "Anh (Mint) Tran"   # full: Tran Pham Tuan Anh; goes by "Anh"
   year: 2026-current
   info: "Institute of Service Science, National Tsing Hua University (NTHU)"
   degree: "PhD"
-  status: "Incoming"
-  note: "Incoming PhD student, joining Fall 2026"
+  status: "In Progress"
+  note: "PhD student"
 
 - name: Daniel Vinicio Gonzalez de Leon
   year: 2021-23
@@ -46,13 +46,14 @@
   thesis_url: https://etd.lib.nthu.edu.tw/detail/0570df8a7951673cc90d245c94b48a0f/
   
 - name: Zhan-Yi Liao
+  mentoring_award_id: robust_ce_thesis
   year: 2023-25
   info: "Institute of Information Management, National Yang Ming Chiao Tung University (NYCU)"
 
   thesis: "Structure-Aware Robust Counterfactual Explanations via Conditional Gaussian Network Classifiers"
   abstract: "Counterfactual explanation (CE), a core technique in explainable AI (XAI), is widely used to interpret model decisions and suggest actionable alternatives. This work proposes a structure-aware and robust counterfactual search method based on the Conditional Gaussian Network Classifier (CGNC). By modeling conditional dependencies among features via a graphical structure, CGNC naturally embeds variable relationships and generative logic into the search process, eliminating the need for additional feasibility constraints. Unlike most black-box approaches that overlook feature dependencies and data distributions, our method integrates these properties with perturbation robustness into the optimization process, ensuring consistency with the model’s generative structure. We employ a convergence-guaranteed cutting-set mechanism to iteratively solve a master-adversary optimization framework. To address the nonconvex quadratic structure introduced by the model, piecewise relaxation is applied to handle second-order terms, enabling reformulation into a mixed-integer linear program (MILP). Experiments show that even direct global optimization of the original nonconvex problem yields stable and efficient results. The framework is extensible to more complex constraint settings and future work on nonconvex quadratic programming designs."
   note: Co-advised with <strong> <a href="https://iim.nycu.edu.tw/en/teacher/chen-po-an" target="_blank">Po-An Chen</a> </strong> (NYCU)
-  status: "In Progress"
+  status: "Completed"
   degree: "Masters"
   thesis_url: https://thesis.lib.nycu.edu.tw/items/afad6b16-1a74-4d3b-9af9-6d0546212a73
   github: "https://github.com/zhanyiliao"
@@ -64,7 +65,7 @@
   info: "Institute of Service Science, National Tsing Hua University (NTHU)"
 
   thesis: "Effects of Paid Family Leave Policy on Firm Risk-Taking: A Quasi-Experimental Approach"
-  status: "In Progress"
+  status: "Completed"
   degree: "Masters"
   thesis_url: https://etd.lib.nthu.edu.tw/detail/c25e999348b0136aceab80dc25d730b2/
   abstract: "This study examines how state-level Paid Family Leave (PFL) policies in the United States affect firm strategic risk-taking. Although PFL programs are primarily designed to support employees, firms may perceive such policies as regulatory shocks, interpreting them either as threats that introduce operational uncertainty and short-term costs or as opportunities to enhance workforce stability. Drawing on the threat–opportunity categorization framework, Upper Echelon Theory (UET), and the Behavioral Agency Model (BAM), this study develops competing hypotheses regarding the direction of firms’ strategic responses to PFL adoption. Using panel data on publicly listed U.S. manufacturing firms from 2002 to 2019, the study exploits the staggered rollout of PFL across states as a quasi-natural experiment. It applies both conventional two-way fixed effects (TWFE) and the staggered Difference-in-Differences (DiD) estimator by Callaway and Sant’Anna (2021), which accounts for variation in treatment timing and heterogeneous effects. The results consistently show that PFL adoption is associated with increased strategic risk-taking, as measured by a standardized composite factor score of R&D investment, capital expenditures, and long-term debt. This suggests that managers may view PFL as a short-term threat and respond by taking greater risks. However, the effect is significantly weaker among small and medium-sized enterprises (SMEs), possibly due to resource constraints and operational vulnerabilities. These findings highlight how pro-employee social policies can shape firm behavior, offering important insights for both managers and policymakers navigating regulatory change."
@@ -74,7 +75,7 @@
   info: "iMBA, National Tsing Hua University (NTHU)"
 
   thesis: "Unintended Consequences of Sales Ban: Empirical Analysis of the Book Retailing Industry"
-  status: "In Progress"
+  status: "Completed"
   degree: "Masters"
   thesis_url: https://etd.lib.nthu.edu.tw/detail/12ad09d982483923e9982de20ed0191c/
   abstract: "This thesis examines the unintended consequences of the 2008 book ban imposed by the South Korean government on 23 book titles. While book bans are typically intended to suppress the circulation of certain books, they can also increase public attention to the banned books, hence resulting in a reactance phenomenon. Using a panel dataset of monthly book sales from a major South Korean bookstore, this study applies a Difference-in-Differences (DiD) framework using a Two-Way Fixed Effects (TWFE) model to estimate the causal impact of the ban on the sales performance of the banned books compared to non-banned books before and after the ban. The analysis also explores the spillover effect on genre, as well as heterogeneity effects of different buyer characteristics, such as conscription eligibility, gender, political regionalism, and regional GDP. The results suggest that, rather than suppressing demand, the book ban in fact significantly stimulated sales for the banned books. These findings contribute to the literature on consumer behavior and policymaking."
@@ -84,47 +85,52 @@
   info: "iMBA, National Tsing Hua University (NTHU)"
 
   thesis: "When Algorithms Go Silent: Effects of Trending Topic Suspension on Political Information Consumption"
-  status: "In Progress"
+  status: "Completed"
   degree: "Masters"
   thesis_url: https://etd.lib.nthu.edu.tw/detail/252b0089ebe61c7618327accc66ba0ec/
   abstract: "This thesis investigates how the temporary removal of algorithmic amplification, specifically the suspension of trending topics features, impacts citizens’ engagement with political news on major Korean portal platforms during the April 2020 legislative elections. Employing a quasi-natural experimental design and leveraging user-level panel interaction data from over 2,000 users across the two major platforms, the study applies a difference-in-differences framework, supplemented with triple differences, event studies, and machine learning–assisted robustness checks. Results indicate that suspending trending topics significantly reduced user engagement with political articles, particularly among heavy users, without corresponding increases in content diversity or declines in engagement volatility. These findings offer empirical support for the proposition that algorithmic infrastructure influences not just content visibility, but also political attention allocation. Theoretically, the thesis contributes to agenda-setting theory in digital environments and emphasizes the political consequences of de-amplification. Normatively, it raises design questions about democratic information flows, especially in contexts of state–platform interaction. Robustness checks suggest that the effects are not artifacts of selection bias or time-varying confounders."
 
 - name: John Loui Santiago
-  year: 2025-current
+  year: 2024-26
   info: "iMBA, National Tsing Hua University (NTHU)"
 
   degree: "Masters"
   linkedin: "https://www.linkedin.com/in/johnlouisantiago/"
   github: "https://github.com/johnlouisantiago"
+  status: "Completed"
 
 - name: Mave Kimara Alexander
-  year: 2025-current
+  year: 2024-26
   info: "iMBA, National Tsing Hua University (NTHU)"
 
   degree: "Masters"
   description: "As a Tax Officer from Saint Lucia, Mave is interested in how regional cultural contexts influence housing markets and organizational behaviour. She aims to produce rigorous quantitative research that strengthens evidence-based policymaking and deepens understanding of Caribbean economic structures."
   linkedin: "https://www.linkedin.com/in/mave-alexander-518406367"
   github: "https://github.com/MaveKimaraAlexander"
+  status: "Completed"
 
 - name: Young Shin
-  year: 2025-current
+  year: 2025-26
   info: "College of Electrical Engineering and Computer Science, National Tsing Hua University (NTHU)"
 
   note: Undergraduate research assistant
   degree: "Undergraduate"
+  status: "Completed"
 
 - name: Ting-Wen (Keri) Liu
-  year: 2026-current
+  year: 2025-current
   info: "Institute of Service Science, National Tsing Hua University (NTHU)"
 
   degree: "Masters"
   linkedin: "https://www.linkedin.com/in/ting-wen-liu-5289971b0"
   github: "https://github.com/keri0502"
+  status: "In Progress"
 
 - name: Hsin-Yu (Joanna) Hsiao
-  year: 2026-current
+  year: 2025-current
   info: "Institute of Service Science, National Tsing Hua University (NTHU)"
 
   degree: "Masters"
   linkedin: "https://www.linkedin.com/in/joanna-hsiao-3145711b8/"
   github: "https://github.com/hsiao30919"
+  status: "In Progress"

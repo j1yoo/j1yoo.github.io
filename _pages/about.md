@@ -32,7 +32,7 @@ Before joining NTHU, I was a visiting postdoc fellow at the [Center of Business 
 
 My [research]({% link _pages/publications.md %}) investigates the following question:
 
-> How do platform and technology design choices shape user/consumer behavior and market outcomes through frictions in decision-making and execution, such as search and evaluation costs, transaction costs, uncertainty, and attention allocation?
+> {{ site.data.academic_profile.research_question }}
 {:.research-question}
 
 Substantively, I study this question in digital platform and technology-enabled market settings, including online media platforms, digital advertising and customer journey interventions, and retail technologies. Across these contexts, my work examines how platform and technology design changes (e.g., participation features, information structures, and intervention formats) alter decision environments, reallocate cognitive and transactional frictions, and in turn affect outcomes such as engagement, choice difficulty, conversion, consumption variety, spending, and firms' strategic behavior.
@@ -41,7 +41,7 @@ Methodologically, my work is grounded in causal inference. I rely on large-scale
 
 In parallel, I pursue cross-disciplinary research on counterfactual reasoning at the intersection of causal inference and explainable artificial intelligence (XAI), with work that is naturally positioned for ML venues and methodological journal outlets. This research examines how credible counterfactuals, both for estimating causal effects and for producing interpretable, actionable counterfactual explanations (CFEs), can be constructed when clean control groups, defensible adjustment sets, or transparent decision rules are difficult to obtain. For more detailed information on my publications and ongoing projects, please visit [the research section]({% link _pages/publications.md %}) of my webpage.
 
-I serve as an ad hoc reviewer for leading journals in information systems, marketing, and innovation studies, including [MIS Quarterly](http://www.misq.org/) (UTD24/FT50 journal), [Research Policy](https://www.sciencedirect.com/journal/research-policy) (FT50 journal), and [Journal of Business Research](https://www.sciencedirect.com/journal/journal-of-business-research) (SSCI/NSTC Mgmt. II Top Journal List), and also contribute to the peer review process at field-facing conferences, such as the [Conference on Information Systems and Technology (CIST)](https://sites.google.com/view/cist2025). I am also a member of the Editorial Board of [Asia Marketing Journal](https://amj.kma.re.kr/journal/), the flagship journal of the Korean Marketing Association.
+{% include academic_service_summary.liquid %}
 
 **<u>For prospective students:</u>**
 

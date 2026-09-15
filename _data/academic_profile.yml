@@ -1,0 +1,127 @@
+# Shared academic facts for the homepage, research listings, and CV.
+# Private correspondence and verification notes are kept outside this public repository.
+reviewed_on: 2026-09-15
+research_question: "How do platform and technology design choices shape user/consumer behavior and market outcomes through frictions in decision-making and execution, such as search and evaluation costs, transaction costs, uncertainty, and attention allocation?"
+cv_research_summary: "I study how platform and technology design shape consumer behavior and market and societal outcomes through changes in decision-making frictions. My research spans marketing and innovation in digital markets and services, using field experiments and quasi-experimental causal inference, with complementary work on counterfactual reasoning and explainable AI."
+lab:
+  role: Director
+  name: Causal Analysis for Digital Interventions Lab
+  short_name: CADI Lab
+  url: https://cadi-lab.github.io/
+awards:
+  - id: high_quality_research_2025_2026
+    title: High Quality Research Award
+    organization: National Tsing Hua University
+    year: "2025, 2026"
+  - id: emerging_scholar_2025
+    title: Emerging Scholar Research Award
+    organization: College of Technology Management, National Tsing Hua University
+    year: 2025
+    url: https://www.ctm.nthu.edu.tw/tw/article/1139-2025-ke-ji-guan-li-syueh-yuan-sin
+  - id: cses_outstanding_research_2020
+    title: Outstanding Research Awards, Stages 1, 2 and 3
+    organization: CSES Social Value Research Competition, Korea
+    year: 2020
+    award_months: [April, July, October]
+  - id: kma_dissertation_2019
+    title: Best Paper Award, Doctoral Dissertation Competition
+    organization: Korean Marketing Association (KMA)
+    note: First Joint Conference on Distribution, Marketing, Advertising, and Consumer Behavior (DMAC)
+    year: 2019
+  - id: global_phd_outstanding_research_2015
+    title: Outstanding Research Award, Global Ph.D. Fellowship
+    organization: National Research Foundation of Korea (NRF)
+    year: 2015
+  - id: global_phd_fellowship_2014
+    title: Global Ph.D. Fellowship
+    organization: National Research Foundation of Korea (NRF)
+    year: "2014–2017"
+    grant_id: nrf_social_influence_2014
+  - id: kaist_phd_full_scholarship
+    title: Ph.D. Full Scholarship
+    organization: Korea Advanced Institute of Science and Technology (KAIST)
+    year: "2013–2019"
+  - id: kaist_masters_full_scholarship
+    title: Master's Degree Full Scholarship
+    organization: Korea Advanced Institute of Science and Technology (KAIST)
+    year: "2011–2013"
+grants:
+  - id: nstc_platform_governance_2026
+    role: Principal investigator
+    title: "Platform Governance and Content Moderation: Interventions and Their Consequences"
+    organization: National Science and Technology Council, Taiwan (NSTC)
+    period: 2026-2028
+    start_date: 2026-08-01
+    end_date: 2028-07-31
+  - id: nstc_scan_go_2023
+    paper_key: yoo_navigating
+    role: Principal investigator
+    title: "Mobile Scan-and-Go and the Future of Offline Retail: How Reduced Transaction Costs Affect Consumer Behavior"
+    organization: National Science and Technology Council, Taiwan (NSTC)
+    period: 2023-2025
+    start_date: 2023-08-01
+    end_date: 2025-07-31
+    grant_number: 112-2410-H-007-034
+  - id: nstc_ad_curiosity_2022
+    paper_key: yoon_bli
+    role: Principal investigator
+    title: "Curiosity Evocation and Resolution in Ads: Empirical Investigation in Large-Scale Randomized Controlled Trials"
+    organization: National Science and Technology Council, Taiwan (NSTC)
+    period: 2022-2024
+    start_date: 2022-08-01
+    end_date: 2024-07-31
+    grant_number: 111-2410-H-007-102
+  - id: nthu_startup_2022
+    role: Recipient
+    title: NTHU Start-up Research Fund
+    organization: National Tsing Hua University
+    period: 2022
+  - id: nrf_social_influence_2014
+    program: Global Ph.D. Fellowship
+    role: Principal investigator
+    title: "Size, Entropy, and Density: The Impact of Social Influence on Assortments and Choices"
+    organization: National Research Foundation of Korea (NRF)
+    period: 2014-2017
+    start_date: 2014-03-01
+    end_date: 2017-02-28
+service:
+  editorial:
+    - journal: Asia Marketing Journal
+      role: Editorial Board Member
+      period: October 2023-present
+      url: https://amj.kma.re.kr/journal/editorialboard.html
+  reviewing:
+    - name: MIS Quarterly
+      url: https://misq.umn.edu/
+      classification: UTD24/FT50 journal
+    - name: Research Policy
+      url: https://www.sciencedirect.com/journal/research-policy
+      classification: FT50 journal
+    - name: Journal of Business Research
+      url: https://www.sciencedirect.com/journal/journal-of-business-research
+      classification: SSCI/NSTC Mgmt. II Top Journal List
+  conferences:
+    - name: International Conference on Information Systems (ICIS)
+      url: https://aisel.aisnet.org/icis
+    - name: Pacific Asia Conference on Information Systems (PACIS)
+      url: https://aisel.aisnet.org/pacis/
+    - name: Conference on Information Systems and Technology (CIST)
+      url: https://cistconf.org/
+    - name: American Marketing Association (AMA) Winter and Summer Academic Conferences
+      url: https://www.ama.org/events/?event_type=academic&event_year=2026
+  organizing:
+    - name: Taiwan Summer Workshop on Information Management (TSWIM)
+      role: Organizing Co-Chair
+      period: 2026
+mentoring_awards:
+  - id: robust_ce_thesis
+    paper_key: yoo_robustce
+    student: Zhan-Yi Liao
+    cv_note: "Zhan-Yi Liao; co-advised with Po-An Chen; presented at CMCT 2026"
+    presentation_note: "presented at CMCT 2026"
+    title: "2025 Best Master's Thesis Award (Honorable Award)"
+    organization: Algorithms and Computation Theory Society of Taiwan
+    note: "Awarded to Zhan-Yi Liao's master's thesis, co-advised with Po-An Chen; presented at CMCT 2026."
+paper_notes:
+  - paper_key: duron_exploring
+    text: "Earlier versions presented by Edgar A. Duron at the ISR Paper Development Workshop at PACIS (2024), TSWIM (2024), and MIS Quarterly Author Workshop (2026)."

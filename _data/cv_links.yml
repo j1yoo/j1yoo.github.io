@@ -1,0 +1,19 @@
+# Describe the resource in black; link only the short destination in blue.
+# Keep URLs in their original source records; this file owns wording only.
+paper_defaults:
+  arxiv: { description: Working paper, target: arXiv }
+  ssrn: { description: Working paper, target: SSRN }
+  html: { description: Research material, target: website }
+papers:
+  yoo_robustce: { description: Working paper, target: arXiv }
+  shmueli_counterfactual: { description: Working paper, target: arXiv }
+  yoo_navigating: { description: Working paper, target: SSRN }
+  duron_exploring: { description: Conference record, target: AIS eLibrary }
+  yoo2018compromise: { description: Journal article, target: Taylor & Francis }
+  kang2018effect: { description: Journal article, target: DBpia }
+editorial: { description: Board roster, target: AMJ }
+award: { description: Award announcement, target: CTM }
+slides: { description: Presentation slides, target: PDF }
+event: { description: Event, target: website }
+course: { description: Course materials, target: website }
+thesis: { description: Thesis record, target: repository }

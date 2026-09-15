@@ -1,0 +1,6 @@
+{%- assign student = include.student -%}
+{%- if student.note -%}{{ student.note }}{%- endif -%}
+{%- if student.mentoring_award_id -%}
+  {%- assign award = site.data.academic_profile.mentoring_awards | where: 'id', student.mentoring_award_id | first -%}
+  {%- if student.note -%}; {% endif -%}<strong>{{ award.title }}</strong>, {{ award.organization }}{% if award.presentation_note %} ({{ award.presentation_note }}){% endif %}.
+{%- endif -%}

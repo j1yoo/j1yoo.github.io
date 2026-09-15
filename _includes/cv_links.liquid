@@ -1,0 +1,3 @@
+{%- if include.url and include.label -%}
+<span class="cv-links"><em class="cv-links-label">Links:</em> <span class="cv-links-items"><span class="cv-link-description">{{ include.label.description }}</span> (<a href="{{ include.url }}">{{ include.label.target }}</a>){% if include.second_url and include.second_label %}<span class="cv-link-separator">; </span><span class="cv-link-description">{{ include.second_label.description }}</span> (<a href="{{ include.second_url }}">{{ include.second_label.target }}</a>){% endif %}</span></span>
+{%- endif -%}

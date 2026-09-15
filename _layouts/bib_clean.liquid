@@ -1,20 +1,30 @@
 ---
 ---
-<div class="entry">
+<div class="entry" data-paper-key="{{ entry.key }}">
   <div class="entry-content">
     {{ entry.title }}.
-    {% if entry.author_array.size > 0 -%}
-    {% for author in entry.author_array -%}
-      {%- if author.last == site.scholar.last_name[0] and author.first == site.scholar.first_name[0] -%}
-        <b>{{ author.first }} {{ author.last }}</b>
-      {%- else -%}
-        {{ author.first }} {{ author.last }}
-      {%- endif -%}
-      {%- unless forloop.last -%}, {% endunless -%}
-    {%- endfor -%}.
-    {%- endif %}
-    {% if entry.journal or entry.booktitle or entry.year != "current" %}
-    <em>{{ entry.journal | default: entry.booktitle }}</em>{% if entry.year != "current" %}, {{ entry.year }}{% endif %}.
+    {% if entry.author_array.size > 0 %}
+    {% for author in entry.author_array %}{% assign author_last = author.last | remove: '*' | remove: '†' %}{% if site.scholar.last_name contains author_last and site.scholar.first_name contains author.first %}<strong>{{ author.first }} {{ author.last }}</strong>{% else %}{{ author.first }} {{ author.last }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
     {% endif %}
+    {% if entry.journal or entry.booktitle or entry.year != 'current' %}<em>{{ entry.journal | default: entry.booktitle | strip_html }}</em>{% if entry.year != 'current' %}{% if entry.volume %}, {{ entry.volume }}{% if entry.number %}({{ entry.number }}){% endif %}{% endif %}{% if entry.pages %}, {{ entry.pages | replace: '--', '–' }}{% endif %} ({{ entry.year }}){% endif %}.{% endif %}
   </div>
+  {% assign mentoring_award = site.data.academic_profile.mentoring_awards | where: 'paper_key', entry.key | first %}
+  {% assign grant = site.data.academic_profile.grants | where: 'paper_key', entry.key | first %}
+  {% assign cv_paper_note = site.data.academic_profile.paper_notes | where: 'paper_key', entry.key | first %}
+  {% if mentoring_award or entry.award or entry.presentation or grant or cv_paper_note or entry.arxiv or entry.ssrn or entry.html %}
+  <ul class="paper-details">
+    {% if mentoring_award %}<li><em>Student thesis award:</em> {{ mentoring_award.title }}, {{ mentoring_award.organization }} ({{ mentoring_award.cv_note | default: mentoring_award.note }}).</li>
+    {% elsif entry.award %}<li><em>Award:</em> {{ entry.award | strip_html }}.</li>{% endif %}
+    {% if entry.presentation %}<li><em>Presented:</em> {{ entry.presentation | strip_html }}.</li>{% endif %}
+    {% if cv_paper_note %}<li>{{ cv_paper_note.text }}</li>{% endif %}
+    {% if grant %}<li><em>Grant:</em> {{ grant.role }}, {{ grant.organization }} ({{ grant.period | replace: '-', '–' }}).</li>{% endif %}
+    {% if entry.arxiv or entry.ssrn or entry.html %}
+    {% assign paper_link_label = site.data.cv_links.papers[entry.key] %}
+    {% if entry.arxiv %}{% assign paper_link_url = 'https://arxiv.org/abs/' | append: entry.arxiv %}{% assign paper_link_label = paper_link_label | default: site.data.cv_links.paper_defaults.arxiv %}
+    {% elsif entry.ssrn %}{% assign paper_link_url = entry.ssrn %}{% assign paper_link_label = paper_link_label | default: site.data.cv_links.paper_defaults.ssrn %}
+    {% else %}{% assign paper_link_url = entry.html %}{% assign paper_link_label = paper_link_label | default: site.data.cv_links.paper_defaults.html %}{% endif %}
+    <li class="paper-links">{% include cv_links.liquid url=paper_link_url label=paper_link_label %}</li>
+    {% endif %}
+  </ul>
+  {% endif %}
 </div>

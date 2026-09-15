@@ -1,61 +1,37 @@
 const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
+const { pathToFileURL } = require('url');
 
 (async () => {
-    const browser = await puppeteer.launch({
-        headless: "new",
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+  const buildDir = path.resolve(process.env.CV_BUILD_DIR || '_site');
+  const htmlPath = path.join(buildDir, 'cv_print', 'index.html');
+  const outputPath = path.resolve(process.argv[2] || 'assets/pdf/cv_jaewon.pdf');
+  if (!fs.existsSync(htmlPath)) throw new Error(`Build the Jekyll site first: missing ${htmlPath}`);
+
+  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+  try {
     const page = await browser.newPage();
-
-    // We assume the server is running on localhost:4000 as per user's state
-    const path = require('path');
-    const fs = require('fs');
-
-    // Construct reference to the generated HTML file in _site
-    // This removes dependency on localhost:4000 being up
-    const buildDir = path.join(process.cwd(), '_site');
-    const htmlPath = path.join(buildDir, 'cv_print', 'index.html');
-    const url = `file://${htmlPath}`;
-
-    console.log(`Generating PDF from ${url}...`);
-
-    if (!fs.existsSync(htmlPath)) {
-        console.error(`❌ Source HTML not found at ${htmlPath}. Ensure Jekyll has built the site.`);
-        process.exit(1);
-    }
-
-    try {
-        await page.goto(url, { waitUntil: 'networkidle0' });
-
-        // Ensure assets/pdf exists (it should, but just in case path is relative)
-        // We assume running from root
-
-        await page.pdf({
-            path: 'assets/pdf/cv_jaewon.pdf',
-            format: 'A4',
-            printBackground: true,
-            // Margin is handled by CSS in cv_clean.liquid
-            margin: {
-                top: '0',
-                right: '0',
-                bottom: '1cm', // Need space for footer
-                left: '0'
-            },
-            displayHeaderFooter: true,
-            headerTemplate: '<div></div>',
-            footerTemplate: `
-                <div style="font-size: 10px; font-family: 'Times New Roman'; text-align: center; width: 100%;">
-                    <span class="pageNumber"></span>
-                </div>
-            `
-        });
-
-        console.log('✅ PDF generated successfully at assets/pdf/cv_jaewon.pdf');
-    } catch (error) {
-        console.error('❌ Error generating PDF:', error);
-        console.error('Make sure your local server is running (bundle exec jekyll serve).');
-        process.exit(1);
-    }
-
+    await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
+    await page.evaluate(() => document.fonts.ready);
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    await page.pdf({
+      path: outputPath,
+      format: 'Letter',
+      preferCSSPageSize: true,
+      printBackground: true,
+      displayHeaderFooter: true,
+      headerTemplate: '<div></div>',
+      footerTemplate: '<div style="font-size:9px;font-family:Times New Roman;width:100%;text-align:center;color:#555;"><span class="pageNumber"></span></div>',
+      margin: { top: '17mm', right: '17mm', bottom: '18mm', left: '17mm' }
+    });
+    // The deployed tree must contain the PDF made from this same HTML build.
+    const deployedPath = path.join(buildDir, 'assets/pdf/cv_jaewon.pdf');
+    fs.mkdirSync(path.dirname(deployedPath), { recursive: true });
+    if (deployedPath !== outputPath) fs.copyFileSync(outputPath, deployedPath);
+    console.log(`Generated ${outputPath}`);
+    console.log(`Placed the same PDF in ${deployedPath}`);
+  } finally {
     await browser.close();
-})();
+  }
+})().catch(error => { console.error(error.message); process.exitCode = 1; });

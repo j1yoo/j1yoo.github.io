@@ -134,7 +134,10 @@
             {{ periodical | strip }}
           </div>
           <ul>
-            {%- if entry.award -%}
+            {% assign mentoring_award = site.data.academic_profile.mentoring_awards | where: 'paper_key', entry.key | first %}
+            {%- if mentoring_award -%}
+            <li style="margin-bottom: 0px;"><b>Award:</b> {{ mentoring_award.title }}, {{ mentoring_award.organization }}. {{ mentoring_award.note }}</li>
+            {%- elsif entry.award -%}
             <li style="margin-bottom: 0px;"><b>Award:</b> {{entry.award}}</li>
             {%- endif -%}
             {%- if entry.media -%}
@@ -143,7 +146,14 @@
             {%- if entry.presentation -%}
             <li style="margin-bottom: 0px;"><b>Presented:</b> {{entry.presentation}}</li>
             {%- endif -%}
-            {%- if entry.grant -%}
+            {% assign paper_note = site.data.academic_profile.paper_notes | where: 'paper_key', entry.key | first %}
+            {%- if paper_note -%}
+            <li style="margin-bottom: 0px;">{{ paper_note.text }}</li>
+            {%- endif -%}
+            {% assign grant = site.data.academic_profile.grants | where: 'paper_key', entry.key | first %}
+            {%- if grant -%}
+            <li style="margin-bottom: 0px;"><b>Grant:</b> {{ grant.role }}, {{ grant.organization }}, "{{ grant.title }}" ({{ grant.period }})</li>
+            {%- elsif entry.grant -%}
             <li style="margin-bottom: 0px;"><b>Grant:</b> {{entry.grant}}</li>
             {%- endif -%}
           </ul>

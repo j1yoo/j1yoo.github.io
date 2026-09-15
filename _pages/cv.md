@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 10
 description: "Academic CV of Jaewon Yoo: education, publications, research experience, and professional activities."
-subtitle: "Automatically generated from [website content](https://j1yoo.github.io) via [Jekyll](https://jekyllrb.com/), [Puppeteer](https://pptr.dev/), and [GitHub Actions](https://github.com/features/actions)."
+subtitle: "Research, teaching, and professional activities."
 # toc:
 #   sidebar: left
 ---
@@ -67,20 +67,24 @@ subtitle: "Automatically generated from [website content](https://j1yoo.github.i
     }
   </style>
 
+  {% if site.cv_preview %}
+  <p style="border-left: 3px solid #a44b1d; padding: 10px 14px;">Local review copy — proposed CV update, not published.</p>
+  {% endif %}
   <div style="text-align: center; margin-bottom: 20px;">
-    <div class="last-updated" title="Automatically updated on build" style="margin-bottom: 10px;">
-      <i class="fa-solid fa-rotate"></i> Updated on {{ site.time | date: "%B %d, %Y" }}
+    <div class="last-updated" title="Date of the academic profile update" style="margin-bottom: 10px;">
+      <i class="fa-solid fa-rotate"></i> Updated on {{ site.data.academic_profile.reviewed_on | date: "%B %d, %Y" }}
     </div>
     <div>
         <a href="{{ 'assets/pdf/cv_jaewon.pdf' | relative_url }}" class="btn btn-theme z-depth-0" target="_blank">
             <i class="fas fa-file-pdf"></i> Download/Open PDF
         </a>
+        <a href="{{ '/cv_print/' | relative_url }}" class="btn btn-theme z-depth-0">Read online</a>
     </div>
   </div>
 
   <!-- Desktop: Interactive PDF iframe -->
   <div class="responsive">
-    <iframe src="{{ 'assets/pdf/cv_jaewon.pdf' | relative_url }}"></iframe>
+    <iframe title="Curriculum vitae of Jaewon Yoo" src="{{ 'assets/pdf/cv_jaewon.pdf' | relative_url }}"></iframe>
   </div>
 
 </html>
