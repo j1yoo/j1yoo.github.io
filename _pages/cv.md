@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 10
 description: "Academic CV of Jaewon Yoo: education, publications, research experience, and professional activities."
-subtitle: "Research, teaching, and professional activities."
+subtitle: "Automatically generated from [website content](https://j1yoo.github.io) via [Jekyll](https://jekyllrb.com/), [Puppeteer](https://pptr.dev/), and [GitHub Actions](https://github.com/features/actions)."
 # toc:
 #   sidebar: left
 ---
