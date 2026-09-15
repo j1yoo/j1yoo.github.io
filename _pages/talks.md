@@ -15,7 +15,9 @@ nav_order: 7
 {% for year_group in talks_by_year %}
   <h2 class="year">{{ year_group.name }}</h2>
   <ul class="talks-list">
-    {% for talk in year_group.items %}
+    {% assign talks_by_date = year_group.items | group_by: 'date' | sort: 'name' | reverse %}
+    {% for date_group in talks_by_date %}
+    {% for talk in date_group.items %}
       <li class="mb-3">
         <div class="periodical">
             {% if talk.type %}
@@ -43,6 +45,7 @@ nav_order: 7
           </div>
         {% endif %}
       </li>
+    {% endfor %}
     {% endfor %}
   </ul>
 {% endfor %}

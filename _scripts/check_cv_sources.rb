@@ -33,7 +33,14 @@ profile.fetch('service').fetch('organizing', []).each do |item|
   contains.call(item.fetch('role'), cv)
 end
 profile.fetch('paper_notes', []).each { |item| contains.call(item.fetch('text'), cv + ['research/index.html']) }
-read_yaml.call('talks.yml').each { |item| contains.call(item.fetch('title'), cv + ['talks/index.html']) }
+talks = read_yaml.call('talks.yml')
+talks.each { |item| contains.call(item.fetch('title'), cv + ['talks/index.html']) }
+# Grouping by date keeps the author's source order for same-day presentations.
+# Sorting directly by date alone can reorder tied entries across Ruby versions.
+expected_talks = talks.each_with_index.sort_by { |item, i| [item.fetch('date').to_s, -i] }.reverse.map { |item, _| [item.fetch('date').to_s, normalize.call(item.fetch('title'))] }
+raw_cv = File.read(File.join(build, 'cv_print/index.html'))
+actual_talks = raw_cv.scan(/class="cv-entry cv-talk" data-talk-date="([^"]+)"[^>]*>\s*<div class="dated-row">\s*<strong>(.*?)<\/strong>/m).map { |date, title| [date, normalize.call(title)] }
+errors << 'CV talk order differs from descending date with original source order for ties' unless actual_talks == expected_talks
 read_yaml.call('supervision.yml').each do |student|
   targets = cv + ['supervision/index.html']
   contains.call(student.fetch('name'), targets)
