@@ -13,6 +13,7 @@ papers:
   kang2018effect: { description: Journal article, target: DBpia }
 editorial: { description: Board roster, target: AMJ }
 award: { description: Award announcement, target: CTM }
+fellowship_background: { description: Program background, target: GIST }
 slides: { description: Presentation slides, target: PDF }
 event: { description: Event, target: website }
 course: { description: Course materials, target: website }
