@@ -35,6 +35,7 @@ awards:
   - id: global_phd_fellowship_2014
     title: Global Ph.D. Fellowship
     organization: National Research Foundation of Korea (NRF)
+    note: Competitive national doctoral fellowship
     year: "2014–2017"
     grant_id: nrf_social_influence_2014
   - id: kaist_phd_full_scholarship
@@ -124,4 +125,4 @@ mentoring_awards:
     note: "Awarded to Zhan-Yi Liao's master's thesis, co-advised with Po-An Chen; presented at CMCT 2026."
 paper_notes:
   - paper_key: duron_exploring
-    text: "Earlier versions presented by Edgar A. Duron at the ISR Paper Development Workshop at PACIS (2024), TSWIM (2024), and MIS Quarterly Author Workshop (2026)."
+    text: "Presented by Edgar A. Duron: ISR Paper Development Workshop at PACIS (2024); TSWIM (2024); DIGIT Workshop at ICIS (2024); MIS Quarterly Author Workshop (2026)."
