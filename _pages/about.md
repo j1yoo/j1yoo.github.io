@@ -32,7 +32,7 @@ Before joining NTHU, I was a visiting postdoctoral fellow at the [Center of Busi
 
 My [research]({% link _pages/publications.md %}) investigates the following question:
 
-> {{ site.data.academic_profile.research_question }}
+> How do platform and technology design choices shape user/consumer behavior and market outcomes through frictions in decision-making and execution, such as search and evaluation costs, transaction costs, uncertainty, and attention allocation?
 {:.research-question}
 
 Substantively, I study this question in digital platform and technology-enabled market settings, including online media platforms, digital advertising and customer journey interventions, and retail technologies. Across these contexts, my work examines how platform and technology design changes (e.g., participation features, information structures, and intervention formats) alter decision environments, reallocate cognitive and transactional frictions, and in turn affect outcomes such as engagement, choice difficulty, conversion, consumption variety, spending, and firms' strategic behavior.
