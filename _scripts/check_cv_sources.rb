@@ -4,6 +4,7 @@ require 'yaml'
 require 'json'
 require 'date'
 require 'cgi'
+require 'kramdown'
 
 root = File.expand_path('..', __dir__)
 build = File.expand_path(ENV.fetch('CV_BUILD_DIR', '_site'), root)
@@ -25,8 +26,17 @@ profile.fetch('grants').each do |item|
 end
 %w[reviewing conferences editorial].each do |kind|
   profile.fetch('service').fetch(kind).each do |item|
-    contains.call(item['name'] || item.fetch('journal'), cv + ['index.html'])
+    contains.call(item['name'] || item.fetch('journal'), cv)
   end
+end
+# About is a deliberately selected, authored introduction. Extending the full
+# CV service records must not expand its prose or its claim about leading journals.
+about_source = File.read(File.join(root, '_pages/about.md'))
+about_service = about_source.lines.find { |line| line.start_with?('I serve as an ad hoc reviewer') }
+if about_service
+  contains.call(Kramdown::Document.new(about_service).to_html, ['index.html'])
+else
+  errors << 'About: missing independently authored reviewer paragraph'
 end
 profile.fetch('service').fetch('organizing', []).each do |item|
   contains.call(item.fetch('name'), cv)
