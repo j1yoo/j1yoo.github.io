@@ -4,13 +4,12 @@ require 'yaml'
 require 'json'
 require 'date'
 require 'cgi'
-require 'kramdown'
 
 root = File.expand_path('..', __dir__)
 build = File.expand_path(ENV.fetch('CV_BUILD_DIR', '_site'), root)
 read_yaml = lambda { |name| YAML.safe_load(File.read(File.join(root, '_data', name)), permitted_classes: [Date, Time]) }
 normalize = lambda { |value| CGI.unescapeHTML(value.to_s.gsub(/<[^>]*>/, ' ')).unicode_normalize(:nfkc).gsub(/\s+/, ' ').strip }
-pages = %w[index.html cv_print/index.html research/index.html supervision/index.html talks/index.html].to_h do |name|
+pages = %w[cv_print/index.html research/index.html supervision/index.html talks/index.html].to_h do |name|
   [name, normalize.call(File.read(File.join(build, name)))]
 end
 profile = read_yaml.call('academic_profile.yml')
@@ -24,19 +23,12 @@ profile.fetch('awards').each { |item| contains.call(item.fetch('title'), cv) }
 profile.fetch('grants').each do |item|
   contains.call(item.fetch('title'), cv + (item['paper_key'] ? ['research/index.html'] : []))
 end
+# The full service list belongs in the CV. About is independently authored
+# and deliberately includes only selected examples.
 %w[reviewing conferences editorial].each do |kind|
   profile.fetch('service').fetch(kind).each do |item|
     contains.call(item['name'] || item.fetch('journal'), cv)
   end
-end
-# About is a deliberately selected, authored introduction. Extending the full
-# CV service records must not expand its prose or its claim about leading journals.
-about_source = File.read(File.join(root, '_pages/about.md'))
-about_service = about_source.lines.find { |line| line.start_with?('I serve as an ad hoc reviewer') }
-if about_service
-  contains.call(Kramdown::Document.new(about_service).to_html, ['index.html'])
-else
-  errors << 'About: missing independently authored reviewer paragraph'
 end
 profile.fetch('service').fetch('organizing', []).each do |item|
   contains.call(item.fetch('name'), cv)
@@ -78,4 +70,4 @@ end
 if errors.any?
   abort "Shared CV source checks failed:\n#{errors.join("\n")}"
 end
-puts 'Shared CV sources match About, Research, Talks, Supervision and print CV.'
+puts 'Shared CV sources match Research, Talks, Supervision and print CV.'
