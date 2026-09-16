@@ -386,6 +386,20 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// The theme toggle and search icons are inline SVGs; they replaced the Tabler
+// icon font, which cost 877KB for three glyphs. Size them like the old glyphs.
+#light-toggle svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+#search-toggle svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
 #light-toggle,
 #search-toggle {
   padding: 0;
