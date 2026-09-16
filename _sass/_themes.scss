@@ -121,6 +121,19 @@ html[data-theme="dark"] {
   .only-dark {
     display: block;
   }
+
+  // JavaScript adds `table-dark` to every table after DOMContentLoaded (see
+  // no_defer.js). Until then Bootstrap's `.table` would paint near-black text on
+  // the dark background, so give not-yet-classed tables the same colors here.
+  .table:not(.table-dark) {
+    color: #{$white-color};
+
+    th,
+    td,
+    thead th {
+      border-color: #454d55;
+    }
+  }
 }
 
 html[data-theme-setting="dark"] {
