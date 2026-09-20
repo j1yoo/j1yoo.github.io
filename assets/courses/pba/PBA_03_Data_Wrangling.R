@@ -2,6 +2,8 @@
 # Run selected lines in order in RStudio. "PDF p." refers to the 65-page slides.
 # Packages used today: tidyverse (dplyr, ggplot2, forcats), knitr, wesanderson.
 # Install once: install.packages(c("tidyverse", "knitr", "wesanderson"))
+# Today's data (news) comes from the course data package, pbadata. Its install line is under "PDF p. 15" below:
+# remove the "# " in front of install.packages(...) and the line after it, run them once, then put the "# " back.
 
 # PDF p. 8
 mtcars$mpg
@@ -22,13 +24,19 @@ mtcars
 #   f()
 
 # PDF p. 15
+# install the course data package (only once):
+# install.packages("https://j1yoo.github.io/assets/courses/pba/pbadata_0.1.0.tar.gz",
+#                  repos = NULL, type = "source")
 library(tidyverse)
-news <- as_tibble(read.csv(url("https://bit.ly/3Qst0Ry")))
-news <- news |>
-    mutate(date = as.Date(date),
-           weekday = factor(weekday, levels = c("Mon", "Tue", "Wed", "Thu", "Fri"),
-                            ordered = TRUE),
-           month = factor(month, levels = month.abb, ordered = TRUE)); news
+library(pbadata)
+news
+# Alternatively, import the CSV file and set the column types yourself:
+# news <- as_tibble(read.csv(url("https://bit.ly/3Qst0Ry")))
+# news <- news |>
+#   mutate(date = as.Date(date),
+#          weekday = factor(weekday, levels = c("Mon", "Tue", "Wed", "Thu", "Fri"),
+#                           ordered = TRUE),
+#          month = factor(month, levels = month.abb, ordered = TRUE))
 
 # PDF p. 18
 news |>
