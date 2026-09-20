@@ -1,6 +1,6 @@
 # Shared academic facts for the homepage, research listings, and CV.
 # Private correspondence and verification notes are kept outside this public repository.
-reviewed_on: 2026-09-15
+reviewed_on: 2026-09-20
 cv_research_summary: "I study how platform and technology design shape consumer behavior and market and societal outcomes through changes in decision-making frictions. My research spans marketing and innovation in digital markets and services, using field experiments and quasi-experimental causal inference, with complementary work on counterfactual reasoning and explainable AI."
 lab:
   role: Director
