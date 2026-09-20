@@ -135,11 +135,9 @@ mentoring_awards:
   - id: robust_ce_thesis
     paper_key: yoo_robustce
     student: Zhan-Yi Liao
-    cv_note: "Zhan-Yi Liao; co-advised with Po-An Chen; presented at CMCT 2026"
+    cv_note: "Zhan-Yi Liao; co-advised with Po-An Chen"
     presentation_note: "presented at CMCT 2026"
     title: "2025 Best Master's Thesis Award (Honorable Award)"
     organization: Algorithms and Computation Theory Society of Taiwan
-    note: "Awarded to Zhan-Yi Liao's master's thesis, co-advised with Po-An Chen; presented at CMCT 2026."
-paper_notes:
-  - paper_key: duron_exploring
-    text: "Presented by Edgar A. Duron: ISR Paper Development Workshop at PACIS (2024); TSWIM (2024); DIGIT Workshop at ICIS (2024); MIS Quarterly Author Workshop (2026)."
+    note: "Awarded to Zhan-Yi Liao's master's thesis, co-advised with Po-An Chen."
+paper_notes: []
