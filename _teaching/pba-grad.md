@@ -57,6 +57,8 @@ materials:
     url: "/assets/courses/pba/PBA_02_Data_Visualization.pdf"
     script_url: "/assets/courses/pba/PBA_02_Data_Visualization.R"
   - title: "Week 3: Data Wrangling with dplyr"
+    url: "/assets/courses/pba/PBA_03_Data_Wrangling_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_03_Data_Wrangling.R"
   - title: "Week 4: Causality"
   - title: "Week 5: Causality II: DAGs and Covariate Selection"
   - title: "Week 6: Individual or team meetings by appointment (no class meeting)"
@@ -104,18 +106,18 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §7.2 (ggplot2); AAG Ch. 3–5 (additional R background); VT Ch. 3–4 (tools and patterns over time).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E1 (gapminder)</em><br>
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 1 released</em><br>
   <span class="badge-due">Due:</span> Group formation survey, Sun Sep 20
   </div>
 
   **Week 3 (Sep 24): Data Wrangling with dplyr**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_03_Data_Wrangling_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_03_Data_Wrangling.R" download>R script</a>
   - Operating on rows, columns, and groups
   - Bar plots
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§3.1–3.6](https://moderndive.com/3-wrangling.html#piping), [MD §3.8](https://moderndive.com/3-wrangling.html#other-verbs) (pipes, filtering, summaries, groups, new variables, sorting, and selecting columns); [MD §2.8](https://moderndive.com/2-viz.html#geombar) (bar plots).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §§12.1–12.9 (dplyr); VT Ch. 7 (visual comparisons).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E2</em><br>
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E2 (local news)</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 1 released: you have two weeks (due Thu Oct 8, before class)</em>
   </div>
 
   ### Part II: Causality, Prediction, and Regression
@@ -127,7 +129,8 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); course notes on potential outcomes, average treatment effects, and comparisons of group means (to be posted before class).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§2.1–2.5.
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em>
   </div>
 
   **Week 5 (Oct 8): Causality II: DAGs and Covariate Selection**
@@ -137,7 +140,7 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §2.5 (observational studies and confounding).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
-  <span class="badge-due">Due:</span> Assignment 1<br>
+  <span class="badge-due">Due:</span> Assignment 1, Thu Oct 8 (before class)<br>
   <span class="badge-due">Due:</span> Milestone 1: GitHub repository, Sun Oct 11
   </div>
 
