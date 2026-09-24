@@ -1,0 +1,59 @@
+---
+layout: null
+permalink: /teaching/material/
+title: Course material
+nav: false
+sitemap: false
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Opening course material…</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f8fa; color: #202830; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    [hidden] { display: none !important; }
+    .toolbar { padding: 16px 24px; border-bottom: 1px solid #d9e0e5; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    h1 { font-size: 16px; font-weight: 600; margin: 0 0 6px; overflow-wrap: anywhere; }
+    #status { font-size: 14px; margin: 0; color: #52616d; }
+    #actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    a, button { color: #147894; }
+    button { font: inherit; cursor: pointer; border: 1px solid #92b9c4; border-radius: 5px; background: transparent; padding: 8px 14px; }
+    #actions a { font-size: 14px; white-space: nowrap; }
+    #loading-panel { max-width: 560px; margin: 14vh auto; padding: 24px; text-align: center; }
+    #progress { width: 100%; accent-color: #2698ba; }
+    #progress-text { min-height: 1.5em; color: #52616d; font-size: 14px; }
+    #pdf-viewer { width: 100%; height: calc(100vh - 84px); height: calc(100dvh - 84px); border: 0; display: block; background: #525659; }
+    noscript { display: block; padding: 24px; }
+    noscript li { margin: 10px 0; overflow-wrap: anywhere; }
+    @media (max-width: 600px) { .toolbar { padding: 12px; align-items: flex-start; flex-direction: column; gap: 10px; } #pdf-viewer { height: calc(100dvh - 124px); } }
+    @media (prefers-color-scheme: dark) { :root { background: #17212b; color: #e9eef2; } .toolbar { border-color: #374550; } #status, #progress-text { color: #b4c1ca; } a, button { color: #72cbe4; } }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div><h1 id="material-title">Course material</h1><p id="status" role="status" aria-live="polite">Opening course material…</p></div>
+    <nav id="actions" aria-label="Material actions">
+      <a id="download-file" hidden>Download</a>
+      <a id="open-direct" target="_blank" rel="noopener" hidden>Open PDF in a new tab</a>
+      <button id="retry" type="button" hidden>Try again</button>
+    </nav>
+  </header>
+  <main>
+    <section id="loading-panel" aria-label="Loading progress">
+      <progress id="progress" aria-label="File received"></progress>
+      <p id="progress-text">Preparing your material…</p>
+    </section>
+    <iframe id="pdf-viewer" title="Course PDF" hidden></iframe>
+    <noscript>
+      <p>Automatic loading needs JavaScript. You can open the original files below.</p>
+      <ul>{% for pair in site.course_materials %}<li><a href="{{ pair[0] | relative_url }}">{{ pair[1].filename | escape }}</a></li>{% endfor %}</ul>
+    </noscript>
+  </main>
+  <script>{% include course-material-loader.js %}</script>
+</body>
+</html>
