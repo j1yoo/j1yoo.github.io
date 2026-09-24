@@ -25,8 +25,8 @@ mtcars
 
 # PDF p. 15
 # install the course data package (only once):
-# install.packages("https://j1yoo.github.io/assets/courses/pba/pbadata_0.1.0.tar.gz",
-#                  repos = NULL, type = "source")
+# install.packages("pbadata", type = "source",
+#                  repos = "https://j1yoo.github.io/assets/courses/pba")
 library(tidyverse)
 library(pbadata)
 news
