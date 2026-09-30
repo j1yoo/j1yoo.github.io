@@ -60,6 +60,8 @@ materials:
     url: "/assets/courses/pba/PBA_03_Data_Wrangling_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_03_Data_Wrangling.R"
   - title: "Week 4: Causality"
+    url: "/assets/courses/pba/PBA_04_Causality_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_04_Causality.R"
   - title: "Week 5: Causality II: DAGs and Covariate Selection"
   - title: "Week 6: Individual or team meetings by appointment (no class meeting)"
   - title: "Week 7: Relationships, Importing, and Tidying Data"
@@ -123,13 +125,14 @@ schedule_content: |
   ### Part II: Causality, Prediction, and Regression
 
   **Week 4 (Oct 1): Causality**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_04_Causality_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_04_Causality.R" download>R script</a>
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); course notes on potential outcomes, average treatment effects, and comparisons of group means (to be posted before class).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§2.1–2.5.
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3 (Line Pay adoption)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em>
   </div>
 
