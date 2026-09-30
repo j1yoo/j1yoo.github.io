@@ -1,12 +1,15 @@
 # PBA 4. Causality (Fall 2026)
 # Run selected lines in order in RStudio. "PDF p." refers to the 60-page slides.
-# Packages used today: tidyverse (dplyr, tidyr).
-# Install once: install.packages("tidyverse")
-# Today's data (AI tutoring study, Line Pay adoption; both simulated) are read from the web with read.csv(url(...)).
+# Packages used today: tidyverse (dplyr, tidyr) and the course data package pbadata (0.2.0 or later).
+# Today's data (ai_tutoring, linepay; both simulated) are in pbadata 0.2.0. If you installed pbadata before today,
+# update it once: remove the "# " in front of the next line, run it, then put the "# " back.
+# (If pbadata is already loaded in this R session, restart R first: Session > Restart R.)
+# install.packages("pbadata", type = "source", repos = "https://j1yoo.github.io/assets/courses/pba")
 library(tidyverse)
 
 # PDF p. 30
-AI_data <- as_tibble(read.csv(url("https://bit.ly/3FHsusw")))
+library(pbadata)
+AI_data <- ai_tutoring
 
 # PDF p. 31
 AI_data # Take a peek at the data!
@@ -62,7 +65,7 @@ AI_data |>
     )
 
 # PDF p. 41
-LinePay_data <- as_tibble(read.csv(url("https://bit.ly/3QHEPmM")))
+LinePay_data <- linepay   # also in the course data package, pbadata
 
 # PDF p. 41
 LinePay_data

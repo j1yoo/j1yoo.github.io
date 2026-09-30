@@ -1,6 +1,6 @@
 Package: pbadata
-Version: 0.1.1
+Version: 0.2.0
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
-MD5sum: 0166cef5ecf431df101c2457b14b6c38
+MD5sum: c53691b091f60ec7cf033cfb4a62bf88
 NeedsCompilation: no
