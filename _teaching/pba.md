@@ -23,6 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
+  - text: "<strong>Oct 1, 2026:</strong> Week 5 slides and R script are posted under <strong>Materials</strong>. This week's data are in the course data package <code>pbadata</code> (version 0.2.0), which installs from this site rather than from CRAN. To install or update it, restart R (Session &gt; Restart R) and run <code>install.packages(\"pbadata\", type = \"source\", repos = \"https://j1yoo.github.io/assets/courses/pba\")</code>. Then <code>library(pbadata)</code> loads it, and <code>packageVersion(\"pbadata\")</code> should show 0.2.0. The datasets are <code>ai_tutoring</code>, <code>linepay</code>, and <code>news</code>; type a dataset name such as <code>ai_tutoring</code> to see the data."
   - text: "<strong>Sep 14, 2026:</strong> The existing reading list has been clarified across the weekly schedule: <strong>Required reading</strong> identifies preparation for each class, and <strong>Further reading</strong> provides optional references. Direct links and section ranges make the free readings easier to find. An R Basics companion handout adds explanations and worked examples to the reference slides under <strong>Materials</strong>."
   - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings. Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
@@ -61,6 +62,8 @@ materials:
     script_url: "/assets/courses/pba/PBA_03_Data_Wrangling.R"
   - title: "Week 4: No class (Teachers' Day)"
   - title: "Week 5: Causality"
+    url: "/assets/courses/pba/PBA_04_Causality_UG.pdf"
+    script_url: "/assets/courses/pba/PBA_04_Causality.R"
   - title: "Week 6: Relationships, Importing, and Tidying Data"
   - title: "Week 7: Prediction and Iteration"
   - title: "Week 8: No class (Retrocession Day observed)"
@@ -127,13 +130,14 @@ schedule_content: |
   ### Part II: Causality, Prediction, and Regression
 
   **Week 5 (Oct 5): Causality**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_04_Causality_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_04_Causality.R" download>R script</a>
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); course notes on potential outcomes, average treatment effects, and comparisons of group means (to be posted before class).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§2.1–2.5.
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3 (Line Pay adoption)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>20-minute debrief of E3</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>GitHub setup guide posted</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
