@@ -20,6 +20,8 @@ const { chromium } = require(playwrightModule);
 const executablePath = process.env.CHROME_EXECUTABLE || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const pdfPath = "/assets/courses/pba/Fault-Test.pdf";
 const rPath = "/assets/courses/pba/Fault-Test.R";
+const eciPdfPath = "/assets/courses/eci/Fault-Test.pdf";
+const otherPdfPath = "/assets/courses/xyz/Fault-Test.pdf";
 const sha256 = (data) => crypto.createHash("sha256").update(data).digest("hex");
 
 // A complete one-page PDF, so browser PDF handling is exercised too.
@@ -105,7 +107,7 @@ const server = http.createServer((req, res) => {
     if (typeof result === "number") return respond(res, "manifest unavailable", result, "text/plain");
     return respond(res, JSON.stringify(result), 200, "application/json");
   }
-  if (url.pathname === pdfPath || url.pathname === rPath) {
+  if ([pdfPath, rPath, eciPdfPath, otherPdfPath].includes(url.pathname)) {
     state.originCount += 1;
     return state.origin(req, res, state.originCount);
   }
@@ -359,7 +361,37 @@ async function main() {
     assert.deepEqual(Buffer.concat(chunks), currentR);
   });
 
-  console.log("All 13 course-material browser fault tests passed.");
+  await run("an ECI PDF with a stalled origin is delivered by the verified CDN hedge", {
+    getManifest: () => manifest(currentPdf, eciPdfPath),
+    origin: () => {},
+  }, async (page, state) => {
+    await open(page, eciPdfPath);
+    await verifyBlob(page, currentPdf, eciPdfPath);
+    assert.equal(state.mirrorCount, 1, "the ECI mirror must pass the allowlist");
+    await page.waitForTimeout(30);
+    assert.ok(state.requests.find((item) => item.path === eciPdfPath).aborted, "the stalled ECI origin must be canceled");
+  });
+
+  await run("ECI materials use ECI colors and PBA colors are unchanged", {
+    getManifest: () => ({ ...manifest(), materials: { [pdfPath]: entry(pdfPath, currentPdf), [eciPdfPath]: entry(eciPdfPath, currentPdf) } }),
+  }, async (page) => {
+    for (const [file, course, accent] of [[eciPdfPath, "eci", "rgb(181, 9, 172)"], [pdfPath, null, "rgb(38, 152, 186)"]]) {
+      await open(page, file);
+      await verifyBlob(page, currentPdf, file);
+      const theme = await page.evaluate(() => [document.documentElement.getAttribute("data-course"), getComputedStyle(document.getElementById("progress")).accentColor]);
+      assert.deepEqual(theme, [course, accent], `${file} must use its course colors`);
+    }
+  });
+
+  await run("a manifest entry outside the PBA and ECI folders is rejected", {
+    getManifest: () => manifest(currentPdf, otherPdfPath),
+  }, async (page, state) => {
+    await open(page, otherPdfPath);
+    await failure(page);
+    assert.equal(state.originCount + state.mirrorCount, 0, "materials outside the course folders must not be requested");
+  });
+
+  console.log("All 16 course-material browser fault tests passed.");
 }
 
 main().catch((error) => {

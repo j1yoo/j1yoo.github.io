@@ -1,4 +1,4 @@
-# PBA downloads use a fresh manifest to verify both the origin and its mirror.
+# PBA and ECI downloads use a fresh manifest to verify both the origin and its mirror.
 require 'digest'
 require 'json'
 require 'nokogiri'
@@ -8,7 +8,7 @@ require 'uri'
 
 module Jekyll
   module CourseMaterials
-    SOURCE_DIRECTORY = 'assets/courses/pba'.freeze
+    SOURCE_DIRECTORIES = %w[assets/courses/pba assets/courses/eci].freeze
     MIRROR_LIMIT = 20_000_000
     MIRROR_BASE = 'https://gcore.jsdelivr.net/gh/j1yoo/j1yoo.github.io'.freeze
     COMMIT_PATTERN = /\A[0-9a-f]{40}\z/.freeze
@@ -40,7 +40,7 @@ module Jekyll
 
         repository_prefix = git(site, 'rev-parse', '--show-prefix').to_s.strip
         materials = {}
-        Dir.glob(File.join(site.source, SOURCE_DIRECTORY, '**', '*')).sort.each do |file|
+        SOURCE_DIRECTORIES.flat_map { |directory| Dir.glob(File.join(site.source, directory, '**', '*')).sort }.each do |file|
           next unless File.file?(file) && File.extname(file).match?(/\A\.(pdf|r)\z/i)
 
           relative_path = file.delete_prefix("#{site.source}/")
@@ -134,7 +134,7 @@ module Jekyll
       path = URI::DEFAULT_PARSER.unescape(uri.path)
       baseurl = site.config['baseurl'].to_s.sub(%r{/\z}, '')
       path = path.delete_prefix(baseurl) if !baseurl.empty? && path.start_with?("#{baseurl}/")
-      return nil unless path.start_with?("/#{SOURCE_DIRECTORY}/")
+      return nil unless SOURCE_DIRECTORIES.any? { |directory| path.start_with?("/#{directory}/") }
 
       { path: path, query: uri.query, fragment: uri.fragment }
     rescue URI::InvalidURIError

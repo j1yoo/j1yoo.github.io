@@ -44,7 +44,7 @@
       throw failure("This material is not available. Please return to the course page.", "manifest");
     }
     const entry = manifest.materials[materialPath];
-    if (!entry || entry.path !== materialPath || !/^\/assets\/courses\/pba\/[^/]+\.(pdf|r)$/i.test(entry.path) ||
+    if (!entry || entry.path !== materialPath || !/^\/assets\/courses\/(pba|eci)\/[^/]+\.(pdf|r)$/i.test(entry.path) ||
         !/^[a-f0-9]{64}$/.test(entry.sha256) || !Number.isSafeInteger(entry.bytes) || entry.bytes <= 0 ||
         typeof entry.filename !== "string" || entry.filename.includes("/")) {
       throw failure("The material details could not be checked. Please try again.", "manifest");
@@ -71,7 +71,7 @@
     if (typeof entry.mirror_url !== "string") return null;
     try {
       const url = new URL(entry.mirror_url);
-      const expected = /^\/gh\/j1yoo\/j1yoo\.github\.io@[a-f0-9]{40}(\/assets\/courses\/pba\/[^/]+)$/;
+      const expected = /^\/gh\/j1yoo\/j1yoo\.github\.io@[a-f0-9]{40}(\/assets\/courses\/(?:pba|eci)\/[^/]+)$/;
       const match = decodeURIComponent(url.pathname).match(expected);
       if (url.protocol === "https:" && url.hostname === "gcore.jsdelivr.net" && !url.search && !url.hash && match && match[1] === entry.path) return url.href;
     } catch (error) { /* An unusable mirror does not disable the original. */ }
