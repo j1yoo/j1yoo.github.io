@@ -17,6 +17,10 @@ enabled only for a tracked file of at most 20,000,000 bytes whose source matches
 the Git blob exactly. The mirror is pinned to a commit, never `@main`. Dirty
 local and untracked files remain origin-only until committed. In a shallow
 checkout, the checked-out commit is used when it contains those exact bytes.
+The deploy workflow checks out full history without blobs (`fetch-depth: 0`,
+`filter: blob:none`), so each material is pinned to the commit that last
+changed it. Its jsDelivr URL then stays the same across deploys, and the CDN
+copy stays warm.
 
 The loader fetches a cache-busted manifest with `cache: no-store`, then begins
 the origin transfer. A mirror transfer starts after 700 ms if needed, or sooner
