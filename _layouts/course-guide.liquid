@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+{% include course-eci-head.liquid %}
+</head>
+
+<body>
+  <!-- A stand-alone course page (e.g. a setup guide) with the course look: course bar, hero, one content section -->
+  <nav class="eci-navbar"{% if page.accent %} style="--global-theme-color: {{ page.accent }}; --global-hover-color: {{ page.accent }};"{% endif %}>
+    <div class="navbar-inner">
+      <a href="{{ page.course_links[0].url | relative_url }}" class="site-title">{{ page.course_label }} · {{ page.semester }}</a>
+      <div class="nav-links">
+        {% for l in page.course_links %}
+          <a href="{{ l.url | relative_url }}" class="eci-nav-link">{{ l.text }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+  <div class="eci-container"{% if page.accent %} style="--global-theme-color: {{ page.accent }}; --global-hover-color: {{ page.accent }};"{% endif %}>
+
+    <div class="eci-hero">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<div class="subtitle">{{ page.description }}</div>{% endif %}
+      {% if page.pdf %}
+        <a href="{{ page.pdf | relative_url }}" class="btn-eci btn-eci-sm" target="_blank" rel="noopener noreferrer" style="margin-top: 0.8rem;">
+          <i class="fas fa-file-pdf"></i> PDF version
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="eci-section active">
+      {{ content }}
+    </div>
+
+    <footer class="eci-footer">
+      {{ page.course_label }} · {{ page.semester }} · <a href="{{ '/teaching/' | relative_url }}">Jaewon Yoo</a> · National Tsing Hua University
+    </footer>
+
+  </div>
+{% if site.enable_google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}', {
+      cookie_domain: 'auto',
+      cookie_flags: 'SameSite=None;Secure',
+      linker: {
+        domains: ['j1yoo.github.io', 'cadi-lab.github.io']
+      }
+    });
+  </script>
+  <script defer src="{{ '/assets/js/enhanced-tracking.js' | relative_url }}"></script>
+{% endif %}
+</body>
+</html>

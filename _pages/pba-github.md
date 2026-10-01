@@ -1,12 +1,22 @@
 ---
-layout: page
+layout: course-guide
 permalink: /teaching/pba-github/
-title: "PBA: Setting Up Git and GitHub"
-description: How to set up Git and GitHub with RStudio for the PBA team project (Milestone 1).
+title: "Setting Up Git and GitHub"
+description: "For the PBA team project: from a new GitHub account to your first push from RStudio, before Milestone 1 (due Sun Oct 11)."
+course_label: "PBA"
+semester: "Fall 2026"
+accent: "#2698ba"
+favicon_base: /assets/courses/pba/pba_favicon
+course_links:
+  - text: "Undergraduate course page"
+    url: "/teaching/pba/"
+  - text: "Graduate course page"
+    url: "/teaching/pba-grad/"
+pdf: /assets/courses/pba/PBA_GitHub_Setup.pdf
 nav: false
 ---
 
-Your team project lives in a public GitHub repository. This page takes you from nothing to your first push from RStudio. It takes about 30 minutes. Do it before **Milestone 1 (GitHub repository), due Sunday, October 11**. Each step links to the matching chapter of [Happy Git and GitHub for the useR](https://happygitwithr.com/) if you want more detail.
+Your team project lives in a public GitHub repository. This guide takes you from nothing to your first push from RStudio. It takes about 30 minutes. Do it before **Milestone 1 (GitHub repository), due Sunday, October 11**. Each step links to the matching chapter of [Happy Git and GitHub for the useR](https://happygitwithr.com/) if you want more detail.
 
 ### 1. Create a GitHub account
 

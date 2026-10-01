@@ -23,6 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
+  - text: "<strong>Oct 1, 2026:</strong> A step-by-step <a href=\"/teaching/pba-github/\">guide to setting up Git and GitHub</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. Milestone 1, your team's GitHub repository, is due Sun Oct 11."
   - text: "<strong>Oct 1, 2026:</strong> Week 5 slides and R script are posted under <strong>Materials</strong>. This week's data are in the course data package <code>pbadata</code> (version 0.2.0), which installs from this site rather than from CRAN. To install or update it, restart R (Session &gt; Restart R) and run <code>install.packages(\"pbadata\", type = \"source\", repos = \"https://j1yoo.github.io/assets/courses/pba\")</code>. Then <code>library(pbadata)</code> loads it, and <code>packageVersion(\"pbadata\")</code> should show 0.2.0. The datasets are <code>ai_tutoring</code>, <code>linepay</code>, and <code>news</code>; type a dataset name such as <code>ai_tutoring</code> to see the data."
   - text: "<strong>Sep 14, 2026:</strong> The existing reading list has been clarified across the weekly schedule: <strong>Required reading</strong> identifies preparation for each class, and <strong>Further reading</strong> provides optional references. Direct links and section ranges make the free readings easier to find. An R Basics companion handout adds explanations and worked examples to the reference slides under <strong>Materials</strong>."
   - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings. Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
@@ -138,7 +139,6 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §2.1 (the résumé experiment that opens the same chapter).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3 (Line Pay adoption)</em><br>
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>20-minute debrief of E3</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-github/">GitHub setup guide</a> posted</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
   <span class="badge-due">Due:</span> Assignment 1, Mon Oct 5 (before class)<br>
@@ -312,6 +312,10 @@ assignments_content: |
   | Final report | Sun Dec 20 |
   | Showcase and Q&A | Mon Dec 21 |
 
+  ## Git and GitHub Setup
+
+  Your team project lives in a public GitHub repository. Before Milestone 1 (due Sun Oct 11), each team member needs a GitHub account, Git on their laptop, and RStudio connected to GitHub. The [step-by-step guide](/teaching/pba-github/) takes about 30 minutes.
+
   ## Assignments
 
   Five assignments, each a short Quarto report on a provided dataset applying the method just covered (data wrangling and visualization, causality, regression and prediction, the bootstrap, hypothesis testing). Late submissions lose 1 percentage point of the assignment's weight per day.
@@ -432,4 +436,5 @@ No prerequisites. The course is designed for students from any background who wa
 | Syllabus, weekly schedule, policies, lecture slides, R scripts | This website |
 | Announcements, in-class exercise and assignment submissions, grades, discussion board | eeclass |
 | Office hours and project consultations | [Google Calendar booking](https://calendar.app.google/AkutVLBQks1gnJ9a7) |
+| Team project repository and code; see the [Git and GitHub setup guide](/teaching/pba-github/) | GitHub |
 | Private matters | Email |
