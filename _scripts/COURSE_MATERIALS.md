@@ -1,15 +1,16 @@
-# PBA material delivery
+# PBA and ECI material delivery
 
-Keep editing the PDF and R files under `assets/courses/pba/` and publish through
-the normal GitHub/Jekyll deployment. No mirror URLs or hashes need manual edits.
+Keep editing the PDF and R files under `assets/courses/pba/` and
+`assets/courses/eci/` and publish through the normal GitHub/Jekyll deployment.
+No mirror URLs or hashes need manual edits.
 The existing deployment filters include course assets, HTML, JS, and Markdown.
 A future Ruby-plugin-only maintenance commit needs a manual Deploy site run
 or an accompanying change covered by those filters.
 
 `_plugins/course-materials.rb` generates `assets/data/course-materials.json` on
-every build and rewrites PBA material links in the shared course layout to the
-stable `/teaching/material/?file=...` loader. Materials and Schedule use the same
-loader, including links opened in a new tab.
+every build and rewrites PBA and ECI material links in the shared course layout
+to the stable `/teaching/material/?file=...` loader. Materials and Schedule use
+the same loader, including links opened in a new tab.
 
 The manifest records each file's byte length and SHA-256. A jsDelivr mirror is
 enabled only for a tracked file of at most 20,000,000 bytes whose source matches
@@ -35,6 +36,8 @@ The loader uses the browser PDF viewer and supplies a verified download with
 the original filename. R files download automatically and retain a manual
 Download link. With JavaScript disabled, the loader lists direct original links.
 No service worker or long-lived application cache is installed.
+The loader page picks its colors from the `file` path before the first paint:
+ECI magenta for `assets/courses/eci/` and the PBA teal for everything else.
 
 `gcore.jsdelivr.net` is the measured emergency mirror, not a promise of a
 permanent provider endpoint. Origin delivery remains available independently.
