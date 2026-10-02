@@ -163,6 +163,18 @@ async function gaEvents(page) {
     .filter((call) => call[0] === "event").map((call) => ({ name: call[1], params: call[2] || {} })));
 }
 
+// The owner marker is queued as gtag("set", "user_properties", { site_role }) before the config call.
+async function siteRole(page) {
+  return page.evaluate(() => {
+    const calls = (window.dataLayer || []).map((call) => Array.from(call));
+    const set = calls.findIndex((call) => call[0] === "set" && call[1] === "user_properties");
+    const config = calls.findIndex((call) => call[0] === "config");
+    if (set === -1) return null;
+    if (config !== -1 && set > config) throw new Error("site_role must be set before the GA config call");
+    return calls[set][2].site_role;
+  });
+}
+
 async function verifyBlob(page, expected, file = pdfPath) {
   await ready(page);
   const download = page.locator("#download-file");
@@ -463,7 +475,24 @@ async function main() {
     assert.equal(events.filter((event) => event.name === "material_view").length, 0, "a failed open must not count as a view");
   });
 
-  console.log("All 21 course-material browser fault tests passed.");
+  await run("the owner marker is kept per browser, sent on every page, and can be cleared", {}, async (page) => {
+    const address = () => page.evaluate(() => new URL(location.href));
+    await open(page, pdfPath, "&site_role=owner");
+    await ready(page);
+    assert.equal(await siteRole(page), "owner");
+    const opened = await address();
+    assert.equal(opened.searchParams.get("site_role"), null, "the marker must leave the address bar");
+    assert.equal(opened.searchParams.get("file"), pdfPath, "other parameters must stay");
+    await page.goto(`${base}/talks/`, { waitUntil: "domcontentloaded" });
+    assert.equal(await siteRole(page), "owner", "later pages carry the marker without the link");
+    await page.goto(`${base}/talks/?site_role=clear`, { waitUntil: "domcontentloaded" });
+    assert.equal(await siteRole(page), "cleared", "clearing is recorded once");
+    assert.equal((await address()).search, "", "the clear marker must leave the address bar too");
+    await page.goto(`${base}/talks/`, { waitUntil: "domcontentloaded" });
+    assert.equal(await siteRole(page), null, "a cleared browser is an ordinary visitor again");
+  });
+
+  console.log("All 22 course-material browser fault tests passed.");
 }
 
 main().catch((error) => {
