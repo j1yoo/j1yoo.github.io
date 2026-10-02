@@ -157,6 +157,12 @@ async function failure(page) {
   assert.ok(!href || !href.startsWith("blob:"), "failure must never expose a download blob");
 }
 
+// GA4 calls the loader queued with gtag(); gtag.js itself is blocked in these offline tests.
+async function gaEvents(page) {
+  return page.evaluate(() => (window.dataLayer || []).map((call) => Array.from(call))
+    .filter((call) => call[0] === "event").map((call) => ({ name: call[1], params: call[2] || {} })));
+}
+
 async function verifyBlob(page, expected, file = pdfPath) {
   await ready(page);
   const download = page.locator("#download-file");
@@ -391,7 +397,73 @@ async function main() {
     assert.equal(state.originCount + state.mirrorCount, 0, "materials outside the course folders must not be requested");
   });
 
-  console.log("All 16 course-material browser fault tests passed.");
+  await run("a verified view is reported to GA4 with file, course, source, and load time", {}, async (page) => {
+    await open(page);
+    await verifyBlob(page, currentPdf);
+    const views = (await gaEvents(page)).filter((event) => event.name === "material_view");
+    assert.equal(views.length, 1, "exactly one material_view per verified open");
+    const view = views[0].params;
+    assert.equal(view.file_name, "Fault-Test.pdf");
+    assert.equal(view.file_extension, "pdf");
+    assert.equal(view.course, "pba");
+    assert.equal(view.source, "origin");
+    assert.equal(view.file_size, currentPdf.length);
+    assert.ok(Number.isInteger(view.load_ms) && view.load_ms >= 0, "load_ms must be a whole number of milliseconds");
+    assert.ok(await page.evaluate(() => Object.keys(window).some((key) => key.startsWith("ga-disable-") && window[key] === true)), "GA must stay off outside github.io");
+  });
+
+  await run("a mirror win is reported as source mirror", {
+    getManifest: () => manifest(currentPdf, eciPdfPath),
+    origin: () => {},
+  }, async (page) => {
+    await open(page, eciPdfPath);
+    await verifyBlob(page, currentPdf, eciPdfPath);
+    const view = (await gaEvents(page)).find((event) => event.name === "material_view");
+    assert.ok(view, "material_view must be sent");
+    assert.equal(view.params.source, "mirror");
+    assert.equal(view.params.course, "eci");
+  });
+
+  await run("a Download click is reported once as file_download", {}, async (page) => {
+    await open(page);
+    await verifyBlob(page, currentPdf);
+    const pending = page.waitForEvent("download");
+    await page.locator("#download-file").click();
+    await pending;
+    const downloads = (await gaEvents(page)).filter((event) => event.name === "file_download");
+    assert.equal(downloads.length, 1, "one click, one file_download");
+    assert.equal(downloads[0].params.trigger, "button");
+    assert.equal(downloads[0].params.file_name, "Fault-Test.pdf");
+  });
+
+  await run("an R file download is reported once with trigger auto", {
+    getManifest: () => manifest(currentR, rPath),
+    origin: (_req, res) => respond(res, currentR, 200, "text/plain"),
+  }, async (page) => {
+    const pending = page.waitForEvent("download");
+    await open(page, rPath);
+    await verifyBlob(page, currentR, rPath);
+    await pending;
+    const downloads = (await gaEvents(page)).filter((event) => event.name === "file_download");
+    assert.equal(downloads.length, 1, "the automatic R download is counted once");
+    assert.equal(downloads[0].params.trigger, "auto");
+    assert.equal(downloads[0].params.file_extension, "r");
+  });
+
+  await run("a failed open is reported as material_error", {
+    origin: (_req, res) => respond(res, "unavailable", 503, "text/plain"),
+    mirror: (_req, res) => respond(res, previousPdf),
+  }, async (page) => {
+    await open(page);
+    await failure(page);
+    const events = await gaEvents(page);
+    const errors = events.filter((event) => event.name === "material_error");
+    assert.equal(errors.length, 1, "one failed open, one material_error");
+    assert.ok(["integrity", "network"].includes(errors[0].params.error_kind), `unexpected error_kind ${errors[0].params.error_kind}`);
+    assert.equal(events.filter((event) => event.name === "material_view").length, 0, "a failed open must not count as a view");
+  });
+
+  console.log("All 21 course-material browser fault tests passed.");
 }
 
 main().catch((error) => {

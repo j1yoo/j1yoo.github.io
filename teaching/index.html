@@ -45,6 +45,8 @@
     function gtag() {
       dataLayer.push(arguments);
     }
+    // Local previews (localhost, 127.0.0.1) must not reach the GA4 property.
+    if (!/\.github\.io$/.test(location.hostname)) window['ga-disable-G-F2Y4X86JTT'] = true;
     gtag('js', new Date());
 
     gtag('config', 'G-F2Y4X86JTT', {

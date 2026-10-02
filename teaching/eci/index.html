@@ -147,6 +147,8 @@
   </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2Y4X86JTT"></script> <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
+    // Local previews (localhost, 127.0.0.1) must not reach the GA4 property.
+    if (!/\.github\.io$/.test(location.hostname)) window['ga-disable-G-F2Y4X86JTT'] = true;
     gtag('js', new Date());
     gtag('config', 'G-F2Y4X86JTT', {
       cookie_domain: 'auto',
