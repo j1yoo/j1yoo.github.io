@@ -235,6 +235,7 @@
     // Local previews (localhost, 127.0.0.1) must not reach the GA4 property.
     if (!/\.github\.io$/.test(location.hostname)) window['ga-disable-{{ site.google_analytics }}'] = true;
     gtag('js', new Date());
+{% include ga-site-role.js %}
 
     gtag('config', '{{ site.google_analytics }}', {
       cookie_domain: 'auto',

@@ -22,6 +22,7 @@ sitemap: false
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
     gtag("js", new Date());
+{% include ga-site-role.js %}
     gtag("config", "{{ site.google_analytics }}", {
       cookie_domain: "auto",
       cookie_flags: "SameSite=None;Secure",
