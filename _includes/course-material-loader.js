@@ -6,6 +6,10 @@
   const IDLE_MS = 12000;
   const TRANSFER_MS = 120000;
   const MAX_VERSION_CHANGES = 2;
+  // Course files, and large downloads directly inside an assets/ folder except CVs (whose deployed copy is
+  // regenerated after the build). The manifest decides which of these exist.
+  const COURSE_FILE = /^\/assets\/courses\/(pba|eci)\/[^/]+\.(pdf|r)$/i;
+  const SITE_FILE = /^\/assets\/[\w-]+\/(?!cv)(?![^/]*resume)[^/]+\.(pdf|pptx?|docx?|xlsx|zip|r|rmd|qmd|ipynb)$/i;
   const params = new URLSearchParams(location.search);
   const materialPath = params.get("file");
   const fragment = (params.get("fragment") || location.hash.slice(1)).slice(0, 256);
@@ -16,9 +20,13 @@
   let active = null;
   let objectUrl = null;
   let autoDownload = false;
-  const course = ((materialPath || "").match(/^\/assets\/courses\/([^/]+)\//) || [])[1] || "unknown";
+  const course = ((materialPath || "").match(/^\/assets\/courses\/([^/]+)\//) || [])[1] || (materialPath ? "site" : "unknown");
+  // The head script marks files outside the PBA and ECI folders; they get neutral wording.
+  const siteFile = document.documentElement.dataset.course === "site";
+  const openingText = siteFile ? "Opening file…" : "Opening course material…";
+  if (siteFile) ui["material-title"].textContent = "File";
 
-  // GA4 funnel for course materials: the course page records the click, the loader records
+  // GA4 funnel: the linking page records the click, the loader records
   // material_view, file_download, and material_error. A no-op when analytics is off or blocked.
   function track(name, extra) {
     if (typeof window.gtag !== "function") return;
@@ -54,12 +62,14 @@
     return controller;
   }
 
+  function allowedPath(path) { return COURSE_FILE.test(path) || SITE_FILE.test(path); }
+
   function validEntry(manifest) {
     if (!manifest || manifest.schema !== 1 || !manifest.materials || !Object.prototype.hasOwnProperty.call(manifest.materials, materialPath)) {
       throw failure("This material is not available. Please return to the course page.", "manifest");
     }
     const entry = manifest.materials[materialPath];
-    if (!entry || entry.path !== materialPath || !/^\/assets\/courses\/(pba|eci)\/[^/]+\.(pdf|r)$/i.test(entry.path) ||
+    if (!entry || entry.path !== materialPath || !allowedPath(entry.path) ||
         !/^[a-f0-9]{64}$/.test(entry.sha256) || !Number.isSafeInteger(entry.bytes) || entry.bytes <= 0 ||
         typeof entry.filename !== "string" || entry.filename.includes("/")) {
       throw failure("The material details could not be checked. Please try again.", "manifest");
@@ -86,9 +96,8 @@
     if (typeof entry.mirror_url !== "string") return null;
     try {
       const url = new URL(entry.mirror_url);
-      const expected = /^\/gh\/j1yoo\/j1yoo\.github\.io@[a-f0-9]{40}(\/assets\/courses\/(?:pba|eci)\/[^/]+)$/;
-      const match = decodeURIComponent(url.pathname).match(expected);
-      if (url.protocol === "https:" && url.hostname === "gcore.jsdelivr.net" && !url.search && !url.hash && match && match[1] === entry.path) return url.href;
+      const match = decodeURIComponent(url.pathname).match(/^\/gh\/j1yoo\/j1yoo\.github\.io@[a-f0-9]{40}(\/.+)$/);
+      if (url.protocol === "https:" && url.host === "gcore.jsdelivr.net" && !url.search && !url.hash && match && allowedPath(match[1]) && match[1] === entry.path) return url.href;
     } catch (error) { /* An unusable mirror does not disable the original. */ }
     return null;
   }
@@ -198,7 +207,8 @@
   function present(bytes, entry, run, source) {
     if (!isCurrent(run)) return;
     const isPdf = /\.pdf$/i.test(entry.path);
-    objectUrl = URL.createObjectURL(new Blob([bytes], { type: isPdf ? "application/pdf" : "text/plain;charset=utf-8" }));
+    const type = isPdf ? "application/pdf" : /\.(r|rmd|qmd)$/i.test(entry.path) ? "text/plain;charset=utf-8" : "application/octet-stream";
+    objectUrl = URL.createObjectURL(new Blob([bytes], { type: type }));
     ui["download-file"].href = objectUrl;
     ui["download-file"].download = entry.filename;
     ui["download-file"].hidden = false;
@@ -230,8 +240,8 @@
     ui["loading-panel"].hidden = false;
     ui.progress.hidden = false;
     ui.progress.removeAttribute("value");
-    ui["progress-text"].textContent = "Checking the latest material…";
-    ui.status.textContent = "Opening course material…";
+    ui["progress-text"].textContent = "Checking the latest version…";
+    ui.status.textContent = openingText;
     try {
       if (!window.crypto || !crypto.subtle || !window.AbortController || !materialPath) throw failure("This material could not be opened automatically. Please use a current browser and the course link.", "browser");
       let entry = await latestEntry(run);

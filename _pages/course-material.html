@@ -12,7 +12,13 @@ sitemap: false
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Opening course material…</title>
-  <script>if ((new URLSearchParams(location.search).get("file") || "").startsWith("/assets/courses/eci/")) document.documentElement.dataset.course = "eci";</script>
+  <script>
+    (function () {
+      const file = new URLSearchParams(location.search).get("file") || "";
+      if (file.startsWith("/assets/courses/eci/")) document.documentElement.dataset.course = "eci";
+      else if (!file.startsWith("/assets/courses/pba/")) { document.documentElement.dataset.course = "site"; document.title = "Opening file…"; }
+    })();
+  </script>
   {% if site.enable_google_analytics %}
   <!-- GA4, same property and settings as the course pages. The title is the file name so page_view rows are readable; local previews send nothing. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -32,7 +38,7 @@ sitemap: false
   {% endif %}
   <style>
     :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f8fa; color: #202830; --accent: #2698ba; --link: #147894; --button-border: #92b9c4; }
-    :root[data-course="eci"] { --accent: #b509ac; --link: #b509ac; --button-border: #c492c2; }
+    :root[data-course="eci"], :root[data-course="site"] { --accent: #b509ac; --link: #b509ac; --button-border: #c492c2; }
     * { box-sizing: border-box; }
     body { margin: 0; }
     [hidden] { display: none !important; }
@@ -50,7 +56,7 @@ sitemap: false
     noscript { display: block; padding: 24px; }
     noscript li { margin: 10px 0; overflow-wrap: anywhere; }
     @media (max-width: 600px) { .toolbar { padding: 12px; align-items: flex-start; flex-direction: column; gap: 10px; } #pdf-viewer { height: calc(100dvh - 124px); } }
-    @media (prefers-color-scheme: dark) { :root { background: #17212b; color: #e9eef2; --link: #72cbe4; } :root[data-course="eci"] { --accent: #d946ef; --link: #e879f9; } .toolbar { border-color: #374550; } #status, #progress-text { color: #b4c1ca; } }
+    @media (prefers-color-scheme: dark) { :root { background: #17212b; color: #e9eef2; --link: #72cbe4; } :root[data-course="eci"], :root[data-course="site"] { --accent: #d946ef; --link: #e879f9; } .toolbar { border-color: #374550; } #status, #progress-text { color: #b4c1ca; } }
   </style>
 </head>
 <body>
