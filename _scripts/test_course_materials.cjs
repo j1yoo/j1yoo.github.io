@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Browser fault tests for the course-material loader.
+ * Browser fault tests for the course-material and site-file loader, plus a check of the built manifest and CV pages.
  * Run against a built Jekyll site:
  *   node _scripts/test_course_materials.cjs /path/to/_site
  * Uses PLAYWRIGHT_MODULE / CHROME_EXECUTABLE when provided. No live CDN calls.
@@ -22,6 +22,10 @@ const pdfPath = "/assets/courses/pba/Fault-Test.pdf";
 const rPath = "/assets/courses/pba/Fault-Test.R";
 const eciPdfPath = "/assets/courses/eci/Fault-Test.pdf";
 const otherPdfPath = "/assets/courses/xyz/Fault-Test.pdf";
+const sitePdfPath = "/assets/pdf/Fault-Test.pdf";
+const cvPaths = ["/assets/pdf/cv_jaewon.pdf", "/assets/pdf/CV-Fault-Test.pdf", "/assets/pdf/Fault-Test-Resume.pdf"];
+const offShapePaths = ["/assets/pdf/talks/Fault-Test.pdf", "/assets/pdf/Fault-Test.html", "/Fault-Test.pdf"];
+const originPaths = [pdfPath, rPath, eciPdfPath, otherPdfPath, sitePdfPath, ...cvPaths, ...offShapePaths];
 const sha256 = (data) => crypto.createHash("sha256").update(data).digest("hex");
 
 // A complete one-page PDF, so browser PDF handling is exercised too.
@@ -107,7 +111,7 @@ const server = http.createServer((req, res) => {
     if (typeof result === "number") return respond(res, "manifest unavailable", result, "text/plain");
     return respond(res, JSON.stringify(result), 200, "application/json");
   }
-  if ([pdfPath, rPath, eciPdfPath, otherPdfPath].includes(url.pathname)) {
+  if (originPaths.includes(url.pathname)) {
     state.originCount += 1;
     return state.origin(req, res, state.originCount);
   }
@@ -240,8 +244,28 @@ async function run(name, configure, check) {
   }
 }
 
+// The build itself: outside the course folders the manifest lists only 1 to 20 MB downloads, never a CV,
+// and the CV pages (/cv_print/ is printed to the CV PDF) keep direct links.
+function checkBuiltSite() {
+  const built = JSON.parse(fs.readFileSync(path.join(site, "assets/data/course-materials.json"), "utf8"));
+  const siteEntries = Object.values(built.materials).filter((item) => !/^\/assets\/courses\/(pba|eci)\//.test(item.path));
+  for (const item of siteEntries) {
+    assert.match(item.path, /^\/assets\/[\w-]+\/[^/]+\.(pdf|pptx?|docx?|xlsx|zip|r|rmd|qmd|ipynb)$/i, `${item.path} is not a site download`);
+    assert.doesNotMatch(path.posix.basename(item.path), /^cv|resume/i, `${item.path} must stay a direct link`);
+    assert.ok(item.bytes >= 1000000 && item.bytes <= 20000000, `${item.path} must be between 1 MB and 20 MB`);
+  }
+  const cvPages = fs.readdirSync(site).filter((name) => /^cv|resume/i.test(name) && fs.existsSync(path.join(site, name, "index.html")));
+  assert.ok(cvPages.includes("cv"), "the CV page must be built");
+  for (const name of cvPages) {
+    const html = fs.readFileSync(path.join(site, name, "index.html"), "utf8");
+    assert.ok(!html.includes("/teaching/material/") && !html.includes("data-material-path"), `/${name}/ must keep direct links`);
+  }
+  console.log(`PASS the build routes ${siteEntries.length} site file(s) and leaves ${cvPages.map((name) => `/${name}/`).join(" and ")} direct`);
+}
+
 async function main() {
   assert.ok(fs.existsSync(path.join(site, "teaching/material/index.html")), `Build the site first; missing ${site}/teaching/material/index.html`);
+  checkBuiltSite();
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   base = `http://127.0.0.1:${server.address().port}`;
   browser = await chromium.launch({ executablePath, headless: true });
@@ -401,12 +425,12 @@ async function main() {
     }
   });
 
-  await run("a manifest entry outside the PBA and ECI folders is rejected", {
+  await run("a manifest entry in another course folder is rejected", {
     getManifest: () => manifest(currentPdf, otherPdfPath),
   }, async (page, state) => {
     await open(page, otherPdfPath);
     await failure(page);
-    assert.equal(state.originCount + state.mirrorCount, 0, "materials outside the course folders must not be requested");
+    assert.equal(state.originCount + state.mirrorCount, 0, "materials in other course folders must not be requested");
   });
 
   await run("a verified view is reported to GA4 with file, course, source, and load time", {}, async (page) => {
@@ -492,7 +516,64 @@ async function main() {
     assert.equal(await siteRole(page), null, "a cleared browser is an ordinary visitor again");
   });
 
-  console.log("All 22 course-material browser fault tests passed.");
+  await run("a large site file opens through the verified CDN hedge in neutral text and site colors", {
+    getManifest: () => manifest(currentPdf, sitePdfPath),
+    origin: () => {},
+  }, async (page, state) => {
+    // Hold the first manifest so the page can be checked before it knows the file name.
+    let release;
+    const released = new Promise((resolve) => { release = resolve; });
+    await page.route((url) => url.pathname === "/assets/data/course-materials.json", async (route) => { await released; await route.continue(); }, { times: 1 });
+    const texts = () => page.evaluate(() => ["#material-title", "#status", "#progress-text"].map((selector) => document.querySelector(selector).textContent));
+    await open(page, sitePdfPath);
+    assert.deepEqual(await texts(), ["File", "Opening file…", "Checking the latest version…"]);
+    release();
+    await page.waitForFunction(() => document.querySelector("#material-title").textContent === "Fault-Test.pdf");
+    assert.equal((await texts())[1], "Opening file…", "the status stays neutral while the file loads");
+    await verifyBlob(page, currentPdf, sitePdfPath);
+    assert.equal(state.mirrorCount, 1, "the site file mirror must pass the allowlist");
+    await page.waitForTimeout(30);
+    assert.ok(state.requests.find((item) => item.path === sitePdfPath).aborted, "the stalled origin must be canceled");
+    const colors = () => page.evaluate(() => [document.documentElement.getAttribute("data-course"),
+      getComputedStyle(document.getElementById("progress")).accentColor, getComputedStyle(document.getElementById("download-file")).color]);
+    assert.deepEqual(await colors(), ["site", "rgb(181, 9, 172)", "rgb(181, 9, 172)"], "light mode uses the site purple");
+    await page.emulateMedia({ colorScheme: "dark" });
+    assert.deepEqual(await colors(), ["site", "rgb(217, 70, 239)", "rgb(232, 121, 249)"], "dark mode uses the lighter purples");
+    const pending = page.waitForEvent("download");
+    await page.locator("#download-file").click();
+    await pending;
+    const events = await gaEvents(page);
+    for (const name of ["material_view", "file_download"]) {
+      const sent = events.filter((event) => event.name === name);
+      assert.equal(sent.length, 1, `one ${name}`);
+      assert.equal(sent[0].params.course, "site", `${name} must report course site`);
+    }
+    assert.equal(events.find((event) => event.name === "material_view").params.source, "mirror");
+  });
+
+  await run("CV-like site files are never fetched, even when a manifest lists them", {
+    getManifest: () => ({ ...manifest(), materials: Object.fromEntries(cvPaths.map((file) => [file, entry(file, currentPdf)])) }),
+  }, async (page, state) => {
+    for (const file of cvPaths) {
+      await open(page, file);
+      await failure(page);
+      const errors = (await gaEvents(page)).filter((event) => event.name === "material_error");
+      assert.deepEqual(errors.map((event) => event.params.course), ["site"], `${file} must be reported once as a site file error`);
+    }
+    assert.equal(state.originCount + state.mirrorCount, 0, "the deployed CV is regenerated after the build, so it must stay a direct link");
+  });
+
+  await run("site files in nested folders, of other types, or outside assets are rejected", {
+    getManifest: () => ({ ...manifest(), materials: Object.fromEntries(offShapePaths.map((file) => [file, entry(file, currentPdf)])) }),
+  }, async (page, state) => {
+    for (const file of offShapePaths) {
+      await open(page, file);
+      await failure(page);
+    }
+    assert.equal(state.originCount + state.mirrorCount, 0, "files outside the allowed shapes must not be requested");
+  });
+
+  console.log("All 26 course-material and site-file loader tests passed.");
 }
 
 main().catch((error) => {

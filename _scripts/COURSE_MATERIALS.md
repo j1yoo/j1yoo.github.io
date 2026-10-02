@@ -1,4 +1,4 @@
-# PBA and ECI material delivery
+# PBA, ECI, and large download delivery
 
 Keep editing the PDF and R files under `assets/courses/pba/` and
 `assets/courses/eci/` and publish through the normal GitHub/Jekyll deployment.
@@ -8,9 +8,10 @@ A future Ruby-plugin-only maintenance commit needs a manual Deploy site run
 or an accompanying change covered by those filters.
 
 `_plugins/course-materials.rb` generates `assets/data/course-materials.json` on
-every build and rewrites PBA and ECI material links in the shared course layout
-to the stable `/teaching/material/?file=...` loader. Materials and Schedule use
-the same loader, including links opened in a new tab.
+every build and rewrites links to the listed files on every page to the stable
+`/teaching/material/?file=...` loader. Materials and Schedule use the same
+loader, including links opened in a new tab. Only the loader page itself and
+the CV pages are left alone.
 
 The manifest records each file's byte length and SHA-256. A jsDelivr mirror is
 enabled only for a tracked file of at most 20,000,000 bytes whose source matches
@@ -37,11 +38,13 @@ checks the current deployment. New pages and refreshed existing course pages
 use the loader; legacy direct PDF URLs retain GitHub Pages behavior.
 
 The loader uses the browser PDF viewer and supplies a verified download with
-the original filename. R files download automatically and retain a manual
-Download link. With JavaScript disabled, the loader lists direct original links.
+the original filename. R files and other non-PDF files download automatically
+and retain a manual Download link. With JavaScript disabled, the loader lists
+direct original links.
 No service worker or long-lived application cache is installed.
 The loader page picks its colors from the `file` path before the first paint:
-ECI magenta for `assets/courses/eci/` and the PBA teal for everything else.
+ECI magenta for `assets/courses/eci/`, the PBA teal for `assets/courses/pba/`,
+and the site purple with neutral wording ("Opening file…") for other files.
 
 `gcore.jsdelivr.net` is the measured emergency mirror, not a promise of a
 permanent provider endpoint. Origin delivery remains available independently.
@@ -49,19 +52,37 @@ A managed Cloudflare mirror can replace it later; update both the generator
 and the loader's mirror allowlist. If GitHub Pages cannot serve the loader or
 fresh manifest at all, the loader fails closed instead of opening stale data.
 
+## Large downloads elsewhere on the site
+
+Other downloads use the same loader when it pays off. A file qualifies on its
+own, with no list to edit, when it is tracked in Git, sits directly in a folder
+under `assets/` (such as `assets/pdf/`), ends in .pdf, .pptx, .ppt, .docx,
+.doc, .xlsx, .zip, .r, .rmd, .qmd, or .ipynb, and has between 1,000,000 and
+20,000,000 bytes. Smaller files stay direct links: GitHub Pages serves them fast
+enough, and plain links are simpler for search engines. Larger files gain
+nothing because jsDelivr refuses them. Files in deeper folders stay direct.
+Today this covers the TSWIM 2026 talk deck; a future talk deck added to
+`assets/pdf/` is picked up by the next build.
+
+CV files never qualify: any name starting with `cv` or containing `resume`
+stays a direct link, and the loader rejects such paths as well. The deploy
+regenerates the CV after the build, so its published bytes differ from the
+repository copy. The CV pages (`/cv/`, and `/cv_print/`, which is printed to
+the CV PDF) are never rewritten. The test script checks the build for both.
+
 ## Analytics
 
 The loader page loads the same GA4 property as the course pages, with the file
 name as the page title, and stays silent when the host is not `*.github.io`
 (local previews). It sends `material_view` once a verified file is shown
-(`file_name`, `file_extension`, `link_url`, `course`, `source` = origin or
-mirror, `load_ms`, `file_size`), `file_download` when the Download link is used
-(`trigger` = button, or auto for R files), and `material_error` with
-`error_kind` when a file cannot be opened. On the course pages,
-`enhanced-tracking.js` reads `data-material-path`, so `pdf_download` keeps the
-real file name and course. These events reach BigQuery without any setup; to
-see `course`, `source`, or `load_ms` in GA4 reports, register them as custom
-definitions.
+(`file_name`, `file_extension`, `link_url`, `course` = pba, eci, or site,
+`source` = origin or mirror, `load_ms`, `file_size`), `file_download` when the
+Download link is used (`trigger` = button, or auto for non-PDF files), and
+`material_error` with `error_kind` when a file cannot be opened. On the linking
+pages, `enhanced-tracking.js` reads `data-material-path`, so `pdf_download`
+keeps the real file name and course. These events reach BigQuery without any
+setup; to see `course`, `source`, or `load_ms` in GA4 reports, register them as
+custom definitions.
 
 ## Local validation
 
@@ -74,4 +95,6 @@ node _scripts/test_course_materials.cjs /path/to/built/site
 The test script accepts `PLAYWRIGHT_MODULE` and `CHROME_EXECUTABLE`. It uses local
 fixtures rather than live CDN calls, including real partially sent HTTP bodies,
 wrong-version files with matching size, both manifest checks, bounded update
-retries, request cancellation, and R download contents and filenames.
+retries, request cancellation, and R download contents and filenames. It also
+checks the built manifest against the size rule and that the CV pages keep
+direct links.
