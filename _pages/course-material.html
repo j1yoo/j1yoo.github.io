@@ -13,6 +13,22 @@ sitemap: false
   <meta name="robots" content="noindex">
   <title>Opening course material…</title>
   <script>if ((new URLSearchParams(location.search).get("file") || "").startsWith("/assets/courses/eci/")) document.documentElement.dataset.course = "eci";</script>
+  {% if site.enable_google_analytics %}
+  <!-- GA4, same property and settings as the course pages. The title is the file name so page_view rows are readable; local previews send nothing. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    document.title = (new URLSearchParams(location.search).get("file") || "").split("/").pop() || document.title;
+    if (!/\.github\.io$/.test(location.hostname)) window["ga-disable-{{ site.google_analytics }}"] = true;
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "{{ site.google_analytics }}", {
+      cookie_domain: "auto",
+      cookie_flags: "SameSite=None;Secure",
+      linker: { domains: ["j1yoo.github.io", "cadi-lab.github.io"] }
+    });
+  </script>
+  {% endif %}
   <style>
     :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f8fa; color: #202830; --accent: #2698ba; --link: #147894; --button-border: #92b9c4; }
     :root[data-course="eci"] { --accent: #b509ac; --link: #b509ac; --button-border: #c492c2; }

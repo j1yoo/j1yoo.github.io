@@ -49,6 +49,20 @@ A managed Cloudflare mirror can replace it later; update both the generator
 and the loader's mirror allowlist. If GitHub Pages cannot serve the loader or
 fresh manifest at all, the loader fails closed instead of opening stale data.
 
+## Analytics
+
+The loader page loads the same GA4 property as the course pages, with the file
+name as the page title, and stays silent when the host is not `*.github.io`
+(local previews). It sends `material_view` once a verified file is shown
+(`file_name`, `file_extension`, `link_url`, `course`, `source` = origin or
+mirror, `load_ms`, `file_size`), `file_download` when the Download link is used
+(`trigger` = button, or auto for R files), and `material_error` with
+`error_kind` when a file cannot be opened. On the course pages,
+`enhanced-tracking.js` reads `data-material-path`, so `pdf_download` keeps the
+real file name and course. These events reach BigQuery without any setup; to
+see `course`, `source`, or `load_ms` in GA4 reports, register them as custom
+definitions.
+
 ## Local validation
 
 Build with the repository's Ruby environment, then run:

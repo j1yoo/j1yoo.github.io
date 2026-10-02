@@ -15,6 +15,21 @@
   });
   let active = null;
   let objectUrl = null;
+  let autoDownload = false;
+  const course = ((materialPath || "").match(/^\/assets\/courses\/([^/]+)\//) || [])[1] || "unknown";
+
+  // GA4 funnel for course materials: the course page records the click, the loader records
+  // material_view, file_download, and material_error. A no-op when analytics is off or blocked.
+  function track(name, extra) {
+    if (typeof window.gtag !== "function") return;
+    const fileName = (materialPath || "").split("/").pop();
+    window.gtag("event", name, Object.assign({
+      file_name: fileName,
+      file_extension: (fileName.split(".").pop() || "").toLowerCase(),
+      link_url: materialPath ? location.origin + materialPath : "",
+      course: course
+    }, extra));
+  }
 
   function failure(message, kind) {
     const error = new Error(message);
@@ -139,7 +154,7 @@
       let hedge;
       const transfers = [];
 
-      function launch(url) {
+      function launch(url, source) {
         pending++;
         const controller = controllerFor(run);
         transfers.push(controller);
@@ -149,7 +164,7 @@
           clearTimeout(hedge);
           run.timers.delete(hedge);
           transfers.forEach(function (other) { other.abort(); });
-          resolve(bytes);
+          resolve({ bytes: bytes, source: source });
         }).catch(function (error) {
           pending--;
           lastError = error;
@@ -169,10 +184,10 @@
         mirrorStarted = true;
         clearTimeout(hedge);
         run.timers.delete(hedge);
-        launch(mirror);
+        launch(mirror, "mirror");
       }
 
-      launch(origin.href);
+      launch(origin.href, "origin");
       if (mirror) {
         hedge = setTimeout(startMirror, HEDGE_MS);
         run.timers.add(hedge);
@@ -180,7 +195,7 @@
     });
   }
 
-  function present(bytes, entry, run) {
+  function present(bytes, entry, run, source) {
     if (!isCurrent(run)) return;
     const isPdf = /\.pdf$/i.test(entry.path);
     objectUrl = URL.createObjectURL(new Blob([bytes], { type: isPdf ? "application/pdf" : "text/plain;charset=utf-8" }));
@@ -196,14 +211,17 @@
       ui["pdf-viewer"].src = viewerUrl;
       ui["pdf-viewer"].title = entry.filename;
       ui["pdf-viewer"].hidden = false;
-    } else {
+    }
+    track("material_view", { source: source, load_ms: Math.round(performance.now() - run.startedAt), file_size: entry.bytes });
+    if (!isPdf) {
+      autoDownload = true;
       ui["download-file"].click();
     }
   }
 
   async function start() {
     stop(active);
-    const run = { controllers: new Set(), timers: new Set(), stopped: false, received: 0 };
+    const run = { controllers: new Set(), timers: new Set(), stopped: false, received: 0, startedAt: performance.now() };
     active = run;
     ui["pdf-viewer"].hidden = true;
     ui["pdf-viewer"].removeAttribute("src");
@@ -222,9 +240,9 @@
         ui["material-title"].textContent = entry.filename;
         document.title = entry.filename;
         run.received = 0;
-        let bytes;
+        let result;
         let transferError;
-        try { bytes = await receive(entry, run); } catch (error) { transferError = error; }
+        try { result = await receive(entry, run); } catch (error) { transferError = error; }
         if (!isCurrent(run)) return;
         // Never show an older verified download if a new version was published while receiving it.
         const latest = await latestEntry(run);
@@ -235,7 +253,7 @@
           continue;
         }
         if (transferError) throw transferError;
-        present(bytes, latest, run);
+        present(result.bytes, latest, run, result.source);
         return;
       }
       throw failure("The material is being updated. Please try again.", "version");
@@ -245,10 +263,15 @@
       ui["progress-text"].textContent = "No unverified or older copy has been opened.";
       ui.progress.hidden = true;
       ui.retry.hidden = false;
+      track("material_error", { error_kind: (error && error.kind) || "unknown" });
     }
   }
 
   ui.retry.addEventListener("click", function () { ui.progress.hidden = false; start(); });
+  ui["download-file"].addEventListener("click", function () {
+    track("file_download", { trigger: autoDownload ? "auto" : "button" });
+    autoDownload = false;
+  });
   window.addEventListener("pagehide", function () { stop(active); });
   window.addEventListener("pageshow", function (event) { if (event.persisted) start(); });
   start();

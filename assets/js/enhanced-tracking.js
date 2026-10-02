@@ -30,23 +30,29 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---------------------------------------------------------
   // 1. PDF Download Tracking
   // ---------------------------------------------------------
-  document.querySelectorAll('a[href$=".pdf"]').forEach(function (link) {
+  // Course-material links point to the loader (/teaching/material/?file=...); the file itself is in
+  // data-material-path, so the name and course come from there when it is present.
+  document.querySelectorAll('a[href$=".pdf"], a[data-material-path$=".pdf" i]').forEach(function (link) {
     link.addEventListener('click', function () {
-      var fileName = this.href.split('/').pop();
+      var materialPath = this.getAttribute('data-material-path');
+      var filePath = materialPath || this.pathname;
+      var fileName = filePath.split('/').pop();
+      var courseMatch = filePath.match(/\/assets\/courses\/([^/]+)\//);
       var isSlide = /slide|lecture|week|lec/i.test(fileName);
       var isSyllabus = /syllabus/i.test(fileName);
 
       gtag('event', 'pdf_download', {
         file_name: fileName,
-        file_url: this.href,
+        file_url: materialPath ? window.location.origin + materialPath : this.href,
         file_type: isSyllabus ? 'syllabus' : isSlide ? 'slide' : 'paper',
+        course: courseMatch ? courseMatch[1] : 'none',
       });
 
-      // ECI 강의 슬라이드 별도 추적
+      // 강의 슬라이드 별도 추적 (과목은 파일 경로에서)
       if (isSlide && currentPath.includes('/teaching/')) {
         gtag('event', 'slide_download', {
           file_name: fileName,
-          course: 'eci',
+          course: courseMatch ? courseMatch[1] : 'eci',
         });
       }
     });
