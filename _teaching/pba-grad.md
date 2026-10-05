@@ -23,6 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
+  - text: "<strong>Oct 5, 2026:</strong> Readings for Week 5 (<strong>Causality II: DAGs and Covariate Selection</strong>) are in the Weekly Schedule: chapters 6 and 8 of Huntington-Klein's <em>The Effect</em>, free to read online. Chapter 7 of the same book goes with your Week 6 team meeting."
   - text: "<strong>Oct 1, 2026:</strong> A step-by-step <a href=\"/teaching/pba-github/\">guide to setting up Git and GitHub</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. Milestone 1, your team's GitHub repository, is due Sun Oct 11."
   - text: "<strong>Oct 1, 2026:</strong> Week 4 slides and R script are posted under <strong>Materials</strong>. This week's data are in the course data package <code>pbadata</code> (version 0.2.0), which installs from this site rather than from CRAN. To install or update it, restart R (Session &gt; Restart R) and run <code>install.packages(\"pbadata\", type = \"source\", repos = \"https://j1yoo.github.io/assets/courses/pba\")</code>. Then <code>library(pbadata)</code> loads it, and <code>packageVersion(\"pbadata\")</code> should show 0.2.0. The datasets are <code>ai_tutoring</code>, <code>linepay</code>, and <code>news</code>; type a dataset name such as <code>ai_tutoring</code> to see the data."
   - text: "<strong>Sep 14, 2026:</strong> The existing reading list has been clarified across the weekly schedule: <strong>Required reading</strong> identifies preparation for each class, and <strong>Further reading</strong> provides optional references. Direct links and section ranges make the free readings easier to find. An R Basics companion handout adds explanations and worked examples to the reference slides under <strong>Materials</strong>."
@@ -131,7 +132,7 @@ schedule_content: |
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); [QSS §§2.3–2.5](https://assets.press.princeton.edu/chapters/s2-11025.pdf) (potential outcomes, randomized experiments, and observational designs, pp. 46–62 of the publisher's free Chapter 2 PDF; read it for the concepts, since its R code is base R).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); [QSS §§2.3–2.5](https://assets.press.princeton.edu/chapters/s2-11025.pdf) (potential outcomes, randomized experiments, and observational designs, pp. 46–63 of the publisher's free Chapter 2 PDF, which are pages 15–32 of the file; read it for the concepts, since its R code is base R).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §2.1 (the résumé experiment that opens the same chapter).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3 (Line Pay adoption)</em><br>
@@ -141,8 +142,8 @@ schedule_content: |
   **Week 5 (Oct 8): Causality II: DAGs and Covariate Selection**
   - Confounding, selection, and the backdoor criterion
   - What to control for, and what not to, in your project
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Course notes on DAGs, confounders, mediators, colliders, and the backdoor criterion (to be posted before class); review [IMS §2.3](https://openintro-ims1.netlify.app/data-design#observational-studies) for observational-study background.
-  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §2.5 (observational studies and confounding).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 6](https://theeffectbook.net/ch-CausalDiagrams.html) (causal diagrams) and [Ch. 8](https://theeffectbook.net/ch-CausalPaths.html) (causal paths and closing back doors). Both chapters are free to read on the author's site.
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [Cunningham, *Causal Inference: The Mixtape*, Ch. 3](https://mixtape.scunning.com/03-directed_acyclical_graphs) (the same ideas with economics examples; skip the regression code for now); [Cinelli, Forney, and Pearl (2022)](https://ftp.cs.ucla.edu/pub/stat_ser/r493.pdf) (the source of the good-control and bad-control table in the slides); [DAGitty tutorials](https://www.dagitty.net/learn/) (interactive practice with d-separation and covariate roles).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
   <span class="badge-due">Due:</span> Assignment 1, Thu Oct 8 (before class)<br>
@@ -151,6 +152,7 @@ schedule_content: |
 
   **Week 6 (Oct 15): Individual or team meetings by appointment (no class meeting)**
   - With the causal-inference concepts in hand, discuss your research question and data before the proposal is due
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 7](https://theeffectbook.net/ch-DrawingCausalDiagrams.html) (drawing causal diagrams), as your team draws its DAG before the meeting.
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a>; meetings at TSMC Bldg. R828B</em>
   </div>

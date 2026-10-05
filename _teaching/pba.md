@@ -135,7 +135,7 @@ schedule_content: |
   - What is a causal effect?
   - Randomized experiments; calculating effects
   - Observational studies
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); [QSS §§2.3–2.5](https://assets.press.princeton.edu/chapters/s2-11025.pdf) (potential outcomes, randomized experiments, and observational designs, pp. 46–62 of the publisher's free Chapter 2 PDF; read it for the concepts, since its R code is base R).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§2.2–2.3](https://openintro-ims1.netlify.app/data-design#experiments) (experiments and observational studies); [QSS §§2.3–2.5](https://assets.press.princeton.edu/chapters/s2-11025.pdf) (potential outcomes, randomized experiments, and observational designs, pp. 46–63 of the publisher's free Chapter 2 PDF, which are pages 15–32 of the file; read it for the concepts, since its R code is base R).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §2.1 (the résumé experiment that opens the same chapter).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E3 (Line Pay adoption)</em><br>
