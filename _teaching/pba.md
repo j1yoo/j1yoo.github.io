@@ -21,14 +21,21 @@ instructor_email: "jaewon.yoo [at] iss.nthu.edu.tw"
 communication: "Lecture slides and R scripts are posted on this page under <strong>Materials</strong> as the course progresses. In-class exercises, assignments, grades, and announcements are on <strong><a href=\"https://eeclass.nthu.edu.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">eeclass</a></strong> (NTHU's learning platform; enrolled students are added automatically). For private matters, email the instructor."
 
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
+updates_max_height: "460px"
 
 updates:
   - text: "<strong>Oct 5, 2026:</strong> A <a href=\"/teaching/pba-data/\">guide to finding data</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. It lists sources of real data by topic and what to check before Milestone 2 (data and proposal), due Sun Oct 25."
+    date: 2026-10-05
   - text: "<strong>Oct 1, 2026:</strong> A step-by-step <a href=\"/teaching/pba-github/\">guide to setting up Git and GitHub</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. Milestone 1, your team's GitHub repository, is due Sun Oct 11."
+    date: 2026-10-01
   - text: "<strong>Oct 1, 2026:</strong> Week 5 slides and R script are posted under <strong>Materials</strong>. This week's data are in the course data package <code>pbadata</code> (version 0.2.0), which installs from this site rather than from CRAN. To install or update it, restart R (Session &gt; Restart R) and run <code>install.packages(\"pbadata\", type = \"source\", repos = \"https://j1yoo.github.io/assets/courses/pba\")</code>. Then <code>library(pbadata)</code> loads it, and <code>packageVersion(\"pbadata\")</code> should show 0.2.0. The datasets are <code>ai_tutoring</code>, <code>linepay</code>, and <code>news</code>; type a dataset name such as <code>ai_tutoring</code> to see the data."
+    date: 2026-10-01
   - text: "<strong>Sep 14, 2026:</strong> The existing reading list has been clarified across the weekly schedule: <strong>Required reading</strong> identifies preparation for each class, and <strong>Further reading</strong> provides optional references. Direct links and section ranges make the free readings easier to find. An R Basics companion handout adds explanations and worked examples to the reference slides under <strong>Materials</strong>."
+    date: 2026-09-14
   - text: "<strong>Sep 13, 2026:</strong> Lecture slides and R scripts are now posted on this page under <strong>Materials</strong>, starting with Week 2 (<strong>Data Visualization</strong>) and the R Basics reference slides that accompany the Week 1 readings. Week 3 is <strong>Data Wrangling</strong>; there is no class on <strong>Sep 28</strong> (Teachers' Day); exercise E3 is in Week 5."
+    date: 2026-09-13
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
+    date: 2026-09-06
   - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
   - text: "<strong>Project showcase with Q&amp;A</strong> in the final week."
   - text: "<strong>ISS4066, Mondays.</strong> Graduate students should enroll in <a href=\"/teaching/pba-grad/\">ISS5066 (Graduate)</a>."

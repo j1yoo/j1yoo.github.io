@@ -77,13 +77,37 @@
               {% if page.updates_note %}
                 <p style="font-size: 0.85rem; line-height: 1.55; color: #555;">{{ page.updates_note }}</p>
               {% endif %}
-              <div style="max-height: 240px; overflow-y: auto; padding: 0.5rem 0.75rem; border: 1px solid #e5e5e5; border-radius: 4px; background: #fafafa; margin-top: 0.5rem;">
+              <div style="max-height: {{ page.updates_max_height | default: '240px' }}; overflow-y: auto; padding: 0.5rem 0.75rem; border: 1px solid #e5e5e5; border-radius: 4px; background: #fafafa; margin-top: 0.5rem;">
                 <ul style="font-size: 0.85rem; line-height: 1.55; padding-left: 1.1rem; margin: 0;">
                   {% for update in page.updates %}
-                    <li style="margin-bottom: 0.5rem;">{{ update.text }}</li>
+                    <li style="margin-bottom: 0.5rem;"{% if update.date %} data-posted="{{ update.date | date: '%Y-%m-%d' }}"{% endif %}>{{ update.text }}</li>
                   {% endfor %}
                 </ul>
               </div>
+              <style>
+                .wn-new { display: inline-block; margin-right: 0.35rem; padding: 0 0.42rem; border-radius: 999px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.05em; line-height: 1.55; color: #fff; background: var(--global-theme-color, #2698ba); vertical-align: 1px; animation: wn-glow 2.6s ease-in-out infinite; }
+                @keyframes wn-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(38, 152, 186, 0); } 50% { box-shadow: 0 0 0 4px rgba(38, 152, 186, 0.22); } }
+                @media (prefers-reduced-motion: reduce) { .wn-new { animation: none; } }
+              </style>
+              <script>
+                /* NEW badge: every dated item for its first 3 days; items from the latest posting date for up to 7 days. */
+                (function () {
+                  var day = 86400000, now = Date.now();
+                  var items = Array.prototype.slice.call(document.querySelectorAll('li[data-posted]'));
+                  var t = function (li) { return Date.parse(li.getAttribute('data-posted') + 'T00:00:00+08:00'); };
+                  var latest = Math.max.apply(null, items.map(t).filter(function (x) { return !isNaN(x); }));
+                  items.forEach(function (li) {
+                    var age = now - t(li);
+                    if (isNaN(age) || age < 0) return;
+                    if (age < 3 * day || (t(li) === latest && age < 7 * day)) {
+                      var b = document.createElement('span');
+                      b.className = 'wn-new';
+                      b.textContent = 'NEW';
+                      li.insertBefore(b, li.firstChild);
+                    }
+                  });
+                })();
+              </script>
             {% endif %}
 
           </div>
