@@ -23,6 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
+  - text: "<strong>Oct 5, 2026:</strong> A <a href=\"/teaching/pba-data/\">guide to finding data</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. It lists sources of real data by topic and what to check before Milestone 2 (data and proposal), due Sun Oct 25."
   - text: "<strong>Oct 5, 2026:</strong> Readings for Week 5 (<strong>Causality II: DAGs and Covariate Selection</strong>) are in the Weekly Schedule: chapters 6 and 8 of Huntington-Klein's <em>The Effect</em>, free to read online. Chapter 7 of the same book goes with your Week 6 team meeting."
   - text: "<strong>Oct 1, 2026:</strong> A step-by-step <a href=\"/teaching/pba-github/\">guide to setting up Git and GitHub</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. Milestone 1, your team's GitHub repository, is due Sun Oct 11."
   - text: "<strong>Oct 1, 2026:</strong> Week 4 slides and R script are posted under <strong>Materials</strong>. This week's data are in the course data package <code>pbadata</code> (version 0.2.0), which installs from this site rather than from CRAN. To install or update it, restart R (Session &gt; Restart R) and run <code>install.packages(\"pbadata\", type = \"source\", repos = \"https://j1yoo.github.io/assets/courses/pba\")</code>. Then <code>library(pbadata)</code> loads it, and <code>packageVersion(\"pbadata\")</code> should show 0.2.0. The datasets are <code>ai_tutoring</code>, <code>linepay</code>, and <code>news</code>; type a dataset name such as <code>ai_tutoring</code> to see the data."
@@ -146,6 +147,7 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [Cunningham, *Causal Inference: The Mixtape*, Ch. 3](https://mixtape.scunning.com/03-directed_acyclical_graphs) (the same ideas with economics examples; skip the regression code for now); [Cinelli, Forney, and Pearl (2022)](https://ftp.cs.ucla.edu/pub/stat_ser/r493.pdf) (the source of the good-control and bad-control table in the slides); [DAGitty tutorials](https://www.dagitty.net/learn/) (interactive practice with d-separation and covariate roles).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-data/">Guide to finding data</a> posted</em><br>
   <span class="badge-due">Due:</span> Assignment 1, Thu Oct 8 (before class)<br>
   <span class="badge-due">Due:</span> Milestone 1: GitHub repository, Sun Oct 11
   </div>
@@ -324,6 +326,10 @@ assignments_content: |
   ## Git and GitHub Setup
 
   Your team project lives in a public GitHub repository. Before Milestone 1 (due Sun Oct 11), each team member needs a GitHub account, Git on their laptop, and RStudio connected to GitHub. The [step-by-step guide](/teaching/pba-github/) takes about 30 minutes.
+
+  ## Finding Data
+
+  Milestone 2 (data and proposal) is due Sun Oct 25. The [guide to finding data](/teaching/pba-data/) lists sources of real data by topic, a checklist for judging a dataset, and what the proposal covers.
 
   ## Assignments
 

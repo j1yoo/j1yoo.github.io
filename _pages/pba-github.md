@@ -13,6 +13,7 @@ course_links:
   - text: "Graduate course page"
     url: "/teaching/pba-grad/"
 pdf: /assets/courses/pba/PBA_GitHub_Setup.pdf
+posted: 2026-10-01
 nav: false
 ---
 

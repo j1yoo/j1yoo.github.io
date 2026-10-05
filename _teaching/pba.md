@@ -23,6 +23,7 @@ communication: "Lecture slides and R scripts are posted on this page under <stro
 updates_note: "This page is updated during the semester. Recently changed items are listed below."
 
 updates:
+  - text: "<strong>Oct 5, 2026:</strong> A <a href=\"/teaching/pba-data/\">guide to finding data</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. It lists sources of real data by topic and what to check before Milestone 2 (data and proposal), due Sun Oct 25."
   - text: "<strong>Oct 1, 2026:</strong> A step-by-step <a href=\"/teaching/pba-github/\">guide to setting up Git and GitHub</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. Milestone 1, your team's GitHub repository, is due Sun Oct 11."
   - text: "<strong>Oct 1, 2026:</strong> Week 5 slides and R script are posted under <strong>Materials</strong>. This week's data are in the course data package <code>pbadata</code> (version 0.2.0), which installs from this site rather than from CRAN. To install or update it, restart R (Session &gt; Restart R) and run <code>install.packages(\"pbadata\", type = \"source\", repos = \"https://j1yoo.github.io/assets/courses/pba\")</code>. Then <code>library(pbadata)</code> loads it, and <code>packageVersion(\"pbadata\")</code> should show 0.2.0. The datasets are <code>ai_tutoring</code>, <code>linepay</code>, and <code>news</code>; type a dataset name such as <code>ai_tutoring</code> to see the data."
   - text: "<strong>Sep 14, 2026:</strong> The existing reading list has been clarified across the weekly schedule: <strong>Required reading</strong> identifies preparation for each class, and <strong>Further reading</strong> provides optional references. Direct links and section ranges make the free readings easier to find. An R Basics companion handout adds explanations and worked examples to the reference slides under <strong>Materials</strong>."
@@ -152,6 +153,7 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§4.1–4.2](https://moderndive.com/4-tidy.html#csv) (importing and tidy data); [MD §§3.7.1–3.7.3](https://moderndive.com/3-wrangling.html#matching-key-variable-names) (joins); [MD §5.1.1](https://moderndive.com/5-regression.html#model1EDA) (correlation); [IMS §13.2.2](https://openintro-ims1.netlify.app/foundations-mathematical#standardizing-with-z-scores) (Z-scores).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §§6.1, 15.2–15.3, 18.2; QSS §§3.5–3.6.
   <div class="schedule-deliverables">
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-data/">Guide to finding data</a> posted</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Optional, Oct 12–23: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a> to discuss your research question before the proposal</em><br>
   <span class="badge-due">Due:</span> Milestone 2: data and proposal, Sun Oct 25
   </div>
@@ -315,6 +317,10 @@ assignments_content: |
   ## Git and GitHub Setup
 
   Your team project lives in a public GitHub repository. Before Milestone 1 (due Sun Oct 11), each team member needs a GitHub account, Git on their laptop, and RStudio connected to GitHub. The [step-by-step guide](/teaching/pba-github/) takes about 30 minutes.
+
+  ## Finding Data
+
+  Milestone 2 (data and proposal) is due Sun Oct 25. The [guide to finding data](/teaching/pba-data/) lists sources of real data by topic, a checklist for judging a dataset, and what the proposal covers.
 
   ## Assignments
 

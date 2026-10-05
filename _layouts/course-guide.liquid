@@ -22,6 +22,7 @@
     <div class="eci-hero">
       <h1>{{ page.title }}</h1>
       {% if page.description %}<div class="subtitle">{{ page.description }}</div>{% endif %}
+      {% if page.posted %}<div class="guide-dates" style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.75;">Posted {{ page.posted | date: "%b %-d, %Y" }}{% if page.updated %} · Updated {{ page.updated | date: "%b %-d, %Y" }}{% endif %}</div>{% endif %}
       {% if page.pdf %}
         <a href="{{ page.pdf | relative_url }}" class="btn-eci btn-eci-sm" target="_blank" rel="noopener noreferrer" style="margin-top: 0.8rem;">
           <i class="fas fa-file-pdf"></i> PDF version
