@@ -75,6 +75,8 @@ materials:
     url: "/assets/courses/pba/PBA_04_Causality_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_04_Causality.R"
   - title: "Week 5: Causality II: DAGs and Covariate Selection"
+    url: "/assets/courses/pba/PBA_05_DAGs.pdf"
+    script_url: "/assets/courses/pba/PBA_05_DAGs.R"
   - title: "Week 6: Individual or team meetings by appointment (no class meeting)"
   - title: "Week 7: Relationships, Importing, and Tidying Data"
   - title: "Week 8: Prediction and Iteration"
@@ -149,6 +151,7 @@ schedule_content: |
   </div>
 
   **Week 5 (Oct 8): Causality II: DAGs and Covariate Selection**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.R" download>R script</a>
   - Confounding, selection, and the backdoor criterion
   - What to control for, and what not to, in your project
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 6](https://theeffectbook.net/ch-CausalDiagrams.html) (causal diagrams) and [Ch. 8](https://theeffectbook.net/ch-CausalPaths.html) (causal paths and closing back doors). Both chapters are free to read on the author's site.
