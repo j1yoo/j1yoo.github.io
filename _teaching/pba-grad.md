@@ -283,6 +283,7 @@ textbooks_content: |
   - **[MD]** Ismay, Chester and Albert Y. Kim. [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/1-getting-started.html). The schedule links to the first-edition online text and specifies the sections to read.
   - **[IMS]** Çetinkaya-Rundel, Mine and Johanna Hardin. 2021. [Introduction to Modern Statistics, 1st ed.](https://openintro-ims1.netlify.app/). OpenIntro. Use this linked edition for the section numbers in the reading list.
   - **Course materials:** lecture slides, R scripts, and handouts are linked under Materials. The [R Basics reference slides](/assets/courses/pba/PBA_00_R_Basics_Reference.pdf) and [companion handout](/assets/courses/pba/PBA_00_R_Basics_Handout.pdf) explain the programming foundations and remain available throughout the semester. Additional course notes named in the schedule will be posted before the relevant class.
+  - **Other free chapters:** a few weeks assign chapters from other books that are free online, such as Huntington-Klein's [*The Effect*](https://theeffectbook.net/) in Weeks 5 and 6. The schedule lists the chapters.
 
   ### Further reading: optional references
 
