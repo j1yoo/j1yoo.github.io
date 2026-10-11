@@ -1,5 +1,5 @@
 # PBA 5. Summarizing Bivariate Relationships & Tidying Data (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 70-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 71-page slides.
 # Packages used today: tidyverse (dplyr, tidyr, readr, ggplot2), gapminder (Week 2), and nycflights13.
 # Today's vaccination, mortality, and Spotify data are read from the web; gapminder and nycflights13 come with their packages.
 # The same three data sets are also in the course data package pbadata (0.3.0 or later) under the same names.
