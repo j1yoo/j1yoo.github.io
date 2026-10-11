@@ -11,7 +11,7 @@
 library(tidyverse)
 
 # PDF p. 11
-covid_data <- as_tibble(read_csv(url("https://bit.ly/3FOLohq"))); covid_data
+covid_data <- read_csv(url("https://bit.ly/3FOLohq")); covid_data
 
 # PDF p. 18
 covid_data |>
@@ -115,7 +115,7 @@ head(z_score2(covid_data$one_dose_5plus_pct))
 head(z_score2(covid_data$one_dose_5plus_pct, na.rm = T))
 
 # PDF p. 43
-mortality <- as_tibble(read_csv(url("https://bit.ly/3QCCPvc"))); mortality
+mortality <- read_csv(url("https://bit.ly/3QCCPvc")); mortality
 
 # PDF p. 45
 mortality |>
@@ -154,7 +154,7 @@ mortality_long |>
   labs(x = "Year", y = "Under 5 Child Mortality")
 
 # PDF p. 49
-spotify <- as_tibble(read_csv(url("https://bit.ly/49tn2qR"))); spotify
+spotify <- read_csv(url("https://bit.ly/49tn2qR")); spotify
 
 # PDF p. 50
 spotify |>
