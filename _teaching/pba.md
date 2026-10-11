@@ -74,6 +74,8 @@ materials:
     url: "/assets/courses/pba/PBA_04_Causality_UG.pdf"
     script_url: "/assets/courses/pba/PBA_04_Causality.R"
   - title: "Week 6: Relationships, Importing, and Tidying Data"
+    url: "/assets/courses/pba/PBA_05_Relationships_Tidying_UG.pdf"
+    script_url: "/assets/courses/pba/PBA_05_Relationships_Tidying.R"
   - title: "Week 7: Prediction and Iteration"
   - title: "Week 8: No class (Retrocession Day observed)"
   - title: "Week 9: Regression and Model Fit"
@@ -154,6 +156,7 @@ schedule_content: |
   </div>
 
   **Week 6 (Oct 12): Relationships, Importing, and Tidying Data**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_05_Relationships_Tidying_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_05_Relationships_Tidying.R" download>R script</a>
   - Z-scores and correlation
   - Writing reusable functions for standardization
   - Pivoting longer; joining datasets
