@@ -4,7 +4,7 @@ permalink: /research/
 title: research
 description: The corresponding author is denoted by *. Video summaries 🎬 generated with NotebookLM. 
 subtitle: >-
-  Video summaries 🎬 generated with NotebookLM.<br>
+  Video summaries 🎬 generated with NotebookLM; musical abstract 🎵 with Claude and Gemini (Lyria 3).<br>
   <span class="d-inline-block mt-2">The <strong>corresponding author</strong> is denoted by *.</span>
 categories: ['manuscripts in revision', 'manuscripts under review', 'working papers', 'work-in-progress', 'publications']
 catprint: ['', 'manuscripts in revision', 'manuscripts under review', 'working papers', 'work-in-progress', 'publications']

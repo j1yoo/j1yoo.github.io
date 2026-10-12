@@ -218,6 +218,9 @@
           {%- if entry.video %}
             <a class="video btn btn-sm z-depth-0" role="button" onclick="if(typeof gtag==='function')gtag('event','video_play',{paper_id:'{{entry.key}}'});">🎬 Video</a>
           {%- endif %}
+          {%- if entry.song %}
+            <a class="song btn btn-sm z-depth-0" role="button" onclick="if(typeof gtag==='function')gtag('event','song_play',{paper_id:'{{entry.key}}'});">🎵 Musical Abstract</a>
+          {%- endif %}
           {%- if entry.bibtex_show %}
             <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
           {%- endif %}
@@ -283,6 +286,26 @@
                 </iframe>
               </div>
               {%- endif %}
+            </div>
+          </div>
+          {%- endif %}
+
+          {%- if entry.song %}
+          <!-- Hidden song block (YouTube embed) -->
+          <div class="song hidden">
+            <div class="video-player">
+              <div class="video-info">Lyrics written with <a href="https://claude.ai/" target="_blank">Claude</a>; music generated with <a href="https://gemini.google.com/" target="_blank">Gemini</a> (Lyria 3)</div>
+              <div class="youtube-container" style="margin-top: 8px;">
+                <iframe
+                  width="640"
+                  height="360"
+                  src="https://www.youtube.com/embed/{{ entry.song }}?rel=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="max-width: 100%;">
+                </iframe>
+              </div>
             </div>
           </div>
           {%- endif %}
