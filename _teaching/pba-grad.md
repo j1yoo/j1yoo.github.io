@@ -74,10 +74,10 @@ materials:
   - title: "Week 4: Causality"
     url: "/assets/courses/pba/PBA_04_Causality_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_04_Causality.R"
-  - title: "Week 5: Causality II: DAGs and Covariate Selection"
+  - title: "Week 5: No class meeting (Causality II moved to Oct 15)"
+  - title: "Week 6: Causality II: DAGs and Covariate Selection"
     url: "/assets/courses/pba/PBA_05_DAGs.pdf"
     script_url: "/assets/courses/pba/PBA_05_DAGs.R"
-  - title: "Week 6: Individual or team meetings by appointment (no class meeting)"
   - title: "Week 7: Relationships, Importing, and Tidying Data"
   - title: "Week 8: Prediction and Iteration"
   - title: "Week 9: Regression and Model Fit"
@@ -92,7 +92,7 @@ materials:
 schedule_content: |
   ## Weekly Schedule (Graduate, Thursdays)
 
-  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Week 6 has no class meeting; teams meet the instructor by appointment instead. The schedule is tentative; eeclass announcements take precedence. Use the resource links under each week to open slides and handouts or download R scripts.*
+  *Assignments are due before class starts (14:20); Sunday deadlines are 23:59. Week 5 (Oct 8) has no class meeting; Causality II is in Week 6 (Oct 15). Teams meet the instructor by appointment, ideally by Wednesday, Oct 21. The schedule is tentative; eeclass announcements take precedence. Use the resource links under each week to open slides and handouts or download R scripts.*
 
   **Before every class:** complete that week's **Required reading** and work through the examples, including any R code. This preparation is expected in the syllabus and supports your participation in class discussions and exercises. **Further reading** is optional. All required readings are freely accessible online.
 
@@ -150,12 +150,7 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-github/">GitHub setup guide</a> posted</em>
   </div>
 
-  **Week 5 (Oct 8): Causality II: DAGs and Covariate Selection**
-  <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.R" download>R script</a>
-  - Confounding, selection, and the backdoor criterion
-  - What to control for, and what not to, in your project
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 6](https://theeffectbook.net/ch-CausalDiagrams.html) (causal diagrams) and [Ch. 8](https://theeffectbook.net/ch-CausalPaths.html) (causal paths and closing back doors). Both chapters are free to read on the author's site.
-  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [Cunningham, *Causal Inference: The Mixtape*, Ch. 3](https://mixtape.scunning.com/03-directed_acyclical_graphs) (the same ideas with economics examples; skip the regression code for now); [Cinelli, Forney, and Pearl (2022)](https://ftp.cs.ucla.edu/pub/stat_ser/r493.pdf) (the source of the good-control and bad-control table in the slides); [DAGitty tutorials](https://www.dagitty.net/learn/) (interactive practice with d-separation and covariate roles).
+  **Week 5 (Oct 8): No class meeting (Causality II moved to Oct 15)**
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-data/">Guide to finding data</a> posted</em><br>
@@ -163,11 +158,16 @@ schedule_content: |
   <span class="badge-due">Due:</span> Milestone 1: GitHub repository, Sun Oct 11
   </div>
 
-  **Week 6 (Oct 15): Individual or team meetings by appointment (no class meeting)**
+  **Week 6 (Oct 15): Causality II: DAGs and Covariate Selection**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.R" download>R script</a>
+  - Confounding, selection, and the backdoor criterion
+  - What to control for, and what not to, in your project
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 6](https://theeffectbook.net/ch-CausalDiagrams.html) (causal diagrams) and [Ch. 8](https://theeffectbook.net/ch-CausalPaths.html) (causal paths and closing back doors). Both chapters are free to read on the author's site.
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [Cunningham, *Causal Inference: The Mixtape*, Ch. 3](https://mixtape.scunning.com/03-directed_acyclical_graphs) (the same ideas with economics examples; skip the regression code for now); [Cinelli, Forney, and Pearl (2022)](https://ftp.cs.ucla.edu/pub/stat_ser/r493.pdf) (the source of the good-control and bad-control table in the slides); [DAGitty tutorials](https://www.dagitty.net/learn/) (interactive practice with d-separation and covariate roles).
   - With the causal-inference concepts in hand, discuss your research question and data before the proposal is due
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 7](https://theeffectbook.net/ch-DrawingCausalDiagrams.html) (drawing causal diagrams), as your team draws its DAG before the meeting.
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a>; meetings at TSMC Bldg. R828B</em>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a>, ideally by Wed Oct 21; meetings at TSMC Bldg. R828B</em>
   </div>
 
   **Week 7 (Oct 22): Relationships, Importing, and Tidying Data**
@@ -315,7 +315,7 @@ assignments_content: |
 
   ## Final Project
 
-  A team research project held to a research-grade standard: self-collected or non-trivial data, an explicit identification argument, and analysis carried to publishable-style depth. The deliverable is a portfolio-ready article or webpage with a linked GitHub repository containing all code. Week 6 is reserved for individual or team meetings by appointment, for feedback on your research question and data before the proposal is due.
+  A team research project held to a research-grade standard: self-collected or non-trivial data, an explicit identification argument, and analysis carried to publishable-style depth. The deliverable is a portfolio-ready article or webpage with a linked GitHub repository containing all code. Team meetings by appointment (ideally by Wednesday, Oct 21) give feedback on your research question and data before the proposal is due.
 
   ### Sample Evaluation
 
