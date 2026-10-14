@@ -1,5 +1,5 @@
 # PBA 5. Causality II: DAGs and Covariate Selection (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 59-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 60-page slides.
 # Packages used today: tidyverse (dplyr, tidyr), the course data package pbadata (0.2.0 or later), and dagitty.
 # dagitty is new today. Install it once: remove the "# " in front of the next line, run it, then put the "# " back.
 # install.packages("dagitty")
@@ -80,7 +80,7 @@ collider |>
     group_by(adopt) |>
     summarize(avg_spend = mean(spend), n = n())
 
-# PDF p. 39
+# PDF p. 33
 LinePay_data |>
     group_by(gender, line_pay_adopt) |>
     summarize(avg_spending = mean(spending_post)) |>
@@ -88,7 +88,7 @@ LinePay_data |>
     pivot_wider(names_from = line_pay_adopt, values_from = avg_spending) |>
     mutate(diff = adopted - unadopted)
 
-# PDF p. 47
+# PDF p. 41
 library(dagitty)
 g <- dagitty('dag {
       X -> Z -> T -> Y
@@ -99,14 +99,14 @@ g <- dagitty('dag {
 latents(g) <- c("U1", "U2")   # unobserved
 plot(g)
 
-# PDF p. 48
+# PDF p. 42
 parents(g, "T")
 descendants(g, "T")
 paths(g, "T", "Y")$paths
 paths(g, "T", "Y", directed = TRUE)$paths
 dseparated(g, "Z", "M", c("T"))
 
-# PDF p. 49
+# PDF p. 43
 adjustmentSets(g, "T", "Y")
 adjustmentSets(g, "T", "Y", type = "all")
 # The list also shows sets with U1 or U2, which we cannot use because they are unobserved.
