@@ -47,6 +47,7 @@ Your question is one of three kinds, and the kind decides what counts as a good 
 
 - [IPUMS](https://www.ipums.org/): U.S. census and survey microdata (ACS, CPS) and census samples from many countries, harmonized across years. Free, with registration.
 - [General Social Survey](https://gss.norc.org/): attitudes and behavior of U.S. adults, repeated since 1972.
+- [Cooperative Election Study (CES)](https://tischcollege.tufts.edu/research-faculty/research-centers/cooperative-election-study): the largest academic survey of U.S. elections, run since 2006 (formerly the Cooperative Congressional Election Study, CCES). Vote choices, political views, and background of U.S. adults; 61,000 respondents in 2020. Free on [Harvard Dataverse](https://dataverse.harvard.edu/dataverse/cces).
 - [Pew Research Center datasets](https://www.pewresearch.org/datasets/): surveys on technology, media, and society. Free account required.
 - [World Values Survey](https://www.worldvaluessurvey.org/): values and beliefs across many countries, including Taiwan.
 
