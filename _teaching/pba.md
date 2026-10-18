@@ -178,7 +178,7 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [R4DS §27.3](https://r4ds.hadley.nz/base-R.html#sec-subset-one) and [R4DS §27.5](https://r4ds.hadley.nz/base-R.html#for-loops) (selecting with `[[` and for loops); [R4DS §12.5.1](https://r4ds.hadley.nz/logicals.html#if_else) (`if_else()`); [R4DS §17.2](https://r4ds.hadley.nz/datetimes.html#sec-creating-datetimes) (creating dates); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs). Then work through the Week 7 slides and R script (election prediction and evaluating predictions).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise (not graded): predicting with the polls from the last 7 days</em>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E4 (2020 election polls)</em>
   </div>
 
   **Week 8 (Oct 26): No class (Retrocession Day observed)**
@@ -200,7 +200,7 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E4 (NYC condominiums)</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5 (NYC condominiums)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em><br>
   <span class="badge-due">Due:</span> Problem Set 1, Sun Nov 15<br>
   <span class="badge-due">Due:</span> Milestone 3: first visualization, Sun Nov 15
@@ -233,7 +233,7 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§9.1–9.4](https://moderndive.com/9-hypothesis-testing.html#ht-activity) (randomization tests and interpretation); [IMS §20.1](https://openintro-ims1.netlify.app/inference-two-means#rand2mean) (two-means randomization test); [IMS §14.4](https://openintro-ims1.netlify.app/decerr#pow) (power).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [MD §§9.5–9.6](https://moderndive.com/9-hypothesis-testing.html#ht-case-study) (worked example and issues with testing).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E6</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Team consultations Nov 30–Dec 4: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a></em><br>
   <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
@@ -443,12 +443,12 @@ No prerequisites. The course is designed for students from any background who wa
   </div>
   <div class="ta-card">
     <span class="ta-photo">
-      <img src="/assets/courses/pba/ta_tba.png" alt="Third teaching assistant, to be announced">
+      <img src="/assets/courses/pba/ta_jasmine_davina.jpg" alt="Jasmine Davina" class="photo-clickable" data-full="/assets/courses/pba/ta_jasmine_davina.jpg">
     </span>
     <div class="ta-info">
-      <p class="ta-name">To be announced</p>
-      <p class="ta-affiliation">Third teaching assistant, to be announced once enrollment is final (after the add/drop period, Sep 20)</p>
-      <p class="ta-contact">&nbsp;</p>
+      <p class="ta-name">Jasmine Davina</p>
+      <p class="ta-affiliation">Master's Student, ISS</p>
+      <p class="ta-contact"><i class="fas fa-envelope"></i> jasmine.davina [at] iss.nthu.edu.tw</p>
     </div>
   </div>
 </div>

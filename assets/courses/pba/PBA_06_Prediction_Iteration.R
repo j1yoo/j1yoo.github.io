@@ -1,5 +1,5 @@
 # PBA 6. Prediction and Iteration (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 57-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 55-page slides.
 # Packages used today: tidyverse (dplyr, tidyr, readr, ggplot2, lubridate).
 # Today's five data sets (CES 2020, 2020 state and national polls, 2020 state results, minimum wage study) are read from the web.
 # The same five data sets are also in the course data package pbadata (0.4.0 or later) under the same names.
@@ -130,7 +130,7 @@ national_polls20 <- read_csv("https://bit.ly/3VOUjsa"); national_polls20
 
 # PDF p. 36
 national_polls20 |>
-  na.omit() |>
+  filter(!is.na(trump)) |> # one poll has no number for Trump
   ggplot(aes(x = end_date)) +
   geom_point(aes(y = biden), color = "steelblue") +
   geom_point(aes(y = trump), color = "indianred")
