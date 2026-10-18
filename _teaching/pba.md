@@ -77,6 +77,8 @@ materials:
     url: "/assets/courses/pba/PBA_05_Relationships_Tidying_UG.pdf"
     script_url: "/assets/courses/pba/PBA_05_Relationships_Tidying.R"
   - title: "Week 7: Prediction and Iteration"
+    url: "/assets/courses/pba/PBA_06_Prediction_Iteration_UG.pdf"
+    script_url: "/assets/courses/pba/PBA_06_Prediction_Iteration.R"
   - title: "Week 8: No class (Retrocession Day observed)"
   - title: "Week 9: Regression and Model Fit"
   - title: "Week 10: More on Regression"
@@ -169,9 +171,10 @@ schedule_content: |
   </div>
 
   **Week 7 (Oct 19): Prediction and Iteration**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_06_Prediction_Iteration_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_06_Prediction_Iteration.R" download>R script</a>
   - Predicting election outcomes
   - Loops; evaluating predictions; time-series plots
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (to be posted before class); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (the Week 7 slides and R script); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
 
   **Week 8 (Oct 26): No class (Retrocession Day observed)**
