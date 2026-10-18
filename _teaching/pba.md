@@ -443,7 +443,7 @@ No prerequisites. The course is designed for students from any background who wa
   </div>
   <div class="ta-card">
     <span class="ta-photo">
-      <img src="/assets/courses/pba/ta_jasmine_davina.jpg" alt="Jasmine Davina" class="photo-clickable" data-full="/assets/courses/pba/ta_jasmine_davina.jpg">
+      <img src="/assets/courses/pba/ta_jasmine_davina.jpg" alt="Jasmine Davina" class="photo-clickable" data-full="/assets/courses/pba/ta_jasmine_davina.jpg" style="width: 110px; height: 110px;">
     </span>
     <div class="ta-info">
       <p class="ta-name">Jasmine Davina</p>

@@ -203,9 +203,9 @@ minwage |>
 # PDF p. 49
 minwage |>
   group_by(state) |>
-  mutate(full_prop_after = fullAfter / (fullAfter + partAfter),
-         full_prop_before = fullBefore / (fullBefore + partBefore)) |>
-  summarize(trend = mean(full_prop_after) - mean(full_prop_before)) |>
+  mutate(fte_after = fullAfter + 0.5 * partAfter,
+         fte_before = fullBefore + 0.5 * partBefore) |>
+  summarize(trend = mean(fte_after) - mean(fte_before)) |>
   pivot_wider(
     names_from = state,
     values_from = trend
