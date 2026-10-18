@@ -145,6 +145,7 @@ lubridate::mdy("11/03/2020") + 3
 
 # PDF p. 39
 election_day <- lubridate::ymd("2020-11-03")
+# + 1: start one day later, so even the first average covers two days of polls
 all_dates <- seq(from = min(national_polls20$end_date) + 1, 
                  to = election_day, 
                  by = "days")
