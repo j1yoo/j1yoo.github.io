@@ -65,9 +65,9 @@ state_names <- sort(unique(polls20$state))
 # add labels to holder
 names(poll_pred) <- state_names
 for (i in 1:51) {
-    state_data <- subset(polls20, subset = (state == state_names[i]))
-    latest <- state_data$days_left == min(state_data$days_left)
-    poll_pred[i] <- mean(state_data$margin[latest])
+    state_data <- polls20 |> filter(state == state_names[i])
+    latest <- state_data |> filter(days_left == min(days_left))
+    poll_pred[i] <- mean(latest$margin)
 }
 head(poll_pred) # Margin of victory for Biden in Alaska, Alabama, Arkansas...
 
