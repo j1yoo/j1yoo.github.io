@@ -1,5 +1,5 @@
 # PBA 6. Prediction and Iteration (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 58-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 57-page slides.
 # Packages used today: tidyverse (dplyr, tidyr, readr, ggplot2, lubridate).
 # Today's five data sets (CES 2020, 2020 state and national polls, 2020 state results, minimum wage study) are read from the web.
 # The same five data sets are also in the course data package pbadata (0.4.0 or later) under the same names.
@@ -101,23 +101,11 @@ ggplot(poll_pred, aes(x = margin_pred, y = margin)) +
   geom_vline(xintercept = 0, color = "grey")
 
 # PDF p. 30
-biden_ev <- 0
-trump_ev <- 0
-for (i in seq_along(poll_pred$state)) {
-  if (poll_pred$margin_pred[i] > 0) {
-    biden_ev <- biden_ev + poll_pred$ev[i]
-  } else {
-    trump_ev <- trump_ev + poll_pred$ev[i]
-  }
-}
-c(biden = biden_ev, trump = trump_ev)
-
-# PDF p. 31
 poll_pred |>
   mutate(winner_pred = if_else(margin_pred > 0, "Biden", "Trump")) |>
   select(state, margin_pred, winner_pred)
 
-# PDF p. 32
+# PDF p. 31
 poll_pred |>
   filter(margin > 0) |> ## States in which Biden actually won
   summarize(sum(ev)) |> pull() # pull to extract single column
@@ -125,29 +113,29 @@ poll_pred |>
   filter(margin_pred > 0) |> ## States in which Biden predicted to win
   summarize(sum(ev)) |> pull()
 
-# PDF p. 33
+# PDF p. 32
 poll_pred |>
   summarize(prop_correct = mean(sign(margin_pred) == sign(margin)))
 poll_pred |>
   filter(sign(margin_pred) != sign(margin))
 
-# PDF p. 34
+# PDF p. 33
 poll_pred |>
   mutate(pred = if_else(margin_pred > 0, "Biden", "Trump"),
          actual = if_else(margin > 0, "Biden", "Trump")) |>
   count(pred, actual)
 
-# PDF p. 36
+# PDF p. 35
 national_polls20 <- read_csv("https://bit.ly/3VOUjsa"); national_polls20
 
-# PDF p. 37
+# PDF p. 36
 national_polls20 |>
   na.omit() |>
   ggplot(aes(x = end_date)) +
   geom_point(aes(y = biden), color = "steelblue") +
   geom_point(aes(y = trump), color = "indianred")
 
-# PDF p. 39
+# PDF p. 38
 head(national_polls20$end_date)
 head(national_polls20$end_date + 3)
 # Don't forget to install and load the package!
@@ -155,14 +143,14 @@ head(national_polls20$end_date + 3)
 lubridate::ymd("2020-11-03") + 3
 lubridate::mdy("11/03/2020") + 3
 
-# PDF p. 40
+# PDF p. 39
 election_day <- lubridate::ymd("2020-11-03")
 all_dates <- seq(from = min(national_polls20$end_date) + 1, 
                  to = election_day, 
                  by = "days")
 head(all_dates)
 
-# PDF p. 41
+# PDF p. 40
 output <- vector("list", length = length(all_dates)) # empty list to assign the output
 for (i in seq_along(all_dates)) {
   this_date <- all_dates[[i]]
@@ -182,10 +170,10 @@ for (i in seq_along(all_dates)) {
   }
 output <- bind_rows(output)
 
-# PDF p. 42
+# PDF p. 41
 output
 
-# PDF p. 43
+# PDF p. 42
 output |>
   ggplot(aes(x = date)) +
   geom_point(aes(y = biden), color = "steelblue") +
@@ -195,15 +183,15 @@ output |>
   annotate("point", x = election_day, y = 46.9, color = "indianred", size = 4) + 
   labs(x = "Date", y = "Predicted Vote Percentage")
 
-# PDF p. 44
+# PDF p. 43
 output |>
   filter(date == election_day) |>
   mutate(margin_pred = biden - trump)
 
-# PDF p. 48
+# PDF p. 47
 minwage <- as_tibble(read.csv(url("https://bit.ly/3QZmodH"))); head(minwage)
 
-# PDF p. 49
+# PDF p. 48
 minwage <- minwage |>
   mutate(
     state = if_else(location == "PA", "PA", "NJ") ## PA is control
@@ -211,7 +199,7 @@ minwage <- minwage |>
 minwage |>
   count(location)
 
-# PDF p. 50
+# PDF p. 49
 minwage |>
   group_by(state) |>
   mutate(full_prop_after = fullAfter / (fullAfter + partAfter),
