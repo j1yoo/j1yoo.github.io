@@ -173,9 +173,13 @@ schedule_content: |
   **Week 7 (Oct 19): Prediction and Iteration**
   <a class="badge-slides" href="/assets/courses/pba/PBA_06_Prediction_Iteration_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_06_Prediction_Iteration.R" download>R script</a>
   - Predicting election outcomes
-  - Loops; evaluating predictions; time-series plots
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (the Week 7 slides and R script); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
+  - Loops and conditional statements; evaluating predictions; time-series plots
+  - Review: difference-in-differences (minimum wage study)
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [R4DS §27.3](https://r4ds.hadley.nz/base-R.html#sec-subset-one) and [R4DS §27.5](https://r4ds.hadley.nz/base-R.html#for-loops) (selecting with `[[` and for loops); [R4DS §12.5.1](https://r4ds.hadley.nz/logicals.html#if_else) (`if_else()`); [R4DS §17.2](https://r4ds.hadley.nz/datetimes.html#sec-creating-datetimes) (creating dates); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs). Then work through the Week 7 slides and R script (election prediction and evaluating predictions).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
+  <div class="schedule-deliverables">
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise (not graded): predicting with the polls from the last 7 days</em>
+  </div>
 
   **Week 8 (Oct 26): No class (Retrocession Day observed)**
 
@@ -275,6 +279,7 @@ textbooks_content: |
 
   - **[MD]** Ismay, Chester and Albert Y. Kim. [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/1-getting-started.html). The schedule links to the first-edition online text and specifies the sections to read.
   - **[IMS]** Çetinkaya-Rundel, Mine and Johanna Hardin. 2021. [Introduction to Modern Statistics, 1st ed.](https://openintro-ims1.netlify.app/). OpenIntro. Use this linked edition for the section numbers in the reading list.
+  - **[R4DS]** Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science, 2nd ed.](https://r4ds.hadley.nz/) Free online; the schedule links to the sections to read.
   - **Course materials:** lecture slides, R scripts, and handouts are linked under Materials. The [R Basics reference slides](/assets/courses/pba/PBA_00_R_Basics_Reference.pdf) and [companion handout](/assets/courses/pba/PBA_00_R_Basics_Handout.pdf) explain the programming foundations and remain available throughout the semester. Additional course notes named in the schedule will be posted before the relevant class.
 
   ### Further reading: optional references
