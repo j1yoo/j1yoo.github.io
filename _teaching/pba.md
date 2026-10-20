@@ -36,7 +36,7 @@ updates:
     date: 2026-09-13
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. No class meeting on <strong>Sep 28</strong> (Teachers' Day) and <strong>Oct 26</strong> (Retrocession Day observed); the schedule already reflects this."
     date: 2026-09-06
-  - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
+  - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of six in-class exercises, submitted on eeclass the same day; your best five count (1% each)."
   - text: "<strong>Project showcase with Q&amp;A</strong> in the final week."
   - text: "<strong>ISS4066, Mondays.</strong> Graduate students should enroll in <a href=\"/teaching/pba-grad/\">ISS5066 (Graduate)</a>."
 
@@ -304,7 +304,7 @@ assignments_content: |
   | Final project (report, showcase Q&A, milestones, peer evaluation) | 40% |
   | Assignments (5) | 20% |
   | Problem sets (3) | 15% |
-  | In-class exercises (5) | 5% |
+  | In-class exercises (best 5 of 6) | 5% |
   | Attitude / participation | 10% |
   | Attendance | 10% |
 
@@ -350,7 +350,7 @@ assignments_content: |
 
   ## In-Class Exercises
 
-  Five short exercises done during class without generative AI and uploaded to eeclass the same day. Each ends with a verification step: check what your code actually did before you trust the output.
+  Six short exercises done during class without generative AI and uploaded to eeclass the same day; your best five count (1% each). Each ends with a verification step: check what your code actually did before you trust the output.
 
 policies_content: |
   ## Course Policies
