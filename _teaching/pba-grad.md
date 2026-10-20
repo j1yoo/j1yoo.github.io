@@ -38,7 +38,7 @@ updates:
     date: 2026-09-13
   - text: "<strong>Sep 6, 2026:</strong> Fall 2026 page published. In Week 6 (Oct 15) there is no class meeting; instead, teams meet the instructor by appointment to discuss research questions."
     date: 2026-09-06
-  - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of five in-class exercises (1% each), submitted on eeclass the same day."
+  - text: "<strong>No take-home quizzes this year.</strong> The 5% \"Quizzes &amp; In-Class Exercises\" component consists of six in-class exercises, submitted on eeclass the same day; your best five count (1% each)."
   - text: "<strong>Team presentations with Q&amp;A</strong> in the final week."
   - text: "<strong>ISS5066, Thursdays.</strong> Undergraduates should enroll in <a href=\"/teaching/pba/\">ISS4066 (Undergraduate)</a>."
 
@@ -79,6 +79,8 @@ materials:
     url: "/assets/courses/pba/PBA_05_DAGs.pdf"
     script_url: "/assets/courses/pba/PBA_05_DAGs.R"
   - title: "Week 7: Relationships, Importing, and Tidying Data"
+    url: "/assets/courses/pba/PBA_05_Relationships_Tidying_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_05_Relationships_Tidying.R"
   - title: "Week 8: Prediction and Iteration"
   - title: "Week 9: Regression and Model Fit"
   - title: "Week 10: More on Regression"
@@ -170,6 +172,7 @@ schedule_content: |
   </div>
 
   **Week 7 (Oct 22): Relationships, Importing, and Tidying Data**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_05_Relationships_Tidying_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_05_Relationships_Tidying.R" download>R script</a>
   - Z-scores and correlation
   - Writing reusable functions for standardization
   - Pivoting longer; joining datasets
@@ -184,6 +187,9 @@ schedule_content: |
   - Loops; evaluating predictions; time-series plots
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Course notes and R examples on election prediction, loops, and storing and evaluating predictions (to be posted before class); review [MD §2.4](https://moderndive.com/2-viz.html#linegraphs) (line graphs).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §4.1; AAG Ch. 10 (loops); VT Ch. 4 (patterns over time).
+  <div class="schedule-deliverables">
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E4 (2020 election polls)</em>
+  </div>
 
   **Week 9 (Nov 5): Regression and Model Fit**
   - Modeling with a line; linear regression in R
@@ -202,7 +208,7 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E4 (NYC condominiums)</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5 (NYC condominiums)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em><br>
   <span class="badge-due">Due:</span> Problem Set 1, Sun Nov 15<br>
   <span class="badge-due">Due:</span> Milestone 3: first visualization, Sun Nov 15
@@ -235,7 +241,7 @@ schedule_content: |
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§9.1–9.4](https://moderndive.com/9-hypothesis-testing.html#ht-activity) (randomization tests and interpretation); [IMS §20.1](https://openintro-ims1.netlify.app/inference-two-means#rand2mean) (two-means randomization test); [IMS §14.4](https://openintro-ims1.netlify.app/decerr#pow) (power).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [MD §§9.5–9.6](https://moderndive.com/9-hypothesis-testing.html#ht-case-study) (worked example and issues with testing).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E6</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Team consultations Nov 30–Dec 4: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a></em><br>
   <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
@@ -306,7 +312,7 @@ assignments_content: |
   | Final project (report, presentation Q&A, milestones, peer evaluation) | 50% |
   | Assignments (5) | 15% |
   | Problem sets (3) | 10% |
-  | In-class exercises (5) | 5% |
+  | In-class exercises (best 5 of 6) | 5% |
   | Attitude / participation | 10% |
   | Attendance | 10% |
 
@@ -352,7 +358,7 @@ assignments_content: |
 
   ## In-Class Exercises
 
-  Five short exercises done during class without generative AI and uploaded to eeclass the same day. Each ends with a verification step: check what your code actually did before you trust the output.
+  Six short exercises done during class without generative AI and uploaded to eeclass the same day; your best five count (1% each). Each ends with a verification step: check what your code actually did before you trust the output.
 
 policies_content: |
   ## Course Policies

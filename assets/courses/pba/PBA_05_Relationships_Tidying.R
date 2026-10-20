@@ -1,5 +1,5 @@
 # PBA 5. Summarizing Bivariate Relationships & Tidying Data (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 72-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 74-page slides.
 # Packages used today: tidyverse (dplyr, tidyr, readr, ggplot2), gapminder (Week 2), and nycflights13.
 # Today's vaccination, mortality, and Spotify data are read from the web; gapminder and nycflights13 come with their packages.
 # The same three data sets are also in the course data package pbadata (0.3.0 or later) under the same names.
@@ -219,29 +219,34 @@ gapminder |>
   select(country, year, lifeExp, pop, gdpPercap, child_mortality) |>
   head(n = 6)
 
-# PDF p. 63
+# PDF p. 64
+gapminder |>
+  left_join(mortality_long, by = "country") |> # year is not in the key
+  nrow()
+
+# PDF p. 65
 library(nycflights13)
 flights2 <- flights |>
   select(year, time_hour, origin, dest, tailnum, carrier); flights2
 
-# PDF p. 64
+# PDF p. 66
 planes2 <- planes |>
   select(tailnum, year, type, engine, seats); planes2
 
-# PDF p. 65
+# PDF p. 67
 flights2 |>
   left_join(planes2)
 
-# PDF p. 66
+# PDF p. 68
 flights2 |>
   left_join(planes2, by = "tailnum")
 
-# PDF p. 67
+# PDF p. 69
 flights2 |>
   left_join(planes2 |>
               rename(manufacture_year = year))
 
-# Appendix, PDF p. 70-71: code for the histograms on PDF p. 12 and 14-16
+# Appendix, PDF p. 72-73: code for the histograms on PDF p. 12 and 14-16
 covid_long <- covid_data |>
   pivot_longer(
     cols = c(one_dose_5plus_pct, one_dose_65plus_pct),
