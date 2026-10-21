@@ -220,33 +220,28 @@ gapminder |>
   head(n = 6)
 
 # PDF p. 64
-gapminder |>
-  left_join(mortality_long, by = "country") |> # year is not in the key
-  nrow()
-
-# PDF p. 65
 library(nycflights13)
 flights2 <- flights |>
   select(year, time_hour, origin, dest, tailnum, carrier); flights2
 
-# PDF p. 66
+# PDF p. 65
 planes2 <- planes |>
   select(tailnum, year, type, engine, seats); planes2
 
-# PDF p. 67
+# PDF p. 66
 flights2 |>
   left_join(planes2)
 
-# PDF p. 68
+# PDF p. 67
 flights2 |>
   left_join(planes2, by = "tailnum")
 
-# PDF p. 69
+# PDF p. 68
 flights2 |>
   left_join(planes2 |>
               rename(manufacture_year = year))
 
-# Appendix, PDF p. 72-73: code for the histograms on PDF p. 12 and 14-16
+# Appendix, PDF p. 71-72: code for the histograms on PDF p. 12 and 14-16
 covid_long <- covid_data |>
   pivot_longer(
     cols = c(one_dose_5plus_pct, one_dose_65plus_pct),
@@ -297,3 +292,8 @@ covid_long |>
   geom_histogram(alpha = .5) +
   geom_vline(aes(xintercept = scaled_60, color = Population)) +
   labs(x = "Z-Score (standard deviations from the group mean)", y = "Count")
+
+# Appendix, PDF p. 74: many-to-many joins
+gapminder |>
+  left_join(mortality_long, by = "country") |> # year is not in the key
+  nrow()
