@@ -56,6 +56,18 @@ nav_order: 6
   {% endfor %}
 </div>
 
+<!-- Teaching resources: kept apart from the course cards, so that they do not read as another course. -->
+<h5 class="mt-2 mb-3">Teaching resources</h5>
+<div class="card shadow-sm border-0 mb-4">
+  <div class="card-body d-flex flex-wrap align-items-center justify-content-between">
+    <div class="mr-3 mb-2">
+      <h5 class="card-title mb-1"><a href="https://j1yoo.github.io/causal-playground/">Causal Playground</a></h5>
+      <p class="card-text text-muted mb-0">Interactive simulations for causal inference. Move a slider and watch what happens to an estimate when an assumption holds or fails.</p>
+    </div>
+    <a href="https://j1yoo.github.io/causal-playground/" class="btn btn-outline-secondary btn-sm btn-theme">Open the Playground</a>
+  </div>
+</div>
+
 <hr>
 
 <div id="teachingPhotoCarousel" class="carousel slide mt-3 shadow-sm rounded" data-ride="carousel">
