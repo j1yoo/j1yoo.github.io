@@ -77,16 +77,21 @@ poll_pred <- polls20 |>
   filter(days_left == min(days_left)) |>
   summarize(margin_pred = mean(biden - trump)); poll_pred
 
-# PDF p. 28
+# PDF p. 27
+poll_pred |>
+  mutate(winner_pred = if_else(margin_pred > 0, "Biden", "Trump")) |>
+  select(state, margin_pred, winner_pred)
+
+# PDF p. 29
 poll_pred <- poll_pred |>
   left_join(pres20, by = "state") |>
   mutate(errors = margin - margin_pred); poll_pred
 
-# PDF p. 29
+# PDF p. 30
 mean(poll_pred$errors)
 sqrt(mean(poll_pred$errors^2))
 
-# PDF p. 30
+# PDF p. 31
 ggplot(poll_pred, aes(x = errors)) +
   geom_histogram() +
   labs(x = "Prediction error for Biden's margin of victory") +
@@ -94,22 +99,17 @@ ggplot(poll_pred, aes(x = errors)) +
   geom_vline(xintercept = mean(poll_pred$errors),
              color = "darkorange", linetype = "dashed", linewidth = 1)
 
-# PDF p. 32
+# PDF p. 33
 mean(poll_pred$errors)^2                              # bias squared
 mean((poll_pred$errors - mean(poll_pred$errors))^2)   # variance (= 4.58 squared)
 mean(poll_pred$errors^2)                              # MSE = RMSE squared
 
-# PDF p. 33
+# PDF p. 34
 ggplot(poll_pred, aes(x = margin_pred, y = margin)) +
   geom_text(aes(label = state)) +
   geom_abline(intercept = 0, slope = 1, linetype = 2) +
   geom_hline(yintercept = 0, color = "grey") +
   geom_vline(xintercept = 0, color = "grey")
-
-# PDF p. 34
-poll_pred |>
-  mutate(winner_pred = if_else(margin_pred > 0, "Biden", "Trump")) |>
-  select(state, margin_pred, winner_pred)
 
 # PDF p. 35
 poll_pred |>
