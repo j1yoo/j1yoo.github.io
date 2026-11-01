@@ -1,5 +1,5 @@
 # PBA 7. Regression and Model Fit (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 66-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 65-page slides.
 # Packages used today: tidyverse (readr, dplyr, tidyr, ggplot2) and broom.
 # Today's two data sets (health, and UT Austin course evaluations) are read from the web.
 # The same two data sets are also in the course data package pbadata (0.5.0 or later) as health and evals.
@@ -23,11 +23,11 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
       y = "Weight (in kg)"
     )
 
-# PDF p. 13
+# PDF p. 12
 health |>
     filter(round(steps_lag) == 5)
 
-# PDF p. 14
+# PDF p. 13
 mean_wt_5k_steps <- health |>
     filter(round(steps_lag) == 5) |>
     summarize(mean(weight)) |>
@@ -43,7 +43,7 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_vline(xintercept = c(4.5, 5.5), linetype = "dashed") +
     geom_point(aes(x = 5, y = mean_wt_5k_steps), color = "indianred1", size = 3)
 
-# PDF p. 16
+# PDF p. 15
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.25) +
     labs(
@@ -54,15 +54,15 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     stat_summary_bin(fun = "mean", color = "indianred1", size = 3,
                      geom = "point", binwidth = 1)
 
-# PDF p. 19
+# PDF p. 18
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.25) +
     labs(x = "Steps on day prior (in 1000s)", y = "Weight (in kg)") +
     stat_summary_bin(fun = "mean", color = "indianred1", size = 2,
                      geom = "point", binwidth = 0.5) +
-    geom_vline(xintercept = c(2.5, 3, 23, 23.5), linetype = "dashed")
+    geom_vline(xintercept = c(23.25, 23.75), linetype = "dashed")
 
-# PDF p. 26
+# PDF p. 25
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple) +
     labs(
@@ -71,18 +71,18 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     ) +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 32
+# PDF p. 31
 fit <- lm(weight ~ steps_lag, data = health); fit
 
-# PDF p. 33
+# PDF p. 32
 coef(fit)
 
-# PDF p. 34
+# PDF p. 33
 # Don't forget to install and load the package!
 require(broom)
 augment(fit) |> head()
 
-# PDF p. 35
+# PDF p. 34
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple) +
     labs(x = "Steps on day prior (in 1000s)", y = "Weight (in kg)") +
@@ -90,11 +90,11 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_vline(xintercept = mean(health$steps_lag), linetype = "dashed") +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 36
+# PDF p. 35
 augment(fit) |>
     summarize(mean(.resid))
 
-# PDF p. 37
+# PDF p. 36
 augment(fit) |>
     ggplot(aes(x = steps_lag, y = .resid)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.75) +
@@ -104,7 +104,7 @@ augment(fit) |>
     ) +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 38
+# PDF p. 37
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.25) +
     labs(x = "Steps on day prior (in 1000s)", y = "Weight (in kg)") +
@@ -112,27 +112,27 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
                      geom = "point", binwidth = 1) +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 41
+# PDF p. 40
 # Don't forget to load tidyverse and ggplot2!
 evals <- read_csv("https://bit.ly/46rSa7s"); evals
 
-# PDF p. 42
+# PDF p. 41
 fit.bty <- lm(score ~ bty_avg, data = evals)
 fit.bty
 
-# PDF p. 43
+# PDF p. 42
 fit.age <- lm(score ~ age, data = evals)
 fit.age
 
-# PDF p. 50
+# PDF p. 49
 fit.bty.sum <- summary(fit.bty)
 fit.bty.sum$r.squared
 fit.age.sum <- summary(fit.age)
 fit.age.sum$r.squared
 
-# PDF p. 51
+# PDF p. 50
 library(broom)
 glance(fit.bty)
 
-# PDF p. 52
+# PDF p. 51
 # fit.x <- lm(y ~ x)  # x and y are simulated for the slide figures and are not created in this script
