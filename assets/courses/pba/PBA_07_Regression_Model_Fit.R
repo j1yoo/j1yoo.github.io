@@ -2,6 +2,10 @@
 # Run selected lines in order in RStudio. "PDF p." refers to the 66-page slides.
 # Packages used today: tidyverse (readr, dplyr, tidyr, ggplot2) and broom.
 # Today's two data sets (health, and UT Austin course evaluations) are read from the web.
+# The same two data sets are also in the course data package pbadata (0.5.0 or later) as health and evals.
+# If a download fails: update pbadata once with the line below (restart R first if pbadata is loaded),
+# then run library(pbadata) instead of the line that reads the data.
+# install.packages("pbadata", type = "source", repos = "https://j1yoo.github.io/assets/courses/pba")
 # If broom is not installed yet, run this line once: install.packages("broom")
 library(tidyverse)
 
