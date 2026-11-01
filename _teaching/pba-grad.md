@@ -85,6 +85,8 @@ materials:
     url: "/assets/courses/pba/PBA_06_Prediction_Iteration_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_06_Prediction_Iteration_Grad.R"
   - title: "Week 9: Regression and Model Fit"
+    url: "/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.R"
   - title: "Week 10: More on Regression"
   - title: "Week 11: Sampling and Sampling Distributions"
   - title: "Week 12: The Bootstrap and Confidence Intervals"
@@ -196,10 +198,11 @@ schedule_content: |
   </div>
 
   **Week 9 (Nov 5): Regression and Model Fit**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.R" download>R script</a>
   - Modeling with a line; linear regression in R
-  - Model fit
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.1](https://moderndive.com/5-regression.html#model1) and [MD §5.3.2](https://moderndive.com/5-regression.html#leastsquares) (linear regression, fitted values, residuals, and least squares); [IMS §7.2.5](https://openintro-ims1.netlify.app/model-slr#r-squared) (R-squared).
-  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.1–4.2.4, 4.2.6; [IMS §§7.1–7.3](https://openintro-ims1.netlify.app/model-slr#fit-line-res-cor) for additional explanation and practice.
+  - Model fit (R-squared); overfitting and the bias–variance trade-off
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.1](https://moderndive.com/5-regression.html#model1) and [MD §5.3.2](https://moderndive.com/5-regression.html#leastsquares) (linear regression, fitted values, residuals, and least squares); [IMS §7.2.5](https://openintro-ims1.netlify.app/model-slr#r-squared) (R-squared). Then work through the Week 9 slides and R script.
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.1–4.2.4, 4.2.6; [IMS §§7.1–7.3](https://openintro-ims1.netlify.app/model-slr#fit-line-res-cor) for additional explanation and practice; [ISLR](https://www.statlearning.com/) (<em>An Introduction to Statistical Learning</em>, 2nd ed., free online) §2.2 (overfitting, bias and variance) and §3.5 (KNN regression).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 3 and Problem Set 1 (IMS Ch. 7) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Course withdrawal period Nov 2–20</em><br>
