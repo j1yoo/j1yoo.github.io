@@ -1,5 +1,5 @@
 # PBA 8. Regression and Model Fit (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 65-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 66-page slides.
 # Packages used today: tidyverse (readr, dplyr, tidyr, ggplot2) and broom.
 # Today's two data sets (health, and UT Austin course evaluations) are read from the web.
 # The same two data sets are also in the course data package pbadata (0.5.0 or later) as health and evals.
@@ -136,3 +136,10 @@ glance(fit.bty)
 
 # PDF p. 51
 # fit.x <- lm(y ~ x)  # x and y are simulated for the slide figures and are not created in this script
+
+# PDF p. 66
+health |>
+    mutate(distance = abs(steps_lag - 5)) |>
+    slice_min(distance, n = 10) |>
+    summarize(mean(weight)) |>
+    pull()
