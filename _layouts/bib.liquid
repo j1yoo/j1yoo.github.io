@@ -172,6 +172,9 @@
           {%- if entry.html %}
             <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button"><i class="fas fa-file-alt"></i> URL</a>
           {%- endif %}
+          {%- if entry.doi %}
+            <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button"><i class="fas fa-file-alt"></i> DOI</a>
+          {%- endif %}
           {%- if entry.pdf %}
             {% if entry.pdf contains '://' -%}
             <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button"><i class="fas fa-file-alt"></i> PDF</a>
