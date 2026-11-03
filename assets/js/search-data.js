@@ -311,8 +311,8 @@ ninja.data = [{
           section: "News",},{id: "news-hosted-prof-minki-kim-kaist-college-of-business-for-an-invited-talk-on-zero-pricing-in-bundle-offers-does-it-reinforce-or-weaken-anticompetitive-effects",
           title: 'Hosted Prof. Minki Kim (KAIST College of Business) for an invited talk on...',
           description: "",
-          section: "News",},{id: "news-welcomed-our-first-child-jeong-yoo-유정-兪晶-into-our-lives-on-april-6-2023",
-          title: '👶 Welcomed our first child, Jeong Yoo (유정 / 兪晶), into our lives...',
+          section: "News",},{id: "news-welcomed-our-first-child-into-our-lives-on-april-6-2023",
+          title: '👶 Welcomed our first child into our lives on April 6, 2023. 🎉...',
           description: "",
           section: "News",},{id: "news-hosted-prof-yuxin-chen-new-york-university-nyu-for-an-invited-talk-on-understanding-the-impacts-of-de-personalization-in-search-algorithm-a-field-experiment-with-a-large-online-retail-platform",
           title: 'Hosted Prof. Yuxin Chen (New York University, NYU) for an invited talk on...',
@@ -350,58 +350,13 @@ ninja.data = [{
           section: "News",},{id: "news-received-the-2025-emerging-scholar-research-award-from-the-college-of-technology-management-national-tsing-hua-university-nthu",
           title: 'Received the 2025 Emerging Scholar Research Award from the College of Technology Management,...',
           description: "",
-          section: "News",},{id: "news-welcomed-our-second-child-ethan-yoo-유이산-兪貽汕-into-our-lives-on-september-27-2025",
-          title: '👶 Welcomed our second child, Ethan Yoo (유이산 / 兪貽汕), into our lives...',
+          section: "News",},{id: "news-welcomed-our-second-child-into-our-lives-on-september-27-2025",
+          title: '👶 Welcomed our second child into our lives on September 27, 2025. 🎊...',
           description: "",
           section: "News",},{id: "news-ms-student-zhan-yi-liao-co-advised-with-po-an-chen-received-the-2025-best-master-39-s-thesis-award-from-the-algorithms-and-computation-theory-society-of-taiwan-to-be-presented-at-cmct-2026",
           title: 'MS student Zhan-Yi Liao (co-advised with Po-An Chen) received the 2025 Best Master&amp;#39;s...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
-            },},{id: "teaching-experiments-and-causal-inference",
+          section: "News",},{id: "teaching-experiments-and-causal-inference",
           title: 'Experiments and Causal Inference',
           description: "A graduate seminar on experimental and quasi-experimental designs for causal inference.",
           section: "Teaching",handler: () => {
