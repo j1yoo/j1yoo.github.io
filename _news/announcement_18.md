@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-👶 Welcomed our first child, **Jeong Yoo (유정 / 兪晶)**, into our lives on April 6, 2023. 🎉
+👶 Welcomed our first child into our lives on April 6, 2023. 🎉
