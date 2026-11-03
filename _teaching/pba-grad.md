@@ -443,7 +443,7 @@ No prerequisites. The course is designed for students from any background who wa
     <div class="ta-info">
       <p class="ta-name">Mave Kimara Alexander</p>
       <p class="ta-affiliation">M.S. Student, Taipei School of Economics and Political Science (TSE) &middot; NTHU IMBA alumna</p>
-      <p class="ta-contact"><i class="fas fa-envelope"></i> alexander.mave [at] gmail.com</p>
+      <p class="ta-contact"><i class="fas fa-envelope"></i> mave [at] gapp.nthu.edu.tw</p>
     </div>
   </div>
 </div>
