@@ -37,7 +37,10 @@ site 3 to 4 minutes later in the three deploys of 2026-11-04. The `check=`
 query and `no-store` keep only the browser's own cache out: the GitHub Pages
 CDN ignores both the query string and the browser's no-cache request headers
 (measured 2026-11-04, `x-cache: HIT` for a new `check=` value), and it may
-keep a copy for up to 600 seconds (`Cache-Control: max-age=600`). Already open PDF views
+keep a copy for up to 600 seconds (`Cache-Control: max-age=600`) between
+deploys. A deploy clears it: on 2026-11-04 the CDN served the new manifest
+3 minutes 13 seconds after the push, the moment GitHub Pages finished, and no
+old copy after that (measured once, at the Singapore edge). Already open PDF views
 are not forcibly refreshed during teaching. Opening the course link again
 checks the current deployment. New pages and refreshed existing course pages
 use the loader; legacy direct PDF URLs retain GitHub Pages behavior.
@@ -53,7 +56,12 @@ commit-pinned mirror address, whose contents never change. After an origin win
 the frame downloads the file from GitHub Pages a second time. This matters right
 after a file changes: the new commit's mirror can fail for a few minutes (about
 3 minutes on 2026-10-05, when GitHub Pages took 36 s for 14 MB), so the origin
-wins and the wait can nearly double (estimate, not measured). The origin transfer
+wins and the wait can nearly double (estimate, not measured). The "Warm course
+mirror" workflow (`_scripts/warm_course_mirror.py`) asks the mirror for each
+changed course file right after every push, so the mirror can fetch the new
+version while GitHub Pages deploys; its log shows how long each file took. It
+asks from GitHub's servers, so whether this also readies the mirror edge that
+students reach in Taiwan is not yet measured. The origin transfer
 uses `cache: no-cache`: the browser still asks GitHub Pages for the current
 file every time, and the stored response lets the new tab, or opening the file
 again within ten minutes (304 Not Modified), skip a second transfer (tested in

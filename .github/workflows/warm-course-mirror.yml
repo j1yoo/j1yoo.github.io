@@ -1,0 +1,27 @@
+name: Warm course mirror
+
+# Right after a push that changes files under assets/, asks the jsDelivr mirror for each changed course file, so the
+# mirror can fetch the new version while "Deploy site" and GitHub Pages deploy. See _scripts/COURSE_MATERIALS.md.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  warm:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+      - name: Ask the mirror for the changed files
+        run: python3 -u _scripts/warm_course_mirror.py "${{ github.event.before }}" "${{ github.sha }}"
