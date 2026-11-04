@@ -274,7 +274,7 @@ schedule_content: |
 textbooks_content: |
   ## Reading Materials
 
-  Completing the assigned reading before each class is part of your responsibility throughout the semester, as set out in the syllabus. The weekly schedule now distinguishes **Required reading (before class)** from **Further reading (optional)**. Work through the required sections and their examples, running any accompanying R code, and arrive ready to participate in discussions and exercises. Bring questions from your preparation so we can work through them in class.
+  Completing the assigned reading before each class is part of your responsibility throughout the semester, as set out in the syllabus. The weekly schedule distinguishes **Required reading (before class)** from **Further reading (optional)**. Work through the required sections and their examples, running any accompanying R code, and arrive ready to participate in discussions and exercises. Bring questions from your preparation so we can work through them in class.
 
   We learn R through practical data-analysis questions. Class time will focus on working through code, interpreting results, and making changes to answer new questions. Programming foundations such as objects, operators, data structures, and functions will be explained and revisited as we use them in visualization, data wrangling, and later analyses. Questions about these foundations are welcome throughout the course.
 

@@ -74,7 +74,7 @@ materials:
   - title: "Week 4: Causality"
     url: "/assets/courses/pba/PBA_04_Causality_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_04_Causality.R"
-  - title: "Week 5: No class meeting (Causality II moved to Oct 15)"
+  - title: "Week 5: No class meeting"
   - title: "Week 6: Causality II: DAGs and Covariate Selection"
     url: "/assets/courses/pba/PBA_05_DAGs.pdf"
     script_url: "/assets/courses/pba/PBA_05_DAGs.R"
@@ -156,7 +156,7 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-github/">GitHub setup guide</a> posted</em>
   </div>
 
-  **Week 5 (Oct 8): No class meeting (Causality II moved to Oct 15)**
+  **Week 5 (Oct 8): No class meeting**
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 2 released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-data/">Guide to finding data</a> posted</em><br>
@@ -286,7 +286,7 @@ schedule_content: |
 textbooks_content: |
   ## Reading Materials
 
-  Completing the assigned reading before each class is part of your responsibility throughout the semester, as set out in the syllabus. The weekly schedule now distinguishes **Required reading (before class)** from **Further reading (optional)**. Work through the required sections and their examples, running any accompanying R code, and arrive ready to participate in discussions and exercises. Bring questions from your preparation so we can work through them in class.
+  Completing the assigned reading before each class is part of your responsibility throughout the semester, as set out in the syllabus. The weekly schedule distinguishes **Required reading (before class)** from **Further reading (optional)**. Work through the required sections and their examples, running any accompanying R code, and arrive ready to participate in discussions and exercises. Bring questions from your preparation so we can work through them in class.
 
   We learn R through practical data-analysis questions. Class time will focus on working through code, interpreting results, and making changes to answer new questions. Programming foundations such as objects, operators, data structures, and functions will be explained and revisited as we use them in visualization, data wrangling, and later analyses. Questions about these foundations are welcome throughout the course.
 
