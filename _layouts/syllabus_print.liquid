@@ -22,15 +22,20 @@
   /* 1in margins as in the posted syllabus. The side margins sit in the body padding so that the
      schedule table can reach past them as the Word table does without Chrome shrinking the page. */
   @page { size: Letter; margin: 1in .5in; }
+  /* Times New Roman for the text, as in the CV; the deploy server prints it with Liberation Serif, which
+     has the same widths. Georgia in the header block; where it is missing (the deploy server) Gelasio, an
+     open font with Georgia's widths kept in assets/fonts/syllabus/ (SIL OFL), takes its place. */
+  @font-face { font-family: "Gelasio"; src: url("../../../assets/fonts/syllabus/Gelasio-VariableFont_wght.ttf") format("truetype"); font-weight: 400 700; font-style: normal; }
+  @font-face { font-family: "Gelasio"; src: url("../../../assets/fonts/syllabus/Gelasio-Italic-VariableFont_wght.ttf") format("truetype"); font-weight: 400 700; font-style: italic; }
   :root { --line: 12.94pt; }
   * { box-sizing: border-box; }
-  body { margin: 0; padding: 0 .5in; color: #000; background: #fff; font-family: Garamond, "EB Garamond", serif; font-size: 11.5pt; line-height: var(--line); text-align: justify; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; padding: 0 .5in; color: #000; background: #fff; font-family: "Times New Roman", "Liberation Serif", serif; font-size: 11pt; line-height: var(--line); text-align: justify; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   @media screen { body { max-width: 7.5in; margin: 1in auto; } }
   a, a:visited { color: #0000ff; text-decoration: underline; }
-  code { font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: .85em; }
+  code { font-family: "Courier New", "Liberation Mono", monospace; font-size: .85em; }
   p { margin: 0 0 var(--line); orphans: 2; widows: 2; }
   p.lead { margin-bottom: 0; }
-  h1, h2, h3 { font-size: 11.5pt; line-height: var(--line); font-weight: bold; text-align: left; break-after: avoid; page-break-after: avoid; }
+  h1, h2, h3 { font-size: 11pt; line-height: var(--line); font-weight: bold; text-align: left; break-after: avoid; page-break-after: avoid; }
 
   /* Header block */
   h1.title { font-size: 16pt; line-height: 18pt; text-align: center; margin: 0 0 10pt; }

@@ -127,6 +127,11 @@ jobs:
         run: |
           bundle exec ruby _scripts/check_cv_sources.rb
           npm run pdf
+      - name: Generate syllabus PDFs from the course pages
+        # Prints teaching/<course>/syllabus-print/ to the PDF its course page lists as the syllabus,
+        # replacing the committed copy in _site. If it fails, the committed PDFs stay and the deploy goes on.
+        continue-on-error: true
+        run: node _scripts/generate_syllabus_pdfs.js
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4

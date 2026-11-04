@@ -10,10 +10,10 @@ const path = require('path');
 const fs = require('fs');
 const { pathToFileURL } = require('url');
 
-// The posted Word syllabus uses Garamond for the text and Georgia in the header block.
-// The open look-alikes EB Garamond and Gelasio are accepted in their place.
+// The text is Times New Roman, as in the CV (Liberation Serif, of the same widths, on the deploy server),
+// and the header block Georgia (Gelasio, of the same widths, kept in assets/fonts/syllabus/, on the server).
 const FONT_GROUPS = [
-  { families: ['Garamond', 'EB Garamond'], selectors: ['h1', 'h2', 'h3', 'p:not(.instructor)', 'li', 'strong', 'em', 'a:not(.info a)', '.grading td', 'table.schedule th', 'table.schedule td div'] },
+  { families: ['Times New Roman', 'Liberation Serif'], selectors: ['h1', 'h2', 'h3', 'p:not(.instructor)', 'li', 'strong', 'em', 'a:not(.info a)', '.grading td', 'table.schedule th', 'table.schedule td div'] },
   { families: ['Georgia', 'Gelasio'], selectors: ['p.instructor', 'table.info td', 'table.info i', 'table.info a'] }
 ];
 const MIN_SHARE = 0.98;
