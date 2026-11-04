@@ -42,7 +42,11 @@
   .instructor { font-family: Georgia, Gelasio, serif; font-size: 11pt; line-height: 12.6pt; text-align: center; margin: 0; }
   .instructor + .instructor { margin-top: 12.6pt; }
   table.info { width: 100%; margin-top: 10pt; border-collapse: collapse; border-top: .5pt solid #000; border-bottom: .5pt solid #000; font-family: Georgia, Gelasio, serif; font-size: 9pt; line-height: 10.3pt; text-align: left; }
-  table.info td { width: 50%; height: 14.5pt; padding: 2.1pt 6pt 2.1pt 13.3pt; vertical-align: middle; }
+  /* Two columns that each stack their own lines, one item (and one TA) per line at the Word table's row pitch (14.5pt) */
+  table.info td { padding: 0 6pt 0 13.3pt; vertical-align: top; white-space: nowrap; }
+  table.info td:first-child { width: 46%; }
+  table.info td > div { padding: 2.1pt 0; }
+  table.info .ta { display: grid; grid-template-columns: auto 1fr; column-gap: .25em; }
   .cjk { font-family: "Heiti TC", "PingFang TC", "Noto Sans CJK TC", sans-serif; font-style: normal; }
 
   /* Sections */
@@ -56,8 +60,6 @@
   li > p:last-child { margin-bottom: 0; }
   ul > li { padding-left: 18pt; }
   ul > li::before { content: "\2022"; left: 0; }
-  /* The posted syllabus prints these lists without their bullet glyphs */
-  ul.plain > li::before { content: none; }
   /* Numbered lists as in the posted syllabus: number at 0.25in, text at 0.5in */
   .reading { counter-reset: book; }
   .reading li { padding-left: 36pt; counter-increment: book; }

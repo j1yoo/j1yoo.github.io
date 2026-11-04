@@ -13,8 +13,8 @@ const { pathToFileURL } = require('url');
 // The text is Times New Roman, as in the CV (Liberation Serif, of the same widths, on the deploy server),
 // and the header block Georgia (Gelasio, of the same widths, kept in assets/fonts/syllabus/, on the server).
 const FONT_GROUPS = [
-  { families: ['Times New Roman', 'Liberation Serif'], selectors: ['h1', 'h2', 'h3', 'p:not(.instructor)', 'li', 'strong', 'em', 'a:not(.info a)', '.grading td', 'table.schedule th', 'table.schedule td div'] },
-  { families: ['Georgia', 'Gelasio'], selectors: ['p.instructor', 'table.info td', 'table.info i', 'table.info a'] }
+  { families: ['Times New Roman', 'Liberation Serif'], selectors: ['h1', 'h2', 'h3', 'p:not(.instructor)', 'li', 'strong', 'em:not(.info em)', 'a:not(.info a)', '.grading td', 'table.schedule th', 'table.schedule td div'] },
+  { families: ['Georgia', 'Gelasio'], selectors: ['p.instructor', 'table.info div', 'table.info em', 'table.info a'] }
 ];
 const MIN_SHARE = 0.98;
 // Page number as in the posted syllabus: Times New Roman 10pt, centered, about 0.25in above the page edge.
