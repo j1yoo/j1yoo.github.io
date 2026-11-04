@@ -1,0 +1,117 @@
+---
+---
+{%- comment -%}
+  Print syllabus, laid out like the Word syllabus posted in assets/courses/.
+  _scripts/generate_syllabus_pdfs.js prints it to a Letter PDF.
+  The header and the course sections are the print page's own content, kept as in the
+  posted syllabus. The weekly schedule comes from the course page whose URL is page.course,
+  and the notes under it from page.notes. Self-contained (no site CSS or JS) so it prints
+  from file://; the PDF script makes the site-relative links absolute.
+{%- endcomment -%}
+{%- assign course = site.teaching | where: "url", page.course | first -%}
+{%- assign weeks = course.schedule_content | syllabus_schedule -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="syllabus-pdf" content="{{ course.syllabus }}">
+<meta name="site-url" content="{{ site.url }}{{ site.baseurl }}/">
+<title>{{ course.course_number }}: {{ course.title }}</title>
+<style>
+  /* 1in margins as in the posted syllabus. The side margins sit in the body padding so that the
+     schedule table can reach past them as the Word table does without Chrome shrinking the page. */
+  @page { size: Letter; margin: 1in .5in; }
+  :root { --line: 12.94pt; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 .5in; color: #000; background: #fff; font-family: Garamond, "EB Garamond", serif; font-size: 11.5pt; line-height: var(--line); text-align: justify; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @media screen { body { max-width: 7.5in; margin: 1in auto; } }
+  a, a:visited { color: #0000ff; text-decoration: underline; }
+  code { font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: .85em; }
+  p { margin: 0 0 var(--line); orphans: 2; widows: 2; }
+  p.lead { margin-bottom: 0; }
+  h1, h2, h3 { font-size: 11.5pt; line-height: var(--line); font-weight: bold; text-align: left; break-after: avoid; page-break-after: avoid; }
+
+  /* Header block */
+  h1.title { font-size: 16pt; line-height: 18pt; text-align: center; margin: 0 0 10pt; }
+  .instructor { font-family: Georgia, Gelasio, serif; font-size: 11pt; line-height: 12.6pt; text-align: center; margin: 0; }
+  .instructor + .instructor { margin-top: 12.6pt; }
+  table.info { width: 100%; margin-top: 10pt; border-collapse: collapse; border-top: .5pt solid #000; border-bottom: .5pt solid #000; font-family: Georgia, Gelasio, serif; font-size: 9pt; line-height: 10.3pt; text-align: left; }
+  table.info td { width: 50%; height: 14.5pt; padding: 2.1pt 6pt 2.1pt 13.3pt; vertical-align: middle; }
+  .cjk { font-family: "Heiti TC", "PingFang TC", "Noto Sans CJK TC", sans-serif; font-style: normal; }
+
+  /* Sections */
+  h2 { margin: calc(2 * var(--line)) 0 0; }
+  h2.first { margin-top: 24pt; }
+  h2.schedule-heading { margin: calc(3 * var(--line)) 0 var(--line); }
+  h3.sub { margin: var(--line) 0; }
+  ul, ol { margin: 0 0 var(--line); padding: 0; list-style: none; }
+  li { position: relative; }
+  li::before { position: absolute; }
+  li > p:last-child { margin-bottom: 0; }
+  ul > li { padding-left: 18pt; }
+  ul > li::before { content: "\2022"; left: 0; }
+  /* The posted syllabus prints these lists without their bullet glyphs */
+  ul.plain > li::before { content: none; }
+  /* Numbered lists as in the posted syllabus: number at 0.25in, text at 0.5in */
+  .reading { counter-reset: book; }
+  .reading li { padding-left: 36pt; counter-increment: book; }
+  .reading li::before { content: counter(book) "."; left: 18pt; font-weight: bold; }
+  ol.requirements { counter-reset: req; }
+  ol.requirements > li { padding-left: 36pt; counter-increment: req; margin-bottom: var(--line); }
+  ol.requirements > li::before { content: counter(req) "."; left: 18pt; }
+  ol.requirements ol.alpha { counter-reset: sub; }
+  ol.requirements ol.alpha > li { padding-left: 36pt; counter-increment: sub; }
+  ol.requirements ol.alpha > li::before { content: counter(sub, lower-alpha) "."; left: 18pt; }
+
+  /* Grading table: centered, rules above and below the header and at the end */
+  .grading table { width: 310pt; margin: 23pt auto var(--line); border-collapse: collapse; border-top: .5pt solid #000; border-bottom: .5pt solid #000; }
+  .grading th, .grading td { padding: 5.4pt 16.3pt; text-align: left !important; font-weight: normal; }
+  .grading th { font-weight: bold; border-bottom: .5pt solid #000; }
+  .grading th:last-child, .grading td:last-child { text-align: right !important; }
+  /* Milestone table inside the final project item: rule under the header only, centered on the page */
+  ol.requirements table { margin: 0 0 var(--line) 77pt; border-collapse: collapse; }
+  ol.requirements th, ol.requirements td { padding: .5pt 1pt; text-align: left !important; font-weight: normal; }
+  ol.requirements th { border-bottom: .5pt solid #000; }
+  ol.requirements td:first-child, ol.requirements th:first-child { width: 174pt; }
+  ol.requirements td:last-child, ol.requirements th:last-child { width: 67pt; }
+
+  /* Weekly schedule: 0.5pt rules, column lines inside only, rows kept whole. The reading column
+     is wider than in the Word table because the course page lists more reading per week. */
+  table.schedule { width: 486pt; margin-left: -5pt; border-collapse: collapse; table-layout: fixed; border-bottom: .5pt solid #000; text-align: left; }
+  table.schedule col.week { width: 40.5pt; }
+  table.schedule col.topics { width: 175pt; }
+  table.schedule col.reading { width: 171pt; }
+  table.schedule col.deliverable { width: 99.5pt; }
+  table.schedule tr { break-inside: avoid; page-break-inside: avoid; }
+  table.schedule th, table.schedule td { border-top: .5pt solid #000; padding: 5pt 5.75pt; vertical-align: top; font-weight: normal; overflow-wrap: break-word; }
+  table.schedule th + th, table.schedule td + td { border-left: .5pt solid #000; }
+  table.schedule th { text-align: center; vertical-align: middle; }
+  table.schedule th.reading { font-weight: bold; }
+  table.schedule td.week { text-align: center; }
+  table.schedule td.topics { color: #7030a0; }
+  .notes { margin-top: 3pt; }
+  .notes p { margin-bottom: 0; }
+</style>
+</head>
+<body>
+{{ content }}
+
+<h2 class="schedule-heading">TENTATIVE WEEKLY SCHEDULE:</h2>
+<table class="schedule">
+  <colgroup><col class="week"><col class="topics"><col class="reading"><col class="deliverable"></colgroup>
+  <tr><th>Week</th><th>Topics</th><th class="reading">Preparation and reading</th><th>In-class deliverable</th></tr>
+  {%- for week in weeks %}
+  <tr class="week">
+    <td class="week">#{{ week.number }}<br>({{ week.date }})</td>
+    <td class="topics"><div>{{ week.title }}{% if week.topics.size > 0 %}:{% endif %}</div>{% for topic in week.topics %}<div>&bull; {{ topic }}</div>{% endfor %}</td>
+    <td>{% for group in week.reading %}<div><strong>{{ group.label }}</strong></div>{% for item in group.items %}<div>{{ item }}</div>{% endfor %}{% endfor %}{% for note in week.notes %}<div>{{ note }}</div>{% endfor %}</td>
+    <td>{% for item in week.deliverables %}<div>{{ item }}</div>{% endfor %}</td>
+  </tr>
+  {%- endfor %}
+</table>
+<div class="notes">
+{{ page.notes | markdownify }}
+</div>
+</body>
+</html>
