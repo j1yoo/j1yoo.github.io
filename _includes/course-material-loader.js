@@ -6,6 +6,10 @@
   const IDLE_MS = 12000;
   const TRANSFER_MS = 120000;
   const MAX_VERSION_CHANGES = 2;
+  // The origin copy goes through the HTTP cache: "no-cache" still asks GitHub Pages for the current file every time,
+  // and the stored response lets the new tab, or opening the file again (304 Not Modified), skip a second transfer.
+  const ORIGIN_FETCH = { cache: "no-cache", credentials: "same-origin" };
+  const MIRROR_FETCH = { cache: "no-store", credentials: "omit" };
   // Course files, and large downloads directly inside an assets/ folder except CVs (whose deployed copy is
   // regenerated after the build). The manifest decides which of these exist.
   const COURSE_FILE = /^\/assets\/courses\/(pba|eci)\/[^/]+\.(pdf|r)$/i;
@@ -92,6 +96,13 @@
     }
   }
 
+  // GitHub Pages ignores the query, so this address always serves the latest deployment; v= only keys the browser cache.
+  function originUrl(entry) {
+    const origin = new URL(entry.path, location.origin);
+    origin.searchParams.set("v", entry.sha256);
+    return origin.href;
+  }
+
   function mirrorUrl(entry) {
     if (typeof entry.mirror_url !== "string") return null;
     try {
@@ -110,7 +121,7 @@
     ui["progress-text"].textContent = (run.received / 1000000).toFixed(1) + " / " + (expected / 1000000).toFixed(1) + " MB";
   }
 
-  async function verifiedBytes(url, entry, run, controller) {
+  async function verifiedBytes(url, entry, run, controller, options) {
     let idle;
     const resetIdle = function () {
       clearTimeout(idle);
@@ -119,7 +130,7 @@
     const total = setTimeout(function () { controller.abort(); }, TRANSFER_MS);
     resetIdle();
     try {
-      const response = await fetch(url, { cache: "no-store", credentials: "omit", signal: controller.signal });
+      const response = await fetch(url, Object.assign({ signal: controller.signal }, options));
       if (!response.ok) throw failure("The material could not be loaded.", "network");
       resetIdle();
       const chunks = [];
@@ -152,8 +163,6 @@
   }
 
   function receive(entry, run) {
-    const origin = new URL(entry.path, location.origin);
-    origin.searchParams.set("v", entry.sha256);
     const mirror = mirrorUrl(entry);
     return new Promise(function (resolve, reject) {
       let finished = false;
@@ -163,17 +172,17 @@
       let hedge;
       const transfers = [];
 
-      function launch(url, source) {
+      function launch(url, source, options) {
         pending++;
         const controller = controllerFor(run);
         transfers.push(controller);
-        verifiedBytes(url, entry, run, controller).then(function (bytes) {
+        verifiedBytes(url, entry, run, controller, options).then(function (bytes) {
           if (finished) return;
           finished = true;
           clearTimeout(hedge);
           run.timers.delete(hedge);
           transfers.forEach(function (other) { other.abort(); });
-          resolve({ bytes: bytes, source: source });
+          resolve({ bytes: bytes, source: source, url: url });
         }).catch(function (error) {
           pending--;
           lastError = error;
@@ -193,10 +202,10 @@
         mirrorStarted = true;
         clearTimeout(hedge);
         run.timers.delete(hedge);
-        launch(mirror, "mirror");
+        launch(mirror, "mirror", MIRROR_FETCH);
       }
 
-      launch(origin.href, "origin");
+      launch(originUrl(entry), "origin", ORIGIN_FETCH);
       if (mirror) {
         hedge = setTimeout(startMirror, HEDGE_MS);
         run.timers.add(hedge);
@@ -204,7 +213,7 @@
     });
   }
 
-  function present(bytes, entry, run, source) {
+  function present(bytes, entry, run, source, address) {
     if (!isCurrent(run)) return;
     const isPdf = /\.pdf$/i.test(entry.path);
     const type = isPdf ? "application/pdf" : /\.(r|rmd|qmd)$/i.test(entry.path) ? "text/plain;charset=utf-8" : "application/octet-stream";
@@ -213,12 +222,16 @@
     ui["download-file"].download = entry.filename;
     ui["download-file"].hidden = false;
     ui["loading-panel"].hidden = true;
-    ui.status.textContent = isPdf ? "Ready." : "Your download is ready.";
+    ui.status.textContent = isPdf ? "Ready. If the PDF does not appear, use Download." : "Your download is ready.";
     if (isPdf) {
-      const viewerUrl = objectUrl + (fragment ? "#" + fragment : "");
-      ui["open-direct"].href = viewerUrl;
+      // Browser PDF viewers name a saved copy after the end of the address they show, and a blob address ends in a
+      // random ID. So the viewer opens the address the checked bytes came from (the commit-pinned mirror never changes),
+      // and the browser loads it once more for the frame. The new tab opens the site's own address: after an origin
+      // win it reuses the checked copy, and a bookmark of it shows the latest deployment, never an old commit.
+      const hash = fragment ? "#" + fragment : "";
+      ui["open-direct"].href = originUrl(entry) + hash;
       ui["open-direct"].hidden = false;
-      ui["pdf-viewer"].src = viewerUrl;
+      ui["pdf-viewer"].src = address + hash;
       ui["pdf-viewer"].title = entry.filename;
       ui["pdf-viewer"].hidden = false;
     }
@@ -263,7 +276,7 @@
           continue;
         }
         if (transferError) throw transferError;
-        present(result.bytes, latest, run, result.source);
+        present(result.bytes, latest, run, result.source, result.url);
         return;
       }
       throw failure("The material is being updated. Please try again.", "version");
