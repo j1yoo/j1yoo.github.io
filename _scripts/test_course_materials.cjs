@@ -59,6 +59,7 @@ const currentR = Buffer.from("# verified course material\nx <- c(1, 2, 3)\nmean(
 let base;
 let active;
 let browser;
+let cachingBrowser;
 const sockets = new Set();
 
 function entry(file, bytes) {
@@ -92,6 +93,25 @@ function respond(res, body, status = 200, mime = "application/pdf") {
   res.end(bytes);
 }
 
+// The caching headers GitHub Pages sends with a course PDF (measured 2026-11-04), with its answer to a revalidation.
+function respondLikePages(req, res, bytes, state) {
+  const etag = `"${sha256(bytes).slice(0, 16)}"`;
+  if (req.headers["if-none-match"] === etag) {
+    state.notModified += 1;
+    res.writeHead(304, { ETag: etag, "Cache-Control": "max-age=600" });
+    return res.end();
+  }
+  res.writeHead(200, {
+    "Content-Type": "application/pdf",
+    "Content-Length": bytes.length,
+    "Cache-Control": "max-age=600",
+    ETag: etag,
+    "Accept-Ranges": "bytes",
+    "Access-Control-Allow-Origin": "*",
+  });
+  res.end(bytes);
+}
+
 function delayedBody(res, bytes, delayMs) {
   const timer = setTimeout(() => {
     if (!res.destroyed) respond(res, bytes);
@@ -102,7 +122,9 @@ function delayedBody(res, bytes, delayMs) {
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, "http://localhost");
   const state = active;
-  const record = { path: url.pathname, url: url.href, at: performance.now(), aborted: false };
+  // The PDF viewer frame reads the checked address once more; only the loader's own transfers are counted.
+  const viewer = req.headers["sec-fetch-dest"] === "iframe";
+  const record = { path: url.pathname, url: url.href, at: performance.now(), aborted: false, viewer };
   if (state) state.requests.push(record);
   res.on("close", () => { record.aborted = !res.writableEnded; });
   if (url.pathname === "/assets/data/course-materials.json") {
@@ -112,11 +134,11 @@ const server = http.createServer((req, res) => {
     return respond(res, JSON.stringify(result), 200, "application/json");
   }
   if (originPaths.includes(url.pathname)) {
-    state.originCount += 1;
+    if (!viewer) state.originCount += 1;
     return state.origin(req, res, state.originCount);
   }
   if (url.pathname.startsWith("/mirror/")) {
-    state.mirrorCount += 1;
+    if (!viewer) state.mirrorCount += 1;
     return state.mirror(req, res, state.mirrorCount);
   }
   let resource = path.resolve(site, `.${decodeURIComponent(url.pathname)}`);
@@ -140,6 +162,7 @@ function defaults() {
     manifestCount: 0,
     originCount: 0,
     mirrorCount: 0,
+    notModified: 0,
     getManifest: () => manifest(),
     origin: (_req, res) => respond(res, currentPdf),
     mirror: (_req, res) => respond(res, currentPdf),
@@ -151,7 +174,7 @@ async function open(page, file = pdfPath, fragment = "") {
 }
 
 async function ready(page) {
-  await page.waitForFunction(() => /^(Ready\.|Your download is ready\.)$/.test(document.querySelector("#status")?.textContent.trim() || ""), null, { timeout: 6500 });
+  await page.waitForFunction(() => /^(Ready\. If the PDF does not appear, use Download\.|Your download is ready\.)$/.test(document.querySelector("#status")?.textContent.trim() || ""), null, { timeout: 6500 });
 }
 
 async function failure(page) {
@@ -159,6 +182,27 @@ async function failure(page) {
   assert.equal(await page.locator("#pdf-viewer").getAttribute("src"), null, "failure must never expose a PDF blob");
   const href = await page.locator("#download-file").getAttribute("href");
   assert.ok(!href || !href.startsWith("blob:"), "failure must never expose a download blob");
+}
+
+// Chrome's built-in PDF viewer runs in a chrome-extension:// frame inside the page or the viewer iframe.
+async function pdfViewer(page) {
+  for (let i = 0; i < 80; i++) {
+    const frame = page.frames().find((item) => item.url().startsWith("chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/"));
+    if (frame) return frame;
+    await page.waitForTimeout(100);
+  }
+  throw new Error("Chrome's PDF viewer did not load");
+}
+
+// Presses the Download button of Chrome's own PDF viewer and returns the saved name and bytes.
+async function saveFromViewer(page) {
+  const viewer = await pdfViewer(page);
+  const pending = page.waitForEvent("download");
+  await viewer.locator("cr-icon-button[aria-label='Download']").first().click();
+  const download = await pending;
+  const chunks = [];
+  for await (const chunk of await download.createReadStream()) chunks.push(chunk);
+  return { name: download.suggestedFilename(), bytes: Buffer.concat(chunks) };
 }
 
 // GA4 calls the loader queued with gtag(); gtag.js itself is blocked in these offline tests.
@@ -188,8 +232,14 @@ async function verifyBlob(page, expected, file = pdfPath) {
   const bytes = await page.evaluate(async (url) => Array.from(new Uint8Array(await (await fetch(url)).arrayBuffer())), href);
   assert.equal(sha256(Buffer.from(bytes)), sha256(expected), "the published blob must have the expected contents");
   if (file.endsWith(".pdf")) {
-    const source = await page.locator("#pdf-viewer").getAttribute("src");
-    assert.equal(source.split("#")[0], href, "preview and download must use the same verified body");
+    // Chrome names a copy saved from its PDF viewer after the end of the viewer's address, so the viewer opens the
+    // address the checked bytes came from; a blob address would save as a random ID. The new tab always opens the
+    // site's own address, which serves the latest deployment.
+    const viewer = (await page.locator("#pdf-viewer").getAttribute("src")).split("#")[0];
+    const source = ((await gaEvents(page)).filter((event) => event.name === "material_view").pop() || { params: {} }).params.source;
+    const siteAddress = `${base}${file}?v=${sha256(expected)}`;
+    assert.equal(viewer, source === "mirror" ? entry(file, expected).mirror_url : siteAddress, `a ${source} win must show its own checked address`);
+    assert.equal((await page.locator("#open-direct").getAttribute("href")).split("#")[0], siteAddress, "the new tab must open the site's own address");
   }
   const checks = await page.evaluate(() => window.__materialFetches.filter((item) => item.url.includes("/assets/data/course-materials.json")));
   assert.ok(checks.length >= 2, "a fresh manifest must be read again before display");
@@ -199,14 +249,20 @@ async function verifyBlob(page, expected, file = pdfPath) {
   }
 }
 
-async function run(name, configure, check) {
+async function run(name, configure, check, options = {}) {
   active = Object.assign(defaults(), configure || {});
   const state = active;
-  const context = await browser.newContext({ acceptDownloads: true });
-  // Keep the tests offline except for the local fixture server.
-  await context.route("**/*", (route) => {
+  // Playwright turns the HTTP cache off while it routes requests, so the caching tests use their own browser, kept
+  // offline by failing every host name instead.
+  if (options.httpCache && !cachingBrowser) {
+    cachingBrowser = await chromium.launch({ executablePath, headless: true, args: ["--lang=en-US", "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1"] });
+  }
+  const context = await (options.httpCache ? cachingBrowser : browser).newContext({ acceptDownloads: true });
+  // Keep the tests offline except for the local fixture server. Non-web schemes stay local: blob: bodies and the
+  // chrome:// and chrome-extension:// files of Chrome's built-in PDF viewer.
+  if (!options.httpCache) await context.route("**/*", (route) => {
     const url = new URL(route.request().url());
-    if (url.origin === base || url.protocol === "blob:") return route.continue();
+    if (url.origin === base || !/^https?:$/.test(url.protocol)) return route.continue();
     if (url.hostname === "gcore.jsdelivr.net") {
       // A redirect keeps real browser streaming semantics for the CDN body too.
       return route.fulfill({
@@ -268,7 +324,8 @@ async function main() {
   checkBuiltSite();
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   base = `http://127.0.0.1:${server.address().port}`;
-  browser = await chromium.launch({ executablePath, headless: true });
+  // English UI, so the PDF viewer's Download button can be found by its label.
+  browser = await chromium.launch({ executablePath, headless: true, args: ["--lang=en-US"] });
 
   await run("slow origin headers trigger a verified CDN hedge", {
     origin: () => {},
@@ -401,6 +458,61 @@ async function main() {
     const chunks = [];
     for await (const chunk of await download.createReadStream()) chunks.push(chunk);
     assert.deepEqual(Buffer.concat(chunks), currentR);
+  });
+
+  await run("saving from the PDF viewer and from the new tab keeps the original file name", {}, async (page) => {
+    await open(page);
+    await verifyBlob(page, currentPdf);
+    const saved = await saveFromViewer(page);
+    assert.equal(saved.name, "Fault-Test.pdf", "the viewer's own Download must not save a random blob ID");
+    assert.deepEqual(saved.bytes, currentPdf);
+    const tab = await page.context().newPage();
+    await tab.goto(await page.locator("#open-direct").getAttribute("href"));
+    const savedFromTab = await saveFromViewer(tab);
+    assert.equal(savedFromTab.name, "Fault-Test.pdf", "the new-tab view must save under the original name too");
+    assert.deepEqual(savedFromTab.bytes, currentPdf);
+  });
+
+  await run("the new tab reuses the checked origin copy, and reopening asks the site again", {
+    getManifest: () => ({ ...manifest(), materials: { [pdfPath]: { ...entry(pdfPath, currentPdf), mirror_url: null } } }),
+    origin: (req, res) => respondLikePages(req, res, currentPdf, active),
+  }, async (page, state) => {
+    const transfers = () => state.requests.filter((item) => item.path === pdfPath);
+    await open(page);
+    await verifyBlob(page, currentPdf);
+    await pdfViewer(page);
+    // Chrome keeps frame loads apart in its HTTP cache, so the viewer frame reads the file once more.
+    assert.deepEqual(transfers().map((item) => item.viewer), [false, true], "one checked transfer, then one load for the viewer frame");
+    const tab = await page.context().newPage();
+    await tab.goto(await page.locator("#open-direct").getAttribute("href"));
+    await pdfViewer(tab);
+    assert.equal(transfers().length, 2, "the new tab must open the checked copy without downloading it again");
+    const saved = await saveFromViewer(tab);
+    assert.equal(saved.name, "Fault-Test.pdf", "the new tab's own Download must keep the original name");
+    assert.deepEqual(saved.bytes, currentPdf);
+    // A second open still asks GitHub Pages for the current file; an unchanged one comes back as 304 Not Modified.
+    await open(page);
+    await verifyBlob(page, currentPdf);
+    assert.ok(state.notModified >= 1, "reopening must check the cached copy with the site");
+  }, { httpCache: true });
+
+  await run("a viewer request that fails after the check leaves the verified Download in place", {
+    origin: () => {},
+    mirror: (req, res) => req.headers["sec-fetch-dest"] === "iframe" ? respond(res, "unavailable", 503, "text/plain") : respond(res, currentPdf),
+  }, async (page, state) => {
+    await open(page);
+    await verifyBlob(page, currentPdf);
+    const viewerAsked = () => state.requests.some((item) => item.path.startsWith("/mirror/") && item.viewer);
+    for (let i = 0; i < 50 && !viewerAsked(); i++) await page.waitForTimeout(100);
+    assert.ok(viewerAsked(), "the viewer must have asked the mirror");
+    assert.equal((await page.locator("#status").textContent()).trim(), "Ready. If the PDF does not appear, use Download.");
+    const pending = page.waitForEvent("download");
+    await page.locator("#download-file").click();
+    const download = await pending;
+    assert.equal(download.suggestedFilename(), "Fault-Test.pdf");
+    const chunks = [];
+    for await (const chunk of await download.createReadStream()) chunks.push(chunk);
+    assert.deepEqual(Buffer.concat(chunks), currentPdf, "Download must still give the verified copy");
   });
 
   await run("an ECI PDF with a stalled origin is delivered by the verified CDN hedge", {
@@ -573,7 +685,7 @@ async function main() {
     assert.equal(state.originCount + state.mirrorCount, 0, "files outside the allowed shapes must not be requested");
   });
 
-  console.log("All 26 course-material and site-file loader tests passed.");
+  console.log("All 29 course-material and site-file loader tests passed.");
 }
 
 main().catch((error) => {
@@ -581,6 +693,7 @@ main().catch((error) => {
   process.exitCode = 1;
 }).finally(async () => {
   if (browser) await browser.close();
+  if (cachingBrowser) await cachingBrowser.close();
   for (const socket of sockets) socket.destroy();
   server.close();
 });

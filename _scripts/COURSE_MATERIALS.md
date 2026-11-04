@@ -32,13 +32,39 @@ restart at most twice. Manifest failure and integrity mismatch never trigger a
 silent fallback to an older cached file.
 
 Freshness means the latest **published deployment** returned by the origin,
-not an unpushed edit or a deployment still in progress. Already open PDF views
+not an unpushed edit or a deployment still in progress. A push reached the
+site 3 to 4 minutes later in the three deploys of 2026-11-04. The `check=`
+query and `no-store` keep only the browser's own cache out: the GitHub Pages
+CDN ignores both the query string and the browser's no-cache request headers
+(measured 2026-11-04, `x-cache: HIT` for a new `check=` value), and it may
+keep a copy for up to 600 seconds (`Cache-Control: max-age=600`). Already open PDF views
 are not forcibly refreshed during teaching. Opening the course link again
 checks the current deployment. New pages and refreshed existing course pages
 use the loader; legacy direct PDF URLs retain GitHub Pages behavior.
 
 The loader uses the browser PDF viewer and supplies a verified download with
-the original filename. R files and other non-PDF files download automatically
+the original filename. The viewer opens the address the checked bytes came
+from, not a blob address: Chrome names a copy saved from its PDF viewer after
+the end of the address it shows, and a blob address ends in a random ID
+(Safari and Firefox are expected to do the same; not tested). The browser
+loads that address once more for the viewer frame, because Chrome keeps frame
+loads apart in its HTTP cache (tested). After a mirror win this is the
+commit-pinned mirror address, whose contents never change. After an origin win
+the frame downloads the file from GitHub Pages a second time. This matters right
+after a file changes: the new commit's mirror can fail for a few minutes (about
+3 minutes on 2026-10-05, when GitHub Pages took 36 s for 14 MB), so the origin
+wins and the wait can nearly double (estimate, not measured). The origin transfer
+uses `cache: no-cache`: the browser still asks GitHub Pages for the current
+file every time, and the stored response lets the new tab, or opening the file
+again within ten minutes (304 Not Modified), skip a second transfer (tested in
+Chrome). The "Open PDF in a new tab" link always opens the site's own address. GitHub Pages ignores its `?v=` query, so a
+bookmarked tab shows the latest deployment, never an old commit. After a mirror
+win the new tab downloads the file from GitHub Pages and can open slowly on a
+slow day; opening the mirror address instead would be faster, but a bookmark or
+a shared copy of that address would keep showing that version. If the
+viewer's own request fails, the page stays ready and Download still gives the
+verified copy.
+R files and other non-PDF files download automatically
 and retain a manual Download link. With JavaScript disabled, the loader lists
 direct original links.
 No service worker or long-lived application cache is installed.
@@ -78,7 +104,9 @@ name as the page title, and stays silent when the host is not `*.github.io`
 (`file_name`, `file_extension`, `link_url`, `course` = pba, eci, or site,
 `source` = origin or mirror, `load_ms`, `file_size`), `file_download` when the
 Download link is used (`trigger` = button, or auto for non-PDF files), and
-`material_error` with `error_kind` when a file cannot be opened. On the linking
+`material_error` with `error_kind` when a file cannot be opened. "Open PDF in
+a new tab" is an ordinary .pdf link, so GA4's enhanced measurement may record
+its clicks as an automatic `file_download` without `trigger` (not checked). On the linking
 pages, `enhanced-tracking.js` reads `data-material-path`, so `pdf_download`
 keeps the real file name and course. These events reach BigQuery without any
 setup; to see `course`, `source`, or `load_ms` in GA4 reports, register them as
@@ -95,6 +123,8 @@ node _scripts/test_course_materials.cjs /path/to/built/site
 The test script accepts `PLAYWRIGHT_MODULE` and `CHROME_EXECUTABLE`. It uses local
 fixtures rather than live CDN calls, including real partially sent HTTP bodies,
 wrong-version files with matching size, both manifest checks, bounded update
-retries, request cancellation, and R download contents and filenames. It also
-checks the built manifest against the size rule and that the CV pages keep
-direct links.
+retries, request cancellation, and R download contents and filenames. It saves
+PDFs from Chrome's own viewer and from the new tab to check their names, and
+runs one browser with the HTTP cache on (Playwright turns it off while routing)
+to check that the new tab reuses the checked origin copy. It also checks the
+built manifest against the size rule and that the CV pages keep direct links.
