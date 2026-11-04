@@ -106,6 +106,7 @@ schedule_content: |
 
   **Week 1 (Sep 10): Course Introduction and R Programming Basics**
   <a class="badge-slides" href="/assets/courses/pba/PBA_01_Course_Intro_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Reference.pdf">R basics (reference)</a> <a class="badge-slides" href="/assets/courses/pba/PBA_00_R_Basics_Handout.pdf">R basics (handout)</a>
+  - Why learn programming and business analytics; what business analysts do
   - Course aims, organization, and expectations
   - Working in R and RStudio: objects, functions, and packages
   - Reproducible reports with Quarto
@@ -166,6 +167,7 @@ schedule_content: |
 
   **Week 6 (Oct 15): Causality II: DAGs and Covariate Selection**
   <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_05_DAGs.R" download>R script</a>
+  - Drawing and reading DAGs: forks, chains, and colliders
   - Confounding, selection, and the backdoor criterion
   - What to control for, and what not to, in your project
   - With the causal-inference concepts in hand, discuss your research question and data before the proposal is due
@@ -199,6 +201,7 @@ schedule_content: |
 
   **Week 9 (Nov 5): Regression and Model Fit**
   <a class="badge-slides" href="/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.R" download>R script</a>
+  - Predicting with averages: binned means and k-nearest neighbors (KNN)
   - Modeling with a line; linear regression in R
   - Model fit (R-squared); overfitting and the bias–variance trade-off
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.1](https://moderndive.com/5-regression.html#model1) and [MD §5.3.2](https://moderndive.com/5-regression.html#leastsquares) (linear regression, fitted values, residuals, and least squares); [IMS §7.2.5](https://openintro-ims1.netlify.app/model-slr#r-squared) (R-squared). Then work through the Week 9 slides and R script.
@@ -211,7 +214,10 @@ schedule_content: |
 
   **Week 10 (Nov 12): More on Regression**
   - Multiple regression
+  - Many predictors: ridge, lasso, and elastic net; choosing the penalty by cross-validation
+  - Linear regression for experimental data
   - Categorical predictors
+  - Interactions
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
   <div class="schedule-deliverables">
@@ -225,6 +231,7 @@ schedule_content: |
 
   **Week 11 (Nov 19): Sampling and Sampling Distributions**
   - Sampling framework
+  - Sampling distributions and standard errors; unbiasedness and the law of large numbers
   - Random variables; the normal distribution and the central limit theorem
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§7.1–7.3](https://moderndive.com/7-sampling.html#sampling-activity) and [MD §7.5](https://moderndive.com/7-sampling.html#sampling-conclusion-central-limit-theorem) (sampling, sampling distributions, and the central limit theorem).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) (normal models and standard errors).
