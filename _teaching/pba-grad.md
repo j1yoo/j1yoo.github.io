@@ -88,6 +88,8 @@ materials:
     url: "/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_07_Regression_Model_Fit_Grad.R"
   - title: "Week 10: More on Regression"
+    url: "/assets/courses/pba/PBA_08_More_on_Regression_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_08_More_on_Regression_Grad.R"
   - title: "Week 11: Sampling and Sampling Distributions"
   - title: "Week 12: The Bootstrap and Confidence Intervals"
   - title: "Week 13: Hypothesis Testing"
@@ -213,13 +215,15 @@ schedule_content: |
   </div>
 
   **Week 10 (Nov 12): More on Regression**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_08_More_on_Regression_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_08_More_on_Regression_Grad.R" download>R script</a>
   - Multiple regression
   - Many predictors: ridge, lasso, and elastic net; choosing the penalty by cross-validation
   - Linear regression for experimental data
   - Categorical predictors
   - Interactions
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression).
-  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics).
+  - Difference-in-differences as a regression; two-way fixed effects
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression); [ISLR](https://www.statlearning.com/) (<em>An Introduction to Statistical Learning</em>, 2nd ed., free online) §§6.2.1–6.2.3 (ridge, lasso, and choosing the penalty) and §5.1.3 (k-fold cross-validation).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics); ISLR §7.1 (powers of a predictor), §6.4.2 (too many predictors), §6.5.2 (glmnet lab), and §3.3.2 (interactions); [An Introduction to glmnet](https://glmnet.stanford.edu/articles/glmnet.html) (elastic net).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5 (NYC condominiums)</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em><br>
