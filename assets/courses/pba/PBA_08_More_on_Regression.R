@@ -63,9 +63,6 @@ evals_26 |>
 tibble(bty_avg = c(2.5, 4.5), age = 36) |>
     gather_predictions(fit.bty, mult.fit)
 
-new_data <- tibble(bty_avg = c(2.5, 4.5), age = 36)
-augment(mult.fit, newdata = new_data)
-
 
 # Part 2. Many Predictors: Ridge, Lasso, and Elastic Net ----------------------------------------
 
@@ -96,8 +93,11 @@ ames_train <- ames[train, ]; ames_test <- ames[-train, ]  # test: the other 2,86
 nrow(ames_test)   # 2,864 test houses
 
 # Slide 16 (PDF p. 20): Polynomial Regression Can Overfit
-# poly(x, 10) makes the columns x, x^2, ..., x^10 (rescaled so that R can compute them accurately).
-lm(price ~ poly(`Gr Liv Area`, 10), data = ames_train)   # the degree-10 fit on the slide
+# poly(x, p) makes p columns from x, of degree 1 to p. Each column mixes the powers so that R can compute them accurately.
+lm(price ~ poly(`Gr Liv Area`, 2), data = ames_train)               # degree 2
+# I(): inhibit interpretation. Inside I(), R reads ^ as arithmetic ("as is") and computes the square.
+lm(price ~ `Gr Liv Area` + I(`Gr Liv Area`^2), data = ames_train)   # degree 2, with I()
+lm(price ~ poly(`Gr Liv Area`, 10), data = ames_train)              # degree 10
 
 # The figure: fits of degree 1, 2, and 10 to the same 40 training houses (purple); grey: the test houses.
 # Test RMSE uses the 2,748 test houses inside the living-area range of the training houses.
@@ -156,40 +156,39 @@ p  # the slide figure is 8 x 2.9 inches: widen the Plots pane (wide and short) t
 # Slide 17 (PDF p. 21): Few Houses: 27 Predictors Overfit
 rmse <- function(y, yhat) sqrt(mean((y - yhat)^2))   # root mean squared error (Week 9)
 few <- c("Gr Liv Area", "Overall Qual", "Year Built")
-# The slide shows one round of the loop below: i <- sample(...), the two fits, and a test RMSE.
 # R warns "prediction from rank-deficient fit": some predictors (Pool Area, for example) can be 0 for all 40
 # training houses, so lm() cannot estimate their coefficients (NA in coef(fit_all)) and predicts without them.
 
 # The table: the same two fits for 200 random samples of 40 training houses (medians over the 200 samples).
 # The same loop also fits lasso, ridge, and elastic net for the lower table on slide 23.
 # It prints its progress every 20 samples; the warning above appears again at the end.
+# set.seed(r) gives each round its own seed: the least-squares columns are then the same with or without the three penalized fits.
 library(glmnet)   # install.packages("glmnet") once
 X <- as.matrix(ames[, predictors])   # glmnet() takes the predictors as a matrix (slide 23)
 y <- ames$price
 
-res <- tibble(few_train = rep(NA, 200), few_test = NA,       # 1. output: one row per sample
-              all_train = NA, all_test = NA,
-              lasso_test = NA, ridge_test = NA, enet_test = NA)
-set.seed(2026)
+output <- tibble(few_train = rep(NA, 200), few_test = NA,       # 1. output: one row per sample
+                 all_train = NA, all_test = NA,
+                 lasso_test = NA, ridge_test = NA, enet_test = NA)
 for (r in 1:200) {                                            # 2. sequence
-  i <- sample(nrow(ames), 40)   # 40 random training houses        3. body (the slide shows one round)
+  set.seed(r); i <- sample(nrow(ames), 40)                    # 3. body: 40 random houses
   fit_few <- lm(price ~ ., data = ames[i, c("price", few)])
   fit_all <- lm(price ~ ., data = ames[i, c("price", predictors)])
   cv_l <- cv.glmnet(X[i, ], y[i], alpha = 1, nfolds = 5)      # lasso (slide 23)
   cv_r <- cv.glmnet(X[i, ], y[i], alpha = 0, nfolds = 5)      # ridge
   cv_e <- cv.glmnet(X[i, ], y[i], alpha = 0.5, nfolds = 5)    # elastic net
 
-  res$few_train[r] <- rmse(ames$price[i], predict(fit_few))   # predict() without new data: the training houses
-  res$few_test[r] <- rmse(ames$price[-i], predict(fit_few, ames[-i, ]))
-  res$all_train[r] <- rmse(ames$price[i], predict(fit_all))
-  res$all_test[r] <- rmse(ames$price[-i], predict(fit_all, ames[-i, ]))   # the slide's last line
-  res$lasso_test[r] <- rmse(y[-i], predict(cv_l, X[-i, ], s = "lambda.min"))
-  res$ridge_test[r] <- rmse(y[-i], predict(cv_r, X[-i, ], s = "lambda.min"))
-  res$enet_test[r] <- rmse(y[-i], predict(cv_e, X[-i, ], s = "lambda.min"))
+  output$few_train[r] <- rmse(ames$price[i], predict(fit_few, ames[i, ]))    # training RMSE
+  output$few_test[r] <- rmse(ames$price[-i], predict(fit_few, ames[-i, ]))   # test RMSE
+  output$all_train[r] <- rmse(ames$price[i], predict(fit_all, ames[i, ]))
+  output$all_test[r] <- rmse(ames$price[-i], predict(fit_all, ames[-i, ]))
+  output$lasso_test[r] <- rmse(y[-i], predict(cv_l, X[-i, ], s = "lambda.min"))
+  output$ridge_test[r] <- rmse(y[-i], predict(cv_r, X[-i, ], s = "lambda.min"))
+  output$enet_test[r] <- rmse(y[-i], predict(cv_e, X[-i, ], s = "lambda.min"))
 
   if (r %% 20 == 0) print(paste0("Completed ", r, "th iteration."))  # show progress every 20 samples
 }
-res |> summarize(across(few_train:all_test, median))   # the table on the slide: medians over the 200 samples
+output |> summarize(across(few_train:all_test, median))   # the table on the slide: medians over the 200 samples
 
 # Slide 18 (PDF p. 22): Too Many Columns, Even with Many Houses
 # 378 columns: the 27 predictors and the product of every pair of them (351 products).
@@ -200,24 +199,24 @@ res |> summarize(across(few_train:all_test, median))   # the table on the slide:
 ames27 <- ames |> select(price, all_of(predictors))
 ncol(model.matrix(price ~ .^2, data = ames27)) - 1   # 378 columns (model.matrix: slide 41), not counting the intercept
 
-res378 <- tibble(ls27_train = rep(NA, 200), ls27_test = NA,   # 1. output: one row per split
-                 ls378_train = NA, ls378_test = NA)
+output378 <- tibble(ls27_train = rep(NA, 200), ls27_test = NA,   # 1. output: one row per split
+                    ls378_train = NA, ls378_test = NA)
 set.seed(2026)
 for (r in 1:200) {                                            # 2. sequence
   tr <- sample(nrow(ames27), 2323)                            # 3. body: 80% of the houses for training
   fit27 <- lm(price ~ ., data = ames27[tr, ])                 # 27 predictors
   fit378 <- lm(price ~ .^2, data = ames27[tr, ])              # 378 columns
 
-  res378$ls27_train[r] <- rmse(ames27$price[tr], predict(fit27))
-  res378$ls27_test[r] <- rmse(ames27$price[-tr], predict(fit27, ames27[-tr, ]))
-  res378$ls378_train[r] <- rmse(ames27$price[tr], predict(fit378))
-  res378$ls378_test[r] <- rmse(ames27$price[-tr], predict(fit378, ames27[-tr, ]))
+  output378$ls27_train[r] <- rmse(ames27$price[tr], predict(fit27))
+  output378$ls27_test[r] <- rmse(ames27$price[-tr], predict(fit27, ames27[-tr, ]))
+  output378$ls378_train[r] <- rmse(ames27$price[tr], predict(fit378))
+  output378$ls378_test[r] <- rmse(ames27$price[-tr], predict(fit378, ames27[-tr, ]))
 
   if (r %% 20 == 0) print(paste0("Completed ", r, "th iteration."))  # show progress every 20 splits
 }
-res378 |> summarize(across(everything(), median))   # the table: medians over the 200 splits
-sum(res378$ls378_test > res378$ls27_test)          # splits where the 378 columns did worse on the test houses
-max(res378$ls378_test)                             # test RMSE in the worst split
+output378 |> summarize(across(everything(), median))   # the table: medians over the 200 splits
+sum(output378$ls378_test > output378$ls27_test)          # splits where the 378 columns did worse on the test houses
+max(output378$ls378_test)                             # test RMSE in the worst split
 
 # Slide 20 (PDF p. 24): Ridge Shrinks; Lasso Sets Some to Zero
 # The figure: ridge and lasso coefficients for 8 predictors as lambda grows (all 2,904 houses).
@@ -252,7 +251,7 @@ p1 <- ggplot(paths, aes(x = log_lambda, y = coef, color = variable)) +
                   segment.size = 0.2, min.segment.length = 0, show.legend = FALSE) +
   facet_wrap(~ method, nrow = 1, scales = "free_x") +
   scale_x_continuous(expand = expansion(mult = c(0.32, 0.03))) +   # room on the left of each panel for the labels
-  labs(x = "log(lambda): a higher price for large coefficients to the right", y = "Coefficient (same scale)") +
+  labs(x = "log(lambda): a larger penalty to the right", y = "Coefficient (same scale)") +
   theme(legend.position = "none")
 p1  # the slide figure is 8 x 3.6 inches: widen the Plots pane (wide and short) to see the same shape
 # ggsave("B08_coef_paths.pdf", p1, width = 8, height = 3.6)  # saves it at the slide's size
@@ -260,7 +259,7 @@ p1  # the slide figure is 8 x 3.6 inches: widen the Plots pane (wide and short) 
 # Slide 21 (PDF p. 25): A Little Bias for Much Less Variance
 # The table: 900 fixed test houses; 200 training sets of 40 houses drawn from the other houses.
 # Spread = standard deviation of a test house's predicted price over the 200 training sets, averaged over the 900 houses.
-# The loop also records whether lasso and elastic net keep garage cars and garage area (slide 23).
+# The loop also records whether lasso and elastic net keep garage cars and garage area (slide 25).
 # It prints its progress every 20 training sets; the rank-deficient warning appears again at the end.
 set.seed(2026)
 n <- nrow(ames)
@@ -306,76 +305,52 @@ cv <- cv.glmnet(X[i, ], y[i], alpha = 1, nfolds = 5)
 cv$lambda.min                              # the chosen lambda
 sum(coef(cv, s = "lambda.min")[-1] != 0)   # number of predictors the chosen lasso keeps
 
-cvd <- tibble(log_lambda = log(cv$lambda), rmse = sqrt(cv$cvm))   # cvm: the average test MSE over the 5 folds
-p2 <- ggplot(cvd, aes(x = log_lambda, y = rmse)) +
+cvd <- tibble(lambda = cv$lambda, rmse = sqrt(cv$cvm))   # cvm: the average test MSE over the 5 folds
+p2 <- ggplot(cvd, aes(x = lambda, y = rmse)) +
   geom_line(color = "darkorange", linewidth = 1) +
   geom_point(color = "darkorange", size = 1) +
-  geom_vline(xintercept = log(cv$lambda.min), linetype = "dashed", color = Tsinghua_Purple) +
-  annotate("text", x = log(cv$lambda.min), y = max(cvd$rmse), label = "lowest average test error",
+  geom_vline(xintercept = cv$lambda.min, linetype = "dashed", color = Tsinghua_Purple) +
+  annotate("text", x = cv$lambda.min, y = 75, label = paste0("lowest average test error\n(lambda = ", round(cv$lambda.min, 1), ")"),
            hjust = -0.05, vjust = 1, size = 3, color = Tsinghua_Purple) +
-  annotate("text", x = min(cvd$log_lambda), y = min(cvd$rmse), label = "small lambda:\nhigh variance",
-           hjust = 0, vjust = 0, size = 3, color = "grey30") +
-  annotate("text", x = max(cvd$log_lambda), y = min(cvd$rmse), label = "large lambda:\nhigh bias",
-           hjust = 1, vjust = 0, size = 3, color = "grey30") +
-  labs(x = "log(lambda)", y = "Test RMSE from 5-fold CV ($1,000s)")
+  annotate("text", x = 0.5, y = 60, label = "high\nvariance", hjust = 0, size = 3, color = "grey30") +
+  annotate("text", x = 25, y = 50, label = "high bias", hjust = 1, size = 3, color = "grey30") +
+  coord_cartesian(xlim = c(0, 25), ylim = c(40, 75)) +   # zoom in: lambda goes on to 86, outside the picture
+  labs(x = "lambda (shown up to 25 of 86)", y = "Test RMSE from 5-fold CV ($1,000s)")
 p2  # the slide figure is 6 x 3.8 inches
 # ggsave("B08_cv_lasso.pdf", p2, width = 6, height = 3.8)  # saves it at the slide's size
 
 # Slide 23 (PDF p. 27): In R: Penalized Models Predict Better
-set.seed(2026); train <- sample(nrow(ames), 40)   # the seed again, so cv.glmnet() draws the same 5 folds as on slide 22
 library(glmnet)   # install.packages("glmnet") once
-# ames_train, ames_test, predictors: made in today's R script
-x <- as.matrix(ames_train[, predictors])   # the 27 predictors
-# alpha = 1: lasso; alpha = 0: ridge; between 0 and 1 (here 0.5): elastic net
-cv <- cv.glmnet(x, ames_train$price, alpha = 1, nfolds = 5)   # 5 folds (default: 10)
-coef(cv, s = "lambda.min")   # coefficients at the chosen lambda
+x <- as.matrix(ames_train[, predictors])   # ames_train, ames_test, predictors: slide 15
+set.seed(2026); train <- sample(nrow(ames), 40)   # the same 5 folds as on slide 22
+# keep = TRUE saves the fold of each house in cv$foldid, so that ridge and elastic net use the same folds.
+cv <- cv.glmnet(x, ames_train$price, alpha = 1, nfolds = 5, keep = TRUE)   # lasso
+cv_r <- cv.glmnet(x, ames_train$price, alpha = 0, foldid = cv$foldid)      # ridge
+cv_e <- cv.glmnet(x, ames_train$price, alpha = 0.5, foldid = cv$foldid)    # elastic net
 x_test <- as.matrix(ames_test[, predictors])
-predict(cv, newx = x_test, s = "lambda.min")   # 2,864 predicted prices: add |> head() to see only the first six
+pred <- predict(cv, newx = x_test, s = "lambda.min")   # predicted test-house prices
+rmse(ames_test$price, pred)   # test RMSE; rmse(): slide 17
 
-# The table: medians over the 200 samples of slide 17 (res)
-res |> summarize(across(c(all_test, lasso_test, ridge_test, enet_test), median))
+# The table: the same code repeated over the 200 samples of slide 17 (output): medians of the 200 test RMSEs.
+output |> summarize(across(c(all_test, lasso_test, ridge_test, enet_test), median))
 
+# Slide 24 (PDF p. 28): Three Test Houses: Which Model Predicts Closer?
+# The trained models predict the prices of the test houses. All five models were fit to the same 40 training houses.
+ls3 <- lm(price ~ ., data = ames_train[, c("price", few)])           # few: slide 17
+ls27 <- lm(price ~ ., data = ames_train[, c("price", predictors)])   # all 27 predictors
+# Our own function. predict() returns a matrix with one column; [, 1] keeps that column.
+pred_net <- function(fit) predict(fit, newx = x_test, s = "lambda.min")[, 1]  # for glmnet
+
+# var: the name of the new column. slice() keeps the rows with these numbers.
+ames_test |>   # all 2,864 test houses
+    add_predictions(ls3, var = "least_sq3") |> add_predictions(ls27, var = "least_sq27") |>
+    mutate(lasso = pred_net(cv), ridge = pred_net(cv_r), elastic_net = pred_net(cv_e)) |>
+    select(actual_price = price, least_sq3:elastic_net) |>
+    slice(2, 53, 435)   # a cheap, a mid-priced, and an expensive house
+
+# Slide 25 (PDF p. 29): Careful: Lasso Picks Predictors, Not Causes
 # Garage cars and garage area in the 200 training sets of slide 21
 mean(garage_l == 1)   # share of training sets where lasso kept only one of the two
-mean(garage_e == 2)   # elastic net kept both
-mean(garage_l == 2)   # lasso kept both
-
-# Slide 24 (PDF p. 28): Three Test Houses: Who Predicts Closer?
-# Five models fit to the same 40 training houses as on slide 15, and their predicted prices for three test houses.
-# foldid: the 5 folds that cv.glmnet(..., nfolds = 5) drew on slide 22, written out so that
-# all three penalized models use the same folds (the lasso is then the same as on slide 22).
-set.seed(2026)
-i <- sample(nrow(ames), 40)
-foldid <- sample(rep(seq(5), length = 40))
-ls3 <- lm(price ~ ., data = ames[i, c("price", few)])
-ls27 <- lm(price ~ ., data = ames[i, c("price", predictors)])
-cv_l <- cv.glmnet(X[i, ], y[i], alpha = 1, foldid = foldid)
-cv_r <- cv.glmnet(X[i, ], y[i], alpha = 0, foldid = foldid)
-cv_e <- cv.glmnet(X[i, ], y[i], alpha = 0.5, foldid = foldid)
-
-te <- setdiff(1:nrow(ames), i)   # the 2,864 test houses
-pred <- tibble(row = te, actual = y[te],
-               ls3 = predict(ls3, ames[te, ]),
-               ls27 = predict(ls27, ames[te, ]),
-               lasso = as.numeric(predict(cv_l, X[te, ], s = "lambda.min")),
-               ridge = as.numeric(predict(cv_r, X[te, ], s = "lambda.min")),
-               enet = as.numeric(predict(cv_e, X[te, ], s = "lambda.min")))
-
-# Three test houses: the first house at the 10th, 50th, and 90th percentiles of price.
-# quantile(..., type = 1) returns prices that occur in the data.
-q <- quantile(pred$actual, c(.1, .5, .9), type = 1)
-pick <- rep(NA, 3)
-for (j in 1:3) {
-  pick[j] <- which(pred$actual == q[j])[1]
-}
-houses <- pred[pick, ] |>
-  mutate(house = c("A", "B", "C"), pct = names(q),
-         area = ames$`Gr Liv Area`[row], quality = ames$`Overall Qual`[row], built = ames$`Year Built`[row])
-houses |>   # the table on the slide: one column per house; prices in $1,000s, rounded
-  select(house, area, quality, built, actual, ls3, ls27, lasso, ridge, enet) |>
-  mutate(across(actual:enet, ~ round(.x))) |>
-  pivot_longer(area:enet, names_to = "row", values_to = "value") |>
-  pivot_wider(names_from = house, values_from = value)
 
 # Slide 26 (PDF p. 30): Lasso for Controls: Use Double Selection
 # Simulated data: 200 people, 50 candidate controls; the first 5 are confounders that drive the treatment T
