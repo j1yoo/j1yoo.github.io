@@ -1,11 +1,11 @@
 # PBA 5. Causality II: DAGs and Covariate Selection (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 60-page slides.
+# Run selected lines in order in RStudio. "Slide" is the number at the bottom right of each slide; "PDF p." in parentheses is the page in a PDF viewer.
 # Packages used today: tidyverse (dplyr, tidyr), the course data package pbadata (0.2.0 or later), and dagitty.
 # dagitty is new today. Install it once: remove the "# " in front of the next line, run it, then put the "# " back.
 # install.packages("dagitty")
 library(tidyverse)
 
-# PDF p. 7: Week 4 Line Pay comparisons, overall and within tech-savviness groups
+# Slide 5 (PDF p. 7): Week 4 Line Pay comparisons, overall and within tech-savviness groups
 library(pbadata)
 LinePay_data <- linepay
 
@@ -23,7 +23,7 @@ LinePay_data |>
     pivot_wider(names_from = line_pay_adopt, values_from = avg_spending) |>
     mutate(diff = adopted - unadopted)
 
-# PDF p. 14: a DAG is a recipe for data (fork: X -> T, X -> Y, no arrow T -> Y)
+# Slide 11 (PDF p. 14): a DAG is a recipe for data (fork: X -> T, X -> Y, no arrow T -> Y)
 set.seed(1008)
 n <- 2000
 tech  <- rbinom(n, 1, 0.5)                 # X: no parents
@@ -31,12 +31,12 @@ adopt <- rbinom(n, 1, 0.3 + 0.4 * tech)    # T: parent X
 spend <- 50 + 20 * tech + rnorm(n, 0, 10)  # Y: parent X only
 fork  <- tibble(tech, adopt, spend)
 
-# PDF p. 20
+# Slide 15 (PDF p. 20)
 fork |>
     group_by(adopt) |>
     summarize(avg_spend = mean(spend))
 
-# PDF p. 21
+# Slide 16 (PDF p. 21)
 fork |>
     group_by(tech, adopt) |>
     summarize(avg_spend = mean(spend)) |>
@@ -44,7 +44,7 @@ fork |>
                 names_prefix = "adopt_") |>
     mutate(diff = adopt_1 - adopt_0)
 
-# PDF p. 22: chain (T -> M -> Y)
+# Slide 17 (PDF p. 22): chain (T -> M -> Y)
 set.seed(1008)
 adopt  <- rbinom(n, 1, 0.5)                    # T: no parents
 coupon <- rbinom(n, 1, 0.2 + 0.5 * adopt)      # M: parent T
@@ -55,7 +55,7 @@ chain |>
     group_by(adopt) |>
     summarize(avg_spend = mean(spend))
 
-# PDF p. 23
+# Slide 18 (PDF p. 23)
 chain |>
     group_by(coupon, adopt) |>
     summarize(avg_spend = mean(spend)) |>
@@ -63,7 +63,7 @@ chain |>
                 names_prefix = "adopt_") |>
     mutate(diff = adopt_1 - adopt_0)
 
-# PDF p. 24: collider (T -> C <- Y)
+# Slide 19 (PDF p. 24): collider (T -> C <- Y)
 set.seed(1008)
 adopt  <- rbinom(n, 1, 0.5)                        # T: no parents
 spend  <- 50 + rnorm(n, 0, 10)                     # Y: no parents
@@ -74,13 +74,13 @@ collider |>
     group_by(adopt) |>
     summarize(avg_spend = mean(spend))
 
-# PDF p. 25
+# Slide 20 (PDF p. 25)
 collider |>
     filter(member == 1) |>
     group_by(adopt) |>
     summarize(avg_spend = mean(spend), n = n())
 
-# PDF p. 33
+# Slide 26 (PDF p. 33)
 LinePay_data |>
     group_by(gender, line_pay_adopt) |>
     summarize(avg_spending = mean(spending_post)) |>
@@ -88,7 +88,7 @@ LinePay_data |>
     pivot_wider(names_from = line_pay_adopt, values_from = avg_spending) |>
     mutate(diff = adopted - unadopted)
 
-# PDF p. 41
+# Slide 33 (PDF p. 41)
 library(dagitty)
 g <- dagitty('dag {
       X -> Z -> T -> Y
@@ -99,14 +99,14 @@ g <- dagitty('dag {
 latents(g) <- c("U1", "U2")   # unobserved
 plot(g)
 
-# PDF p. 42
+# Slide 34 (PDF p. 42)
 parents(g, "T")
 descendants(g, "T")
 paths(g, "T", "Y")$paths
 paths(g, "T", "Y", directed = TRUE)$paths
 dseparated(g, "Z", "M", c("T"))
 
-# PDF p. 43
+# Slide 35 (PDF p. 43)
 adjustmentSets(g, "T", "Y")
 adjustmentSets(g, "T", "Y", type = "all")
 # The list also shows sets with U1 or U2, which we cannot use because they are unobserved.

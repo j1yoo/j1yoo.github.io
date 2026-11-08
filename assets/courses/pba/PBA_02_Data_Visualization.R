@@ -1,42 +1,42 @@
 # PBA 2. Data Visualization (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 55-page slides.
+# Run selected lines in order in RStudio. "Slide" is the number at the bottom right of each slide; "PDF p." in parentheses is the page in a PDF viewer.
 # Packages used today: ggplot2, gapminder, dplyr. Install once: install.packages(c("pacman", "ggplot2", "gapminder", "dplyr"))
 
-# PDF p. 6
+# Slide 6 (PDF p. 6)
 # Install once: install.packages(c("pacman", "ggplot2"))
 # Load with library() or require(), or let pacman do both:
 pacman::p_load(ggplot2)
 midwest
 
-# PDF p. 7
+# Slide 7 (PDF p. 7)
 ggplot(midwest, mapping = aes(x = percollege, y = percbelowpoverty)) +
   geom_point() + geom_smooth()   # the curve: loess, local smoothing
 
-# PDF p. 8
+# Slide 8 (PDF p. 8)
 ggplot(midwest, mapping = aes(x = percollege)) +
   geom_histogram()
 
-# PDF p. 11
+# Slide 11 (PDF p. 11)
 p <- ggplot(data = midwest)
 
-# PDF p. 11
+# Slide 11 (PDF p. 11)
 p <- ggplot(data = midwest,
               mapping = aes(x = popdensity,
                             y = percbelowpoverty))
 
-# PDF p. 12
+# Slide 12 (PDF p. 12)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty)) +
     geom_point()
 
-# PDF p. 14
+# Slide 14 (PDF p. 14)
 ggplot(data = midwest,
          mapping = aes(x = popdensity, 
                        y = percbelowpoverty)) +
     geom_smooth()
 
-# PDF p. 16
+# Slide 16 (PDF p. 16)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty)) +
@@ -44,7 +44,7 @@ ggplot(data = midwest,
     geom_smooth() +
     scale_x_log10() # Log scale for the skewed x variable
 
-# PDF p. 18
+# Slide 18 (PDF p. 18)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty)) +
@@ -52,7 +52,7 @@ ggplot(data = midwest,
     geom_smooth(method = "lm", se = F) +
     scale_x_log10()
 
-# PDF p. 20
+# Slide 20 (PDF p. 20)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty)) +
@@ -65,7 +65,7 @@ ggplot(data = midwest,
          subtitle = "Among Counties in the Midwest",
          caption = "Source: US Census, 2000")
 
-# PDF p. 22
+# Slide 22 (PDF p. 22)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty,
@@ -74,7 +74,7 @@ ggplot(data = midwest,
     geom_smooth() +
     scale_x_log10()
 
-# PDF p. 25
+# Slide 25 (PDF p. 25)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty)) +
@@ -82,7 +82,7 @@ ggplot(data = midwest,
     geom_smooth() +
     scale_x_log10()
 
-# PDF p. 27
+# Slide 27 (PDF p. 27)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty,
@@ -92,7 +92,7 @@ ggplot(data = midwest,
     geom_smooth() +
     scale_x_log10()
 
-# PDF p. 29
+# Slide 29 (PDF p. 29)
 ggplot(data = midwest,
          mapping = aes(x = popdensity,
                        y = percbelowpoverty)) +
@@ -100,50 +100,50 @@ ggplot(data = midwest,
     geom_smooth(color = "black") +
     scale_x_log10()
 
-# PDF p. 33
+# Slide 33 (PDF p. 33)
 ggplot2::midwest ## If needed: install.packages("ggplot2")
 
-# PDF p. 34
+# Slide 34 (PDF p. 34)
 require(ggplot2)
 ggplot(data = midwest,
        mapping = aes(x = percbelowpoverty)) +
   geom_histogram()
 
-# PDF p. 36
+# Slide 36 (PDF p. 36)
 ggplot(data = midwest,
        mapping = aes(x = percbelowpoverty)) +
   geom_histogram() +
   facet_wrap(~ state)
 
-# PDF p. 38
+# Slide 38 (PDF p. 38)
 ggplot(data = midwest,
        mapping = aes(x = percbelowpoverty,
                      fill = state, color = state)) +
   geom_density(alpha = 0.3)
 
-# PDF p. 40
+# Slide 40 (PDF p. 40)
 ggplot(data = midwest,
        mapping = aes(x = state,
                      y = percbelowpoverty)) +
   geom_boxplot()
 
-# PDF p. 44
+# Slide 44 (PDF p. 44)
 require(gapminder)
 dplyr::glimpse(gapminder)
 
-# PDF p. 45
+# Slide 45 (PDF p. 45)
 ggplot(data = gapminder,
        mapping = aes(x = year,
                      y = gdpPercap)) +
   geom_line() # Didn't specify how to group the lines..
 
-# PDF p. 47
+# Slide 47 (PDF p. 47)
 ggplot(data = gapminder,
        mapping = aes(x = year,
                      y = gdpPercap)) +
   geom_line(mapping = aes(group = country))
 
-# PDF p. 49
+# Slide 49 (PDF p. 49)
 ggplot(data = gapminder,
        mapping = aes(x = year,
                      y = gdpPercap)) +
@@ -153,4 +153,4 @@ ggplot(data = gapminder,
 
 # ---------------- Appendix: data types (reference, pp. 80-84) ----------------
 
-# PDF p. 51-51  In-class exercise E1 (Gapminder): write your own code here and upload it to eeclass.
+# Slides 51-51 (PDF pp. 51-51)  In-class exercise E1 (Gapminder): write your own code here and upload it to eeclass.
