@@ -8,7 +8,7 @@
 # evals and minwage are also in pbadata: if a download fails, run library(pbadata) instead of the line that reads them.
 # If modelr, glmnet, or ggrepel is not installed yet, run this line once: install.packages(c("modelr", "glmnet", "ggrepel"))
 #
-# The script has four parts, like the slides. RStudio lists them in the outline of the script.
+# The script has four parts and an appendix, like the slides. RStudio lists them in the outline of the script.
 # A model fit many times uses the for loop from PBA 6 (Prediction and Iteration): 1. output, 2. sequence, 3. body.
 # Four loops take a while. On a Mac Studio (M1 Ultra): slide 17 about 10 seconds, slide 18 about 1 minute,
 # slide 21 about 10 seconds, and slide 26 about 20 seconds. Slower computers may take two or three times as long.
@@ -69,7 +69,7 @@ augment(mult.fit, newdata = new_data)
 
 # Part 2. Many Predictors: Ridge, Lasso, and Elastic Net ----------------------------------------
 
-# Slide 15 (PDF p. 19): Ames Housing Data in R
+# Slide 15 (PDF p. 19): Ames Data in R: 40 Training Houses
 # predictors: the 27 numeric features of the Ames data (size, quality, year built, rooms, garage, and more)
 predictors <- c("Lot Area", "Overall Qual", "Overall Cond", "Year Built", "Year Remod/Add", "Mas Vnr Area",
                 "Total Bsmt SF", "Gr Liv Area", "Bsmt Full Bath", "Bsmt Half Bath", "Full Bath", "Half Bath",
@@ -91,10 +91,11 @@ median(ames$price)  # the median sale price in the table on slide 14
 # set.seed() makes the random draws the same every time; sample(n, 40) draws 40 of the row numbers 1 to n.
 set.seed(2026)
 train <- sample(nrow(ames), 40)                          # 40 training houses
+# data[rows, columns], as in Week 1 (R basics); -train means all rows but train
 ames_train <- ames[train, ]; ames_test <- ames[-train, ]  # test: the other 2,864 houses
 nrow(ames_test)   # 2,864 test houses
 
-# Slide 16 (PDF p. 20): More Columns from One Predictor: Powers of x
+# Slide 16 (PDF p. 20): Powers of x Can Overfit
 # poly(x, 10) makes the columns x, x^2, ..., x^10 (rescaled so that R can compute them accurately).
 lm(price ~ poly(`Gr Liv Area`, 10), data = ames_train)   # the degree-10 fit on the slide
 
@@ -152,12 +153,12 @@ p <- ggplot() +
 p  # the slide figure is 8 x 2.9 inches: widen the Plots pane (wide and short) to see the same shape
 # ggsave("B08_poly_degrees_gap.pdf", p, width = 8, height = 2.9)  # saves it at the slide's size
 
-# Slide 17 (PDF p. 21): Too Many Predictors
+# Slide 17 (PDF p. 21): Few Houses: 27 Predictors Overfit
 rmse <- function(y, yhat) sqrt(mean((y - yhat)^2))   # root mean squared error (Week 9)
 few <- c("Gr Liv Area", "Overall Qual", "Year Built")
 fit_few <- lm(price ~ ., data = ames_train[, c("price", few)])         # 3 predictors
 fit_all <- lm(price ~ ., data = ames_train[, c("price", predictors)])  # all 27 predictors
-rmse(ames_test$price, predict(fit_all, ames_test))   # test RMSE (R script: 200 samples)
+rmse(ames_test$price, predict(fit_all, ames_test))   # 73.7 here (table: median of 200)
 # R warns "prediction from rank-deficient fit": some predictors (Pool Area, for example) are 0 for all 40
 # training houses, so lm() cannot estimate their coefficients (NA in coef(fit_all)) and predicts without them.
 
@@ -192,7 +193,7 @@ for (r in 1:200) {                                            # 2. sequence
 }
 res |> summarize(across(few_train:all_test, median))   # the table on the slide: medians over the 200 samples
 
-# Slide 18 (PDF p. 22): What If We Add Hundreds of Columns?
+# Slide 18 (PDF p. 22): Too Many Columns, Even with Many Houses
 # 378 columns: the 27 predictors and the product of every pair of them (351 products).
 # In a formula, .^2 means every predictor plus every product of two predictors (an interaction, slide 43).
 # 200 random splits: 2,323 training houses (80% of 2,904) and 581 test houses.
@@ -220,7 +221,7 @@ res378 |> summarize(across(everything(), median))   # the table: medians over th
 sum(res378$ls378_test > res378$ls27_test)          # splits where the 378 columns did worse on the test houses
 max(res378$ls378_test)                             # test RMSE in the worst split
 
-# Slide 20 (PDF p. 24): Ridge vs. Lasso
+# Slide 20 (PDF p. 24): Ridge Shrinks; Lasso Sets Some to Zero
 # The figure: ridge and lasso coefficients for 8 predictors as lambda grows (all 2,904 houses).
 # Each predictor becomes a z-score (PBA 5): mean 0 and standard deviation 1, so the 8 are on the same scale.
 # glmnet() fits the model for 100 values of lambda at once; alpha = 0 is ridge and alpha = 1 is lasso.
@@ -258,7 +259,7 @@ p1 <- ggplot(paths, aes(x = log_lambda, y = coef, color = variable)) +
 p1  # the slide figure is 8 x 3.6 inches: widen the Plots pane (wide and short) to see the same shape
 # ggsave("B08_coef_paths.pdf", p1, width = 8, height = 3.6)  # saves it at the slide's size
 
-# Slide 21 (PDF p. 25): Why the Price Helps: Bias and Variance
+# Slide 21 (PDF p. 25): A Little Bias for Much Less Variance
 # The table: 900 fixed test houses; 200 training sets of 40 houses drawn from the other houses.
 # Spread = standard deviation of a test house's predicted price over the 200 training sets, averaged over the 900 houses.
 # The loop also records whether lasso and elastic net keep garage cars and garage area (slide 23).
@@ -322,7 +323,7 @@ p2 <- ggplot(cvd, aes(x = log_lambda, y = rmse)) +
 p2  # the slide figure is 6 x 3.8 inches
 # ggsave("B08_cv_lasso.pdf", p2, width = 6, height = 3.8)  # saves it at the slide's size
 
-# Slide 23 (PDF p. 27): Ridge, Lasso, and Elastic Net in R
+# Slide 23 (PDF p. 27): In R: Penalized Models Predict Better
 set.seed(2026); train <- sample(nrow(ames), 40)   # the seed again, so cv.glmnet() draws the same 5 folds as on slide 22
 library(glmnet)   # install.packages("glmnet") once
 # ames_train, ames_test, predictors: made in today's R script
@@ -341,7 +342,7 @@ mean(garage_l == 1)   # share of training sets where lasso kept only one of the 
 mean(garage_e == 2)   # elastic net kept both
 mean(garage_l == 2)   # lasso kept both
 
-# Slide 24 (PDF p. 28): What Price Does Each Model Predict?
+# Slide 24 (PDF p. 28): Three Test Houses: Who Predicts Closer?
 # Five models fit to the same 40 training houses as on slide 15, and their predicted prices for three test houses.
 # foldid: the 5 folds that cv.glmnet(..., nfolds = 5) drew on slide 22, written out so that
 # all three penalized models use the same folds (the lasso is then the same as on slide 22).
@@ -378,7 +379,7 @@ houses |>   # the table on the slide: one column per house; prices in $1,000s, r
   pivot_longer(area:enet, names_to = "row", values_to = "value") |>
   pivot_wider(names_from = house, values_from = value)
 
-# Slide 26 (PDF p. 30): When Lasso Chooses Controls: Double Selection
+# Slide 26 (PDF p. 30): Lasso for Controls: Use Double Selection
 # Simulated data: 200 people, 50 candidate controls; the first 5 are confounders that drive the treatment T
 # strongly and the outcome Y weakly; the true effect of T is 1. 500 simulated samples; lambda by 5-fold CV.
 # It prints its progress every 50 samples.
@@ -509,7 +510,7 @@ n_distinct(bli$book)   # number of books: factor(book) adds one binary variable 
 # Part 4. Interactions --------------------------------------------------------------------------
 
 # Slide 44 (PDF p. 50): Finishing x Experience in R
-fit.int <- lm(purchase_intent ~ finished * experience + genre_match +
+fit.int <- lm(purchase_intent ~ finished + finished:experience + genre_match +   # the model of the paper's Table 8
                   factor(person) + factor(book), data = survey)
 coef(fit.int)[c("finished", paste0("finished:experience", 2:5))] |> round(3)
 
@@ -526,7 +527,7 @@ effects <- function(fit) {   # the effect of finishing at each experience level
 ggplot(effects(fit.int), aes(x = experience, y = effect)) + geom_line() + geom_point()
 
 # The figure on the slide, with labels and colors. Larger text (base_size = 14) because the figure is small on
-# the slide; theme_set() keeps it for the next figure too.
+# the slide; theme_set(theme_gray()) after the figure puts the default back.
 theme_set(theme_gray(base_size = 14))
 base <- ggplot(mapping = aes(x = experience, y = effect)) +
   geom_hline(yintercept = 0, color = "grey50", linetype = "dashed") +
@@ -538,28 +539,12 @@ p_int <- base +
   geom_point(data = effects(fit.int), color = Tsinghua_Purple, size = 2.4)
 p_int  # the slide figure is 6 x 3.6 inches
 # ggsave("B08_jnm_interaction_gap.pdf", p_int, width = 6, height = 3.6)  # saves it at the slide's size
-
-# Slide 46 (PDF p. 52): Comparing Within the Same Person
-fit.raw <- lm(purchase_intent ~ finished *
-                experience + genre_match,
-                data = survey)   # no dummies
-effects(fit.raw)   # the orange line
-
-# The figure on the slide: the gap with and without person and book dummies
-eff <- bind_rows(effects(fit.int) |> mutate(model = "With person and book dummies"),
-                 effects(fit.raw) |> mutate(model = "Without dummies"))
-p_wp <- base +
-  geom_line(data = eff, aes(color = model, group = model), linewidth = 1) +
-  geom_point(data = eff, aes(color = model), size = 2.4) +
-  scale_color_manual(values = c("With person and book dummies" = Tsinghua_Purple,   # the two line colors
-                                "Without dummies" = "darkorange")) +
-  labs(color = NULL) +
-  theme(legend.position = "top")
-p_wp  # the slide figure is 6 x 3.8 inches
-# ggsave("B08_jnm_within_person_gap.pdf", p_wp, width = 6, height = 3.8)  # saves it at the slide's size
 theme_set(theme_gray())   # back to the default text size
 
-# Slide 47 (PDF p. 53): Difference-in-Differences as a Regression
+
+# Appendix. Difference-in-Differences as a Regression ------------------------------------------
+
+# Appendix slide 1 (PDF p. 58): Difference-in-Differences as a Regression
 minwage <- as_tibble(read.csv(url("https://bit.ly/3QZmodH")))   # same data as before
 long <- minwage |>
     mutate(id = 1:n(), nj = if_else(location == "PA", 0, 1),
@@ -569,7 +554,7 @@ long <- minwage |>
     mutate(post = if_else(period == "fte_after", 1, 0))
 lm(fte ~ nj * post, data = long) |> coef() |> round(2)
 
-# Slide 48 (PDF p. 54): Two-Way Fixed Effects
+# Appendix slide 2 (PDF p. 59): Two-Way Fixed Effects
 fit.twfe <- lm(fte ~ nj:post + post + factor(id), data = long)
 coef(fit.twfe)[c("post", "nj:post")] |> round(2)
 n_distinct(long$id)   # number of restaurants: factor(id) adds one binary variable for each restaurant but the first

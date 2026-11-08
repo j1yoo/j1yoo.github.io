@@ -208,7 +208,7 @@ schedule_content: |
   - Linear regression for experimental data
   - Categorical predictors
   - Interactions
-  - Difference-in-differences as a regression; two-way fixed effects
+  - Difference-in-differences as a regression; two-way fixed effects (appendix)
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §5.2](https://moderndive.com/5-regression.html#model2) (categorical predictors); [MD §§6.1–6.2](https://moderndive.com/6-multiple-regression.html#model4) (multiple regression); [ISLR](https://www.statlearning.com/) (<em>An Introduction to Statistical Learning</em>, 2nd ed., free online) §§6.2.1–6.2.3 (ridge, lasso, and choosing the penalty) and §5.1.3 (k-fold cross-validation).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics); ISLR §7.1 (powers of a predictor), §6.4.2 (too many predictors), §6.5.2 (glmnet lab), and §3.3.2 (interactions); [An Introduction to glmnet](https://glmnet.stanford.edu/articles/glmnet.html) (elastic net).
   <div class="schedule-deliverables">
