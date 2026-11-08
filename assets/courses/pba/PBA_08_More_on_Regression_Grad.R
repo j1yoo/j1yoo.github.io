@@ -95,7 +95,7 @@ train <- sample(nrow(ames), 40)                          # 40 training houses
 ames_train <- ames[train, ]; ames_test <- ames[-train, ]  # test: the other 2,864 houses
 nrow(ames_test)   # 2,864 test houses
 
-# Slide 16 (PDF p. 20): Powers of x Can Overfit
+# Slide 16 (PDF p. 20): Polynomial Regression Can Overfit
 # poly(x, 10) makes the columns x, x^2, ..., x^10 (rescaled so that R can compute them accurately).
 lm(price ~ poly(`Gr Liv Area`, 10), data = ames_train)   # the degree-10 fit on the slide
 
@@ -156,10 +156,8 @@ p  # the slide figure is 8 x 2.9 inches: widen the Plots pane (wide and short) t
 # Slide 17 (PDF p. 21): Few Houses: 27 Predictors Overfit
 rmse <- function(y, yhat) sqrt(mean((y - yhat)^2))   # root mean squared error (Week 9)
 few <- c("Gr Liv Area", "Overall Qual", "Year Built")
-fit_few <- lm(price ~ ., data = ames_train[, c("price", few)])         # 3 predictors
-fit_all <- lm(price ~ ., data = ames_train[, c("price", predictors)])  # all 27 predictors
-rmse(ames_test$price, predict(fit_all, ames_test))   # 73.7 here (table: median of 200)
-# R warns "prediction from rank-deficient fit": some predictors (Pool Area, for example) are 0 for all 40
+# The slide shows one round of the loop below: i <- sample(...), the two fits, and a test RMSE.
+# R warns "prediction from rank-deficient fit": some predictors (Pool Area, for example) can be 0 for all 40
 # training houses, so lm() cannot estimate their coefficients (NA in coef(fit_all)) and predicts without them.
 
 # The table: the same two fits for 200 random samples of 40 training houses (medians over the 200 samples).
@@ -174,17 +172,17 @@ res <- tibble(few_train = rep(NA, 200), few_test = NA,       # 1. output: one ro
               lasso_test = NA, ridge_test = NA, enet_test = NA)
 set.seed(2026)
 for (r in 1:200) {                                            # 2. sequence
-  i <- sample(nrow(ames), 40)                                 # 3. body: 40 training houses
+  i <- sample(nrow(ames), 40)   # 40 random training houses        3. body (the slide shows one round)
   fit_few <- lm(price ~ ., data = ames[i, c("price", few)])
   fit_all <- lm(price ~ ., data = ames[i, c("price", predictors)])
   cv_l <- cv.glmnet(X[i, ], y[i], alpha = 1, nfolds = 5)      # lasso (slide 23)
   cv_r <- cv.glmnet(X[i, ], y[i], alpha = 0, nfolds = 5)      # ridge
   cv_e <- cv.glmnet(X[i, ], y[i], alpha = 0.5, nfolds = 5)    # elastic net
 
-  res$few_train[r] <- rmse(y[i], predict(fit_few))            # predict() without new data: the training houses
-  res$few_test[r] <- rmse(y[-i], predict(fit_few, ames[-i, ]))
-  res$all_train[r] <- rmse(y[i], predict(fit_all))
-  res$all_test[r] <- rmse(y[-i], predict(fit_all, ames[-i, ]))
+  res$few_train[r] <- rmse(ames$price[i], predict(fit_few))   # predict() without new data: the training houses
+  res$few_test[r] <- rmse(ames$price[-i], predict(fit_few, ames[-i, ]))
+  res$all_train[r] <- rmse(ames$price[i], predict(fit_all))
+  res$all_test[r] <- rmse(ames$price[-i], predict(fit_all, ames[-i, ]))   # the slide's last line
   res$lasso_test[r] <- rmse(y[-i], predict(cv_l, X[-i, ], s = "lambda.min"))
   res$ridge_test[r] <- rmse(y[-i], predict(cv_r, X[-i, ], s = "lambda.min"))
   res$enet_test[r] <- rmse(y[-i], predict(cv_e, X[-i, ], s = "lambda.min"))
@@ -297,8 +295,8 @@ spread_of <- function(P) {
   }
   mean(sds)
 }
-tibble(method = c("ls3", "ls27", "ridge", "lasso", "enet"),   # the table on the slide: $1,000s, rounded to whole numbers
-       mean_sd = round(c(spread_of(P_ls3), spread_of(P_ls27), spread_of(P_ridge), spread_of(P_lasso), spread_of(P_enet))))
+tibble(model = c("ls3", "ls27", "ridge", "lasso", "enet"),   # the table on the slide: spread in $1,000s, rounded to whole numbers
+       spread = round(c(spread_of(P_ls3), spread_of(P_ls27), spread_of(P_ridge), spread_of(P_lasso), spread_of(P_enet))))
 
 # Slide 22 (PDF p. 26): Choosing lambda: Cross-Validation
 # The figure: 5-fold cross-validation for lasso with the 40 training houses of slide 15
@@ -328,7 +326,7 @@ set.seed(2026); train <- sample(nrow(ames), 40)   # the seed again, so cv.glmnet
 library(glmnet)   # install.packages("glmnet") once
 # ames_train, ames_test, predictors: made in today's R script
 x <- as.matrix(ames_train[, predictors])   # the 27 predictors
-# alpha = 1: lasso; alpha = 0: ridge; alpha = 0.5: elastic net
+# alpha = 1: lasso; alpha = 0: ridge; between 0 and 1 (here 0.5): elastic net
 cv <- cv.glmnet(x, ames_train$price, alpha = 1, nfolds = 5)   # 5 folds (default: 10)
 coef(cv, s = "lambda.min")   # coefficients at the chosen lambda
 x_test <- as.matrix(ames_test[, predictors])
