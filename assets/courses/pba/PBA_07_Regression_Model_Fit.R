@@ -339,7 +339,6 @@ anscombe_long |>
 # for each value in xnew, the average of ytr over the k training points whose xtr is nearest.
 closest_avg <- function(xtr, ytr, xnew, k) sapply(xnew, function(z) mean(ytr[order(abs(xtr - z))[1:k]]))
 
-closest_avg(health$steps_lag, health$weight, 5, k = 10)  # 87.09703, the same as the dplyr code on PDF p. 66
 
 # PDF p. 59
 # 30 random training days; three prediction rules: a straight line, and KNN with k = 5 and k = 1

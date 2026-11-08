@@ -1,5 +1,5 @@
 # PBA 2. Data Visualization (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 54-page slides.
+# Run selected lines in order in RStudio. "PDF p." refers to the 55-page slides.
 # Packages used today: ggplot2, gapminder, dplyr. Install once: install.packages(c("pacman", "ggplot2", "gapminder", "dplyr"))
 
 # PDF p. 6
