@@ -1,5 +1,5 @@
 # PBA 4. Causality (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 61-page slides.
+# Run selected lines in order in RStudio. "Slide" is the number at the bottom right of each slide; "PDF p." in parentheses is the page in a PDF viewer.
 # Packages used today: tidyverse (dplyr, tidyr) and the course data package pbadata (0.2.0 or later).
 # Today's data (ai_tutoring, linepay; both simulated) are in pbadata 0.2.0. If you installed pbadata before today,
 # update it once: remove the "# " in front of the next line, run it, then put the "# " back.
@@ -7,39 +7,39 @@
 # install.packages("pbadata", type = "source", repos = "https://j1yoo.github.io/assets/courses/pba")
 library(tidyverse)
 
-# PDF p. 31
+# Slide 25 (PDF p. 31)
 library(pbadata)
 AI_data <- ai_tutoring
 
-# PDF p. 32
+# Slide 26 (PDF p. 32)
 AI_data # Take a peek at the data!
 
-# PDF p. 33
+# Slide 27 (PDF p. 33)
 treat_mean <- AI_data |>
     filter(treat_ind == 1) |>
     summarize(test_outcome_mean = mean(test_outcome_post))
 treat_mean
 
-# PDF p. 33
+# Slide 27 (PDF p. 33)
 control_mean <- AI_data |>
     filter(treat_ind == 0) |>
     summarize(test_outcome_mean = mean(test_outcome_post))
 control_mean
 
-# PDF p. 34
+# Slide 28 (PDF p. 34)
 treat_mean - control_mean
 
-# PDF p. 35
+# Slide 29 (PDF p. 35)
 AI_data |>
     group_by(treat_ind) |>
     summarize(age_mean = mean(student_age))
 
-# PDF p. 36
+# Slide 30 (PDF p. 36)
 AI_data |>
     group_by(treat_ind, education_level) |>
     summarize(n = n())
 
-# PDF p. 36
+# Slide 30 (PDF p. 36)
 AI_data |>
     group_by(treat_ind, education_level) |>
     summarize(n = n()) |>
@@ -48,7 +48,7 @@ AI_data |>
       values_from = n
     )
 
-# PDF p. 38
+# Slide 32 (PDF p. 38)
 AI_data |>
     mutate(
       treat_ind = if_else(treat_ind == 1, "Treated", "Control"),
@@ -64,13 +64,13 @@ AI_data |>
       diff_in_means = Treated - Control
     )
 
-# PDF p. 42
+# Slide 35 (PDF p. 42)
 LinePay_data <- linepay   # also in the course data package, pbadata
 
-# PDF p. 42
+# Slide 35 (PDF p. 42)
 LinePay_data
 
-# PDF p. 47
+# Slide 40 (PDF p. 47)
 adopted <- LinePay_data |>
     filter(line_pay_adopt == 1) |>
     summarize(mean(spending_post)); adopted
@@ -78,10 +78,10 @@ no_change <- LinePay_data |>
     filter(line_pay_adopt == 0) |>
     summarize(mean(spending_post)); no_change
 
-# PDF p. 47
+# Slide 40 (PDF p. 47)
 adopted - no_change
 
-# PDF p. 49
+# Slide 42 (PDF p. 49)
 LinePay_data |>
     group_by(tech_savviness, line_pay_adopt) |>
     summarize(avg_spending = mean(spending_post)) |>
@@ -92,7 +92,7 @@ LinePay_data |>
     ) |>
     mutate(diff_by_tech_savviness = `adopted` - `unadopted`)
 
-# PDF p. 51
+# Slide 44 (PDF p. 51)
 LinePay_data |>
     filter(line_pay_adopt == 1) |>
     mutate(
@@ -100,7 +100,7 @@ LinePay_data |>
     ) |>
     summarize(avg_change = mean(spending_change))
 
-# PDF p. 53
+# Slide 46 (PDF p. 53)
 LinePay_data |>
     mutate(
       spending_change = spending_post - spending_pre,

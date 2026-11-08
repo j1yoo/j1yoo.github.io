@@ -1,22 +1,22 @@
 # PBA 8. Regression and Model Fit (Fall 2026)
-# Run selected lines in order in RStudio. "PDF p." refers to the 66-page slides.
+# Run selected lines in order in RStudio. "Slide" is the number at the bottom right of each slide; "PDF p." in parentheses is the page in a PDF viewer.
 # Packages used today: tidyverse (readr, dplyr, tidyr, ggplot2, purrr), broom, and gridExtra.
 # Today's two data sets (health, and UT Austin course evaluations) are read from the web.
 # The same two data sets are also in the course data package pbadata (0.5.0 or later) as health and evals.
 # If a download fails: update pbadata once with the line below (restart R first if pbadata is loaded),
 # then run library(pbadata) instead of the line that reads the data.
 # install.packages("pbadata", type = "source", repos = "https://j1yoo.github.io/assets/courses/pba")
-# The simulated points on PDF p. 45 and pp. 51-54 are typed into this script. anscombe (PDF p. 55) comes with R.
+# The simulated points on slide 39 and slides 45-46 are typed into this script. anscombe (slide 47) comes with R.
 # If broom or gridExtra is not installed yet, run this line once: install.packages(c("broom", "gridExtra"))
 
 library(tidyverse)
 
-# PDF p. 10
+# Slide 7 (PDF p. 10)
 # Don't forget to load tidyverse and ggplot2!
 health <- as_tibble(read.csv(url("https://bit.ly/47uyilg"))); health
 health <- drop_na(health)
 
-# PDF p. 11
+# Slide 8 (PDF p. 11)
 Tsinghua_Purple <- "#5f2167"  # Hex code for Tsinghua Purple
 
 ggplot(health, aes(x = steps_lag, y = weight)) +
@@ -26,11 +26,11 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
       y = "Weight (in kg)"
     )
 
-# PDF p. 12
+# Slide 9 (PDF p. 12)
 health |>
     filter(round(steps_lag) == 5)
 
-# PDF p. 13
+# Slide 10 (PDF p. 13)
 mean_wt_5k_steps <- health |>
     filter(round(steps_lag) == 5) |>
     summarize(mean(weight)) |>
@@ -47,7 +47,7 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_vline(xintercept = c(4.5, 5.5), linetype = "dashed") +
     geom_point(aes(x = 5, y = mean_wt_5k_steps), color = "indianred1", size = 3)
 
-# PDF p. 15
+# Slide 12 (PDF p. 15)
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.25) +
     labs(
@@ -58,7 +58,7 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     stat_summary_bin(fun = "mean", color = "indianred1", size = 3,
                      geom = "point", binwidth = 1)
 
-# PDF p. 18
+# Slide 15 (PDF p. 18)
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.25) +
     labs(x = "Steps on day prior (in 1000s)", y = "Weight (in kg)") +
@@ -66,7 +66,7 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
                      geom = "point", binwidth = 0.5) +
     geom_vline(xintercept = c(23.25, 23.75), linetype = "dashed")
 
-# PDF p. 25
+# Slide 21 (PDF p. 25)
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple) +
     labs(
@@ -75,7 +75,7 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     ) +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 26
+# Slide 22 (PDF p. 26)
 # Any other line: intercept 150 * 0.453592 + 10 (about 78.04) and slope 0.5
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple) +
@@ -85,18 +85,18 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     ) +
     geom_abline(intercept = 150 * 0.453592 + 10, slope = .5, color = "green3", size = 1.5)
 
-# PDF p. 31
+# Slide 26 (PDF p. 31)
 fit <- lm(weight ~ steps_lag, data = health); fit
 
-# PDF p. 32
+# Slide 27 (PDF p. 32)
 coef(fit)
 
-# PDF p. 33
+# Slide 28 (PDF p. 33)
 # Don't forget to install and load the package!
 require(broom)
 augment(fit) |> head()
 
-# PDF p. 34
+# Slide 29 (PDF p. 34)
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple) +
     labs(x = "Steps on day prior (in 1000s)", y = "Weight (in kg)") +
@@ -104,11 +104,11 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_vline(xintercept = mean(health$steps_lag), linetype = "dashed") +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 35
+# Slide 30 (PDF p. 35)
 augment(fit) |>
     summarize(mean(.resid))
 
-# PDF p. 36
+# Slide 31 (PDF p. 36)
 augment(fit) |>
     ggplot(aes(x = steps_lag, y = .resid)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.75) +
@@ -118,7 +118,7 @@ augment(fit) |>
     ) +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 37
+# Slide 32 (PDF p. 37)
 ggplot(health, aes(x = steps_lag, y = weight)) +
     geom_point(color = Tsinghua_Purple, alpha = 0.25) +
     labs(x = "Steps on day prior (in 1000s)", y = "Weight (in kg)") +
@@ -126,19 +126,19 @@ ggplot(health, aes(x = steps_lag, y = weight)) +
                      geom = "point", binwidth = 1) +
     geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
-# PDF p. 40
+# Slide 34 (PDF p. 40)
 # Don't forget to load tidyverse and ggplot2!
 evals <- read_csv("https://bit.ly/46rSa7s"); evals
 
-# PDF p. 41
+# Slide 35 (PDF p. 41)
 fit.bty <- lm(score ~ bty_avg, data = evals)
 fit.bty
 
-# PDF p. 42
+# Slide 36 (PDF p. 42)
 fit.age <- lm(score ~ age, data = evals)
 fit.age
 
-# PDF p. 43
+# Slide 37 (PDF p. 43)
 library(gridExtra)  # grid.arrange() puts plots side by side
 
 p1 <- ggplot(data = evals, aes(x = bty_avg, y = score)) +
@@ -153,7 +153,7 @@ p2 <- ggplot(data = evals, aes(x = age, y = score)) +
 
 grid.arrange(p1, p2, nrow = 1)
 
-# PDF p. 45
+# Slide 39 (PDF p. 45)
 # The simulated points on the slide: x from 0 to 1; y1 does not change with x, and y2 rises with x
 simdat <- tibble(
     x = seq(0, 1, length.out = 100),
@@ -196,7 +196,7 @@ p2 <- ggplot(simdat, aes(x = x, y = y2)) +
 
 grid.arrange(p1, p2, nrow = 1)
 
-# PDF p. 47
+# Slide 41 (PDF p. 47)
 # 46 randomly chosen courses (10%), so that each vertical line is easy to see.
 # The slides use the sample drawn in 2023 with set.seed(123) and sample_frac(evals, .1).
 # Today's R draws a different sample from that code, so the 46 row numbers are listed here.
@@ -212,7 +212,7 @@ ggplot(data = sample, aes(x = bty_avg, y = score)) +
     labs(x = "Average Beauty Score (Sampled)", y = "Teaching Evaluation Score") +
     theme_classic()
 
-# PDF p. 48
+# Slide 42 (PDF p. 48)
 ggplot(data = sample, aes(x = bty_avg, y = score)) +
     geom_point(alpha = .5, size = 3) +
     geom_smooth(method = "lm", se = F, color = Tsinghua_Purple, size = 1.5) +
@@ -220,23 +220,23 @@ ggplot(data = sample, aes(x = bty_avg, y = score)) +
     labs(x = "Average Beauty Score (Sampled)", y = "Teaching Evaluation Score") +
     theme_classic()
 
-# R-squared from the two sums of squares (PDF p. 46), with all 463 courses
+# R-squared from the two sums of squares (slide 40), with all 463 courses
 tss <- sum((evals$score - mean(evals$score))^2)  # total sum of squares
 ssr <- sum(residuals(fit.bty)^2)                 # sum of squared residuals
-(tss - ssr) / tss                                # the same R-squared as on PDF p. 49
+(tss - ssr) / tss                                # the same R-squared as on slide 43
 
-# PDF p. 49
+# Slide 43 (PDF p. 49)
 fit.bty.sum <- summary(fit.bty)
 fit.bty.sum$r.squared
 
 fit.age.sum <- summary(fit.age)
 fit.age.sum$r.squared
 
-# PDF p. 50
+# Slide 44 (PDF p. 50)
 library(broom)
 glance(fit.bty)
 
-# PDF p. 51
+# Slide 45 (PDF p. 51)
 # The 200 simulated points on the slides (a 10% random sample of a larger simulated data set)
 fake_data <- tibble(
     x = c(
@@ -283,7 +283,7 @@ y <- fake_data$y
 fit.x <- lm(y ~ x)
 summary(fit.x)$r.squared  # about 0.95
 
-# PDF p. 52-54 (one figure in three steps)
+# Slides 46-46 (PDF pp. 52-54) (one figure in three steps)
 # Step 1: the points and a horizontal line at 0
 ggplot(fake_data, aes(x=x, y=y)) +
     geom_point(alpha = .5, color = Tsinghua_Purple) +
@@ -304,7 +304,7 @@ ggplot(fake_data, aes(x=x, y=y)) +
     geom_segment(aes(xend = x, yend = predict(lm(y~x, fake_data))), color = Tsinghua_Purple, alpha = .5) +
     theme_classic()
 
-# PDF p. 55
+# Slide 47 (PDF p. 55)
 data(anscombe)  # comes with R
 
 # Convert the data to a long format for easier plotting with ggplot2
@@ -334,13 +334,13 @@ anscombe_long |>
     group_by(dataset) |>
     summarize(r_squared = round(summary(lm(y ~ x))$r.squared, 2))
 
-# PDF p. 58
-# KNN as a function, from the code that made the figures on PDF p. 59 and p. 61:
+# Slide 50 (PDF p. 58)
+# KNN as a function, from the code that made the figures on slides 51 and 53:
 # for each value in xnew, the average of ytr over the k training points whose xtr is nearest.
 closest_avg <- function(xtr, ytr, xnew, k) sapply(xnew, function(z) mean(ytr[order(abs(xtr - z))[1:k]]))
 
 
-# PDF p. 59
+# Slide 51 (PDF p. 59)
 # 30 random training days; three prediction rules: a straight line, and KNN with k = 5 and k = 1
 rmse <- function(y, yhat) sqrt(mean((y - yhat)^2))
 
@@ -374,7 +374,7 @@ p1 <- ggplot() +
 p1  # the slide figure is 8 x 3.4 inches: widen the Plots pane (wide and short) to see the same shape
 # ggsave("B07_train_test_weight.pdf", p1, width = 8, height = 3.4)  # saves it at the slide's size
 
-# PDF p. 61
+# Slide 53 (PDF p. 61)
 # Simulated data: true curve sin(x), noise SD 0.4, 30 training points, 1,000 training samples;
 # KNN with k = 30 down to 1. Takes about 15 seconds (1,000 samples x 9 values of k x 130 predictions).
 set.seed(2026)
@@ -412,7 +412,7 @@ p2 <- sim |> pivot_longer(-k, names_to = "what", values_to = "value") |>
 p2
 # ggsave("B07_bias_variance_sim.pdf", p2, width = 6.4, height = 4)  # saves it at the slide's size
 
-# PDF p. 66
+# Appendix slide 2 (PDF p. 66)
 health |>
     mutate(distance = abs(steps_lag - 5)) |>
     slice_min(distance, n = 10) |>
