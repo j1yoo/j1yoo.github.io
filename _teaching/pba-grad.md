@@ -91,6 +91,8 @@ materials:
     url: "/assets/courses/pba/PBA_08_More_on_Regression_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_08_More_on_Regression_Grad.R"
   - title: "Week 11: Sampling and Sampling Distributions"
+    url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_Grad.R"
   - title: "Week 12: The Bootstrap and Confidence Intervals"
   - title: "Week 13: Hypothesis Testing"
   - title: "Week 14: Models of Uncertainty"
@@ -234,6 +236,7 @@ schedule_content: |
   ### Part III: Statistical Uncertainty
 
   **Week 11 (Nov 19): Sampling and Sampling Distributions**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_Grad.R" download>R script</a>
   - Sampling framework
   - Sampling distributions and standard errors; unbiasedness and the law of large numbers
   - Random variables; the normal distribution and the central limit theorem
