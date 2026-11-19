@@ -1,15 +1,15 @@
 # PBA 10. Sampling and Sampling Distributions (Fall 2026)
 # Run selected lines in order in RStudio. "Slide" is the number at the bottom right of each slide; "PDF p." in parentheses is the page in a PDF viewer.
-# Packages used today: tidyverse (readr, dplyr, ggplot2) and infer. The picture on slide 22 also uses gridExtra.
+# Packages used today: tidyverse (readr, dplyr, ggplot2) and infer. The picture on slide 20 also uses gridExtra.
 # If infer or gridExtra is not installed yet, run this line once: install.packages(c("infer", "gridExtra"))
 # The class data (class_years) are read from the web. midwest comes with ggplot2.
 #
 # With set.seed(1) before a random draw, the draw is the same every time, so your output is the same as on the slides.
 # Run the lines in order. If you run a random draw again without its set.seed(1) line, you get a different sample.
 #
-# The script has five parts, like the slides. RStudio lists them in the outline of the script.
-# The pictures with 10,000 and 100,000 repetitions (slides 37 and 38), the picture on slide 51 and the check on slide 53 take a few seconds.
-# Slides 18, 23-25, 45 and 46 are text. The target picture (slide 41) and the normal curves of part 5 (slides 48, 49 and 52) are pictures, not data.
+# The script has five parts and an appendix, like the slides. RStudio lists them in the outline of the script.
+# The pictures with 10,000 and 100,000 repetitions (slides 34 and 35), the check on slide 49 and the picture on appendix slide 2 take a few seconds.
+# Slides 21, 22, 42 and 43 and appendix slides 1 and 3 are text. The target picture (slide 38) and the normal curves of part 5 (slides 45, 46 and 48) are pictures, not data.
 
 library(tidyverse)
 
@@ -48,7 +48,7 @@ library(infer) # don't forget to install the package!
 set.seed(1)
 class_years |>
     rep_slice_sample(n = 5, reps = 2)
-# In the textbook (ModernDive 7.2), the same step is rep_sample_n(size = 5, reps = 2).
+# In the textbook (ModernDive 7.2), the same step is rep_sample_n(size = 5, reps = 2), an older infer function.
 
 # Slide 8 (PDF p. 11): Simulate Many Separate `Studies' Being Done
 set.seed(1)
@@ -115,15 +115,22 @@ tibble(n = sizes, sd = output)
 
 # Part 2. Sampling Framework and Polls ----------------------------------------------------------
 
-# Slide 20 (PDF p. 24): Expected Value
+# Slide 18 (PDF p. 22): Expected Value
 samples_n60 |>
     summarize(mean(jn_prop)) |> pull() # 100 samples only: close to 0.324, not exactly
 
-# Slide 21 (PDF p. 25): Standard Error Across Repeated Samples
+set.seed(1)
+class_years |>
+    rep_slice_sample(n = 60, reps = 100000) |>       # 100,000 samples
+    group_by(replicate) |>
+    summarize(jn_prop = mean(year == "Junior")) |>
+    summarize(mean(jn_prop)) |> pull() |> round(3)   # the population proportion is 0.324
+
+# Slide 19 (PDF p. 23): Standard Error Across Repeated Samples
 samples_n60 |>
     summarize(sd(jn_prop)) |> pull()
 
-# Slide 22 (PDF p. 26): The Three Distributions Visualized
+# Slide 20 (PDF p. 24): The Three Distributions Visualized
 # Left: all 71 students (1 = junior). Middle: one sample of 20 students. Right: the 100 sample proportions of slide 8.
 # With factor(), the 0/1 variable is a category, so the bars are labeled 0 and 1. With ylim(), the y-axis goes from 0 to 70.
 p1 <- class_years |>
@@ -153,17 +160,17 @@ gridExtra::grid.arrange(p1, p2, p3, nrow = 1)   # the three plots side by side
 
 # Part 3. Random Variables and Probability Distributions ----------------------------------------
 
-# Slide 29 (PDF p. 34): Discrete Probability Distribution
+# Slide 26 (PDF p. 31): Discrete Probability Distribution
 class_years |>
     mutate(Third_year = as.numeric(year == "Junior")) |>
     ggplot(aes(x = Third_year)) +
     geom_bar(mapping = aes(y = after_stat(prop)), width = 0.1)
 
-# Slide 30 (PDF p. 35): Midwest Data Redux
+# Slide 27 (PDF p. 32): Midwest Data Redux
 library(ggplot2)
 midwest
 
-# Slide 31 (PDF p. 36): Continuous Probability Distribution
+# Slide 28 (PDF p. 33): Continuous Probability Distribution
 midwest |>
     ggplot(aes(x = percollege)) +
     geom_histogram(aes(y = after_stat(density)), binwidth = 1)
@@ -171,7 +178,7 @@ midwest |>
 
 # Part 4. Sampling Distribution -----------------------------------------------------------------
 
-# Slides 34 and 35 (PDF p. 40-41): Sample Means/Proportions Distribution, 100 repetitions
+# Slides 31 and 32 (PDF p. 37-38): Sample Means/Proportions Distribution, 100 repetitions
 set.seed(1)
 midwest |>
     rep_slice_sample(n = 50, reps = 100) |>
@@ -181,12 +188,12 @@ midwest |>
     geom_histogram(aes(y = after_stat(density)), binwidth = 0.5) +
     coord_cartesian(xlim = c(14, 23), ylim = c(0, 0.7)) +
     labs(title = "100 Repetitions") +
-    # red curve: a normal curve with this mean and sd (slides 39 and 50)
+    # red curve: a normal curve with this mean and sd (slides 36 and 47)
     stat_function(fun = dnorm, args = c(mean = mean(midwest$percollege),
                                         sd = sd(midwest$percollege)/sqrt(50)),
                   color = "indianred1", linewidth = 1.5, xlim = c(14,23))
 
-# Slide 36 (PDF p. 42): 1,000 repetitions. Only reps and the title change.
+# Slide 33 (PDF p. 39): 1,000 repetitions. Only reps and the title change.
 set.seed(1)
 midwest |>
     rep_slice_sample(n = 50, reps = 1000) |>
@@ -200,7 +207,7 @@ midwest |>
                                         sd = sd(midwest$percollege)/sqrt(50)),
                   color = "indianred1", linewidth = 1.5, xlim = c(14,23))
 
-# Slide 37 (PDF p. 43): 10,000 repetitions. With more sample means the bins can be narrower (binwidth = 0.2).
+# Slide 34 (PDF p. 40): 10,000 repetitions. With more sample means the bins can be narrower (binwidth = 0.2).
 set.seed(1)
 midwest |>
     rep_slice_sample(n = 50, reps = 10000) |>
@@ -214,7 +221,7 @@ midwest |>
                                         sd = sd(midwest$percollege)/sqrt(50)),
                   color = "indianred1", linewidth = 1.5, xlim = c(14,23))
 
-# Slide 38 (PDF p. 44): 100,000 repetitions (binwidth = 0.05)
+# Slide 35 (PDF p. 41): 100,000 repetitions (binwidth = 0.05)
 set.seed(1)
 midwest |>
     rep_slice_sample(n = 50, reps = 100000) |>
@@ -228,7 +235,7 @@ midwest |>
                                         sd = sd(midwest$percollege)/sqrt(50)),
                   color = "indianred1", linewidth = 1.5, xlim = c(14,23))
 
-# Slide 42 (PDF p. 48): What If We Sample Only from Undergraduates?
+# Slide 39 (PDF p. 45): What If We Sample Only from Undergraduates?
 # undergrads: the 52 undergraduates. The 19 graduate students are not on this list.
 undergrads <- class_years |>
     filter(year %in% c("Sophomore", "Junior", "Senior"))
@@ -244,8 +251,8 @@ ug_n20 |> summarize(mean = mean(jn_prop), sd = sd(jn_prop))
 
 ug_n40 |> summarize(mean = mean(jn_prop), sd = sd(jn_prop))
 
-# Slide 43 (PDF p. 49): Undergraduates Only: Precise but Not Accurate
-# The four sets of 100 sample proportions in one table. panel is the name of each set: one histogram for each name,
+# Slide 40 (PDF p. 46): A Larger Sample: More Precise, Still Biased
+# The four tables of 100 sample proportions in one table. panel is the name of the table a row is from: one histogram for each name,
 # with facet_wrap() (PBA 2). The panels are in alphabetical order: "Larger ..." before "Smaller ...".
 four <- bind_rows(
     samples_n40 |> mutate(panel = "Larger sample (n = 40): whole class"),
@@ -262,8 +269,8 @@ four |>
     coord_cartesian(xlim = c(0, 1)) +
     labs(x = "Sample proportion of juniors (jn_prop)")
 
-# Slide 44 (PDF p. 50): Bias and Spread Together: The Total Error
-# four: the table made for the picture of slide 43, just above.
+# Slide 41 (PDF p. 47): Bias and Spread Together: The Total Error
+# four: the table made for the picture of slide 40, just above.
 four |>
     group_by(panel) |>
     summarize(bias = round(mean(jn_prop) - 0.324, 3),            # center minus truth
@@ -273,16 +280,7 @@ four |>
 
 # Part 5. Normal Variables and the Central Limit Theorem ----------------------------------------
 
-# Slide 51 (PDF p. 58): Not Every Statistic: The Largest Value in a Sample
-set.seed(1)
-midwest |>
-    rep_slice_sample(n = 50, reps = 10000) |>
-    group_by(replicate) |>
-    summarize(largest = max(percollege)) |>
-    ggplot(mapping = aes(x = largest)) +
-    geom_histogram(binwidth = 0.5)
-
-# Slide 53 (PDF p. 63): Checking the Empirical Rule with Our Samples
+# Slide 49 (PDF p. 59): Checking the Empirical Rule with Our Samples
 set.seed(1)
 means <- midwest |>
     rep_slice_sample(n = 50, reps = 10000) |>
@@ -294,3 +292,15 @@ means |>
               within_1 = mean(abs(xbar - mu) < se),      # abs(): the distance from mu
               within_2 = mean(abs(xbar - mu) < 2 * se),
               within_3 = mean(abs(xbar - mu) < 3 * se))
+
+
+# Appendix --------------------------------------------------------------------------------------
+
+# Appendix slide 2 (PDF p. 64): Not Every Statistic: The Largest Value in a Sample
+set.seed(1)
+midwest |>
+    rep_slice_sample(n = 50, reps = 10000) |>
+    group_by(replicate) |>
+    summarize(largest = max(percollege)) |>
+    ggplot(mapping = aes(x = largest)) +
+    geom_histogram(binwidth = 0.5)
