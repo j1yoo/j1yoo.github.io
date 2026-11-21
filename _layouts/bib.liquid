@@ -175,6 +175,9 @@
           {%- if entry.doi %}
             <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button"><i class="fas fa-file-alt"></i> DOI</a>
           {%- endif %}
+          {%- if entry.dataverse %}
+            <a href="{{ entry.dataverse }}" class="btn btn-sm z-depth-0" role="button"><i class="fas fa-database"></i> Dataverse</a>
+          {%- endif %}
           {%- if entry.pdf %}
             {% if entry.pdf contains '://' -%}
             <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button"><i class="fas fa-file-alt"></i> PDF</a>
