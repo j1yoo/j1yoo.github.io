@@ -8,8 +8,8 @@
 # Run the lines in order. If you run a random draw again without its set.seed(1) line, you get a different sample.
 #
 # The script has five parts and an appendix, like the slides. RStudio lists them in the outline of the script.
-# The pictures with 10,000 and 100,000 repetitions (slides 34 and 35), the check on slide 49 and the picture on appendix slide 2 take a few seconds.
-# Slides 21, 22, 42 and 43 and appendix slides 1 and 3 are text. The target picture (slide 38) and the normal curves of part 5 (slides 45, 46 and 48) are pictures, not data.
+# The pictures with 10,000 and 100,000 repetitions (slides 34 and 35), the check on slide 48 and the picture on appendix slide 3 take a few seconds.
+# Slides 21, 22, 41 and 42 and appendix slides 1 and 4 are text. The target picture (slide 38) and the normal curves of part 5 (slides 44, 45 and 47) are pictures, not data.
 
 library(tidyverse)
 
@@ -188,7 +188,7 @@ midwest |>
     geom_histogram(aes(y = after_stat(density)), binwidth = 0.5) +
     coord_cartesian(xlim = c(14, 23), ylim = c(0, 0.7)) +
     labs(title = "100 Repetitions") +
-    # red curve: a normal curve with this mean and sd (slides 36 and 47)
+    # red curve: a normal curve with this mean and sd (slides 36 and 46)
     stat_function(fun = dnorm, args = c(mean = mean(midwest$percollege),
                                         sd = sd(midwest$percollege)/sqrt(50)),
                   color = "indianred1", linewidth = 1.5, xlim = c(14,23))
@@ -269,18 +269,10 @@ four |>
     coord_cartesian(xlim = c(0, 1)) +
     labs(x = "Sample proportion of juniors (jn_prop)")
 
-# Slide 41 (PDF p. 47): Bias and Spread Together: The Total Error
-# four: the table made for the picture of slide 40, just above.
-four |>
-    group_by(panel) |>
-    summarize(bias = round(mean(jn_prop) - 0.324, 3),            # center minus truth
-              sd   = round(sd(jn_prop), 3),                      # the spread
-              rmse = round(sqrt(mean((jn_prop - 0.324)^2)), 3))  # the typical error
-
 
 # Part 5. Normal Variables and the Central Limit Theorem ----------------------------------------
 
-# Slide 49 (PDF p. 59): Checking the Empirical Rule with Our Samples
+# Slide 48 (PDF p. 58): Checking the Empirical Rule with Our Samples
 set.seed(1)
 means <- midwest |>
     rep_slice_sample(n = 50, reps = 10000) |>
@@ -296,7 +288,15 @@ means |>
 
 # Appendix --------------------------------------------------------------------------------------
 
-# Appendix slide 2 (PDF p. 64): Not Every Statistic: The Largest Value in a Sample
+# Appendix slide 2 (PDF p. 63): Bias and Spread Together: The Total Error
+# four: the table made for the picture of slide 40 (part 4).
+four |>
+    group_by(panel) |>
+    summarize(bias = round(mean(jn_prop) - 0.324, 3),            # center minus truth
+              sd   = round(sd(jn_prop), 3),                      # the spread
+              rmse = round(sqrt(mean((jn_prop - 0.324)^2)), 3))  # the typical error
+
+# Appendix slide 3 (PDF p. 64): Not Every Statistic: The Largest Value in a Sample
 set.seed(1)
 midwest |>
     rep_slice_sample(n = 50, reps = 10000) |>
