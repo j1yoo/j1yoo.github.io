@@ -83,15 +83,17 @@ materials:
   - title: "Week 9: Regression and Model Fit"
     url: "/assets/courses/pba/PBA_07_Regression_Model_Fit_UG.pdf"
     script_url: "/assets/courses/pba/PBA_07_Regression_Model_Fit.R"
-  - title: "Week 10: More on Regression"
+  - title: "Week 10: No class"
+  - title: "Week 11: More on Regression"
     url: "/assets/courses/pba/PBA_08_More_on_Regression_UG.pdf"
     script_url: "/assets/courses/pba/PBA_08_More_on_Regression.R"
-  - title: "Week 11: Sampling and Sampling Distributions"
-  - title: "Week 12: The Bootstrap and Confidence Intervals"
-  - title: "Week 13: Hypothesis Testing"
-  - title: "Week 14: Models of Uncertainty"
-  - title: "Week 15: Inference for Regression"
-  - title: "Week 16: Project Showcase, Q&A, and Peer Evaluation"
+  - title: "Week 12: Sampling and Sampling Distributions"
+    url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_UG.pdf"
+    script_url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions.R"
+  - title: "Week 13: The Bootstrap and Confidence Intervals"
+  - title: "Week 14: Hypothesis Testing"
+  - title: "Week 15: Models of Uncertainty"
+  - title: "Week 16: Inference for Regression and Project Showcase"
 
 schedule_content: |
   ## Weekly Schedule (Undergraduate, Mondays)
@@ -201,7 +203,14 @@ schedule_content: |
   <span class="badge-due">Due:</span> Assignment 2
   </div>
 
-  **Week 10 (Nov 9): More on Regression**
+  **Week 10 (Nov 9): No class**
+
+  <div class="schedule-deliverables">
+  <span class="badge-due">Due:</span> Problem Set 1, Sun Nov 15<br>
+  <span class="badge-due">Due:</span> Milestone 3: first visualization, Sun Nov 15
+  </div>
+
+  **Week 11 (Nov 16): More on Regression**
   <a class="badge-slides" href="/assets/courses/pba/PBA_08_More_on_Regression_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_08_More_on_Regression.R" download>R script</a>
   - Multiple regression
   - Many predictors: ridge, lasso, and elastic net; choosing the penalty by cross-validation
@@ -213,14 +222,13 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §§4.2.6–4.3.2; [MD §6.3](https://moderndive.com/6-multiple-regression.html#mult-reg-related-topics) (model comparison and related topics); ISLR §7.1 (powers of a predictor), §6.4.2 (too many predictors), §6.5.2 (glmnet lab), and §3.3.2 (interactions); [An Introduction to glmnet](https://glmnet.stanford.edu/articles/glmnet.html) (elastic net).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E5 (NYC condominiums)</em><br>
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em><br>
-  <span class="badge-due">Due:</span> Problem Set 1, Sun Nov 15<br>
-  <span class="badge-due">Due:</span> Milestone 3: first visualization, Sun Nov 15
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 2 (IMS Ch. 8) released</em>
   </div>
 
   ### Part III: Statistical Uncertainty
 
-  **Week 11 (Nov 16): Sampling and Sampling Distributions**
+  **Week 12 (Nov 23): Sampling and Sampling Distributions**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions.R" download>R script</a>
   - Sampling framework
   - Sampling distributions and standard errors; unbiasedness and the law of large numbers
   - Random variables; the normal distribution and the central limit theorem
@@ -228,51 +236,49 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) (normal models and standard errors).
   <div class="schedule-deliverables">
   <span class="badge-due">Due:</span> Assignment 3<br>
-  <span class="badge-due">Due:</span> Problem Set 2, Sun Nov 22
+  <span class="badge-due">Due:</span> Problem Set 2, Sun Nov 29
   </div>
 
-  **Week 12 (Nov 23): The Bootstrap and Confidence Intervals**
+  **Week 13 (Nov 30): The Bootstrap and Confidence Intervals**
   - Resampling; bootstrap CIs for means and ATEs
   - Computing and interpreting CIs
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§8.1–8.5](https://moderndive.com/8-confidence-intervals.html#resampling-tactile) (resampling and confidence intervals); [IMS §20.2](https://openintro-ims1.netlify.app/inference-two-means#bootstrap-confidence-interval-for-the-difference-in-means) (bootstrap intervals for a difference in means).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> AAG §21.4; [MD §8.6](https://moderndive.com/8-confidence-intervals.html#case-study-two-prop-ci) (a worked comparison of two groups).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Team consultations Nov 30–Dec 4: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a></em><br>
+  <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
   </div>
 
-  **Week 13 (Nov 30): Hypothesis Testing**
+  **Week 14 (Dec 7): Hypothesis Testing**
   - Hypothesis tests with infer; two-sample and permutation tests
   - Issues with hypothesis testing; power
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§9.1–9.4](https://moderndive.com/9-hypothesis-testing.html#ht-activity) (randomization tests and interpretation); [IMS §20.1](https://openintro-ims1.netlify.app/inference-two-means#rand2mean) (two-means randomization test); [IMS §14.4](https://openintro-ims1.netlify.app/decerr#pow) (power).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [MD §§9.5–9.6](https://moderndive.com/9-hypothesis-testing.html#ht-case-study) (worked example and issues with testing).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>In-class exercise E6</em><br>
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Team consultations Nov 30–Dec 4: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a></em><br>
-  <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 5 released</em><br>
+  <span class="badge-due">Due:</span> Problem Set 3, Sun Dec 13
   </div>
 
-  **Week 14 (Dec 7): Models of Uncertainty**
+  **Week 15 (Dec 14): Models of Uncertainty**
   - Normal approximation and standard errors for confidence intervals and hypothesis tests
   - Comparing groups: confidence intervals and two-sample tests for experiments
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) and [IMS §13.6](https://openintro-ims1.netlify.app/foundations-mathematical#casestent) (normal models, standard errors, and confidence intervals); [IMS §20.4](https://openintro-ims1.netlify.app/inference-two-means#mathematical-model-for-estimating-the-difference-in-means) (intervals for a difference in means).
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [IMS §§13.4–13.5](https://openintro-ims1.netlify.app/foundations-mathematical#caseopp) (additional examples).
   <div class="schedule-deliverables">
-  <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 5 released</em><br>
-  <span class="badge-due">Due:</span> Assignment 4<br>
-  <span class="badge-due">Due:</span> Problem Set 3, Sun Dec 13
+  <span class="badge-due">Due:</span> Assignment 4
   </div>
-
-  **Week 15 (Dec 14): Inference for Regression**
-  - Uncertainty for regression coefficients
-  - Presenting OLS regressions
-  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§10.1–10.3](https://moderndive.com/10-inference-for-regression.html#regression-refresher) (regression tables, uncertainty, and conditions for inference); [IMS §25.1](https://openintro-ims1.netlify.app/inf-model-mlr#inf-mult-reg-soft) (multiple-regression output).
-  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §7.3; [MD §10.4](https://moderndive.com/10-inference-for-regression.html#infer-regression) (simulation-based inference).
 
   ### Part IV: Showcase
 
-  **Week 16 (Dec 21): Project Showcase, Q&A, and Peer Evaluation**
-  - Teams present at stations; the instructor and TAs rotate for Q&A
+  **Week 16 (Dec 21): Inference for Regression and Project Showcase**
+  - One class day for both, with one extra hour of class time; the time will be announced on eeclass
+  - Lecture: uncertainty for regression coefficients; presenting OLS regressions
+  - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§10.1–10.3](https://moderndive.com/10-inference-for-regression.html#regression-refresher) (regression tables, uncertainty, and conditions for inference); [IMS §25.1](https://openintro-ims1.netlify.app/inf-model-mlr#inf-mult-reg-soft) (multiple-regression output).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> QSS §7.3; [MD §10.4](https://moderndive.com/10-inference-for-regression.html#infer-regression) (simulation-based inference).
+  - Showcase: teams present at stations; the instructor and TAs rotate for Q&A
   - Peer evaluation
   - **Preparation:** Review the project instructions and evaluation rubric on eeclass, and prepare your presentation and responses to questions.
   <div class="schedule-deliverables">
