@@ -39,7 +39,7 @@ class_years |>
     select(year) |>
     slice_sample(n = 5)
 
-# Sampling proportion of 3rd year undergrads (n=20)
+# Sample proportion of 3rd year undergrads (n=20)
 class_years |> slice_sample(n = 20) |>
     summarize(jn_prop = mean(year == "Junior"))
 
