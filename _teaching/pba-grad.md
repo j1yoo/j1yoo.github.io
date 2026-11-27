@@ -95,6 +95,8 @@ materials:
     url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_Grad.pdf"
     script_url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_Grad.R"
   - title: "Week 13: The Bootstrap and Confidence Intervals"
+    url: "/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals_Grad.pdf"
+    script_url: "/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals_Grad.R"
   - title: "Week 14: Hypothesis Testing"
   - title: "Week 15: Models of Uncertainty"
   - title: "Final lecture: Inference for Regression"
@@ -252,6 +254,7 @@ schedule_content: |
   - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [IMS §§13.1–13.3](https://openintro-ims1.netlify.app/foundations-mathematical#CLTsection) (normal models and standard errors).
 
   **Week 13 (Dec 3): The Bootstrap and Confidence Intervals**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals_Grad.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals_Grad.R" download>R script</a>
   - Resampling; bootstrap CIs for means and ATEs
   - Computing and interpreting CIs
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§8.1–8.5](https://moderndive.com/8-confidence-intervals.html#resampling-tactile) (resampling and confidence intervals); [IMS §20.2](https://openintro-ims1.netlify.app/inference-two-means#bootstrap-confidence-interval-for-the-difference-in-means) (bootstrap intervals for a difference in means).

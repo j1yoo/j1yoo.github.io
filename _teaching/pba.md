@@ -91,6 +91,8 @@ materials:
     url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions_UG.pdf"
     script_url: "/assets/courses/pba/PBA_09_Sampling_and_Sampling_Distributions.R"
   - title: "Week 13: The Bootstrap and Confidence Intervals"
+    url: "/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals_UG.pdf"
+    script_url: "/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals.R"
   - title: "Week 14: Hypothesis Testing"
   - title: "Week 15: Models of Uncertainty"
   - title: "Week 16: Inference for Regression and Project Showcase"
@@ -240,6 +242,7 @@ schedule_content: |
   </div>
 
   **Week 13 (Nov 30): The Bootstrap and Confidence Intervals**
+  <a class="badge-slides" href="/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals_UG.pdf">Slides</a> <a class="badge-slides" href="/assets/courses/pba/PBA_10_The_Bootstrap_and_Confidence_Intervals.R" download>R script</a>
   - Resampling; bootstrap CIs for means and ATEs
   - Computing and interpreting CIs
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> [MD §§8.1–8.5](https://moderndive.com/8-confidence-intervals.html#resampling-tactile) (resampling and confidence intervals); [IMS §20.2](https://openintro-ims1.netlify.app/inference-two-means#bootstrap-confidence-interval-for-the-difference-in-means) (bootstrap intervals for a difference in means).
