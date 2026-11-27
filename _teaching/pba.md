@@ -24,6 +24,8 @@ updates_note: "This page is updated during the semester. Recently changed items 
 updates_max_height: "460px"
 
 updates:
+  - text: "<strong>Nov 27, 2026:</strong> A <a href=\"/teaching/pba-milestones/\">guide to the project milestones and the final report</a> is posted, and it is also linked under <strong>Evaluation</strong>. It explains what Milestone 4 (first analysis, due Sun Dec 6) asks for and how it leads to the final report."
+    date: 2026-11-27
   - text: "<strong>Oct 5, 2026:</strong> A <a href=\"/teaching/pba-data/\">guide to finding data</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. It lists sources of real data by topic and what to check before Milestone 2 (data and proposal), due Sun Oct 25."
     date: 2026-10-05
   - text: "<strong>Oct 1, 2026:</strong> A step-by-step <a href=\"/teaching/pba-github/\">guide to setting up Git and GitHub</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. Milestone 1, your team's GitHub repository, is due Sun Oct 11."
@@ -251,6 +253,7 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Team consultations Nov 30–Dec 4: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a></em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-milestones/">Guide to the milestones and the final report</a> posted</em><br>
   <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
   </div>
 
@@ -303,6 +306,9 @@ textbooks_content: |
   - **[IMS]** Çetinkaya-Rundel, Mine and Johanna Hardin. 2021. [Introduction to Modern Statistics, 1st ed.](https://openintro-ims1.netlify.app/). OpenIntro. Use this linked edition for the section numbers in the reading list.
   - **[R4DS]** Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science, 2nd ed.](https://r4ds.hadley.nz/) Free online; the schedule links to the sections to read.
   - **Course materials:** lecture slides, R scripts, and handouts are linked under Materials. The [R Basics reference slides](/assets/courses/pba/PBA_00_R_Basics_Reference.pdf) and [companion handout](/assets/courses/pba/PBA_00_R_Basics_Handout.pdf) explain the programming foundations and remain available throughout the semester. Additional course notes named in the schedule will be posted before the relevant class.
+  - **Other free chapters:** a few weeks assign chapters from other books that are free online. The schedule lists the sections to read.
+    - **[ISLR]** James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. [An Introduction to Statistical Learning: with Applications in R, 2nd ed.](https://www.statlearning.com/) Springer. Assigned in Week 11 (ridge, lasso, and cross-validation).
+    - **[QSS]** Chapter 2 of Imai and Williams, *Quantitative Social Science* (listed under Further reading), is free on the publisher's site. Assigned in Week 5 (causality).
 
   ### Further reading: optional references
 
@@ -361,6 +367,10 @@ assignments_content: |
   ## Finding Data
 
   Milestone 2 (data and proposal) is due Sun Oct 25. The [guide to finding data](/teaching/pba-data/) lists sources of real data by topic, a checklist for judging a dataset, and what the proposal covers.
+
+  ## Milestones and the Final Report
+
+  Milestone 4 (first analysis) is due Sun Dec 6. The [guide to the milestones and the final report](/teaching/pba-milestones/) explains what each milestone asks for, how the first analysis leads to the final report, and what the final report contains.
 
   ## Assignments
 

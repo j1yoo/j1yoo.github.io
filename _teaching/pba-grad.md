@@ -24,6 +24,8 @@ updates_note: "This page is updated during the semester. Recently changed items 
 updates_max_height: "460px"
 
 updates:
+  - text: "<strong>Nov 27, 2026:</strong> A <a href=\"/teaching/pba-milestones/\">guide to the project milestones and the final report</a> is posted, and it is also linked under <strong>Evaluation</strong>. It explains what Milestone 4 (first analysis, due Sun Dec 6) asks for and how it leads to the final report."
+    date: 2026-11-27
   - text: "<strong>Oct 5, 2026:</strong> A <a href=\"/teaching/pba-data/\">guide to finding data</a> for your team project is posted, and it is also linked under <strong>Evaluation</strong>. It lists sources of real data by topic and what to check before Milestone 2 (data and proposal), due Sun Oct 25."
     date: 2026-10-05
   - text: "<strong>Oct 5, 2026:</strong> Readings for Week 5 (<strong>Causality II: DAGs and Covariate Selection</strong>) are in the Weekly Schedule: chapters 6 and 8 of Huntington-Klein's <em>The Effect</em>, free to read online. Chapter 7 of the same book goes with your Week 6 team meeting."
@@ -179,7 +181,7 @@ schedule_content: |
   - What to control for, and what not to, in your project
   - With the causal-inference concepts in hand, discuss your research question and data before the proposal is due
   - <span class="badge-read badge-read-required"><i class="fas fa-book-open" aria-hidden="true"></i>Required reading:</span> Huntington-Klein, *The Effect*, [Ch. 6](https://theeffectbook.net/ch-CausalDiagrams.html) (causal diagrams) and [Ch. 8](https://theeffectbook.net/ch-CausalPaths.html) (causal paths and closing back doors); then [Ch. 7](https://theeffectbook.net/ch-DrawingCausalDiagrams.html) (drawing causal diagrams), as your team draws its DAG before the meeting. All three chapters are free to read on the author's site.
-  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [Cunningham, *Causal Inference: The Mixtape*, Ch. 3](https://mixtape.scunning.com/03-directed_acyclical_graphs) (the same ideas with economics examples; skip the regression code for now); [Cinelli, Forney, and Pearl (2022)](https://ftp.cs.ucla.edu/pub/stat_ser/r493.pdf) (the source of the good-control and bad-control table in the slides); [DAGitty tutorials](https://www.dagitty.net/learn/) (interactive practice with d-separation and covariate roles).
+  - <span class="badge-read badge-read-optional"><i class="fas fa-book-open" aria-hidden="true"></i>Further reading (optional):</span> [Cunningham, *Causal Inference: The Mixtape*, Ch. 3](https://mixtape-1ed.netlify.app/03-directed_acyclical_graphs) (the same ideas with economics examples; skip the regression code for now); [Cinelli, Forney, and Pearl (2022)](https://ftp.cs.ucla.edu/pub/stat_ser/r493.pdf) (the source of the good-control and bad-control table in the slides); [DAGitty tutorials](https://www.dagitty.net/learn/) (interactive practice with d-separation and covariate roles).
   <div class="schedule-deliverables">
   <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a>, ideally by Wed Oct 21; meetings at TSMC Bldg. R828B</em>
   </div>
@@ -263,6 +265,7 @@ schedule_content: |
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Assignment 4 released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Problem Set 3 (IMS Ch. 11–12) released</em><br>
   <i class="fas fa-clipboard-list deliv-icon"></i> <em>Team consultations Nov 30–Dec 4: <a href="https://calendar.app.google/AkutVLBQks1gnJ9a7" target="_blank" rel="noopener noreferrer">book a slot via Google Calendar</a></em><br>
+  <i class="fas fa-clipboard-list deliv-icon"></i> <em><a href="/teaching/pba-milestones/">Guide to the milestones and the final report</a> posted</em><br>
   <span class="badge-due">Due:</span> Milestone 4: first analysis, Sun Dec 6
   </div>
 
@@ -316,8 +319,12 @@ textbooks_content: |
 
   - **[MD]** Ismay, Chester and Albert Y. Kim. [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/1-getting-started.html). The schedule links to the first-edition online text and specifies the sections to read.
   - **[IMS]** Çetinkaya-Rundel, Mine and Johanna Hardin. 2021. [Introduction to Modern Statistics, 1st ed.](https://openintro-ims1.netlify.app/). OpenIntro. Use this linked edition for the section numbers in the reading list.
+  - **[R4DS]** Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science, 2nd ed.](https://r4ds.hadley.nz/) Free online; the schedule links to the sections to read.
   - **Course materials:** lecture slides, R scripts, and handouts are linked under Materials. The [R Basics reference slides](/assets/courses/pba/PBA_00_R_Basics_Reference.pdf) and [companion handout](/assets/courses/pba/PBA_00_R_Basics_Handout.pdf) explain the programming foundations and remain available throughout the semester. Additional course notes named in the schedule will be posted before the relevant class.
-  - **Other free chapters:** a few weeks assign chapters from other books that are free online, such as Huntington-Klein's [*The Effect*](https://theeffectbook.net/) in Week 6. The schedule lists the chapters.
+  - **Other free chapters:** a few weeks assign chapters from other books that are free online. The schedule lists the sections to read.
+    - **[ISLR]** James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. [An Introduction to Statistical Learning: with Applications in R, 2nd ed.](https://www.statlearning.com/) Springer. Assigned in Week 10 (ridge, lasso, and cross-validation).
+    - Huntington-Klein, Nick. [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/). Assigned in Week 6 (causal diagrams).
+    - **[QSS]** Chapter 2 of Imai and Williams, *Quantitative Social Science* (listed under Further reading), is free on the publisher's site. Assigned in Week 4 (causality).
 
   ### Further reading: optional references
 
@@ -326,6 +333,7 @@ textbooks_content: |
   - **[QSS]** Imai, Kosuke and Nora Webb Williams. 2022. *Quantitative Social Science: An Introduction in tidyverse*. Princeton University Press.
   - **[AAG]** Lander, Jared P. 2017. *R for Everyone: Advanced Analytics and Graphics*, 2nd ed. Addison-Wesley Professional.
   - **[VT]** Yau, Nathan. 2011. *Visualize This: The FlowingData Guide to Design, Visualization, and Statistics*. Wiley.
+  - Cunningham, Scott. [Causal Inference: The Mixtape](https://mixtape-1ed.netlify.app/). Yale University Press. The first edition is free online. Week 6 lists Chapter 3.
 
   ## Software
 
@@ -376,6 +384,10 @@ assignments_content: |
   ## Finding Data
 
   Milestone 2 (data and proposal) is due Sun Oct 25. The [guide to finding data](/teaching/pba-data/) lists sources of real data by topic, a checklist for judging a dataset, and what the proposal covers.
+
+  ## Milestones and the Final Report
+
+  Milestone 4 (first analysis) is due Sun Dec 6. The [guide to the milestones and the final report](/teaching/pba-milestones/) explains what each milestone asks for, how the first analysis leads to the final report, and what the final report contains.
 
   ## Assignments
 
